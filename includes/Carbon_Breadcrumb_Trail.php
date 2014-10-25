@@ -55,6 +55,22 @@ class Carbon_Breadcrumb_Trail {
 	private $wrapper_after = '';
 
 	/**
+	 * String before the title of a breadcrumb item.
+	 *
+	 * @access private
+	 * @var string
+	 */
+	private $title_before = '';
+
+	/**
+	 * String before the title of a breadcrumb item.
+	 *
+	 * @access private
+	 * @var string
+	 */
+	private $title_after = '';
+
+	/**
 	 * Minimum items necessary to display the breadcrumb trail.
 	 *
 	 * @access private
@@ -74,9 +90,11 @@ class Carbon_Breadcrumb_Trail {
 	 * @param string $link_after String after the closing link tag of a breadcrumb item.
 	 * @param string $wrapper_before String before all breadcrumb items.
 	 * @param string $wrapper_after String after all breadcrumb items.
+	 * @param string $title_before String before the breadcrumb item title.
+	 * @param string $title_after String after the breadcrumb item title.
 	 * @return Carbon_Breadcrumb_Trail
 	 */
-	function __construct($glue = ' &gt; ', $link_before = '', $link_after = '', $wrapper_before = '', $wrapper_after = '') {
+	function __construct($glue = ' &gt; ', $link_before = '', $link_after = '', $wrapper_before = '', $wrapper_after = '', $title_before = '', $title_after = '') {
 
 		// configure settings
 		$this->set_glue($glue);
@@ -84,6 +102,8 @@ class Carbon_Breadcrumb_Trail {
 		$this->set_link_after($link_after);
 		$this->set_wrapper_before($wrapper_before);
 		$this->set_wrapper_after($wrapper_after);
+		$this->set_title_before($title_before);
+		$this->set_title_after($title_after);
 
 		// schedule sorting of all items after they are created
 		add_action('carbon_breadcrumb_after_setup_trail', array($this, 'sort_items'), 999);
@@ -309,6 +329,50 @@ class Carbon_Breadcrumb_Trail {
 	}
 
 	/**
+	 * Retrieve the string before the title of a breadcrumb item.
+	 *
+	 * @access public
+	 *
+	 * @return string $title_before String before the title of a breadcrumb item.
+	 */
+	function get_title_before() {
+		return $this->title_before;
+	}
+
+	/**
+	 * Modify the string before the title of a breadcrumb item.
+	 *
+	 * @access public
+	 *
+	 * @param string $title_before String before the title of a breadcrumb item.
+	 */
+	function set_title_before($title_before = '') {
+		$this->title_before = $title_before;
+	}
+
+	/**
+	 * Retrieve the string after the title of a breadcrumb item.
+	 *
+	 * @access public
+	 *
+	 * @return string $title_after String after the title of a breadcrumb item.
+	 */
+	function get_title_after() {
+		return $this->title_after;
+	}
+
+	/**
+	 * Modify the string after the title of a breadcrumb item.
+	 *
+	 * @access public
+	 *
+	 * @param string $title_after String after the title of a breadcrumb item.
+	 */
+	function set_title_after($title_after = '') {
+		$this->title_after = $title_after;
+	}
+
+	/**
 	 * Retrieve the minimum number of items, necessary to display the trail.
 	 *
 	 * @access public
@@ -388,8 +452,14 @@ class Carbon_Breadcrumb_Trail {
 					$item_output .= '<a href="' . $item->get_link() . '">';
 				}
 
+				// HTML before title
+				$item_output .= $this->get_title_before();
+
 				// breadcrumb item title
 				$item_output .= $item->get_title();
+
+				// HTML after title
+				$item_output .= $this->get_title_after();
 
 				// link can be optional
 				if ($item->get_link()) {

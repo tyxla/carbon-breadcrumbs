@@ -77,7 +77,6 @@ abstract class Carbon_Breadcrumb_Item {
 	 *
 	 * @access public
 	 *
-	 * @param Carbon_Breadcrumb_Locator $locator Locator, used to find and generate the items.
 	 * @param int $priority Priority of this breadcrumb item.
 	 * @return Carbon_Breadcrumb_Item
 	 */
