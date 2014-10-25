@@ -168,8 +168,15 @@ class Carbon_Breadcrumb_Trail {
 
 		// add home item
 		if (!is_front_page()) {
-			$home_title = __('Home', 'crb');
-			$home_link = home_url('/');
+			$front_page_id = get_option('page_on_front');
+			if ($front_page_id) {
+				$home_title = get_the_title($front_page_id);
+				$home_link = get_permalink($front_page_id);
+			} else {
+				$home_title = __('Home', 'crb');
+				$home_link = home_url('/');
+			}
+			
 			$this->add_custom_item($home_title, $home_link, 10);
 		}
 
