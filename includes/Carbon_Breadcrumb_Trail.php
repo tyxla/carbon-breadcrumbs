@@ -176,7 +176,7 @@ class Carbon_Breadcrumb_Trail {
 				$home_title = __('Home', 'crb');
 				$home_link = home_url('/');
 			}
-			
+
 			$this->add_custom_item($home_title, $home_link, 10);
 		}
 
@@ -497,9 +497,17 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @static
 	 * @access public
+	 *
+	 * @param string $glue String used between the breadcrumb items when displaying the breadcrumbs. 
+	 * @param string $link_before String before the opening link tag of a breadcrumb item.
+	 * @param string $link_after String after the closing link tag of a breadcrumb item.
+	 * @param string $wrapper_before String before all breadcrumb items.
+	 * @param string $wrapper_after String after all breadcrumb items.
+	 * @param string $title_before String before the breadcrumb item title.
+	 * @param string $title_after String after the breadcrumb item title.
 	 */
-	static function output() {
-		$trail = new self(); 
+	static function output($glue = ' &gt; ', $link_before = '', $link_after = '', $wrapper_before = '', $wrapper_after = '', $title_before = '', $title_after = '') {
+		$trail = new self($glue, $link_before, $link_after, $wrapper_before, $wrapper_after, $title_before, $title_after); 
 		$trail->setup();
 		$trail->render();
 	}
