@@ -25,7 +25,12 @@ class Carbon_Breadcrumb_Item_Term extends Carbon_Breadcrumb_Item implements Carb
 			throw new Carbon_Breadcrumb_Exception('The term breadcrumb items must have term ID specified.');
 		}
 
-		$subtype = $this->get_locator()->get_subtype();
+		// in order to continue, taxonomy must be specified
+		if (!$this->get_subtype()) {
+			throw new Carbon_Breadcrumb_Exception('The term breadcrumb items must have taxonomy specified.');
+		}
+
+		$subtype = $this->get_subtype();
 		$term = get_term_by('id', $this->get_id(), $subtype);
 
 		// configure title

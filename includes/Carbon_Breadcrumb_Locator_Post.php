@@ -37,8 +37,9 @@ class Carbon_Breadcrumb_Locator_Post extends Carbon_Breadcrumb_Locator {
 		// walk the tree of ancestors of the post
 		do {
 
-			$item = Carbon_Breadcrumb_Item::factory($this, $this->get_type(), $priority);
+			$item = Carbon_Breadcrumb_Item::factory($this->get_type(), $priority);
 			$item->set_id($post_id);
+			$item->set_subtype($this->get_subtype());
 			$item->setup();
 
 			$items[] = $item;

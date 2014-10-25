@@ -139,9 +139,11 @@ class Carbon_Breadcrumb_Trail {
 		}
 
 		// add home item
-		$home_title = __('Home', 'crb');
-		$home_link = home_url('/');
-		$this->add_custom_item($home_title, $home_link, 10);
+		if (!is_front_page()) {
+			$home_title = __('Home', 'crb');
+			$home_link = home_url('/');
+			$this->add_custom_item($home_title, $home_link, 10);
+		}
 
 		// completing setup
 		do_action('carbon_breadcrumb_after_setup_trail', $this);
@@ -319,8 +321,7 @@ class Carbon_Breadcrumb_Trail {
 	 * @param int $priority Breadcrumb item priority.
 	 */
 	function add_custom_item($title, $link = '', $priority = 1000) {
-		$custom_locator = Carbon_Breadcrumb_Locator::factory('custom');
-		$custom_item = Carbon_Breadcrumb_Item::factory($custom_locator, 'custom', $priority);
+		$custom_item = Carbon_Breadcrumb_Item::factory('custom', $priority);
 		$custom_item->set_title( $title );
 		$custom_item->set_link( $link );
 		$custom_item->setup();

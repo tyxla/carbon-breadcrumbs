@@ -19,7 +19,6 @@ function crb_include_carbon_breadcrumbs() {
 	include_once($includes_dir . 'Carbon_Breadcrumb_Locator_Term.php');
 	include_once($includes_dir . 'Carbon_Breadcrumb_Locator_User.php');
 	include_once($includes_dir . 'Carbon_Breadcrumb_Locator_Date.php');
-	include_once($includes_dir . 'Carbon_Breadcrumb_Locator_Custom.php');
 
 	include_once($includes_dir . 'Carbon_Breadcrumb_Item.php');
 	include_once($includes_dir . 'Carbon_Breadcrumb_Item_Post.php');

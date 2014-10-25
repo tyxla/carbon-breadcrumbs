@@ -31,12 +31,20 @@ abstract class Carbon_Breadcrumb_Item {
 	private $priority = 1000;
 
 	/**
-	 * Locator, used to find items of this breadcrumb item type.
+	 * Breadcrumb item type.
 	 *
 	 * @access private
-	 * @var Carbon_Breadcrumb_Locator
+	 * @var string
 	 */
-	private $locator;
+	private $type = '';
+
+	/**
+	 * Breadcrumb item subtype.
+	 *
+	 * @access private
+	 * @var string
+	 */
+	private $subtype = '';
 
 	/**
 	 * Build a new breadcrumb item of the selected type.
@@ -44,24 +52,20 @@ abstract class Carbon_Breadcrumb_Item {
 	 * @static
 	 * @access public
 	 *
-	 * @param Carbon_Breadcrumb_Locator $locator Locator, used to find and generate the items.
 	 * @param string $type Type of the breadcrumb item.
 	 * @param int $priority Priority of this breadcrumb item.
 	 * @return Carbon_Breadcrumb_Item $item The new breadcrumb item.
 	 */
-	static function factory(Carbon_Breadcrumb_Locator $locator = null, $type = 'custom', $priority = 1000) {
-		if (!$locator) {
-			$locator = Carbon_Breadcrumb_Locator::factory($type);
-		}
-
-		$type = str_replace(" ", '', ucwords(str_replace("_", ' ', $type)));
-		$class = 'Carbon_Breadcrumb_Item_' . $type;
+	static function factory($type = 'custom', $priority = 1000) {
+		$class_type = str_replace(" ", '', ucwords(str_replace("_", ' ', $type)));
+		$class = 'Carbon_Breadcrumb_Item_' . $class_type;
 
 		if ( !class_exists($class) ) {
 			throw new Carbon_Breadcrumb_Exception('Unexisting breadcrumb item type: "' . $type . '".');
 		}
 
-		$item = new $class($locator, $priority);
+		$item = new $class($priority);
+		$item->set_type($type);
 
 		return $item;
 	}
@@ -77,11 +81,7 @@ abstract class Carbon_Breadcrumb_Item {
 	 * @param int $priority Priority of this breadcrumb item.
 	 * @return Carbon_Breadcrumb_Item
 	 */
-	function __construct(Carbon_Breadcrumb_Locator $locator = null, $priority = 1000) {
-		if (!$locator) {
-			$locator = Carbon_Breadcrumb_Locator::factory('custom');
-		}
-		$this->set_locator($locator);
+	function __construct($priority = 1000) {
 		$this->set_priority($priority);
 	}
 
@@ -152,25 +152,47 @@ abstract class Carbon_Breadcrumb_Item {
 	}
 
 	/**
-	 * Retrieve the breadcrumb item locator.
+	 * Retrieve the type of this breadcrumb item.
 	 *
 	 * @access public
 	 *
-	 * @return Carbon_Breadcrumb_Locator $locator The locator of this breadcrumb item.
+	 * @return string $type The type of this breadcrumb item.
 	 */
-	function get_locator() {
-		return $this->locator;
+	function get_type() {
+		return $this->type;
 	}
 
 	/**
-	 * Modify the locator of this breadcrumb item.
+	 * Modify the type of this breadcrumb item.
 	 *
 	 * @access public
 	 *
-	 * @param Carbon_Breadcrumb_Locator $locator The new locator.
+	 * @param string $id The new breadcrumb item type.
 	 */
-	function set_locator(Carbon_Breadcrumb_Locator $locator) {
-		$this->locator = $locator;
+	function set_type($type) {
+		$this->type = $type;
+	}
+
+	/**
+	 * Retrieve the subtype of this breadcrumb item.
+	 *
+	 * @access public
+	 *
+	 * @return string $subtype The subtype of this breadcrumb item.
+	 */
+	function get_subtype() {
+		return $this->subtype;
+	}
+
+	/**
+	 * Modify the subtype of this breadcrumb item.
+	 *
+	 * @access public
+	 *
+	 * @param string $id The new breadcrumb item subtype.
+	 */
+	function set_subtype($subtype) {
+		$this->subtype = $subtype;
 	}
 
 	/**

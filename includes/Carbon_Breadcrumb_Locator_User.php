@@ -35,7 +35,7 @@ class Carbon_Breadcrumb_Locator_User extends Carbon_Breadcrumb_Locator {
 		}
 		
 		// create the author breadcrumb item
-		$item = Carbon_Breadcrumb_Item::factory($this, $this->get_type(), $priority);
+		$item = Carbon_Breadcrumb_Item::factory($this->get_type(), $priority);
 		$item->set_id($user_id);
 		$item->setup();
 

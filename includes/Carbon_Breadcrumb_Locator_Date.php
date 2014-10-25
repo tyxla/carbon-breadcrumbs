@@ -50,7 +50,7 @@ class Carbon_Breadcrumb_Locator_Date extends Carbon_Breadcrumb_Locator {
 		// add the associated date archive breadcrumb items
 		foreach ($date_archives as $archive_name => $archive_details) {
 			if ($archive_details['condition']) {
-				$item = Carbon_Breadcrumb_Item::factory($this, 'custom', $priority);
+				$item = Carbon_Breadcrumb_Item::factory('custom', $priority);
 				$item->set_title( get_the_time( $archive_details['title_format'] ) );
 				$item->set_link( $archive_details['link'] );
 				$item->setup();
