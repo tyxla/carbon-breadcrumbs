@@ -55,6 +55,14 @@ class Carbon_Breadcrumb_Trail {
 	private $wrapper_after = '';
 
 	/**
+	 * Minimum items necessary to display the breadcrumb trail.
+	 *
+	 * @access private
+	 * @var int
+	 */
+	private $min_items = 2;
+
+	/**
 	 * Constructor.
 	 *
 	 * Creates and configures a new breadcrumb trail with the provided settings.
@@ -301,6 +309,28 @@ class Carbon_Breadcrumb_Trail {
 	}
 
 	/**
+	 * Retrieve the minimum number of items, necessary to display the trail.
+	 *
+	 * @access public
+	 *
+	 * @return int $min_items Minimum number of items, necessary to display the trail
+	 */
+	function get_min_items() {
+		return $this->min_items;
+	}
+
+	/**
+	 * Modify the minimum number of items, necessary to display the trail.
+	 *
+	 * @access public
+	 *
+	 * @param int $min_items Minimum number of items, necessary to display the trail.
+	 */
+	function set_min_items($min_items) {
+		$this->min_items = $min_items;
+	}
+
+	/**
 	 * Sort the currently loaded breadcrumb items by their priority.
 	 *
 	 * @access public
@@ -337,9 +367,9 @@ class Carbon_Breadcrumb_Trail {
 	 * @return string|void $output The output HTML if $return is true.
 	 */
 	function render($return = false) {
-		// if there are no items, nothing should be rendered
+		// if there are no items, or they are less than the minimum, nothing should be rendered
 		$all_items = $this->get_items();
-		if (!$all_items) {
+		if (!$all_items || count($all_items) < $this->get_min_items()) {
 			return;
 		}
 
