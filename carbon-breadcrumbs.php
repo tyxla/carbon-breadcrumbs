@@ -5,26 +5,77 @@ Description: A basic plugin for breadcrumbs with advanced capabilities for exten
 Version: 1.0
 */
 
-// include the plugin files
-add_action('after_setup_theme', 'crb_include_carbon_breadcrumbs');
-function crb_include_carbon_breadcrumbs() {
-	$includes_dir = dirname(__FILE__) . '/includes/';
+/**
+ * The main Carbon Breadcrumbs plugin class.
+ *
+ * Singleton, used as a bootstrap to include the plugin files.
+ */
+final class Carbon_Breadcrumbs {
+    /**
+     * Instance container.
+	 *
+	 * @static
+	 *
+	 * @var Carbon_Breadcrumbs
+	 */
+	static $instance = null;
 
-	include_once($includes_dir . 'Carbon_Breadcrumb_Trail.php');
+    /**
+	 * Constructor.
+	 *	
+     * Private so only the get_instance() can instantiate it.
+     *
+     * @access private
+     */
+    private function __construct() {
+    	// include the plugin files
+    	add_action('after_setup_theme', array('Carbon_Breadcrumbs', 'include_files'));
+    }
 
-	include_once($includes_dir . 'Carbon_Breadcrumb_DB_Object.php');	
+	/**
+	 * Retrieve or create the Carbon_Breadcrumbs instance.
+	 *
+	 * @static
+	 * @access public
+	 *
+	 * @return Carbon_Breadcrumbs $instance
+	 */
+    static function get_instance() {
+        if (self::$instance === null) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
 
-	include_once($includes_dir . 'Carbon_Breadcrumb_Locator.php');
-	include_once($includes_dir . 'Carbon_Breadcrumb_Locator_Post.php');
-	include_once($includes_dir . 'Carbon_Breadcrumb_Locator_Term.php');
-	include_once($includes_dir . 'Carbon_Breadcrumb_Locator_User.php');
-	include_once($includes_dir . 'Carbon_Breadcrumb_Locator_Date.php');
+	/**
+	 * Include the plugin files.
+	 *
+	 * @static
+	 * @access public
+	 */
+    static function include_files() {
+		$includes_dir = dirname(__FILE__) . '/includes/';
 
-	include_once($includes_dir . 'Carbon_Breadcrumb_Item.php');
-	include_once($includes_dir . 'Carbon_Breadcrumb_Item_Post.php');
-	include_once($includes_dir . 'Carbon_Breadcrumb_Item_Term.php');
-	include_once($includes_dir . 'Carbon_Breadcrumb_Item_User.php');
-	include_once($includes_dir . 'Carbon_Breadcrumb_Item_Custom.php');
+		include_once($includes_dir . 'Carbon_Breadcrumb_Trail.php');
 
-	include_once($includes_dir . 'Carbon_Breadcrumb_Exception.php');
+		include_once($includes_dir . 'Carbon_Breadcrumb_DB_Object.php');	
+
+		include_once($includes_dir . 'Carbon_Breadcrumb_Locator.php');
+		include_once($includes_dir . 'Carbon_Breadcrumb_Locator_Post.php');
+		include_once($includes_dir . 'Carbon_Breadcrumb_Locator_Term.php');
+		include_once($includes_dir . 'Carbon_Breadcrumb_Locator_User.php');
+		include_once($includes_dir . 'Carbon_Breadcrumb_Locator_Date.php');
+
+		include_once($includes_dir . 'Carbon_Breadcrumb_Item.php');
+		include_once($includes_dir . 'Carbon_Breadcrumb_Item_Post.php');
+		include_once($includes_dir . 'Carbon_Breadcrumb_Item_Term.php');
+		include_once($includes_dir . 'Carbon_Breadcrumb_Item_User.php');
+		include_once($includes_dir . 'Carbon_Breadcrumb_Item_Custom.php');
+
+		include_once($includes_dir . 'Carbon_Breadcrumb_Exception.php');
+    }
+
 }
+
+// initialize the plugin
+Carbon_Breadcrumbs::get_instance();
