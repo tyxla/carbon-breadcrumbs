@@ -71,7 +71,6 @@ class Carbon_Breadcrumb_Locator_Term extends Carbon_Breadcrumb_Locator {
 
 		$taxonomies = get_taxonomies(array(
 			'public' => true,
-			'_builtin' => true
 		));
 		
 		foreach ($taxonomies as $taxonomy) {

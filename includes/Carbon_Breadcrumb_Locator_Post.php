@@ -64,7 +64,6 @@ class Carbon_Breadcrumb_Locator_Post extends Carbon_Breadcrumb_Locator {
 
 		$post_types = get_post_types(array(
 			'public' => true,
-			'_builtin' => true
 		));
 		
 		foreach ($post_types as $post_type) {
