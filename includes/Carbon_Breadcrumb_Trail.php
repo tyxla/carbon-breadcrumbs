@@ -155,13 +155,25 @@ class Carbon_Breadcrumb_Trail {
 			$this->add_custom_item($not_found_title, '', 700);
 		}
 
+		// add category hierarchy for single posts
+		if (is_single() && get_post_type() == 'post') {
+			$taxonomy = 'category';
+			$categories = wp_get_object_terms(get_the_ID(), $taxonomy, 'orderby=term_id');
+			$last_category = array_pop($categories);
+			$locator = Carbon_Breadcrumb_Locator::factory('term', $taxonomy);
+			$items = $locator->get_items(700, $last_category->term_id);
+			if ($items) {
+				$this->add_item($items);
+			}
+		}
+
 		// process page for posts where necessary
 		if (is_home() || is_archive() || is_search() || (is_single() && get_post_type() == 'post') ) {
 			if ($page_for_posts = get_option('page_for_posts')) {
 				$locator = Carbon_Breadcrumb_Locator::factory('post', 'page');
 				$items = $locator->get_items(500, $page_for_posts);
 				if ($items) {
-					$this->add_item($items);	
+					$this->add_item($items);
 				}
 			}
 		}
