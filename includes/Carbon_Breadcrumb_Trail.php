@@ -79,6 +79,14 @@ class Carbon_Breadcrumb_Trail {
 	private $min_items = 2;
 
 	/**
+	 * Whether to display the last item as link.
+	 *
+	 * @access private
+	 * @var bool
+	 */
+	private $last_item_link = true;
+
+	/**
 	 * Constructor.
 	 *
 	 * Creates and configures a new breadcrumb trail with the provided settings.
@@ -414,6 +422,28 @@ class Carbon_Breadcrumb_Trail {
 	}
 
 	/**
+	 * Whether the last item will be displayed as a link.
+	 *
+	 * @access public
+	 *
+	 * @return bool $last_item_link Whether the last item will be displayed as a link.
+	 */
+	function get_last_item_link() {
+		return (bool)$this->last_item_link;
+	}
+
+	/**
+	 * Change whether the last item will be displayed as a link.
+	 *
+	 * @access public
+	 *
+	 * @param bool $last_item_link Whether the last item will be displayed as a link.
+	 */
+	function set_last_item_link($last_item_link) {
+		$this->last_item_link = (bool)$last_item_link;
+	}
+
+	/**
 	 * Sort the currently loaded breadcrumb items by their priority.
 	 *
 	 * @access public
@@ -442,6 +472,22 @@ class Carbon_Breadcrumb_Trail {
 	}
 
 	/**
+	 * Add a custom breadcrumb item to the trail.
+	 *
+	 * @access public
+	 *
+	 * @return int $total_items Number of items in the breadcrumb trail.
+	 */
+	function get_total_items() {
+		$total = 0;
+		$all_items = $this->get_items();
+		foreach ($all_items as $priority => $items) {
+			$total += count($items);
+		}
+		return $total;
+	}
+
+	/**
 	 * Render the breadcrumb trail.
 	 *
 	 * @access public
@@ -450,17 +496,22 @@ class Carbon_Breadcrumb_Trail {
 	 * @return string|void $output The output HTML if $return is true.
 	 */
 	function render($return = false) {
-		// if there are no items, or they are less than the minimum, nothing should be rendered
-		$all_items = $this->get_items();
-		if (!$all_items || count($all_items) < $this->get_min_items()) {
+		$total_items = $this->get_total_items();
+
+		// if the items are less than the minimum, nothing should be rendered
+		if ( $total_items < $this->get_min_items() ) {
 			return;
 		}
 
 		$items_output = array();
+		$counter = 0;
 
 		// prepare all breadcrumb items for display
+		$all_items = $this->get_items();
 		foreach ($all_items as $priority => $items) {
 			foreach ($items as $item) {
+				$counter++;
+
 				$item_output = '';
 
 				// HTML before link opening tag
@@ -468,7 +519,10 @@ class Carbon_Breadcrumb_Trail {
 
 				// link can be optional
 				if ($item->get_link()) {
-					$item_output .= '<a href="' . $item->get_link() . '">';
+					// last item link can be disabled
+					if ($this->get_last_item_link() || $counter < $total_items) {
+						$item_output .= '<a href="' . $item->get_link() . '">';
+					}
 				}
 
 				// HTML before title
@@ -482,7 +536,10 @@ class Carbon_Breadcrumb_Trail {
 
 				// link can be optional
 				if ($item->get_link()) {
-					$item_output .= '</a>';
+					// last item link can be disabled
+					if ($this->get_last_item_link() || $counter < $total_items) {
+						$item_output .= '</a>';
+					}
 				}
 
 				// HTML after link closing tag
