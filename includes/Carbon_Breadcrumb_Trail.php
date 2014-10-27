@@ -87,6 +87,14 @@ class Carbon_Breadcrumb_Trail {
 	private $last_item_link = true;
 
 	/**
+	 * Whether to display the home item.
+	 *
+	 * @access private
+	 * @var bool
+	 */
+	private $display_home_item = true;
+
+	/**
 	 * Constructor.
 	 *
 	 * Creates and configures a new breadcrumb trail with the provided settings.
@@ -186,8 +194,8 @@ class Carbon_Breadcrumb_Trail {
 			}
 		}
 
-		// add home item
-		if (!is_front_page()) {
+		// add home item (if enabled)
+		if (!is_front_page() && $this->get_display_home_item()) {
 			$front_page_id = get_option('page_on_front');
 			if ($front_page_id) {
 				$home_title = get_the_title($front_page_id);
@@ -441,6 +449,28 @@ class Carbon_Breadcrumb_Trail {
 	 */
 	function set_last_item_link($last_item_link) {
 		$this->last_item_link = (bool)$last_item_link;
+	}
+
+	/**
+	 * Whether the home item will be displayed.
+	 *
+	 * @access public
+	 *
+	 * @return bool $display_home_item Whether the home item will be displayed.
+	 */
+	function get_display_home_item() {
+		return (bool)$this->display_home_item;
+	}
+
+	/**
+	 * Change whether the home item will be displayed.
+	 *
+	 * @access public
+	 *
+	 * @param bool $display_home_item Whether the home item will be displayed.
+	 */
+	function set_display_home_item($display_home_item) {
+		$this->display_home_item = (bool)$display_home_item;
 	}
 
 	/**
