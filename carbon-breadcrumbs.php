@@ -1,9 +1,10 @@
 <?php
-/*
-Plugin Name: Carbon Breadcrumbs
-Description: A basic plugin for breadcrumbs with advanced capabilities for extending.
-Version: 1.0
-*/
+/**
+ * Plugin Name: Carbon Breadcrumbs
+ * Description: A basic plugin for breadcrumbs with advanced capabilities for extending.
+ * Version: 1.0
+ * License: GPL2
+ */
 
 /**
  * The main Carbon Breadcrumbs plugin class.
