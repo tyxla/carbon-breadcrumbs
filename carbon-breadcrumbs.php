@@ -6,6 +6,11 @@
  * License: GPL2
  */
 
+// allows the plugin to be included as a library in themes
+if (class_exists('Carbon_Breadcrumbs')) {
+	return;
+}
+
 /**
  * The main Carbon Breadcrumbs plugin class.
  *
