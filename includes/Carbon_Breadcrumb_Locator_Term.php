@@ -40,7 +40,7 @@ class Carbon_Breadcrumb_Locator_Term extends Carbon_Breadcrumb_Locator {
 			$term_id = get_queried_object_id();
 		}
 
-		// walk the tree of ancestors of the taxonomy term
+		// walk the tree of ancestors of the taxonomy term up to the top
 		do {
 
 			$item = Carbon_Breadcrumb_Item::factory($this->get_type(), $priority);
