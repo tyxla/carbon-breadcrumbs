@@ -122,7 +122,7 @@ class Carbon_Breadcrumb_Trail {
 		$this->set_title_after($title_after);
 
 		// schedule sorting of all items after they are created
-		add_action('carbon_breadcrumb_after_setup_trail', array($this, 'sort_items'), 999);
+		add_action('carbon_breadcrumbs_after_setup_trail', array($this, 'sort_items'), 999);
 
 	}
 
@@ -134,7 +134,7 @@ class Carbon_Breadcrumb_Trail {
 	function setup() {
 
 		// starting setup
-		do_action('carbon_breadcrumb_before_setup_trail', $this);
+		do_action('carbon_breadcrumbs_before_setup_trail', $this);
 
 		// process post types, terms, authors
 		$locators = array(
@@ -209,7 +209,7 @@ class Carbon_Breadcrumb_Trail {
 		}
 
 		// completing setup
-		do_action('carbon_breadcrumb_after_setup_trail', $this);
+		do_action('carbon_breadcrumbs_after_setup_trail', $this);
 
 	}
 
