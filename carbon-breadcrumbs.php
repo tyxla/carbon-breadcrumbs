@@ -7,7 +7,7 @@
  */
 
 // allows the plugin to be included as a library in themes
-if (class_exists('Carbon_Breadcrumbs')) {
+if (class_exists('Carbon_Breadcrumb_Trail')) {
 	return;
 }
 
