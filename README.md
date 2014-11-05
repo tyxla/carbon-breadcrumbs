@@ -17,7 +17,7 @@ The following example is the most basic way to display a breadcrumb trail, using
 
 #### Simple with configuration options
 
-The following example will display a breadcrumb trail with the "/" character between the breadcrumb items.
+The following example will display a breadcrumb trail with the `"/"` character between the breadcrumb items.
 
 	<?php
     Carbon_Breadcrumb_Trail::output(array(
@@ -106,4 +106,4 @@ Whether the last item will be a link or not.
 
 *(bool). Default: **true***.
 
-Whether the Home breadcrumb item should be displayed or not.
+Whether the **Home** breadcrumb item should be displayed or not.
