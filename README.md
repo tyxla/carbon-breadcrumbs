@@ -27,7 +27,7 @@ The following example will display a breadcrumb trail with the `"/"` character b
 
 #### Advanced
 
-The following example will create an empty breadcrumb trail, providing you the option to set it up yourself.
+The following example will create an empty breadcrumb trail, providing you the option to set it up yourself with your preferred configuration.
 
 	<?php
 	$trail = new Carbon_Breadcrumb_Trail(); // initialize trail
@@ -46,7 +46,7 @@ The following example will create an empty breadcrumb trail, providing you the o
 Configuration Options
 ------
 
-The following options can be passed to the `Carbon_Breadcrumb_Trail()` or `Carbon_Breadcrumb_Trail::output()`.
+The following options can be passed to the `Carbon_Breadcrumb_Trail()` or `Carbon_Breadcrumb_Trail::output()` - whichever you use.
 
 #### glue
 
