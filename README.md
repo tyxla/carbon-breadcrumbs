@@ -50,60 +50,60 @@ The following options can be passed to the `Carbon_Breadcrumb_Trail()` or `Carbo
 
 #### glue
 
-*(string). Default: **' &gt; '***.
+_(string). Default: **' &gt; '**_.
 
 The HTML, displayed between the breadcrumb items.
 
 #### link_before
 
-*(string). Default: **''** (none)*.
+_(string). Default: **''** (none)_.
 
 The HTML before the `<a>` link of each of the breadcrumb items.
 
 #### link_after
 
-*(string). Default: **''** (none)*.
+_(string). Default: **''** (none)_.
 
 The HTML after the `<a>` link of each of the breadcrumb items.
 
 #### wrapper_before
 
-*(string). Default: **''** (none)*.
+_(string). Default: **''** (none)_.
 
 The HTML before all breadcrumb items.
 
 #### wrapper_after
 
-*(string). Default: **''** (none)*.
+_(string). Default: **''** (none)_.
 
 The HTML after all breadcrumb items.
 
 #### title_before
 
-*(string). Default: **''** (none)*.
+_(string). Default: **''** (none)_.
 
 The HTML displayed before the breadcrumb item title.
 
 #### title_after
 
-*(string). Default: **''** (none)*.
+_(string). Default: **''** (none)_.
 
 The HTML displayed after the breadcrumb item title.
 
 #### min_items
 
-*(int). Default: **2***.
+_(int). Default: **2**_.
 
 The minimum number of breadcrumb items, required to display the trail.
 
 #### last\_item_link
 
-*(bool). Default: **true***.
+_(bool). Default: **true**_.
 
 Whether the last item will be a link or not.
 
 #### display\_home_item
 
-*(bool). Default: **true***.
+_(bool). Default: **true**_.
 
 Whether the **Home** breadcrumb item should be displayed or not.
