@@ -101,25 +101,35 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @access public
 	 *
-	 * @param string $glue String used between the breadcrumb items when displaying the breadcrumbs. 
-	 * @param string $link_before String before the opening link tag of a breadcrumb item.
-	 * @param string $link_after String after the closing link tag of a breadcrumb item.
-	 * @param string $wrapper_before String before all breadcrumb items.
-	 * @param string $wrapper_after String after all breadcrumb items.
-	 * @param string $title_before String before the breadcrumb item title.
-	 * @param string $title_after String after the breadcrumb item title.
+	 * @param array $args Configuration options to modify the breadcrumb trail output.
 	 * @return Carbon_Breadcrumb_Trail
 	 */
-	function __construct($glue = ' &gt; ', $link_before = '', $link_after = '', $wrapper_before = '', $wrapper_after = '', $title_before = '', $title_after = '') {
+	function __construct( $args = array() ) {
 
-		// configure settings
-		$this->set_glue($glue);
-		$this->set_link_before($link_before);
-		$this->set_link_after($link_after);
-		$this->set_wrapper_before($wrapper_before);
-		$this->set_wrapper_after($wrapper_after);
-		$this->set_title_before($title_before);
-		$this->set_title_after($title_after);
+		// default configuration options
+		$defaults = array(
+			'glue' => ' &gt; ',
+			'link_before' => '',
+			'link_after' => '',
+			'wrapper_before' => '',
+			'wrapper_after' => '',
+			'title_before' => '',
+			'title_after' => '',
+			'min_items' => 2,
+			'last_item_link' => true,
+			'display_home_item' => true
+		);
+
+		// parse configuration options
+		$args = wp_parse_args( $args, $defaults );
+
+		// set configuration options
+		foreach ($args as $arg_name => $arg_value) {
+			$method = 'set_' . $arg_name;
+			if (array_key_exists($arg_name, $defaults) && method_exists($this, $method)) {
+				call_user_func(array($this, $method), $arg_value);
+			}
+		}
 
 		// schedule sorting of all items after they are created
 		add_action('carbon_breadcrumbs_after_setup_trail', array($this, 'sort_items'), 999);
@@ -597,16 +607,10 @@ class Carbon_Breadcrumb_Trail {
 	 * @static
 	 * @access public
 	 *
-	 * @param string $glue String used between the breadcrumb items when displaying the breadcrumbs. 
-	 * @param string $link_before String before the opening link tag of a breadcrumb item.
-	 * @param string $link_after String after the closing link tag of a breadcrumb item.
-	 * @param string $wrapper_before String before all breadcrumb items.
-	 * @param string $wrapper_after String after all breadcrumb items.
-	 * @param string $title_before String before the breadcrumb item title.
-	 * @param string $title_after String after the breadcrumb item title.
+	 * @param array $args Configuration options to modify the breadcrumb trail output.
 	 */
-	static function output($glue = ' &gt; ', $link_before = '', $link_after = '', $wrapper_before = '', $wrapper_after = '', $title_before = '', $title_after = '') {
-		$trail = new self($glue, $link_before, $link_after, $wrapper_before, $wrapper_after, $title_before, $title_after); 
+	static function output($args = array()) {
+		$trail = new self($args); 
 		$trail->setup();
 		$trail->render();
 	}
