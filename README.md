@@ -43,7 +43,7 @@ The following example will create an empty breadcrumb trail, providing you the o
 
 - - -
 
-Configuration Options
+Carbon_Breadcrumb_Trail - Configuration Options
 ------
 
 The following options can be passed to the `Carbon_Breadcrumb_Trail()` or `Carbon_Breadcrumb_Trail::output()` - whichever you use.
