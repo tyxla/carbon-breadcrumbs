@@ -9,18 +9,18 @@ abstract class Carbon_Breadcrumb_Locator {
 	/**
 	 * Breadcrumb item locator type.
 	 *
-	 * @access private
+	 * @access protected
 	 * @var string
 	 */
-	private $type = '';
+	protected $type = '';
 
 	/**
 	 * Breadcrumb item locator subtype.
 	 *
-	 * @access private
+	 * @access protected
 	 * @var string
 	 */
-	private $subtype = '';
+	protected $subtype = '';
 
 	/**
 	 * Build a new breadcrumb item locator of the selected type.

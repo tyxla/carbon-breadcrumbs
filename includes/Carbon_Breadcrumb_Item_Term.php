@@ -9,10 +9,10 @@ class Carbon_Breadcrumb_Item_Term extends Carbon_Breadcrumb_Item implements Carb
 	/**
 	 * ID of the taxonomy term, associated with this breadcrumb item.
 	 *
-	 * @access private
+	 * @access protected
 	 * @var int
 	 */
-	private $id = 0;
+	protected $id = 0;
 
 	/**
 	 * Configure the title and link URL by using the specified term ID.

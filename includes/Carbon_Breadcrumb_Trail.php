@@ -9,90 +9,90 @@ class Carbon_Breadcrumb_Trail {
 	/**
 	 * Breadcrumb items.
 	 *
-	 * @access private
+	 * @access protected
 	 * @var array
 	 */
-	private $items = array();
+	protected $items = array();
 
 	/**
 	 * String used between the breadcrumb items when displaying the breadcrumbs.
 	 *
-	 * @access private
+	 * @access protected
 	 * @var string
 	 */
-	private $glue = '';
+	protected $glue = '';
 
 	/**
 	 * String before the opening link tag.
 	 *
-	 * @access private
+	 * @access protected
 	 * @var string
 	 */
-	private $link_before = '';
+	protected $link_before = '';
 
 	/**
 	 * String after the closing link tag.
 	 *
-	 * @access private
+	 * @access protected
 	 * @var string
 	 */
-	private $link_after = '';
+	protected $link_after = '';
 
 	/**
 	 * String before all breadcrumb items.
 	 *
-	 * @access private
+	 * @access protected
 	 * @var string
 	 */
-	private $wrapper_before = '';
+	protected $wrapper_before = '';
 
 	/**
 	 * String after all breadcrumb items.
 	 *
-	 * @access private
+	 * @access protected
 	 * @var string
 	 */
-	private $wrapper_after = '';
+	protected $wrapper_after = '';
 
 	/**
 	 * String before the title of a breadcrumb item.
 	 *
-	 * @access private
+	 * @access protected
 	 * @var string
 	 */
-	private $title_before = '';
+	protected $title_before = '';
 
 	/**
 	 * String before the title of a breadcrumb item.
 	 *
-	 * @access private
+	 * @access protected
 	 * @var string
 	 */
-	private $title_after = '';
+	protected $title_after = '';
 
 	/**
 	 * Minimum items necessary to display the breadcrumb trail.
 	 *
-	 * @access private
+	 * @access protected
 	 * @var int
 	 */
-	private $min_items = 2;
+	protected $min_items = 2;
 
 	/**
 	 * Whether to display the last item as link.
 	 *
-	 * @access private
+	 * @access protected
 	 * @var bool
 	 */
-	private $last_item_link = true;
+	protected $last_item_link = true;
 
 	/**
 	 * Whether to display the home item.
 	 *
-	 * @access private
+	 * @access protected
 	 * @var bool
 	 */
-	private $display_home_item = true;
+	protected $display_home_item = true;
 
 	/**
 	 * Constructor.

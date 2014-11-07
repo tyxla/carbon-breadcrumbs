@@ -9,42 +9,42 @@ abstract class Carbon_Breadcrumb_Item {
 	/**
 	 * Breadcrumb item title.
 	 *
-	 * @access private
+	 * @access protected
 	 * @var string
 	 */
-	private $title;
+	protected $title;
 
 	/**
 	 * Breadcrumb item link URL.
 	 *
-	 * @access private
+	 * @access protected
 	 * @var string
 	 */
-	private $link;
+	protected $link;
 
 	/**
 	 * Breadcrumb item priority.
 	 *
-	 * @access private
+	 * @access protected
 	 * @var int
 	 */
-	private $priority = 1000;
+	protected $priority = 1000;
 
 	/**
 	 * Breadcrumb item type.
 	 *
-	 * @access private
+	 * @access protected
 	 * @var string
 	 */
-	private $type = '';
+	protected $type = '';
 
 	/**
 	 * Breadcrumb item subtype.
 	 *
-	 * @access private
+	 * @access protected
 	 * @var string
 	 */
-	private $subtype = '';
+	protected $subtype = '';
 
 	/**
 	 * Build a new breadcrumb item of the selected type.
