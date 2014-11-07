@@ -81,6 +81,13 @@ final class Carbon_Breadcrumbs {
 		include_once($includes_dir . 'Carbon_Breadcrumb_Exception.php');
     }
 
+	/**
+	 * Private __clone() to prevent cloning the singleton instance.
+	 *
+	 * @access private
+	 */
+	private function __clone() {}
+
 }
 
 // initialize the plugin
