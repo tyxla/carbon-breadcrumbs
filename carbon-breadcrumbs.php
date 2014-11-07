@@ -88,6 +88,13 @@ final class Carbon_Breadcrumbs {
 	 */
 	private function __clone() {}
 
+	/**
+	 * Private __wakeup() to prevent singleton instance unserialization.
+	 *
+	 * @access private
+	 */
+	private function __wakeup() {}
+
 }
 
 // initialize the plugin
