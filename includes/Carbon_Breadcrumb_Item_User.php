@@ -19,7 +19,7 @@ class Carbon_Breadcrumb_Item_User extends Carbon_Breadcrumb_Item implements Carb
 	 *
 	 * @access public
 	 */
-	function setup() {
+	public function setup() {
 		// in order to continue, author user ID must be specified
 		if (!$this->get_id()) {
 			throw new Carbon_Breadcrumb_Exception('The author breadcrumb items must have author ID specified.');
@@ -42,7 +42,7 @@ class Carbon_Breadcrumb_Item_User extends Carbon_Breadcrumb_Item implements Carb
 	 *
 	 * @return int $id The ID of the author user associated with this breadcrumb item.
 	 */
-	function get_id() {
+	public function get_id() {
 		return $this->id;
 	}
 
@@ -53,7 +53,7 @@ class Carbon_Breadcrumb_Item_User extends Carbon_Breadcrumb_Item implements Carb
 	 *
 	 * @param int $id The new author user ID.
 	 */
-	function set_id($id = 0) {
+	public function set_id($id = 0) {
 		$this->id = $id;
 	}
 

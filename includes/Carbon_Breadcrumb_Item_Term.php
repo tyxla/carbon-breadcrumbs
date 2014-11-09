@@ -19,7 +19,7 @@ class Carbon_Breadcrumb_Item_Term extends Carbon_Breadcrumb_Item implements Carb
 	 *
 	 * @access public
 	 */
-	function setup() {
+	public function setup() {
 		// in order to continue, taxonomy term ID must be specified
 		if (!$this->get_id()) {
 			throw new Carbon_Breadcrumb_Exception('The term breadcrumb items must have term ID specified.');
@@ -49,7 +49,7 @@ class Carbon_Breadcrumb_Item_Term extends Carbon_Breadcrumb_Item implements Carb
 	 *
 	 * @return int $id The ID of the taxonomy term associated with this breadcrumb item.
 	 */
-	function get_id() {
+	public function get_id() {
 		return $this->id;
 	}
 
@@ -60,7 +60,7 @@ class Carbon_Breadcrumb_Item_Term extends Carbon_Breadcrumb_Item implements Carb
 	 *
 	 * @param int $id The new taxonomy term ID.
 	 */
-	function set_id($id = 0) {
+	public function set_id($id = 0) {
 		$this->id = $id;
 	}
 

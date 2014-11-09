@@ -46,7 +46,7 @@ final class Carbon_Breadcrumbs {
 	 *
 	 * @return Carbon_Breadcrumbs $instance
 	 */
-    static function get_instance() {
+    public static function get_instance() {
         if (self::$instance === null) {
             self::$instance = new self();
         }
@@ -59,7 +59,7 @@ final class Carbon_Breadcrumbs {
 	 * @static
 	 * @access public
 	 */
-    static function include_files() {
+    public static function include_files() {
 		$includes_dir = dirname(__FILE__) . '/includes/';
 
 		include_once($includes_dir . 'Carbon_Breadcrumb_Trail.php');

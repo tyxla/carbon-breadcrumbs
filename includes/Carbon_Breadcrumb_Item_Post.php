@@ -19,7 +19,7 @@ class Carbon_Breadcrumb_Item_Post extends Carbon_Breadcrumb_Item implements Carb
 	 *
 	 * @access public
 	 */
-	function setup() {
+	public function setup() {
 		// in order to continue, post ID must be specified
 		if (!$this->get_id()) {
 			throw new Carbon_Breadcrumb_Exception('The post breadcrumb items must have post ID specified.');
@@ -42,7 +42,7 @@ class Carbon_Breadcrumb_Item_Post extends Carbon_Breadcrumb_Item implements Carb
 	 *
 	 * @return int $id The ID of the post associated with this breadcrumb item.
 	 */
-	function get_id() {
+	public function get_id() {
 		return $this->id;
 	}
 
@@ -53,7 +53,7 @@ class Carbon_Breadcrumb_Item_Post extends Carbon_Breadcrumb_Item implements Carb
 	 *
 	 * @param int $id The new post ID.
 	 */
-	function set_id($id = 0) {
+	public function set_id($id = 0) {
 		$this->id = $id;
 	}
 

@@ -32,7 +32,7 @@ abstract class Carbon_Breadcrumb_Locator {
 	 * @param string $subtype Subtype of the breadcrumb item locator.
 	 * @return Carbon_Breadcrumb_Locator $locator The new breadcrumb item locator.
 	 */
-	static function factory($type, $subtype = '') {
+	public static function factory($type, $subtype = '') {
 		$type = str_replace(" ", '', ucwords(str_replace("_", ' ', $type)));
 		$class = 'Carbon_Breadcrumb_Locator_' . $type;
 
@@ -56,7 +56,7 @@ abstract class Carbon_Breadcrumb_Locator {
 	 * @param string $subtype Subtype of the breadcrumb item locator.
 	 * @return Carbon_Breadcrumb_Locator
 	 */
-	function __construct($type, $subtype) {
+	public function __construct($type, $subtype) {
 		$this->set_type($type);
 		$this->set_subtype($subtype);
 	}
@@ -68,7 +68,7 @@ abstract class Carbon_Breadcrumb_Locator {
 	 *
 	 * @return string $type The type of this locator.
 	 */
-	function get_type() {
+	public function get_type() {
 		return $this->type;
 	}
 
@@ -79,7 +79,7 @@ abstract class Carbon_Breadcrumb_Locator {
 	 *
 	 * @param string $id The new locator type.
 	 */
-	function set_type($type) {
+	public function set_type($type) {
 		$this->type = $type;
 	}
 
@@ -90,7 +90,7 @@ abstract class Carbon_Breadcrumb_Locator {
 	 *
 	 * @return string $subtype The subtype of this locator.
 	 */
-	function get_subtype() {
+	public function get_subtype() {
 		return $this->subtype;
 	}
 
@@ -101,7 +101,7 @@ abstract class Carbon_Breadcrumb_Locator {
 	 *
 	 * @param string $id The new locator subtype.
 	 */
-	function set_subtype($subtype) {
+	public function set_subtype($subtype) {
 		$this->subtype = $subtype;
 	}
 
@@ -111,7 +111,7 @@ abstract class Carbon_Breadcrumb_Locator {
 	 * @abstract
 	 * @access public
 	 */
-	abstract function is_included();
+	public abstract function is_included();
 	
 	/**
 	 * Get the breadcrumb items, found by this locator.
@@ -119,7 +119,7 @@ abstract class Carbon_Breadcrumb_Locator {
 	 * @abstract
 	 * @access public
 	 */
-	abstract function get_items();
+	public abstract function get_items();
 
 	/**
 	 * Generate a set of breadcrumb items that found by this locator type and any subtype.
@@ -127,6 +127,6 @@ abstract class Carbon_Breadcrumb_Locator {
 	 * @abstract
 	 * @access public
 	 */
-	abstract function generate_items();
+	public abstract function generate_items();
 	
 }

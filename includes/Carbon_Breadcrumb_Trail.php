@@ -104,7 +104,7 @@ class Carbon_Breadcrumb_Trail {
 	 * @param array $args Configuration options to modify the breadcrumb trail output.
 	 * @return Carbon_Breadcrumb_Trail
 	 */
-	function __construct( $args = array() ) {
+	public function __construct( $args = array() ) {
 
 		// default configuration options
 		$defaults = array(
@@ -141,7 +141,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @access public
 	 */
-	function setup() {
+	public function setup() {
 
 		// starting setup
 		do_action('carbon_breadcrumbs_before_setup_trail', $this);
@@ -230,7 +230,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @param mixed $item The item or array of items to add.
 	 */
-	function add_item($item) {
+	public function add_item($item) {
 		if (is_array($item)) {
 			foreach ($item as $single_item) {
 				$this->add_item($single_item);
@@ -248,7 +248,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @return array $items The breadcrumb items, contained in the trail.
 	 */
-	function get_items() {
+	public function get_items() {
 		return $this->items;
 	}
 
@@ -259,7 +259,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @param array $items The new set of breadcrumb items.
 	 */
-	function set_items($items = array()) {
+	public function set_items($items = array()) {
 		$this->items = $items;
 	}
 
@@ -270,7 +270,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @return string $glue String, used for concatenating the breadcrumb items.
 	 */
-	function get_glue() {
+	public function get_glue() {
 		return $this->glue;
 	}
 
@@ -281,7 +281,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @param string $glue String, used for concatenating the breadcrumb items.
 	 */
-	function set_glue($glue = '') {
+	public function set_glue($glue = '') {
 		$this->glue = $glue;
 	}
 
@@ -292,7 +292,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @return string $link_before String before the opening link tag of a breadcrumb item.
 	 */
-	function get_link_before() {
+	public function get_link_before() {
 		return $this->link_before;
 	}
 
@@ -303,7 +303,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @param string $link_before String before the opening link tag of a breadcrumb item.
 	 */
-	function set_link_before($link_before = '') {
+	public function set_link_before($link_before = '') {
 		$this->link_before = $link_before;
 	}
 
@@ -314,7 +314,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @return string $link_after String after the closing link tag of a breadcrumb item.
 	 */
-	function get_link_after() {
+	public function get_link_after() {
 		return $this->link_after;
 	}
 
@@ -325,7 +325,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @param string $link_after String after the closing link tag of a breadcrumb item.
 	 */
-	function set_link_after($link_after = '') {
+	public function set_link_after($link_after = '') {
 		$this->link_after = $link_after;
 	}
 
@@ -336,7 +336,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @return string $wrapper_before String before the breadcrumb items.
 	 */
-	function get_wrapper_before() {
+	public function get_wrapper_before() {
 		return $this->wrapper_before;
 	}
 
@@ -347,7 +347,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @param string $wrapper_before String before the breadcrumb items.
 	 */
-	function set_wrapper_before($wrapper_before = '') {
+	public function set_wrapper_before($wrapper_before = '') {
 		$this->wrapper_before = $wrapper_before;
 	}
 
@@ -358,7 +358,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @return string $wrapper_after String after the breadcrumb items.
 	 */
-	function get_wrapper_after() {
+	public function get_wrapper_after() {
 		return $this->wrapper_after;
 	}
 
@@ -369,7 +369,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @param string $wrapper_after String after the breadcrumb items.
 	 */
-	function set_wrapper_after($wrapper_after = '') {
+	public function set_wrapper_after($wrapper_after = '') {
 		$this->wrapper_after = $wrapper_after;
 	}
 
@@ -380,7 +380,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @return string $title_before String before the title of a breadcrumb item.
 	 */
-	function get_title_before() {
+	public function get_title_before() {
 		return $this->title_before;
 	}
 
@@ -391,7 +391,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @param string $title_before String before the title of a breadcrumb item.
 	 */
-	function set_title_before($title_before = '') {
+	public function set_title_before($title_before = '') {
 		$this->title_before = $title_before;
 	}
 
@@ -402,7 +402,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @return string $title_after String after the title of a breadcrumb item.
 	 */
-	function get_title_after() {
+	public function get_title_after() {
 		return $this->title_after;
 	}
 
@@ -413,7 +413,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @param string $title_after String after the title of a breadcrumb item.
 	 */
-	function set_title_after($title_after = '') {
+	public function set_title_after($title_after = '') {
 		$this->title_after = $title_after;
 	}
 
@@ -424,7 +424,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @return int $min_items Minimum number of items, necessary to display the trail
 	 */
-	function get_min_items() {
+	public function get_min_items() {
 		return $this->min_items;
 	}
 
@@ -435,7 +435,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @param int $min_items Minimum number of items, necessary to display the trail.
 	 */
-	function set_min_items($min_items) {
+	public function set_min_items($min_items) {
 		$this->min_items = $min_items;
 	}
 
@@ -446,7 +446,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @return bool $last_item_link Whether the last item will be displayed as a link.
 	 */
-	function get_last_item_link() {
+	public function get_last_item_link() {
 		return (bool)$this->last_item_link;
 	}
 
@@ -457,7 +457,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @param bool $last_item_link Whether the last item will be displayed as a link.
 	 */
-	function set_last_item_link($last_item_link) {
+	public function set_last_item_link($last_item_link) {
 		$this->last_item_link = (bool)$last_item_link;
 	}
 
@@ -468,7 +468,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @return bool $display_home_item Whether the home item will be displayed.
 	 */
-	function get_display_home_item() {
+	public function get_display_home_item() {
 		return (bool)$this->display_home_item;
 	}
 
@@ -479,7 +479,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @param bool $display_home_item Whether the home item will be displayed.
 	 */
-	function set_display_home_item($display_home_item) {
+	public function set_display_home_item($display_home_item) {
 		$this->display_home_item = (bool)$display_home_item;
 	}
 
@@ -488,7 +488,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @access public
 	 */
-	function sort_items() {
+	public function sort_items() {
 		$items = $this->get_items();
 		ksort($items);
 		$this->set_items($items);
@@ -503,7 +503,7 @@ class Carbon_Breadcrumb_Trail {
 	 * @param string $link Breadcrumb item link.
 	 * @param int $priority Breadcrumb item priority.
 	 */
-	function add_custom_item($title, $link = '', $priority = 1000) {
+	public function add_custom_item($title, $link = '', $priority = 1000) {
 		$custom_item = Carbon_Breadcrumb_Item::factory('custom', $priority);
 		$custom_item->set_title( $title );
 		$custom_item->set_link( $link );
@@ -518,7 +518,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @return int $total_items Number of items in the breadcrumb trail.
 	 */
-	function get_total_items() {
+	public function get_total_items() {
 		$total = 0;
 		$all_items = $this->get_items();
 		foreach ($all_items as $priority => $items) {
@@ -535,7 +535,7 @@ class Carbon_Breadcrumb_Trail {
 	 * @param bool $return Whether to return the output.
 	 * @return string|void $output The output HTML if $return is true.
 	 */
-	function render($return = false) {
+	public function render($return = false) {
 		$total_items = $this->get_total_items();
 
 		// if the items are less than the minimum, nothing should be rendered
@@ -612,7 +612,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @param array $args Configuration options to modify the breadcrumb trail output.
 	 */
-	static function output($args = array()) {
+	public static function output($args = array()) {
 		$trail = new self($args); 
 		$trail->setup();
 		$trail->render();

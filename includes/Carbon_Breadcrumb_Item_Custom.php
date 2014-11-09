@@ -6,7 +6,7 @@
  */
 class Carbon_Breadcrumb_Item_Custom extends Carbon_Breadcrumb_Item {
 
-	function setup() {
+	public function setup() {
 		// custom breadcrumb items should be setup manually
 	}
 	
