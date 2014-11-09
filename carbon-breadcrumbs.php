@@ -17,8 +17,8 @@ if (class_exists('Carbon_Breadcrumb_Trail')) {
  * Singleton, used as a bootstrap to include the plugin files.
  */
 final class Carbon_Breadcrumbs {
-    /**
-     * Instance container.
+	/**
+	 * Instance container.
 	 *
 	 * @static
 	 *
@@ -26,17 +26,17 @@ final class Carbon_Breadcrumbs {
 	 */
 	static $instance = null;
 
-    /**
+	/**
 	 * Constructor.
 	 *	
-     * Private so only the get_instance() can instantiate it.
-     *
-     * @access private
-     */
-    private function __construct() {
-    	// include the plugin files
-    	add_action('after_setup_theme', array('Carbon_Breadcrumbs', 'include_files'));
-    }
+	 * Private so only the get_instance() can instantiate it.
+	 *
+	 * @access private
+	 */
+	private function __construct() {
+		// include the plugin files
+		add_action('after_setup_theme', array('Carbon_Breadcrumbs', 'include_files'));
+	}
 
 	/**
 	 * Retrieve or create the Carbon_Breadcrumbs instance.
@@ -46,12 +46,12 @@ final class Carbon_Breadcrumbs {
 	 *
 	 * @return Carbon_Breadcrumbs $instance
 	 */
-    public static function get_instance() {
-        if (self::$instance === null) {
-            self::$instance = new self();
-        }
-        return self::$instance;
-    }
+	public static function get_instance() {
+		if (self::$instance === null) {
+			self::$instance = new self();
+		}
+		return self::$instance;
+	}
 
 	/**
 	 * Include the plugin files.
@@ -59,7 +59,7 @@ final class Carbon_Breadcrumbs {
 	 * @static
 	 * @access public
 	 */
-    public static function include_files() {
+	public static function include_files() {
 		$includes_dir = dirname(__FILE__) . '/includes/';
 
 		include_once($includes_dir . 'Carbon_Breadcrumb_Trail.php');
@@ -79,7 +79,7 @@ final class Carbon_Breadcrumbs {
 		include_once($includes_dir . 'Carbon_Breadcrumb_Item_Custom.php');
 
 		include_once($includes_dir . 'Carbon_Breadcrumb_Exception.php');
-    }
+	}
 
 	/**
 	 * Private __clone() to prevent cloning the singleton instance.
