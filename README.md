@@ -37,6 +37,7 @@ The following example will create an empty breadcrumb trail, providing you the o
 	$trail->set_wrapper_before('<ul>'); // setup HTML before the breadcrumb trail
 	$trail->set_wrapper_after('</ul>'); // setup HTML after the breadcrumb trail
 	$trail->set_min_items(1); // setup the minimum number of items to display the trail
+	$trail->set_home_item_title('Site Home'); // setup the title of the home page item (if not using `page_on_front`)
 	$trail->setup(); // setup the trail by generating necessary breadcrumb items
 	$trail->render(); // display the breadcrumb trail
     ?>
@@ -107,3 +108,9 @@ Whether the last item will be a link or not.
 _(bool). Default: **true**_.
 
 Whether the **Home** breadcrumb item should be displayed or not.
+
+#### home\_item_title
+
+_(string). Default: **Home**_.
+
+The title of the home item, if there is no page specified as `page_on_front`.
