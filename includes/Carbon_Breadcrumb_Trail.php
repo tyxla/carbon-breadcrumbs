@@ -95,6 +95,14 @@ class Carbon_Breadcrumb_Trail {
 	protected $display_home_item = true;
 
 	/**
+	 * The title of the home item (if NOT using page_on_front).
+	 *
+	 * @access protected
+	 * @var string
+	 */
+	protected $home_item_title = '';
+
+	/**
 	 * Constructor.
 	 *
 	 * Creates and configures a new breadcrumb trail with the provided settings.
@@ -117,7 +125,8 @@ class Carbon_Breadcrumb_Trail {
 			'title_after' => '',
 			'min_items' => 2,
 			'last_item_link' => true,
-			'display_home_item' => true
+			'display_home_item' => true,
+			'home_item_title' => __('Home', 'crb'),
 		);
 
 		// parse configuration options
@@ -211,7 +220,7 @@ class Carbon_Breadcrumb_Trail {
 				$home_title = get_the_title($front_page_id);
 				$home_link = get_permalink($front_page_id);
 			} else {
-				$home_title = __('Home', 'crb');
+				$home_title = $this->get_home_item_title();
 				$home_link = home_url('/');
 			}
 
@@ -481,6 +490,28 @@ class Carbon_Breadcrumb_Trail {
 	 */
 	public function set_display_home_item($display_home_item) {
 		$this->display_home_item = (bool)$display_home_item;
+	}
+
+	/**
+	 * Retrieve the title of the home item (if NOT using page_on_front).
+	 *
+	 * @access public
+	 *
+	 * @return string $home_item_title The title of the home item.
+	 */
+	public function get_home_item_title() {
+		return $this->home_item_title;
+	}
+
+	/**
+	 * Modify the title of the home item (if NOT using page_on_front).
+	 *
+	 * @access public
+	 *
+	 * @param string $home_item_title The title of the home item.
+	 */
+	public function set_home_item_title($home_item_title = '') {
+		$this->home_item_title = $home_item_title;
 	}
 
 	/**
