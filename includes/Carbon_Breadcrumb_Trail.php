@@ -268,6 +268,127 @@ class Carbon_Breadcrumb_Trail {
 	}
 
 	/**
+	 * Remove an item from the breadcrumb trail by either link or title, or both.
+	 *
+	 * @access public
+	 *
+	 * @param string $title Title to remove breadcrumb item by.
+	 * @param string $link Link URL to remove breadcrumb item by.
+	 */
+	public function remove_item($title = '', $link = '') {
+		// if there is nothing specified, skip
+		if (!$title && !$link) {
+			return;
+		}
+
+		// if no link is specified, use remove_item_by_title()
+		if ($title && !$link) {
+			$this->remove_item_by_title($title);
+			return;
+		}
+
+		// if no title is specified, use remove_item_by_link()
+		if (!$title && $link) {
+			$this->remove_item_by_link($link);
+			return;
+		}
+
+		// if both title and link are specified, search for exact match
+		$all_items = $this->get_items();
+		foreach ($all_items as $items_priority => $items) {
+			foreach ($items as $item_key => $item) {
+				if ( strcasecmp($item->get_title(), $title) === 0 && strcasecmp($item->get_link(), $link) === 0 ) {
+					// if we have a match, remove that item
+					unset($all_items[$items_priority][$item_key]);
+				}
+			}
+		}
+
+		// update the items
+		$this->set_items($all_items);
+	}
+
+	/**
+	 * Remove an item from the breadcrumb trail by its title.
+	 *
+	 * @access public
+	 *
+	 * @param string $title Title to remove breadcrumb item by.
+	 */
+	public function remove_item_by_title($title = '') {
+		// if there is no title specified, skip
+		if (!$title) {
+			return;
+		}
+
+		// search all items for one with the same title
+		$all_items = $this->get_items();
+		foreach ($all_items as $priority => $items) {
+			foreach ($items as $item_key => $item) {
+				if ( strcasecmp($item->get_title(), $title) === 0 ) {
+					// if we have a match, remove that item
+					unset($all_items[$priority][$item_key]);
+				}
+			}
+		}
+
+		// update the items
+		$this->set_items($all_items);
+	}
+
+	/**
+	 * Remove an item from the breadcrumb trail by its link.
+	 *
+	 * @access public
+	 *
+	 * @param string $link Link URL to remove breadcrumb item by.
+	 */
+	public function remove_item_by_link($link = '') {
+		// if there is no link specified, skip
+		if (!$link) {
+			return;
+		}
+
+		// search all items for one with the same link
+		$all_items = $this->get_items();
+		foreach ($all_items as $priority => $items) {
+			foreach ($items as $item_key => $item) {
+				if ( strcasecmp($item->get_link(), $link) == 0 ) {
+					// if we have a match, remove that item
+					unset($all_items[$priority][$item_key]);
+				}
+			}
+		}
+
+		// update the items
+		$this->set_items($all_items);
+	}
+
+	/**
+	 * Remove an item from the breadcrumb trail by its priority.
+	 *
+	 * @access public
+	 *
+	 * @param int $priority Priority to remove breadcrumb item by.
+	 */
+	public function remove_item_by_priority($priority = 0) {
+		// if there is no priority specified, skip
+		if (!$priority) {
+			return;
+		}
+
+		// search all items for the same priority
+		$all_items = $this->get_items();
+		if (array_key_exists($priority, $all_items)) {
+			// remove all items with that priority
+			unset($all_items[$priority]);
+		}
+
+		// update the items
+		$this->set_items($all_items);
+	}
+
+	/**
 	 * Retrieve the breadcrumb items that are currently loaded.
 	 *
 	 * @access public
