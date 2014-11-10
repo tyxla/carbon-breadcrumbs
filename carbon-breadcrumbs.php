@@ -35,7 +35,7 @@ final class Carbon_Breadcrumbs {
 	 */
 	private function __construct() {
 		// include the plugin files
-		add_action('after_setup_theme', array('Carbon_Breadcrumbs', 'include_files'));
+		self::include_files();
 	}
 
 	/**
