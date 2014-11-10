@@ -251,6 +251,23 @@ class Carbon_Breadcrumb_Trail {
 	}
 
 	/**
+	 * Add a custom breadcrumb item to the trail.
+	 *
+	 * @access public
+	 *
+	 * @param string $title Breadcrumb item title.
+	 * @param string $link Breadcrumb item link.
+	 * @param int $priority Breadcrumb item priority.
+	 */
+	public function add_custom_item($title, $link = '', $priority = 1000) {
+		$custom_item = Carbon_Breadcrumb_Item::factory('custom', $priority);
+		$custom_item->set_title( $title );
+		$custom_item->set_link( $link );
+		$custom_item->setup();
+		$this->add_item($custom_item);
+	}
+
+	/**
 	 * Retrieve the breadcrumb items that are currently loaded.
 	 *
 	 * @access public
@@ -523,23 +540,6 @@ class Carbon_Breadcrumb_Trail {
 		$items = $this->get_items();
 		ksort($items);
 		$this->set_items($items);
-	}
-
-	/**
-	 * Add a custom breadcrumb item to the trail.
-	 *
-	 * @access public
-	 *
-	 * @param string $title Breadcrumb item title.
-	 * @param string $link Breadcrumb item link.
-	 * @param int $priority Breadcrumb item priority.
-	 */
-	public function add_custom_item($title, $link = '', $priority = 1000) {
-		$custom_item = Carbon_Breadcrumb_Item::factory('custom', $priority);
-		$custom_item->set_title( $title );
-		$custom_item->set_link( $link );
-		$custom_item->setup();
-		$this->add_item($custom_item);
 	}
 
 	/**
