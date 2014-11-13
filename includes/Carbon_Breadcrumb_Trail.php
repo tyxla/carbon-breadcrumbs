@@ -140,9 +140,6 @@ class Carbon_Breadcrumb_Trail {
 			}
 		}
 
-		// schedule sorting of all items after they are created
-		add_action('carbon_breadcrumbs_after_setup_trail', array($this, 'sort_items'), 999);
-
 	}
 
 	/**
@@ -697,6 +694,12 @@ class Carbon_Breadcrumb_Trail {
 
 		$items_output = array();
 		$counter = 0;
+
+		// whether to auto-sort the items
+		$auto_sort = apply_filters('carbon_breadcrumbs_auto_sort_items', true);
+		if ($auto_sort) {
+			$this->sort_items();
+		}
 
 		// prepare all breadcrumb items for display
 		$all_items = $this->get_items();
