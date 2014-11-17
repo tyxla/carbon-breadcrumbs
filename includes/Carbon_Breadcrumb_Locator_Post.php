@@ -34,6 +34,11 @@ class Carbon_Breadcrumb_Locator_Post extends Carbon_Breadcrumb_Locator {
 			$post_id = get_the_ID();
 		}
 
+		// if this is the front page, skip it, as it is added separately
+		if (is_front_page() && $post_id == get_option('page_on_front')) {
+			return array();
+		}
+
 		// walk the tree of ancestors of the post up to the top
 		do {
 
