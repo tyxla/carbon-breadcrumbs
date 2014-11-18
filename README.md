@@ -9,45 +9,61 @@ Provides the theme and plugin developers an easy way to build and implement high
 Usage & Examples
 ------
 
-#### Simple
+#### Basic
 
 The following example is the most basic way to display a breadcrumb trail, using the default options.
 	
-    <?php Carbon_Breadcrumb_Trail::output(); ?>
+	<?php Carbon_Breadcrumb_Trail::output(); ?>
 
 #### Simple with configuration options
 
-The following example will display a breadcrumb trail with the `/` character between the items.
+The following example will display a breadcrumb trail with the specified settings.
 
 	<?php
-    Carbon_Breadcrumb_Trail::output(array(
-    	'glue' => ' / ', // glue between breadcrumb items
-    ));
-    ?>
+	Carbon_Breadcrumb_Trail::output(array(
+		'glue' => ' &gt; ', // glue between breadcrumb items
+		'link_before' => '',
+		'link_after' => '',
+		'wrapper_before' => '',
+		'wrapper_after' => '',
+		'title_before' => '',
+		'title_after' => '',
+		'min_items' => 2,
+		'last_item_link' => true,
+		'display_home_item' => true,
+		'home_item_title' => __('Home', 'crb'),
+		'glue' => ' / ',
+	));
+	?>
 
-#### Advanced
+#### Intermediate
 
-The following example will create an empty breadcrumb trail, providing you the option to set it up yourself with your preferred configuration.
+The following example will create and render an breadcrumb trail, providing you the option to set it up yourself with your preferred configuration. You can further manipulate the trail object by using its built-in methods.
 
 	<?php
-	$trail = new Carbon_Breadcrumb_Trail(); // initialize trail
-	$trail->set_glue(''); // setup glue between breadcrumb items
-	$trail->set_link_before('<li>'); // setup HTML before each link
-	$trail->set_link_after('</li>'); // setup HTML after each link
-	$trail->set_wrapper_before('<ul>'); // setup HTML before the breadcrumb trail
-	$trail->set_wrapper_after('</ul>'); // setup HTML after the breadcrumb trail
-	$trail->set_min_items(1); // setup the minimum number of items to display the trail
-	$trail->set_home_item_title('Site Home'); // setup the title of the home page item (if not using `page_on_front`)
+	$trail = new Carbon_Breadcrumb_Trail(array(
+		'glue' => ' &gt; ',
+		'link_before' => '',
+		'link_after' => '',
+		'wrapper_before' => '',
+		'wrapper_after' => '',
+		'title_before' => '',
+		'title_after' => '',
+		'min_items' => 2,
+		'last_item_link' => true,
+		'display_home_item' => true,
+		'home_item_title' => __('Home', 'crb'),
+	));
 	$trail->setup(); // setup the trail by generating necessary breadcrumb items
 	$trail->render(); // display the breadcrumb trail
-    ?>
+	?>
 
 - - -
 
-Carbon_Breadcrumb_Trail - Configuration Options
+Configuration Options
 ------
 
-The following options can be passed to the `Carbon_Breadcrumb_Trail()` or `Carbon_Breadcrumb_Trail::output()` - whichever you use.
+The following options can be passed to `Carbon_Breadcrumb_Trail()`, `Carbon_Breadcrumb_Trail::output()` or `Carbon_Breadcrumb_Trail_Renderer()` - whichever you are using.
 
 #### glue
 
@@ -113,4 +129,4 @@ Whether the **Home** breadcrumb item should be displayed or not.
 
 _(string). Default: **Home**_.
 
-The title of the home item, if there is no page specified as `page_on_front`.
+The title of the home item, used if there is no page specified as `page_on_front`.
