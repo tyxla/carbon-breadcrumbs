@@ -661,7 +661,7 @@ class Carbon_Breadcrumb_Trail {
 	}
 
 	/**
-	 * Add a custom breadcrumb item to the trail.
+	 * Retrieve the total number of breadcrumb items in the trail.
 	 *
 	 * @access public
 	 *
