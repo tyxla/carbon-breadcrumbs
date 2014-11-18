@@ -49,7 +49,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @access public
 	 *
-	 * @return array $renderer The renderer object.
+	 * @return Carbon_Breadcrumb_Trail_Renderer $renderer The renderer object.
 	 */
 	public function get_renderer() {
 		return $this->renderer;
