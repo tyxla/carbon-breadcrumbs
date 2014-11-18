@@ -63,6 +63,7 @@ final class Carbon_Breadcrumbs {
 		$includes_dir = dirname(__FILE__) . '/includes/';
 
 		include_once($includes_dir . 'Carbon_Breadcrumb_Trail.php');
+		include_once($includes_dir . 'Carbon_Breadcrumb_Trail_Renderer.php');
 
 		include_once($includes_dir . 'Carbon_Breadcrumb_DB_Object.php');	
 

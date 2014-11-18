@@ -15,92 +15,12 @@ class Carbon_Breadcrumb_Trail {
 	protected $items = array();
 
 	/**
-	 * String used between the breadcrumb items when displaying the breadcrumbs.
+	 * Breadcrumb trail renderer.
 	 *
 	 * @access protected
-	 * @var string
+	 * @var Carbon_Breadcrumb_Trail_Renderer
 	 */
-	protected $glue = '';
-
-	/**
-	 * String before the opening link tag.
-	 *
-	 * @access protected
-	 * @var string
-	 */
-	protected $link_before = '';
-
-	/**
-	 * String after the closing link tag.
-	 *
-	 * @access protected
-	 * @var string
-	 */
-	protected $link_after = '';
-
-	/**
-	 * String before all breadcrumb items.
-	 *
-	 * @access protected
-	 * @var string
-	 */
-	protected $wrapper_before = '';
-
-	/**
-	 * String after all breadcrumb items.
-	 *
-	 * @access protected
-	 * @var string
-	 */
-	protected $wrapper_after = '';
-
-	/**
-	 * String before the title of a breadcrumb item.
-	 *
-	 * @access protected
-	 * @var string
-	 */
-	protected $title_before = '';
-
-	/**
-	 * String before the title of a breadcrumb item.
-	 *
-	 * @access protected
-	 * @var string
-	 */
-	protected $title_after = '';
-
-	/**
-	 * Minimum items necessary to display the breadcrumb trail.
-	 *
-	 * @access protected
-	 * @var int
-	 */
-	protected $min_items = 2;
-
-	/**
-	 * Whether to display the last item as link.
-	 *
-	 * @access protected
-	 * @var bool
-	 */
-	protected $last_item_link = true;
-
-	/**
-	 * Whether to display the home item.
-	 *
-	 * @access protected
-	 * @var bool
-	 */
-	protected $display_home_item = true;
-
-	/**
-	 * The title of the home item (if NOT using page_on_front).
-	 *
-	 * @access protected
-	 * @var string
-	 */
-	protected $home_item_title = '';
+	protected $renderer = array();
 
 	/**
 	 * Constructor.
@@ -109,37 +29,38 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @access public
 	 *
-	 * @param array $args Configuration options to modify the breadcrumb trail output.
+	 * @param array $settings Configuration options to modify the breadcrumb trail output.
 	 * @return Carbon_Breadcrumb_Trail
 	 */
-	public function __construct( $args = array() ) {
+	public function __construct( $settings = array() ) {
 
-		// default configuration options
-		$defaults = array(
-			'glue' => ' &gt; ',
-			'link_before' => '',
-			'link_after' => '',
-			'wrapper_before' => '',
-			'wrapper_after' => '',
-			'title_before' => '',
-			'title_after' => '',
-			'min_items' => 2,
-			'last_item_link' => true,
-			'display_home_item' => true,
-			'home_item_title' => __('Home', 'crb'),
-		);
+		// build a new renderer
+		$renderer = new Carbon_Breadcrumb_Trail_Renderer($settings);
 
-		// parse configuration options
-		$args = wp_parse_args( $args, $defaults );
+		// set the renderer
+		$this->set_renderer($renderer);
+	}
 
-		// set configuration options
-		foreach ($args as $arg_name => $arg_value) {
-			$method = 'set_' . $arg_name;
-			if (array_key_exists($arg_name, $defaults) && method_exists($this, $method)) {
-				call_user_func(array($this, $method), $arg_value);
-			}
-		}
+	/**
+	 * Retrieve the renderer object.
+	 *
+	 * @access public
+	 *
+	 * @return array $renderer The renderer object.
+	 */
+	public function get_renderer() {
+		return $this->renderer;
+	}
 
+	/**
+	 * Modify the rendering renderer.
+	 *
+	 * @access public
+	 *
+	 * @param string $renderer The updated rendering renderer.
+	 */
+	public function set_renderer(Carbon_Breadcrumb_Trail_Renderer $renderer) {
+		$this->renderer = $renderer;
 	}
 
 	/**
@@ -211,13 +132,13 @@ class Carbon_Breadcrumb_Trail {
 		}
 
 		// add home item (if enabled)
-		if (!is_front_page() && $this->get_display_home_item()) {
+		if ($this->get_renderer()->get_display_home_item()) {
 			$front_page_id = get_option('page_on_front');
 			if ($front_page_id) {
 				$home_title = get_the_title($front_page_id);
 				$home_link = get_permalink($front_page_id);
 			} else {
-				$home_title = $this->get_home_item_title();
+				$home_title = $this->get_renderer()->get_home_item_title();
 				$home_link = home_url('/');
 			}
 
@@ -408,248 +329,6 @@ class Carbon_Breadcrumb_Trail {
 	}
 
 	/**
-	 * Retrieve the string, used for concatenating the breadcrumb items.
-	 *
-	 * @access public
-	 *
-	 * @return string $glue String, used for concatenating the breadcrumb items.
-	 */
-	public function get_glue() {
-		return $this->glue;
-	}
-
-	/**
-	 * Modify the string, used for concatenating the breadcrumb items.
-	 *
-	 * @access public
-	 *
-	 * @param string $glue String, used for concatenating the breadcrumb items.
-	 */
-	public function set_glue($glue = '') {
-		$this->glue = $glue;
-	}
-
-	/**
-	 * Retrieve the string before the opening link tag of a breadcrumb item.
-	 *
-	 * @access public
-	 *
-	 * @return string $link_before String before the opening link tag of a breadcrumb item.
-	 */
-	public function get_link_before() {
-		return $this->link_before;
-	}
-
-	/**
-	 * Modify the string before the opening link tag of a breadcrumb item.
-	 *
-	 * @access public
-	 *
-	 * @param string $link_before String before the opening link tag of a breadcrumb item.
-	 */
-	public function set_link_before($link_before = '') {
-		$this->link_before = $link_before;
-	}
-
-	/**
-	 * Retrieve the string after the closing link tag of a breadcrumb item.
-	 *
-	 * @access public
-	 *
-	 * @return string $link_after String after the closing link tag of a breadcrumb item.
-	 */
-	public function get_link_after() {
-		return $this->link_after;
-	}
-
-	/**
-	 * Modify the string after the closing link tag of a breadcrumb item.
-	 *
-	 * @access public
-	 *
-	 * @param string $link_after String after the closing link tag of a breadcrumb item.
-	 */
-	public function set_link_after($link_after = '') {
-		$this->link_after = $link_after;
-	}
-
-	/**
-	 * Retrieve the string before the breadcrumb items.
-	 *
-	 * @access public
-	 *
-	 * @return string $wrapper_before String before the breadcrumb items.
-	 */
-	public function get_wrapper_before() {
-		return $this->wrapper_before;
-	}
-
-	/**
-	 * Modify the string before the breadcrumb items.
-	 *
-	 * @access public
-	 *
-	 * @param string $wrapper_before String before the breadcrumb items.
-	 */
-	public function set_wrapper_before($wrapper_before = '') {
-		$this->wrapper_before = $wrapper_before;
-	}
-
-	/**
-	 * Retrieve the string after the breadcrumb items.
-	 *
-	 * @access public
-	 *
-	 * @return string $wrapper_after String after the breadcrumb items.
-	 */
-	public function get_wrapper_after() {
-		return $this->wrapper_after;
-	}
-
-	/**
-	 * Modify the string after the breadcrumb items.
-	 *
-	 * @access public
-	 *
-	 * @param string $wrapper_after String after the breadcrumb items.
-	 */
-	public function set_wrapper_after($wrapper_after = '') {
-		$this->wrapper_after = $wrapper_after;
-	}
-
-	/**
-	 * Retrieve the string before the title of a breadcrumb item.
-	 *
-	 * @access public
-	 *
-	 * @return string $title_before String before the title of a breadcrumb item.
-	 */
-	public function get_title_before() {
-		return $this->title_before;
-	}
-
-	/**
-	 * Modify the string before the title of a breadcrumb item.
-	 *
-	 * @access public
-	 *
-	 * @param string $title_before String before the title of a breadcrumb item.
-	 */
-	public function set_title_before($title_before = '') {
-		$this->title_before = $title_before;
-	}
-
-	/**
-	 * Retrieve the string after the title of a breadcrumb item.
-	 *
-	 * @access public
-	 *
-	 * @return string $title_after String after the title of a breadcrumb item.
-	 */
-	public function get_title_after() {
-		return $this->title_after;
-	}
-
-	/**
-	 * Modify the string after the title of a breadcrumb item.
-	 *
-	 * @access public
-	 *
-	 * @param string $title_after String after the title of a breadcrumb item.
-	 */
-	public function set_title_after($title_after = '') {
-		$this->title_after = $title_after;
-	}
-
-	/**
-	 * Retrieve the minimum number of items, necessary to display the trail.
-	 *
-	 * @access public
-	 *
-	 * @return int $min_items Minimum number of items, necessary to display the trail
-	 */
-	public function get_min_items() {
-		return $this->min_items;
-	}
-
-	/**
-	 * Modify the minimum number of items, necessary to display the trail.
-	 *
-	 * @access public
-	 *
-	 * @param int $min_items Minimum number of items, necessary to display the trail.
-	 */
-	public function set_min_items($min_items) {
-		$this->min_items = $min_items;
-	}
-
-	/**
-	 * Whether the last item will be displayed as a link.
-	 *
-	 * @access public
-	 *
-	 * @return bool $last_item_link Whether the last item will be displayed as a link.
-	 */
-	public function get_last_item_link() {
-		return (bool)$this->last_item_link;
-	}
-
-	/**
-	 * Change whether the last item will be displayed as a link.
-	 *
-	 * @access public
-	 *
-	 * @param bool $last_item_link Whether the last item will be displayed as a link.
-	 */
-	public function set_last_item_link($last_item_link) {
-		$this->last_item_link = (bool)$last_item_link;
-	}
-
-	/**
-	 * Whether the home item will be displayed.
-	 *
-	 * @access public
-	 *
-	 * @return bool $display_home_item Whether the home item will be displayed.
-	 */
-	public function get_display_home_item() {
-		return (bool)$this->display_home_item;
-	}
-
-	/**
-	 * Change whether the home item will be displayed.
-	 *
-	 * @access public
-	 *
-	 * @param bool $display_home_item Whether the home item will be displayed.
-	 */
-	public function set_display_home_item($display_home_item) {
-		$this->display_home_item = (bool)$display_home_item;
-	}
-
-	/**
-	 * Retrieve the title of the home item (if NOT using page_on_front).
-	 *
-	 * @access public
-	 *
-	 * @return string $home_item_title The title of the home item.
-	 */
-	public function get_home_item_title() {
-		return $this->home_item_title;
-	}
-
-	/**
-	 * Modify the title of the home item (if NOT using page_on_front).
-	 *
-	 * @access public
-	 *
-	 * @param string $home_item_title The title of the home item.
-	 */
-	public function set_home_item_title($home_item_title = '') {
-		$this->home_item_title = $home_item_title;
-	}
-
-	/**
 	 * Sort the currently loaded breadcrumb items by their priority.
 	 *
 	 * @access public
@@ -685,72 +364,9 @@ class Carbon_Breadcrumb_Trail {
 	 * @return string|void $output The output HTML if $return is true.
 	 */
 	public function render($return = false) {
-		$total_items = $this->get_total_items();
 
-		// if the items are less than the minimum, nothing should be rendered
-		if ( $total_items < $this->get_min_items() ) {
-			return;
-		}
-
-		$items_output = array();
-		$counter = 0;
-
-		// whether to auto-sort the items
-		$auto_sort = apply_filters('carbon_breadcrumbs_auto_sort_items', true);
-		if ($auto_sort) {
-			$this->sort_items();
-		}
-
-		// prepare all breadcrumb items for display
-		$all_items = $this->get_items();
-		foreach ($all_items as $priority => $items) {
-			foreach ($items as $item) {
-				$counter++;
-
-				$item_output = '';
-
-				// get the item link
-				$item_link = apply_filters('carbon_breadcrumbs_item_link', $item->get_link(), $item);
-
-				// HTML before link opening tag
-				$item_output .= $this->get_link_before();
-
-				// link can be optional
-				if ($item_link) {
-					// last item link can be disabled
-					if ($this->get_last_item_link() || $counter < $total_items) {
-						$item_output .= '<a href="' . $item_link . '">';
-					}
-				}
-
-				// HTML before title
-				$item_output .= $this->get_title_before();
-
-				// breadcrumb item title
-				$item_output .= apply_filters('carbon_breadcrumbs_item_title', $item->get_title(), $item);
-
-				// HTML after title
-				$item_output .= $this->get_title_after();
-
-				// link can be optional
-				if ($item_link) {
-					// last item link can be disabled
-					if ($this->get_last_item_link() || $counter < $total_items) {
-						$item_output .= '</a>';
-					}
-				}
-
-				// HTML after link closing tag
-				$item_output .= $this->get_link_after();
-
-				$items_output[] = $item_output;
-			}
-		}
-
-		// implode the breadcrumb items and wrap them with the configured wrappers
-		$output = $this->get_wrapper_before();
-		$output .= implode($this->get_glue(), $items_output);
-		$output .= $this->get_wrapper_after();
+		// get the rendered output
+		$output = $this->get_renderer()->render($this, true);
 
 		if ($return) {
 			return $output;
