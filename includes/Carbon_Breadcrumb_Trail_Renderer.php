@@ -121,6 +121,9 @@ class Carbon_Breadcrumb_Trail_Renderer {
 			'home_item_title' => __('Home', 'crb'),
 		);
 
+		// allow default options to be filtered
+		$defaults = apply_filters('carbon_breadcrumbs_renderer_default_options', $defaults);
+
 		// parse configuration options
 		$args = wp_parse_args( $args, $defaults );
 
@@ -377,7 +380,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	}
 
 	/**
-	 * Render the breadcrumb trail.
+	 * Render the given breadcrumb trail.
 	 *
 	 * @access public
 	 *
