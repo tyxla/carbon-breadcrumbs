@@ -60,7 +60,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @access public
 	 *
-	 * @param string $renderer The updated rendering object.
+	 * @param Carbon_Breadcrumb_Trail_Renderer $renderer The updated rendering object.
 	 */
 	public function set_renderer(Carbon_Breadcrumb_Trail_Renderer $renderer) {
 		$this->renderer = $renderer;
