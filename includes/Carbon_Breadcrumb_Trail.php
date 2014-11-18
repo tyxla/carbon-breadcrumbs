@@ -34,8 +34,11 @@ class Carbon_Breadcrumb_Trail {
 	 */
 	public function __construct( $settings = array() ) {
 
+		// determine the renderer class
+		$renderer_class = apply_filters('carbon_breadcrumbs_renderer_class', 'Carbon_Breadcrumb_Trail_Renderer');
+
 		// build a new renderer
-		$renderer = new Carbon_Breadcrumb_Trail_Renderer($settings);
+		$renderer = new $renderer_class($settings);
 
 		// set the renderer
 		$this->set_renderer($renderer);
