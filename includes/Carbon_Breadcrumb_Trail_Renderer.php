@@ -2,7 +2,7 @@
 /**
  * The breadcrumb trail render class.
  * 
- * Manages the breadcrumb trail rendering.
+ * Responsible for the breadcrumb trail rendering settings and process.
  */
 class Carbon_Breadcrumb_Trail_Renderer {
 
