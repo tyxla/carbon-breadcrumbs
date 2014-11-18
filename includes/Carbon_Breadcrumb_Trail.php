@@ -121,7 +121,7 @@ class Carbon_Breadcrumb_Trail {
 		}
 
 		// process page for posts where necessary
-		if (is_home() || is_archive() || is_search() || (is_single() && get_post_type() == 'post') ) {
+		if (is_home() || is_archive() || (is_single() && get_post_type() == 'post') ) {
 			if ($page_for_posts = get_option('page_for_posts')) {
 				$locator = Carbon_Breadcrumb_Locator::factory('post', 'page');
 				$items = $locator->get_items(500, $page_for_posts);
