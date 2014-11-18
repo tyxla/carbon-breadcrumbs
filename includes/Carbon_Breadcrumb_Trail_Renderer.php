@@ -385,7 +385,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 * @param bool $return Whether to return the output.
 	 * @return string|void $output The output HTML if $return is true.
 	 */
-	public function render($trail, $return = false) {
+	public function render(Carbon_Breadcrumb_Trail $trail, $return = false) {
 		$total_items = $trail->get_total_items();
 
 		// if the items are less than the minimum, nothing should be rendered
