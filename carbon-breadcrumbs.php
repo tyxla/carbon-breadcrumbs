@@ -3,6 +3,8 @@
  * Plugin Name: Carbon Breadcrumbs
  * Description: A basic plugin for breadcrumbs with advanced capabilities for extending.
  * Version: 1.0
+ * Author: tyxla
+ * Author URI: https://github.com/tyxla
  * License: GPL2
  */
 
