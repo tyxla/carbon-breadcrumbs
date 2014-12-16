@@ -399,6 +399,9 @@ class Carbon_Breadcrumb_Trail_Renderer {
 		$items_output = array();
 		$counter = 0;
 
+		// last chance to modify render settings before rendering
+		do_action('carbon_breadcrumbs_before_render', $this);
+
 		// whether to auto-sort the items
 		$auto_sort = apply_filters('carbon_breadcrumbs_auto_sort_items', true);
 		if ($auto_sort) {
