@@ -414,6 +414,9 @@ class Carbon_Breadcrumb_Trail_Renderer {
 			foreach ($items as $item) {
 				$counter++;
 
+				// allow each item to be filtered right before rendering
+				$item = apply_filters('carbon_breadcrumbs_item', $item);
+
 				$item_output = '';
 
 				// get the item link
