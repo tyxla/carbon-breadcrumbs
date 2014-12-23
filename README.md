@@ -197,3 +197,92 @@ Whether the **Home** breadcrumb item should be displayed or not.
 _(string). Default: **Home**_.
 
 The title of the home item, used if there is no page specified as `page_on_front`.
+
+- - -
+
+Actions & Filters
+------
+
+The following actions and filters can allow developers to modify the default behavior and hook to add custom functionality in various situations.
+
+- - -
+
+### Filters
+
+#### the\_title
+
+**$title** *(string)*. The unfiltered title of the item.
+
+This filter is default for WordPress and is applied on the titles of all Post, Term and User breadcrumb items.
+
+#### carbon\_breadcrumbs\_renderer\_class
+
+**$class_name** *(string)*. The name of the renderer class.
+
+This filter can allow you to modify the default renderer class, which is used for rendering the breadcrumb trail.
+
+#### carbon\_breadcrumbs\_renderer\_default\_options
+
+**$options** *(array)*. A list of all default options.
+
+This filter allows you to modify the default options of the breadcrumb renderer. They are used if no other settings are specified. Here is a list of all default options and their default values:
+
+	$default_options = array(
+		'glue' => ' &gt; ',
+		'link_before' => '',
+		'link_after' => '',
+		'wrapper_before' => '',
+		'wrapper_after' => '',
+		'title_before' => '',
+		'title_after' => '',
+		'min_items' => 2,
+		'last_item_link' => true,
+		'display_home_item' => true,
+		'home_item_title' => __('Home', 'crb'),
+	);
+
+#### carbon\_breadcrumbs\_auto\_sort\_items
+
+**$autosort** *(bool)*. Whether to autosort the items before rendering or not.
+
+This filter allows you to specify whether to automatically sort the items by their priority right before they are rendered. 
+
+#### carbon\_breadcrumbs\_item
+
+**$item** *(Carbon\_Breadcrumb\_Item)*. The breadcrumb item object.
+
+This filter allows you to modify a breadcrumb item right before its rendering.
+
+#### carbon\_breadcrumbs\_item\_link
+
+**$link** *(string)*. The link of the breadcrumb item.
+
+This filter allows you to modify the link URL of a breadcrumb item right before its rendering.
+
+#### carbon\_breadcrumbs\_item\_title
+
+**$title** *(string)*. The title of the breadcrumb item.
+
+This filter allows you to modify the title of a breadcrumb item right before its rendering.
+
+- - -
+
+### Actions
+
+#### carbon\_breadcrumbs\_before\_setup\_trail
+
+**$trail** *(Carbon\_Breadcrumb\_Trail)*. The breadcrumb trail object.
+
+This action allows you to modify the breadcrumb trail object before the setup (which adds breadcrumb items) has started.
+
+#### carbon\_breadcrumbs\_after\_setup\_trail
+
+**$trail** *(Carbon\_Breadcrumb\_Trail)*. The breadcrumb trail object.
+
+This action allows you to modify the breadcrumb trail object after the setup (which adds breadcrumb items) has completed.
+
+#### carbon\_breadcrumbs\_before\_render
+
+**$trail** *(Carbon\_Breadcrumb\_Trail)*. The breadcrumb trail object.
+
+This action allows you to modify the breadcrumb trail object right before the breadcrumb trail rendering.
