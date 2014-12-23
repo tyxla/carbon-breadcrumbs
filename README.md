@@ -58,6 +58,73 @@ The following example will create and render an breadcrumb trail, providing you 
 	$trail->render(); // display the breadcrumb trail
 	?>
 
+#### Advanced
+
+The following example will create, setup and render a breadcrumb trail with a custom breadcrumb item and will use a custom renderer. It also takes advantage of some of the available filters and actions.
+
+	<?php
+	# A custom breadcrumb trail renderer class
+	class Crb_Carbon_Breadcrumb_Trail_Renderer extends Carbon_Breadcrumb_Trail_Renderer {
+		// your custom renderer methods & overrides here
+	}
+
+	# Modify the default breadcrumb trail renderer class
+	function crb_carbon_breadcrumbs_renderer_class($renderer_class) {
+		return 'Crb_Carbon_Breadcrumb_Trail_Renderer';
+	}
+
+	# Prepend "Blog Post: " to the title of the post items
+	add_filter('carbon_breadcrumbs_item_title', 'crb_carbon_breadcrumbs_item_title_post', 10, 2);
+	function crb_carbon_breadcrumbs_item_title_post($item_title, $item) {
+		if ( is_a($item, 'Carbon_Breadcrumb_Item_Post') && $item->get_subtype() == 'post' ) {
+			$item_title = 'Blog Post: ' . $item_title;
+		}
+		return $item_title;
+	}
+
+	# Append "?test=1" to the link of the post items
+	add_filter('carbon_breadcrumbs_item_link', 'crb_carbon_breadcrumbs_item_link_post', 10, 2);
+	function crb_carbon_breadcrumbs_item_link_post($item_link, $item) {
+		if ( is_a($item, 'Carbon_Breadcrumb_Item_Post') && $item->get_subtype() == 'post' ) {
+			$item_link = add_query_arg('test', 1, $item_link);
+		}
+		return $item_link;
+	}
+
+	# Remove the "Electronics" category item
+	add_action('carbon_breadcrumbs_after_setup_trail', 'crb_remove_electronics_category_item', 500);
+	function crb_remove_electronics_category_item($trail) {
+		$trail->remove_item('Electronics', 'http://example.com/category/electronics/');
+	}
+
+	# Remove all items with priority 999
+	add_action('carbon_breadcrumbs_after_setup_trail', 'crb_remove_items_priority_999', 500);
+	function crb_remove_items_priority_999($trail) {
+		$trail->remove_item_by_priority(999);
+	}
+
+	# Initialize the trail as bulleted list
+	$trail = new Carbon_Breadcrumb_Trail(array(
+		'glue' => '',
+		'link_before' => '<li>',
+		'link_after' => '</li>',
+		'wrapper_before' => '<ul>',
+		'wrapper_after' => '</ul>',
+		'title_before' => '',
+		'title_after' => '',
+		'min_items' => 1,
+		'last_item_link' => true,
+		'display_home_item' => true,
+		'home_item_title' => __('Home', 'crb'),
+	));
+
+	# Setup the trail by generating necessary breadcrumb items
+	$trail->setup();
+
+	# Display the breadcrumb trail
+	$trail->render();
+	?>
+
 - - -
 
 Configuration Options
