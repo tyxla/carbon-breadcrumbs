@@ -422,6 +422,9 @@ class Carbon_Breadcrumb_Trail_Renderer {
 				// get the item link
 				$item_link = apply_filters('carbon_breadcrumbs_item_link', $item->get_link(), $item);
 
+				// get the item target
+				$item_target = apply_filters('carbon_breadcrumbs_item_target', $item->get_target(), $item);
+
 				// HTML before link opening tag
 				$item_output .= $this->get_link_before();
 
@@ -429,7 +432,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 				if ($item_link) {
 					// last item link can be disabled
 					if ($this->get_last_item_link() || $counter < $total_items) {
-						$item_output .= '<a href="' . $item_link . '">';
+						$item_output .= '<a href="' . $item_link . '" target="' . $item_target . '">';
 					}
 				}
 
