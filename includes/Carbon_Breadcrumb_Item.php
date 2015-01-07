@@ -23,6 +23,14 @@ abstract class Carbon_Breadcrumb_Item {
 	protected $link;
 
 	/**
+	 * Breadcrumb item link target.
+	 *
+	 * @access protected
+	 * @var string
+	 */
+	protected $target = '_self';
+
+	/**
 	 * Breadcrumb item priority.
 	 *
 	 * @access protected
@@ -126,6 +134,28 @@ abstract class Carbon_Breadcrumb_Item {
 	 */
 	public function set_link($link = '') {
 		$this->link = $link;
+	}
+
+	/**
+	 * Retrieve the breadcrumb item link target.
+	 *
+	 * @access public
+	 *
+	 * @return string $target The link target of this breadcrumb item.
+	 */
+	public function get_target() {
+		return $this->target;
+	}
+
+	/**
+	 * Modify the link target of this breadcrumb item.
+	 *
+	 * @access public
+	 *
+	 * @param string $target The new link target.
+	 */
+	public function set_target($target = '') {
+		$this->target = $target;
 	}
 
 	/**
