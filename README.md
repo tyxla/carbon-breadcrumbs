@@ -265,6 +265,12 @@ This filter allows you to modify the link URL of a breadcrumb item right before 
 
 This filter allows you to modify the title of a breadcrumb item right before its rendering.
 
+#### carbon\_breadcrumbs\_item\_target
+
+**$target** *(string)*. The link target of the breadcrumb item.
+
+This filter allows you to modify the link target of a breadcrumb item right before its rendering. Default is `_self`
+
 - - -
 
 ### Actions
