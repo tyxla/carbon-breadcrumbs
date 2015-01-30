@@ -84,8 +84,6 @@ final class Carbon_Breadcrumbs {
 
 		include_once($includes_dir . 'Carbon_Breadcrumb_Exception.php');
 
-		include_once($includes_dir . 'Carbon_Breadcrumb_Exception.php');
-
 		include_once($base_dir . '/admin/Carbon_Breadcrumb_Admin.php');
 	}
 
