@@ -8,6 +8,23 @@
 abstract class Carbon_Breadcrumb_Admin_Settings_Field {
 
 	/**
+	 * Field title.
+	 *
+	 * @access protected
+	 * @var string
+	 */
+	protected $title;
+
+	/**
+	 * Field ID.
+	 *
+	 * @access protected
+	 * @var string
+	 */
+	protected $id;
+
+
+	/**
 	 * Constructor.
 	 *
 	 * Register an administration breadcrumb settings field.
@@ -20,6 +37,10 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field {
 	 * @param array $args Additional args.
 	 */
 	public function __construct($id, $title, $section = '', $args = array()) {
+
+		$this->set_id($id);
+		$this->set_title($title);
+
 		add_settings_field( 
 			$id,
 			$title,
@@ -28,6 +49,8 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field {
 			$section,
 			$args
 		);
+
+		register_setting( Carbon_Breadcrumb_Admin_Settings::get_page_name(), $id );
 	}
 
 	/**
@@ -54,6 +77,50 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field {
 		$field = new $class($id, $title, $section, $args);
 
 		return $field;
+	}
+
+	/**
+	 * Retrieve the field title.
+	 *
+	 * @access public
+	 *
+	 * @return string $title The title of this field.
+	 */
+	public function get_title() {
+		return $this->title;
+	}
+
+	/**
+	 * Modify the title of this field.
+	 *
+	 * @access public
+	 *
+	 * @param string $title The new title.
+	 */
+	public function set_title($title) {
+		$this->title = $title;
+	}
+
+	/**
+	 * Retrieve the field ID.
+	 *
+	 * @access public
+	 *
+	 * @return string $id The ID of this field.
+	 */
+	public function get_id() {
+		return $this->id;
+	}
+
+	/**
+	 * Modify the ID of this field.
+	 *
+	 * @access public
+	 *
+	 * @param string $id The new ID.
+	 */
+	public function set_id($id) {
+		$this->id = $id;
 	}
 
 	/**

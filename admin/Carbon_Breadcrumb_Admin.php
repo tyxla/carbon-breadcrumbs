@@ -56,6 +56,7 @@ final class Carbon_Breadcrumb_Admin {
 
 		include_once($dir . '/Carbon_Breadcrumb_Admin_Settings.php');
 		include_once($dir . '/Carbon_Breadcrumb_Admin_Settings_Field.php');
+		include_once($dir . '/Carbon_Breadcrumb_Admin_Settings_Field_Text.php');
 	}
 
 	/**
