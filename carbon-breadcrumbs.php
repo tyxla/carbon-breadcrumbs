@@ -62,7 +62,8 @@ final class Carbon_Breadcrumbs {
 	 * @access public
 	 */
 	public static function include_files() {
-		$includes_dir = dirname(__FILE__) . '/includes/';
+		$base_dir = dirname(__FILE__);
+		$includes_dir = $base_dir . '/includes/';
 
 		include_once($includes_dir . 'Carbon_Breadcrumb_Trail.php');
 		include_once($includes_dir . 'Carbon_Breadcrumb_Trail_Renderer.php');
@@ -82,6 +83,10 @@ final class Carbon_Breadcrumbs {
 		include_once($includes_dir . 'Carbon_Breadcrumb_Item_Custom.php');
 
 		include_once($includes_dir . 'Carbon_Breadcrumb_Exception.php');
+
+		include_once($includes_dir . 'Carbon_Breadcrumb_Exception.php');
+
+		include_once($base_dir . '/admin/Carbon_Breadcrumb_Admin.php');
 	}
 
 	/**
