@@ -28,7 +28,7 @@ final class Carbon_Breadcrumb_Admin {
 		$this->include_files();
 
 		// initialize
-		add_action('admin_init', array($this, 'admin_init'));
+		add_action('admin_menu', array($this, 'init'), 20);
 	}
 
 	/**
@@ -63,13 +63,25 @@ final class Carbon_Breadcrumb_Admin {
 	 *
 	 * @access public
 	 */
-	public function admin_init() {
+	public function init() {
 
 		// if admin interface should not be enabled, bail
 		if ( !$this->is_enabled() ) {
 			return;
 		}
 
+		// register settings
+		$this->register_settings();
+	}
+
+	/**
+	 * Register and setup the settings page.
+	 *
+	 * @access public
+	 */
+	public function register_settings() {
+		// register the settings page
+		$settings_page = new Carbon_Breadcrumb_Admin_Settings();
 	}
 	
 	/**
