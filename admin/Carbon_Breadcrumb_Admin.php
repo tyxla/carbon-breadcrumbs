@@ -11,7 +11,7 @@ final class Carbon_Breadcrumb_Admin {
 	 *
 	 * @static
 	 *
-	 * @var Carbon_Breadcrumbs
+	 * @var Carbon_Breadcrumbs_Admin
 	 */
 	static $instance = null;
 
@@ -32,12 +32,12 @@ final class Carbon_Breadcrumb_Admin {
 	}
 
 	/**
-	 * Retrieve or create the Carbon_Breadcrumbs instance.
+	 * Retrieve or create the Carbon_Breadcrumbs instance._Admin
 	 *
 	 * @static
 	 * @access public
 	 *
-	 * @return Carbon_Breadcrumbs $instance
+	 * @return Carbon_Breadcrumbs $instance_Admin
 	 */
 	public static function get_instance() {
 		if (self::$instance === null) {
@@ -47,16 +47,19 @@ final class Carbon_Breadcrumb_Admin {
 	}
 
 	/**
-	 * Include the plugin files.
+	 * Include the administration files.
 	 *
 	 * @access public
 	 */
 	public function include_files() {
+		$dir = dirname(__FILE__);
 
+		include_once($dir . '/Carbon_Breadcrumb_Admin_Settings.php');
+		include_once($dir . '/Carbon_Breadcrumb_Admin_Settings_Field.php');
 	}
 
 	/**
-	 * Initialize administrator.
+	 * Initialize breadcrumb administration.
 	 *
 	 * @access public
 	 */
