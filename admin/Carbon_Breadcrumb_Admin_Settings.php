@@ -12,7 +12,11 @@ class Carbon_Breadcrumb_Admin_Settings {
 	 * @access public
 	 */
 	public function __construct() {
+		// register settings page
 		add_action( 'admin_menu', array( $this, 'admin_menu' ), 30 );
+
+		// register settings fields & sections
+		add_action( 'admin_init', array( $this, 'register_settings' ) );
 	}
 
 	/**
@@ -52,6 +56,14 @@ class Carbon_Breadcrumb_Admin_Settings {
 			self::get_page_name(),
 			array( $this, 'settings_page' )
 		);
+	}
+
+	/**
+	 * Register the settings sections and fields.
+	 *
+	 * @access public
+	 */
+	public function register_settings() {
 	}
 
 	/**

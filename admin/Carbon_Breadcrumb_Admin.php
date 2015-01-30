@@ -75,12 +75,12 @@ final class Carbon_Breadcrumb_Admin {
 	}
 
 	/**
-	 * Register and setup the settings page.
+	 * Register and setup the settings page and fields.
 	 *
 	 * @access public
 	 */
 	public function register_settings() {
-		// register the settings page
+		// register the settings page and fields
 		$settings_page = new Carbon_Breadcrumb_Admin_Settings();
 	}
 	
