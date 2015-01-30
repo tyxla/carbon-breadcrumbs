@@ -5,6 +5,14 @@
 class Carbon_Breadcrumb_Admin_Settings {
 
 	/**
+	 * Registered fields.
+	 *
+	 * @access protected
+	 * @var array
+	 */
+	public $fields = array();
+
+	/**
 	 * Constructor.
 	 *
 	 * Initialize the administration breadcrumb settings.
@@ -44,11 +52,13 @@ class Carbon_Breadcrumb_Admin_Settings {
 	}
 
 	/**
-	 * Register the settings page.
+	 * Register the settings page & default section.
 	 *
 	 * @access public
 	 */
 	public function admin_menu() {
+
+		// register settings page
 		add_options_page(
 			self::get_page_title(),
 			self::get_page_title(),
@@ -56,6 +66,15 @@ class Carbon_Breadcrumb_Admin_Settings {
 			self::get_page_name(),
 			array( $this, 'settings_page' )
 		);
+
+		// register settings section
+		add_settings_section(
+			self::get_page_name(),
+			'',
+			'',
+			self::get_page_name()
+		);
+
 	}
 
 	/**
@@ -64,6 +83,58 @@ class Carbon_Breadcrumb_Admin_Settings {
 	 * @access public
 	 */
 	public function register_settings() {
+		// define fields
+		$fields = array(
+			'glue' => array(
+				'type' => 'text',
+				'title' => 'Glue',
+			),
+			'link_before' => array(
+				'type' => 'text',
+				'title' => 'Link Before',
+			),
+			'link_after' => array(
+				'type' => 'text',
+				'title' => 'Link After',
+			),
+			'wrapper_before' => array(
+				'type' => 'text',
+				'title' => 'Wrapper Before',
+			),
+			'wrapper_after' => array(
+				'type' => 'text',
+				'title' => 'Wrapper After',
+			),
+			'title_before' => array(
+				'type' => 'text',
+				'title' => 'Title Before',
+			),
+			'title_after' => array(
+				'type' => 'text',
+				'title' => 'Title After',
+			),
+			'min_items' => array(
+				'type' => 'text',
+				'title' => 'Min Items',
+			),
+			'last_item_link' => array(
+				'type' => 'checkbox',
+				'title' => 'Last Item Link',
+			),
+			'display_home_item' => array(
+				'type' => 'checkbox',
+				'title' => 'Display Home Item?',
+			),
+			'home_item_title' => array(
+				'type' => 'text',
+				'title' => 'Home Item Title',
+			),
+		);
+
+		// register fields
+		foreach ($fields as $field_id => $field_data) {
+			$this->fields[] = Carbon_Breadcrumb_Admin_Settings_Field::factory($field_data['type'], 'carbon_breadcrumbs_' . $field_id, $field_data['title'], self::get_page_name());
+		}
 	}
 
 	/**
