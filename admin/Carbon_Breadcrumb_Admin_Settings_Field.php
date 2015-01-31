@@ -124,12 +124,24 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field {
 	}
 
 	/**
-	 * Render this field.
+	 * Retrieve the field value. If there is no value, use the default one.
 	 *
 	 * @access public
-	 * @abstract
+	 *
+	 * @return mixed $value The value of this field.
 	 */
-	abstract public function render();
+	public function get_value() {
+		$original_name = str_replace('carbon_breadcrumbs_', '', $this->get_id());
+		$field_data = Carbon_Breadcrumb_Admin_Settings::get_field_data();
+		$default = !empty($field_data[$original_name]['default']) ? $field_data[$original_name]['default'] : '';
+
+		$value = get_option($this->get_id());
+		if ($value === false) {
+			$value = $default;
+		}
+
+		return $value;
+	}
 
 	/**
 	 * Render the help description of this field.
@@ -147,5 +159,13 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field {
 		<p class="description"><?php echo $help; ?></p>
 		<?php
 	}
+
+	/**
+	 * Render this field.
+	 *
+	 * @access public
+	 * @abstract
+	 */
+	abstract public function render();
 
 }
