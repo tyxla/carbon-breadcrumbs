@@ -12,7 +12,13 @@ class Carbon_Breadcrumb_Admin_Settings_Field_Text extends Carbon_Breadcrumb_Admi
 	 * @access public
 	 */
 	public function render() {
+		$original_name = str_replace('carbon_breadcrumbs_', '', $this->get_id());
+		$field_data = Carbon_Breadcrumb_Admin_Settings::get_field_data();
+		$default = $field_data[$original_name]['default'];
 		$value = get_option($this->get_id());
+		if ($value === false) {
+			$value = $default;
+		}
 		?>
 		<input name="<?php echo $this->get_id(); ?>" id="<?php echo $this->get_id(); ?>" type="text" value="<?php echo esc_attr($value); ?>" class="regular-text" />
 		<?php
