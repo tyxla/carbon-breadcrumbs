@@ -28,6 +28,74 @@ class Carbon_Breadcrumb_Admin_Settings {
 	}
 
 	/**
+	 * Get field data. Defines and describes the fields that will be registered.
+	 *
+	 * @access public
+	 * @static
+	 *
+	 * @return array $fields The fields and their data.
+	 */
+	public static function get_field_data() {
+		return array(
+			'glue' => array(
+				'type' => 'text',
+				'title' => 'Glue',
+				'default' => ' > ',
+			),
+			'link_before' => array(
+				'type' => 'text',
+				'title' => 'Link Before',
+				'default' => '',
+			),
+			'link_after' => array(
+				'type' => 'text',
+				'title' => 'Link After',
+				'default' => '',
+			),
+			'wrapper_before' => array(
+				'type' => 'text',
+				'title' => 'Wrapper Before',
+				'default' => '',
+			),
+			'wrapper_after' => array(
+				'type' => 'text',
+				'title' => 'Wrapper After',
+				'default' => '',
+			),
+			'title_before' => array(
+				'type' => 'text',
+				'title' => 'Title Before',
+				'default' => '',
+			),
+			'title_after' => array(
+				'type' => 'text',
+				'title' => 'Title After',
+				'default' => '',
+			),
+			'min_items' => array(
+				'type' => 'text',
+				'title' => 'Min Items',
+				'default' => 2,
+			),
+			'last_item_link' => array(
+				'type' => 'checkbox',
+				'title' => 'Last Item Link',
+				'default' => true,
+			),
+			'display_home_item' => array(
+				'type' => 'checkbox',
+				'title' => 'Display Home Item?',
+				'default' => true,
+			),
+			'home_item_title' => array(
+				'type' => 'text',
+				'title' => 'Home Item Title',
+				'default' => __('Home', 'crb'),
+			),
+		);
+	}
+
+	/**
 	 * Name of the settings page.
 	 *
 	 * @access public
@@ -83,57 +151,11 @@ class Carbon_Breadcrumb_Admin_Settings {
 	 * @access public
 	 */
 	public function register_settings() {
-		// define fields
-		$fields = array(
-			'glue' => array(
-				'type' => 'text',
-				'title' => 'Glue',
-			),
-			'link_before' => array(
-				'type' => 'text',
-				'title' => 'Link Before',
-			),
-			'link_after' => array(
-				'type' => 'text',
-				'title' => 'Link After',
-			),
-			'wrapper_before' => array(
-				'type' => 'text',
-				'title' => 'Wrapper Before',
-			),
-			'wrapper_after' => array(
-				'type' => 'text',
-				'title' => 'Wrapper After',
-			),
-			'title_before' => array(
-				'type' => 'text',
-				'title' => 'Title Before',
-			),
-			'title_after' => array(
-				'type' => 'text',
-				'title' => 'Title After',
-			),
-			'min_items' => array(
-				'type' => 'text',
-				'title' => 'Min Items',
-			),
-			'last_item_link' => array(
-				'type' => 'checkbox',
-				'title' => 'Last Item Link',
-			),
-			'display_home_item' => array(
-				'type' => 'checkbox',
-				'title' => 'Display Home Item?',
-			),
-			'home_item_title' => array(
-				'type' => 'text',
-				'title' => 'Home Item Title',
-			),
-		);
 
 		// register fields
-		foreach ($fields as $field_id => $field_data) {
-			$this->fields[] = Carbon_Breadcrumb_Admin_Settings_Field::factory($field_data['type'], 'carbon_breadcrumbs_' . $field_id, $field_data['title'], self::get_page_name());
+		$field_data = self::get_field_data();
+		foreach ($field_data as $field_id => $field) {
+			$this->fields[] = Carbon_Breadcrumb_Admin_Settings_Field::factory($field['type'], 'carbon_breadcrumbs_' . $field_id, $field['title'], self::get_page_name());
 		}
 	}
 
