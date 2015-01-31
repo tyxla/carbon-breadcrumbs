@@ -131,4 +131,21 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field {
 	 */
 	abstract public function render();
 
+	/**
+	 * Render the help description of this field.
+	 *
+	 * @access public
+	 */
+	public function render_help() {
+		$field_data = Carbon_Breadcrumb_Admin_Settings::get_field_data();
+		$original_name = str_replace('carbon_breadcrumbs_', '', $this->get_id());
+		$help = !empty($field_data[$original_name]['help']) ? $field_data[$original_name]['help'] : '';
+		if (!$help) {
+			return;
+		}
+		?>
+		<p class="description"><?php echo $help; ?></p>
+		<?php
+	}
+
 }

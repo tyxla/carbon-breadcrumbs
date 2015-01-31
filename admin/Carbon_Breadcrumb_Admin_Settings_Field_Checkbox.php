@@ -23,6 +23,8 @@ class Carbon_Breadcrumb_Admin_Settings_Field_Checkbox extends Carbon_Breadcrumb_
 		?>
 		<input name="<?php echo $this->get_id(); ?>" id="<?php echo $this->get_id(); ?>" type="checkbox" value="1" class="code" <?php echo $checked; ?> />
 		<?php
+
+		$this->render_help();
 	}
 
 }
