@@ -32,7 +32,6 @@ The following example will display a breadcrumb trail with the specified setting
 		'last_item_link' => true,
 		'display_home_item' => true,
 		'home_item_title' => __('Home', 'crb'),
-		'glue' => ' / ',
 	));
 	?>
 
