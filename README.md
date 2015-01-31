@@ -6,6 +6,33 @@ Provides the theme and plugin developers an easy way to build and implement high
 
 - - -
 
+Administration & Settings
+------
+
+Although this plugin provides various ways to be extended, it can be used by people with no programming skills.
+
+If Carbon Breadcrumbs is installed and activated as a WordPress plugin, a `Carbon Breadcrumbs` page will appear in `Settings` in the WordPress administration. This page allows the default rendering settings to be modified to the preferred ones. The following settings are available:
+
+* **Glue** - Displayed between the breadcrumb items.
+* **Link Before** - Displayed before the breadcrumb item link.
+* **Link After** - Displayed after the breadcrumb item link.
+* **Wrapper Before** - Displayed before displaying the breadcrumb items.
+* **Wrapper After** - Displayed after displaying the breadcrumb items.
+* **Title Before** - Displayed before the breadcrumb item title.
+* **Title After** - Displayed after the breadcrumb item title.
+* **Min Items** - Determines the minimum number of items, required to display the breadcrumb trail.
+* **Last Item Link** - Whether the last breadcrumb item should be a link.
+* **Display Home Item?** - Whether the home breadcrumb item should be displayed.
+* **Home Item Title** - Determines the title of the home item.
+
+If this plugin is manually included in a theme, the administration settings page will not be shown by default. This allows theme developers to disable control over the breadcrumb trail settings, if necessary. In this case, the administration settings can still be enabled by defining the `CARBON_BREADCRUMB_ENABLE_ADMIN` constant and setting it to true. To do that, add the following line to your theme `functions.php` file:
+
+	define('CARBON_BREADCRUMB_ENABLE_ADMIN', true);
+
+**Note:** The administration settings override the default breadcrumb settings, by using the `carbon_breadcrumbs_renderer_default_options` filter. This means that developers can still override these settings by using the `carbon_breadcrumbs_before_render` action. Both `carbon_breadcrumbs_renderer_default_options` and `carbon_breadcrumbs_before_render` are documented below in this readme.
+
+- - -
+
 Usage & Examples
 ------
 
