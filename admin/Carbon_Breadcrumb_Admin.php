@@ -16,6 +16,15 @@ final class Carbon_Breadcrumb_Admin {
 	static $instance = null;
 
 	/**
+	 * Settings container.
+	 *
+	 * @static
+	 *
+	 * @var Carbon_Breadcrumb_Admin_Settings
+	 */
+	static $settings = null;
+
+	/**
 	 * Constructor.
 	 * Private so only the get_instance() can instantiate it.
 	 *
@@ -27,8 +36,11 @@ final class Carbon_Breadcrumb_Admin {
 		// include the plugin files
 		$this->include_files();
 
-		// initialize
-		add_action('admin_menu', array($this, 'init'), 20);
+		// if administration is enabled, initialize
+		if ( $this->is_enabled() ) {
+			add_action('init', array($this, 'init'));
+			add_action('admin_menu', array($this, 'admin_init'), 20);
+		}
 	}
 
 	/**
@@ -65,15 +77,19 @@ final class Carbon_Breadcrumb_Admin {
 	 *
 	 * @access public
 	 */
-	public function init() {
-
-		// if admin interface should not be enabled, bail
-		if ( !$this->is_enabled() ) {
-			return;
-		}
-
+	public function admin_init() {
 		// register settings
 		$this->register_settings();
+	}
+
+	/**
+	 * Initialize breadcrumb frontend.
+	 *
+	 * @access public
+	 */
+	public function init() {
+		// apply the breadcrumb renderer settings 
+		add_filter('carbon_breadcrumbs_renderer_default_options', array($this, 'apply_settings'), 20);
 	}
 
 	/**
@@ -83,7 +99,30 @@ final class Carbon_Breadcrumb_Admin {
 	 */
 	public function register_settings() {
 		// register the settings page and fields
-		$settings_page = new Carbon_Breadcrumb_Admin_Settings();
+		self::$settings = new Carbon_Breadcrumb_Admin_Settings(); 
+	}
+
+	/**
+	 * Apply the settings to the breadcrumb trail renderer
+	 *
+	 * @access public
+	 *
+	 * @param array $settings The default settings.
+	 * @return array $settings The modified settings.
+	 */
+	public function apply_settings($settings) {
+		$settings_fields = Carbon_Breadcrumb_Admin_Settings::get_field_data();
+
+		foreach ($settings_fields as $field_id => $field) {
+			$field_value = get_option('carbon_breadcrumbs_' . $field_id);
+			if ( $field['type'] == 'text' && strlen($field_value) ) {
+				$settings[$field_id] = $field_value;
+			} elseif( $field['type'] == 'checkbox' && is_string($field_value) ) {
+				$settings[$field_id] = (bool) $field_value;
+			}
+		}
+
+		return $settings;
 	}
 	
 	/**
