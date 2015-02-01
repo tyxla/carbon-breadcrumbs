@@ -149,7 +149,7 @@ class Carbon_Breadcrumb_Admin_Settings {
 		// register settings section
 		add_settings_section(
 			self::get_page_name(),
-			'',
+			'General Settings',
 			'',
 			self::get_page_name()
 		);
