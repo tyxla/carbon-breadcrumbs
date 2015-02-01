@@ -311,7 +311,7 @@ This action allows you to modify the breadcrumb trail object before the setup (w
 
 **$trail** *(Carbon\_Breadcrumb\_Trail)*. The breadcrumb trail object.
 
-This action allows you to modify the breadcrumb trail object after the setup (which adds breadcrumb items) has completed.
+This action allows you to modify the breadcrumb trail object after the setup (which adds breadcrumb items) has been completed.
 
 #### carbon\_breadcrumbs\_before\_render
 
