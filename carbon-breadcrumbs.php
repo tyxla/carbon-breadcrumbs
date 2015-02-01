@@ -23,10 +23,11 @@ final class Carbon_Breadcrumbs {
 	 * Instance container.
 	 *
 	 * @static
+	 * @access private
 	 *
 	 * @var Carbon_Breadcrumbs
 	 */
-	static $instance = null;
+	private static $instance = null;
 
 	/**
 	 * Constructor.
