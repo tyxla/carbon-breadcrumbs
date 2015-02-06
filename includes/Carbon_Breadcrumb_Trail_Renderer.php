@@ -438,7 +438,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 				if ($item_link) {
 					// last item link can be disabled
 					if ($this->get_last_item_link() || $counter < $total_items) {
-						$item_output .= '<a href="' . $item_link . '"' . $item_attributes . '>';
+						$item_output .= '<a href="' . $item_link . '"' . $attributes_html . '>';
 					}
 				}
 
