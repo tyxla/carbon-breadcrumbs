@@ -291,11 +291,11 @@ This filter allows you to modify the link URL of a breadcrumb item right before 
 
 This filter allows you to modify the title of a breadcrumb item right before its rendering.
 
-#### carbon\_breadcrumbs\_item\_target
+#### carbon\_breadcrumbs\_item\_attributes
 
-**$target** *(string)*. The link target of the breadcrumb item.
+**$attributes** *(array)*. The custom attributes of the breadcrumb item.
 
-This filter allows you to modify the link target of a breadcrumb item right before its rendering. Default is `_self`
+This filter allows you to modify the link attributes of a breadcrumb item right before its rendering. By default, the `target="_self"` attribute is added. This array expects the attribute name as the array element key, and the attribute value as the array element value. Example: `'target' => '_blank'`.
 
 - - -
 

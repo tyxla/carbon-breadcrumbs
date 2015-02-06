@@ -422,8 +422,14 @@ class Carbon_Breadcrumb_Trail_Renderer {
 				// get the item link
 				$item_link = apply_filters('carbon_breadcrumbs_item_link', $item->get_link(), $item);
 
-				// get the item target
-				$item_target = apply_filters('carbon_breadcrumbs_item_target', $item->get_target(), $item);
+				// get the item attributes
+				$item_attributes = apply_filters('carbon_breadcrumbs_item_attributes', $item->get_attributes(), $item);
+
+				// prepare the item attributes
+				$attributes_html = '';
+				foreach ($item_attributes as $attr => $attr_value) {
+					$attributes_html .= ' ' . $attr . '="' . esc_attr($attr_value) . '"';
+				}
 
 				// HTML before link opening tag
 				$item_output .= $this->get_link_before();
@@ -432,7 +438,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 				if ($item_link) {
 					// last item link can be disabled
 					if ($this->get_last_item_link() || $counter < $total_items) {
-						$item_output .= '<a href="' . $item_link . '" target="' . $item_target . '">';
+						$item_output .= '<a href="' . $item_link . '"' . $item_attributes . '>';
 					}
 				}
 
