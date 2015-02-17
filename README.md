@@ -117,6 +117,24 @@ The following example will create, setup and render a breadcrumb trail with a cu
 		return $item_link;
 	}
 
+	# Add a new custom item by specifying title, link and priority
+	add_action('carbon_breadcrumbs_after_setup_trail', 'crb_add_custom_item');
+	function crb_add_custom_item($trail) {
+		$trail->add_custom_item('Link Title', 'http://example.com/custom/link/', 500);
+	}
+
+	# Add a new page item and its ancestry
+	add_action('carbon_breadcrumbs_after_setup_trail', 'crb_add_test_page_item');
+	function crb_add_test_page_item($trail) {
+		$locator = Carbon_Breadcrumb_Locator::factory('post', 'page');
+		$priority = 500;
+		$page_id = 123;
+		$items = $locator->get_items($priority, $page_id);
+		if ($items) {
+			$trail->add_item($items);
+		}
+	}
+
 	# Remove the "Electronics" category item
 	add_action('carbon_breadcrumbs_after_setup_trail', 'crb_remove_electronics_category_item', 500);
 	function crb_remove_electronics_category_item($trail) {
