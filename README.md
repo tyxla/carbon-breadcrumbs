@@ -86,7 +86,7 @@ The following example will create and render an breadcrumb trail, providing you 
 
 #### Advanced
 
-The following example will create, setup and render a breadcrumb trail with a custom breadcrumb item and will use a custom renderer. It also takes advantage of some of the available filters and actions.
+The following example will create, setup and render a breadcrumb trail with a custom breadcrumb items and will use a custom renderer. It also takes advantage of some of the available filters and actions. Each portion of the code can be used separately in case you need to perform advanced manipulation on the trail. The following can be seen in the example: custom renderer setup, prepending text to specific items, appending something to the URLs of some items, adding a custom item, adding a page item along with its ancenstry, removing a certain item by name and link, removing all items by priority, initialization with setup and rendering. Each portion of the code is commented accordingly so you can understand what it does.
 
 	<?php
 	# A custom breadcrumb trail renderer class
