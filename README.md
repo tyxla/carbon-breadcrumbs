@@ -23,7 +23,7 @@ If Carbon Breadcrumbs is installed and activated as a WordPress plugin, a `Carbo
 * **Min Items** - Determines the minimum number of items, required to display the breadcrumb trail.
 * **Last Item Link** - Whether the last breadcrumb item should be a link.
 * **Display Home Item?** - Whether the home breadcrumb item should be displayed.
-* **Home Item Title** - Determines the title of the home item (if NOT using page_on_front).
+* **Home Item Title** - Determines the title of the home item.
 
 If this plugin is manually included in a theme, the administration settings page will not be shown by default. This allows theme developers to disable control over the breadcrumb trail settings, if necessary. In this case, the administration settings can still be enabled by defining the `CARBON_BREADCRUMB_ENABLE_ADMIN` constant and setting it to true. To do that, add the following line to your theme `functions.php` file:
 
@@ -240,7 +240,7 @@ Whether the **Home** breadcrumb item should be displayed or not.
 
 _(string). Default: **Home**_.
 
-The title of the home item, used if there is no page specified as `page_on_front`.
+The title of the home item.
 
 - - -
 

@@ -136,15 +136,8 @@ class Carbon_Breadcrumb_Trail {
 
 		// add home item (if enabled)
 		if ($this->get_renderer()->get_display_home_item()) {
-			$front_page_id = get_option('page_on_front');
-			if ($front_page_id) {
-				$home_title = get_the_title($front_page_id);
-				$home_link = get_permalink($front_page_id);
-			} else {
-				$home_title = $this->get_renderer()->get_home_item_title();
-				$home_link = home_url('/');
-			}
-
+			$home_title = $this->get_renderer()->get_home_item_title();
+			$home_link = home_url('/');
 			$this->add_custom_item($home_title, $home_link, 10);
 		}
 

@@ -87,7 +87,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	protected $display_home_item = true;
 
 	/**
-	 * The title of the home item (if NOT using page_on_front).
+	 * The title of the home item.
 	 *
 	 * @access protected
 	 * @var string
@@ -358,7 +358,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	}
 
 	/**
-	 * Retrieve the title of the home item (if NOT using page_on_front).
+	 * Retrieve the title of the home item.
 	 *
 	 * @access public
 	 *
@@ -369,7 +369,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	}
 
 	/**
-	 * Modify the title of the home item (if NOT using page_on_front).
+	 * Modify the title of the home item.
 	 *
 	 * @access public
 	 *
