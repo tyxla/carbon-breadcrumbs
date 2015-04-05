@@ -45,7 +45,9 @@ Carbon_Breadcrumb_Trail::output(array(
 ));
 ?>`
 
-For additional configuration and developer documentation, you can visit the Github repository: https://github.com/tyxla/carbon-breadcrumbs
+For additional configuration and developer documentation, you can visit the Github repository: 
+
+https://github.com/tyxla/carbon-breadcrumbs
 
 == Ideas and bug reports ==
 
