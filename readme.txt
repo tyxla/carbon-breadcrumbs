@@ -23,6 +23,28 @@ This plugin can also be embedded in themes, instead of installing it as a WordPr
 
 == Configuration ==
 
+The most basic way to insert Carbon Breadcrumbs in your theme code is:
+
+`<?php Carbon_Breadcrumb_Trail::output(); ?>`
+
+If you want to specify various breadcrumb rendering options, you can specify them in an array, like this:
+
+`<?php
+Carbon_Breadcrumb_Trail::output(array(
+    'glue' => ' &gt; ', // glue between breadcrumb items
+    'link_before' => '',
+    'link_after' => '',
+    'wrapper_before' => '',
+    'wrapper_after' => '',
+    'title_before' => '',
+    'title_after' => '',
+    'min_items' => 2,
+    'last_item_link' => true,
+    'display_home_item' => true,
+    'home_item_title' => __('Home', 'crb'),
+));
+?>`
+
 If you install Carbon Breadcrumbs as a WordPress Plugin, or if you define the `CARBON_BREADCRUMB_ENABLE_ADMIN` constant to `true`, a "Carbon Breadcrumbs" page will appear in the Settings menu in the WordPress admin. There you can modify the breadcrumb trail rendering options.
 
 For additional configuration and developer documentation, you can visit the Github repository: https://github.com/tyxla/carbon-breadcrumbs
