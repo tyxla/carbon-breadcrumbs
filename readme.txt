@@ -45,8 +45,6 @@ Carbon_Breadcrumb_Trail::output(array(
 ));
 ?>`
 
-If you install Carbon Breadcrumbs as a WordPress Plugin, or if you define the `CARBON_BREADCRUMB_ENABLE_ADMIN` constant to `true`, a "Carbon Breadcrumbs" page will appear in the Settings menu in the WordPress admin. There you can modify the breadcrumb trail rendering options.
-
 For additional configuration and developer documentation, you can visit the Github repository: https://github.com/tyxla/carbon-breadcrumbs
 
 == Ideas and bug reports ==
