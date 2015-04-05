@@ -19,7 +19,7 @@ This plugin can also be embedded in themes, instead of installing it as a WordPr
 
 1. Install Carbon Breadcrumbs either via the WordPress.org plugin directory, or by uploading the files to your server.
 1. Activate the plugin.
-1. That's it. You're ready to go!
+1. That's it. You're ready to go! Please, refer to the Configuration section for examples and usage information.
 
 == Configuration ==
 
