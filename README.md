@@ -301,11 +301,15 @@ This filter allows you to modify a breadcrumb item right before its rendering.
 
 **$link** *(string)*. The link of the breadcrumb item.
 
+**$item** *(Carbon\_Breadcrumb\_Item)*. The breadcrumb item object.
+
 This filter allows you to modify the link URL of a breadcrumb item right before its rendering.
 
 #### carbon\_breadcrumbs\_item\_title
 
 **$title** *(string)*. The title of the breadcrumb item.
+
+**$item** *(Carbon\_Breadcrumb\_Item)*. The breadcrumb item object.
 
 This filter allows you to modify the title of a breadcrumb item right before its rendering.
 
@@ -313,7 +317,17 @@ This filter allows you to modify the title of a breadcrumb item right before its
 
 **$attributes** *(array)*. The custom attributes of the breadcrumb item.
 
+**$item** *(Carbon\_Breadcrumb\_Item)*. The breadcrumb item object.
+
 This filter allows you to modify the link attributes of a breadcrumb item right before its rendering. By default, the `target="_self"` attribute is added. This array expects the attribute name as the array element key, and the attribute value as the array element value. Example: `'target' => '_blank'`.
+
+#### carbon\_breadcrumbs\_item\_output
+
+**$output** *(string)*. The HTML output of the breadcrumb item.
+
+**$item** *(Carbon\_Breadcrumb\_Item)*. The breadcrumb item object.
+
+This filter allows you to modify the HTML output of a breadcrumb item right before its rendering.
 
 - - -
 
