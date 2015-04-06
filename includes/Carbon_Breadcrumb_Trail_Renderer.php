@@ -462,6 +462,9 @@ class Carbon_Breadcrumb_Trail_Renderer {
 				// HTML after link closing tag
 				$item_output .= $this->get_link_after();
 
+				// allow item output to be filtered
+				$item_output = apply_filters('carbon_breadcrumbs_item_output', $item_output, $item);
+
 				$items_output[] = $item_output;
 			}
 		}
