@@ -42,6 +42,7 @@ Carbon_Breadcrumb_Trail::output(array(
     'last_item_link' => true,
     'display_home_item' => true,
     'home_item_title' => __('Home', 'crb'),
+    'renderer' => 'Carbon_Breadcrumb_Trail_Renderer',
 ));
 ?>`
 
