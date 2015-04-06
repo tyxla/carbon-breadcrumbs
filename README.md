@@ -24,6 +24,7 @@ If Carbon Breadcrumbs is installed and activated as a WordPress plugin, a `Carbo
 * **Last Item Link** - Whether the last breadcrumb item should be a link.
 * **Display Home Item?** - Whether the home breadcrumb item should be displayed.
 * **Home Item Title** - Determines the title of the home item.
+* **Renderer** - Determines the class name of the renderer object.
 
 If this plugin is manually included in a theme, the administration settings page will not be shown by default. This allows theme developers to disable control over the breadcrumb trail settings, if necessary. In this case, the administration settings can still be enabled by defining the `CARBON_BREADCRUMB_ENABLE_ADMIN` constant and setting it to true. To do that, add the following line to your theme `functions.php` file:
 
@@ -59,6 +60,7 @@ The following example will display a breadcrumb trail with the specified setting
 		'last_item_link' => true,
 		'display_home_item' => true,
 		'home_item_title' => __('Home', 'crb'),
+		'renderer' => 'Carbon_Breadcrumb_Trail_Renderer',
 	));
 	?>
 
@@ -79,6 +81,7 @@ The following example will create and render an breadcrumb trail, providing you 
 		'last_item_link' => true,
 		'display_home_item' => true,
 		'home_item_title' => __('Home', 'crb'),
+		'renderer' => 'Carbon_Breadcrumb_Trail_Renderer',
 	));
 	$trail->setup(); // setup the trail by generating necessary breadcrumb items
 	$trail->render(); // display the breadcrumb trail
@@ -160,6 +163,7 @@ The following example will create, setup and render a breadcrumb trail with a cu
 		'last_item_link' => true,
 		'display_home_item' => true,
 		'home_item_title' => __('Home', 'crb'),
+		'renderer' => 'Carbon_Breadcrumb_Trail_Renderer',
 	));
 
 	# Setup the trail by generating necessary breadcrumb items
@@ -242,6 +246,12 @@ _(string). Default: **Home**_.
 
 The title of the home item.
 
+#### renderer
+
+_(string). Default: **Carbon\_Breadcrumb\_Trail\_Renderer**_.
+
+The class name that will be used for the breadcrumb trail renderer object. Should correspond to a declared PHP class. This setting is used in the `Carbon_Breadcrumb_Trail` instance instead of being passed to the `Carbon_Breadcrumb_Trail_Renderer` instance.
+
 - - -
 
 Actions & Filters
@@ -283,6 +293,7 @@ This filter allows you to modify the default options of the breadcrumb renderer.
 		'last_item_link' => true,
 		'display_home_item' => true,
 		'home_item_title' => __('Home', 'crb'),
+		'renderer' => 'Carbon_Breadcrumb_Trail_Renderer',
 	);
 
 #### carbon\_breadcrumbs\_auto\_sort\_items

@@ -119,6 +119,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 			'last_item_link' => true,
 			'display_home_item' => true,
 			'home_item_title' => __('Home', 'crb'),
+			'renderer' => 'Carbon_Breadcrumb_Trail_Renderer',
 		);
 
 		// allow default options to be filtered
