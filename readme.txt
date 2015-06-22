@@ -2,7 +2,7 @@
 Contributors: tyxla
 Tags: breadcrumb, breadcrumbs, carbon, admin, trail, settings, developer, configuration, extending, advanced, glue, before, after, auto
 Requires at least: 3.8
-Tested up to: 4.2
+Tested up to: 4.2.2
 Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
