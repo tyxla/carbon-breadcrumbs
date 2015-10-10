@@ -32,15 +32,15 @@ abstract class Carbon_Breadcrumb_Locator {
 	 * @param string $subtype Subtype of the breadcrumb item locator.
 	 * @return Carbon_Breadcrumb_Locator $locator The new breadcrumb item locator.
 	 */
-	public static function factory($type, $subtype = '') {
-		$type = str_replace(" ", '', ucwords(str_replace("_", ' ', $type)));
+	public static function factory( $type, $subtype = '' ) {
+		$type = str_replace( " ", '', ucwords( str_replace( "_", ' ', $type ) ) );
 		$class = 'Carbon_Breadcrumb_Locator_' . $type;
 
-		if (!class_exists($class)) {
-			throw new Carbon_Breadcrumb_Exception ('Unexisting breadcrumb locator type: "' . $type . '".');
+		if ( ! class_exists( $class ) ) {
+			throw new Carbon_Breadcrumb_Exception( 'Unexisting breadcrumb locator type: "' . $type . '".' );
 		}
 
-		$locator = new $class($type, $subtype);
+		$locator = new $class( $type, $subtype );
 
 		return $locator;
 	}
@@ -56,9 +56,9 @@ abstract class Carbon_Breadcrumb_Locator {
 	 * @param string $subtype Subtype of the breadcrumb item locator.
 	 * @return Carbon_Breadcrumb_Locator
 	 */
-	public function __construct($type, $subtype) {
-		$this->set_type($type);
-		$this->set_subtype($subtype);
+	public function __construct( $type, $subtype ) {
+		$this->set_type( $type );
+		$this->set_subtype( $subtype );
 	}
 
 	/**
@@ -79,7 +79,7 @@ abstract class Carbon_Breadcrumb_Locator {
 	 *
 	 * @param string $id The new locator type.
 	 */
-	public function set_type($type) {
+	public function set_type( $type ) {
 		$this->type = $type;
 	}
 
@@ -101,7 +101,7 @@ abstract class Carbon_Breadcrumb_Locator {
 	 *
 	 * @param string $id The new locator subtype.
 	 */
-	public function set_subtype($subtype) {
+	public function set_subtype( $subtype ) {
 		$this->subtype = $subtype;
 	}
 
