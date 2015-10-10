@@ -39,69 +39,69 @@ class Carbon_Breadcrumb_Admin_Settings {
 		return array(
 			'glue' => array(
 				'type' => 'text',
-				'title' => 'Glue',
+				'title' => __( 'Glue', 'carbon_breadcrumbs' ),
 				'default' => ' > ',
-				'help' => 'This is displayed between the breadcrumb items.',
+				'help' => __( 'This is displayed between the breadcrumb items.', 'carbon_breadcrumbs' ),
 			),
 			'link_before' => array(
 				'type' => 'text',
-				'title' => 'Link Before',
+				'title' => __( 'Link Before', 'carbon_breadcrumbs' ),
 				'default' => '',
-				'help' => 'This is displayed before the breadcrumb item link.',
+				'help' => __( 'This is displayed before the breadcrumb item link.', 'carbon_breadcrumbs' ),
 			),
 			'link_after' => array(
 				'type' => 'text',
-				'title' => 'Link After',
+				'title' => __( 'Link After', 'carbon_breadcrumbs' ),
 				'default' => '',
-				'help' => 'This is displayed after the breadcrumb item link.',
+				'help' => __( 'This is displayed after the breadcrumb item link.', 'carbon_breadcrumbs' ),
 			),
 			'wrapper_before' => array(
 				'type' => 'text',
-				'title' => 'Wrapper Before',
+				'title' => __( 'Wrapper Before', 'carbon_breadcrumbs' ),
 				'default' => '',
-				'help' => 'This is displayed before displaying the breadcrumb items.',
+				'help' => __( 'This is displayed before displaying the breadcrumb items.', 'carbon_breadcrumbs' ),
 			),
 			'wrapper_after' => array(
 				'type' => 'text',
-				'title' => 'Wrapper After',
+				'title' => __( 'Wrapper After', 'carbon_breadcrumbs' ),
 				'default' => '',
-				'help' => 'This is displayed after displaying the breadcrumb items.',
+				'help' => __( 'This is displayed after displaying the breadcrumb items.', 'carbon_breadcrumbs' ),
 			),
 			'title_before' => array(
 				'type' => 'text',
-				'title' => 'Title Before',
+				'title' => __( 'Title Before', 'carbon_breadcrumbs' ),
 				'default' => '',
-				'help' => 'This is displayed before the breadcrumb item title.',
+				'help' => __( 'This is displayed before the breadcrumb item title.', 'carbon_breadcrumbs' ),
 			),
 			'title_after' => array(
 				'type' => 'text',
-				'title' => 'Title After',
+				'title' => __( 'Title After', 'carbon_breadcrumbs' ),
 				'default' => '',
-				'help' => 'This is displayed after the breadcrumb item title.',
+				'help' => __( 'This is displayed after the breadcrumb item title.', 'carbon_breadcrumbs' ),
 			),
 			'min_items' => array(
 				'type' => 'text',
-				'title' => 'Min Items',
+				'title' => __( 'Min Items', 'carbon_breadcrumbs' ),
 				'default' => 2,
-				'help' => 'Determines the minimum number of items, required to display the breadcrumb trail.',
+				'help' => __( 'Determines the minimum number of items, required to display the breadcrumb trail.', 'carbon_breadcrumbs' ),
 			),
 			'last_item_link' => array(
 				'type' => 'checkbox',
-				'title' => 'Last Item Link',
+				'title' => __( 'Last Item Link', 'carbon_breadcrumbs' ),
 				'default' => true,
-				'help' => 'Whether the last breadcrumb item should be a link.',
+				'help' => __( 'Whether the last breadcrumb item should be a link.', 'carbon_breadcrumbs' ),
 			),
 			'display_home_item' => array(
 				'type' => 'checkbox',
-				'title' => 'Display Home Item?',
+				'title' => __( 'Display Home Item?', 'carbon_breadcrumbs' ),
 				'default' => true,
-				'help' => 'Whether the home breadcrumb item should be displayed.',
+				'help' => __( 'Whether the home breadcrumb item should be displayed.', 'carbon_breadcrumbs' ),
 			),
 			'home_item_title' => array(
 				'type' => 'text',
-				'title' => 'Home Item Title',
-				'default' => __( 'Home', 'crb' ),
-				'help' => 'Determines the title of the home item.',
+				'title' => __( 'Home Item Title', 'carbon_breadcrumbs' ),
+				'default' => __( 'Home', 'carbon_breadcrumbs' ),
+				'help' => __( 'Determines the title of the home item.', 'carbon_breadcrumbs' ),
 			),
 		);
 	}
@@ -127,7 +127,7 @@ class Carbon_Breadcrumb_Admin_Settings {
 	 * @return string $title The title of the options page.
 	 */
 	public static function get_page_title() {
-		return 'Carbon Breadcrumbs';
+		return __( 'Carbon Breadcrumbs', 'carbon_breadcrumbs' );
 	}
 
 	/**
@@ -149,7 +149,7 @@ class Carbon_Breadcrumb_Admin_Settings {
 		// register settings section
 		add_settings_section(
 			self::get_page_name(),
-			'General Settings',
+			__( 'General Settings', 'carbon_breadcrumbs' ),
 			'',
 			self::get_page_name()
 		);

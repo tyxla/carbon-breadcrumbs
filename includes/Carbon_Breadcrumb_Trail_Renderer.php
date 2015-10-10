@@ -117,7 +117,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 			'min_items' => 2,
 			'last_item_link' => true,
 			'display_home_item' => true,
-			'home_item_title' => __( 'Home', 'crb' ),
+			'home_item_title' => __( 'Home', 'carbon_breadcrumbs' ),
 			'renderer' => 'Carbon_Breadcrumb_Trail_Renderer',
 		);
 

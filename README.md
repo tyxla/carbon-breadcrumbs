@@ -59,7 +59,7 @@ The following example will display a breadcrumb trail with the specified setting
 		'min_items' => 2,
 		'last_item_link' => true,
 		'display_home_item' => true,
-		'home_item_title' => __('Home', 'crb'),
+		'home_item_title' => __('Home', 'carbon_breadcrumbs'),
 		'renderer' => 'Carbon_Breadcrumb_Trail_Renderer',
 	));
 	?>
@@ -80,7 +80,7 @@ The following example will create and render an breadcrumb trail, providing you 
 		'min_items' => 2,
 		'last_item_link' => true,
 		'display_home_item' => true,
-		'home_item_title' => __('Home', 'crb'),
+		'home_item_title' => __('Home', 'carbon_breadcrumbs'),
 		'renderer' => 'Carbon_Breadcrumb_Trail_Renderer',
 	));
 	$trail->setup(); // setup the trail by generating necessary breadcrumb items
@@ -162,7 +162,7 @@ The following example will create, setup and render a breadcrumb trail with a cu
 		'min_items' => 1,
 		'last_item_link' => true,
 		'display_home_item' => true,
-		'home_item_title' => __('Home', 'crb'),
+		'home_item_title' => __('Home', 'carbon_breadcrumbs'),
 		'renderer' => 'Carbon_Breadcrumb_Trail_Renderer',
 	));
 
@@ -292,7 +292,7 @@ This filter allows you to modify the default options of the breadcrumb renderer.
 		'min_items' => 2,
 		'last_item_link' => true,
 		'display_home_item' => true,
-		'home_item_title' => __('Home', 'crb'),
+		'home_item_title' => __('Home', 'carbon_breadcrumbs'),
 		'renderer' => 'Carbon_Breadcrumb_Trail_Renderer',
 	);
 

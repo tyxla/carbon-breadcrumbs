@@ -57,6 +57,7 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field {
 	 * Register a new administration breadcrumb settings field of a certain type.
 	 *
 	 * @static
+	 * @access public
 	 *
 	 * @param string $type Type of the field.
 	 * @param string $id The ID of the field.
@@ -65,7 +66,7 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field {
 	 * @param array $args Additional args.
 	 * @return Carbon_Breadcrumb_Admin_Settings_Field $field
 	 */
-	static function factory( $type, $id, $title, $section = '', $args = array() ) {
+	public static function factory( $type, $id, $title, $section = '', $args = array() ) {
 		$type = str_replace( ' ', '', ucwords( str_replace( '_', ' ', $type ) ) );
 
 		$class = 'Carbon_Breadcrumb_Admin_Settings_Field_' . $type;

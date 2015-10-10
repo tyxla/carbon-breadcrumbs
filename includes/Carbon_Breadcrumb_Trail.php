@@ -105,13 +105,13 @@ class Carbon_Breadcrumb_Trail {
 
 		// process search results
 		if ( is_search() ) {
-			$search_title = sprintf( __( 'Search results for: "%1$s"', 'crb' ), get_search_query() );
+			$search_title = sprintf( __( 'Search results for: "%1$s"', 'carbon_breadcrumbs' ), get_search_query() );
 			$this->add_custom_item( $search_title, '', 700 );
 		}
 
 		// process 404 not found
 		if (is_404()) {
-			$not_found_title = __( 'Error 404 - Not Found', 'crb' );
+			$not_found_title = __( 'Error 404 - Not Found', 'carbon_breadcrumbs' );
 			$this->add_custom_item( $not_found_title, '', 700 );
 		}
 
