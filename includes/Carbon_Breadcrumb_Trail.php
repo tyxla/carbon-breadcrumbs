@@ -30,7 +30,6 @@ class Carbon_Breadcrumb_Trail {
 	 * @access public
 	 *
 	 * @param array $settings Configuration options to modify the breadcrumb trail output.
-	 * @return Carbon_Breadcrumb_Trail
 	 */
 	public function __construct( $settings = array() ) {
 

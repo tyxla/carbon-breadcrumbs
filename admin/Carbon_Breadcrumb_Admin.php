@@ -10,19 +10,21 @@ final class Carbon_Breadcrumb_Admin {
 	 * Instance container.
 	 *
 	 * @static
+	 * @access private
 	 *
 	 * @var Carbon_Breadcrumb_Admin
 	 */
-	static $instance = null;
+	private static $instance = null;
 
 	/**
 	 * Settings container.
 	 *
 	 * @static
+	 * @access public
 	 *
 	 * @var Carbon_Breadcrumb_Admin_Settings
 	 */
-	static $settings = null;
+	public static $settings = null;
 
 	/**
 	 * Constructor.

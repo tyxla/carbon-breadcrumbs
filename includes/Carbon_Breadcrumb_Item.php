@@ -67,7 +67,7 @@ abstract class Carbon_Breadcrumb_Item {
 	 * @return Carbon_Breadcrumb_Item $item The new breadcrumb item.
 	 */
 	public static function factory( $type = 'custom', $priority = 1000 ) {
-		$class_type = str_replace( " ", '', ucwords( str_replace( "_", ' ', $type ) ) );
+		$class_type = str_replace( ' ', '', ucwords( str_replace( '_', ' ', $type ) ) );
 		$class = 'Carbon_Breadcrumb_Item_' . $class_type;
 
 		if ( ! class_exists( $class ) ) {
@@ -88,7 +88,6 @@ abstract class Carbon_Breadcrumb_Item {
 	 * @access public
 	 *
 	 * @param int $priority Priority of this breadcrumb item.
-	 * @return Carbon_Breadcrumb_Item
 	 */
 	public function __construct( $priority = 1000 ) {
 		$this->set_priority( $priority );
@@ -235,6 +234,6 @@ abstract class Carbon_Breadcrumb_Item {
 	 * @abstract
 	 * @access public
 	 */
-	public abstract function setup();
+	abstract public function setup();
 
 }

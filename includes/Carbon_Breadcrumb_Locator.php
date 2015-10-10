@@ -33,7 +33,7 @@ abstract class Carbon_Breadcrumb_Locator {
 	 * @return Carbon_Breadcrumb_Locator $locator The new breadcrumb item locator.
 	 */
 	public static function factory( $type, $subtype = '' ) {
-		$type = str_replace( " ", '', ucwords( str_replace( "_", ' ', $type ) ) );
+		$type = str_replace( ' ', '', ucwords( str_replace( '_', ' ', $type ) ) );
 		$class = 'Carbon_Breadcrumb_Locator_' . $type;
 
 		if ( ! class_exists( $class ) ) {
@@ -54,7 +54,6 @@ abstract class Carbon_Breadcrumb_Locator {
 	 *
 	 * @param string $type Type of the breadcrumb item locator.
 	 * @param string $subtype Subtype of the breadcrumb item locator.
-	 * @return Carbon_Breadcrumb_Locator
 	 */
 	public function __construct( $type, $subtype ) {
 		$this->set_type( $type );
@@ -111,7 +110,7 @@ abstract class Carbon_Breadcrumb_Locator {
 	 * @abstract
 	 * @access public
 	 */
-	public abstract function is_included();
+	abstract public function is_included();
 	
 	/**
 	 * Get the breadcrumb items, found by this locator.
@@ -119,7 +118,7 @@ abstract class Carbon_Breadcrumb_Locator {
 	 * @abstract
 	 * @access public
 	 */
-	public abstract function get_items();
+	abstract public function get_items();
 
 	/**
 	 * Generate a set of breadcrumb items that found by this locator type and any subtype.
@@ -127,6 +126,6 @@ abstract class Carbon_Breadcrumb_Locator {
 	 * @abstract
 	 * @access public
 	 */
-	public abstract function generate_items();
+	abstract public function generate_items();
 	
 }

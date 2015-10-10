@@ -66,7 +66,7 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field {
 	 * @return Carbon_Breadcrumb_Admin_Settings_Field $field
 	 */
 	static function factory( $type, $id, $title, $section = '', $args = array() ) {
-		$type = str_replace( " ", '', ucwords( str_replace( "_", ' ', $type ) ) );
+		$type = str_replace( ' ', '', ucwords( str_replace( '_', ' ', $type ) ) );
 
 		$class = 'Carbon_Breadcrumb_Admin_Settings_Field_' . $type;
 

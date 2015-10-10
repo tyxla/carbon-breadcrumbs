@@ -100,7 +100,7 @@ class Carbon_Breadcrumb_Admin_Settings {
 			'home_item_title' => array(
 				'type' => 'text',
 				'title' => 'Home Item Title',
-				'default' => __('Home', 'crb'),
+				'default' => __( 'Home', 'crb' ),
 				'help' => 'Determines the title of the home item.',
 			),
 		);
