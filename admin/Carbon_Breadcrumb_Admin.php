@@ -11,7 +11,7 @@ final class Carbon_Breadcrumb_Admin {
 	 *
 	 * @static
 	 *
-	 * @var Carbon_Breadcrumbs_Admin
+	 * @var Carbon_Breadcrumb_Admin
 	 */
 	static $instance = null;
 
@@ -44,12 +44,12 @@ final class Carbon_Breadcrumb_Admin {
 	}
 
 	/**
-	 * Retrieve or create the Carbon_Breadcrumbs instance._Admin
+	 * Retrieve or create the Carbon_Breadcrumb_Admin instance.
 	 *
 	 * @static
 	 * @access public
 	 *
-	 * @return Carbon_Breadcrumbs $instance_Admin
+	 * @return Carbon_Breadcrumb_Admin $instance
 	 */
 	public static function get_instance() {
 		if ( self::$instance === null ) {
@@ -165,6 +165,3 @@ final class Carbon_Breadcrumb_Admin {
 	private function __wakeup() {}
 
 }
-
-// initialize the admin interface
-Carbon_Breadcrumb_Admin::get_instance();

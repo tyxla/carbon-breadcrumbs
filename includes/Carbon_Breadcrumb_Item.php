@@ -198,7 +198,7 @@ abstract class Carbon_Breadcrumb_Item {
 	 *
 	 * @access public
 	 *
-	 * @param string $id The new breadcrumb item type.
+	 * @param string $type The new breadcrumb item type.
 	 */
 	public function set_type( $type ) {
 		$this->type = $type;
@@ -220,7 +220,7 @@ abstract class Carbon_Breadcrumb_Item {
 	 *
 	 * @access public
 	 *
-	 * @param string $id The new breadcrumb item subtype.
+	 * @param string $subtype The new breadcrumb item subtype.
 	 */
 	public function set_subtype( $subtype ) {
 		$this->subtype = $subtype;

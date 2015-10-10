@@ -77,7 +77,7 @@ abstract class Carbon_Breadcrumb_Locator {
 	 *
 	 * @access public
 	 *
-	 * @param string $id The new locator type.
+	 * @param string $type The new locator type.
 	 */
 	public function set_type( $type ) {
 		$this->type = $type;
@@ -99,7 +99,7 @@ abstract class Carbon_Breadcrumb_Locator {
 	 *
 	 * @access public
 	 *
-	 * @param string $id The new locator subtype.
+	 * @param string $subtype The new locator subtype.
 	 */
 	public function set_subtype( $subtype ) {
 		$this->subtype = $subtype;
