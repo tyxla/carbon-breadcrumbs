@@ -35,18 +35,18 @@ class Carbon_Breadcrumb_Trail {
 	public function __construct( $settings = array() ) {
 
 		// make sure renderer is specified
-		if ( !isset($settings['renderer']) ) {
+		if ( ! isset($settings['renderer'] ) ) {
 			$settings['renderer'] = 'Carbon_Breadcrumb_Trail_Renderer';
 		}
 
 		// determine the renderer class
-		$renderer_class = apply_filters('carbon_breadcrumbs_renderer_class', $settings['renderer']);
+		$renderer_class = apply_filters( 'carbon_breadcrumbs_renderer_class', $settings['renderer'] );
 
 		// build a new renderer
-		$renderer = new $renderer_class($settings);
+		$renderer = new $renderer_class( $settings );
 
 		// set the renderer
-		$this->set_renderer($renderer);
+		$this->set_renderer( $renderer );
 	}
 
 	/**
@@ -67,7 +67,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @param Carbon_Breadcrumb_Trail_Renderer $renderer The modified rendering object.
 	 */
-	public function set_renderer(Carbon_Breadcrumb_Trail_Renderer $renderer) {
+	public function set_renderer( Carbon_Breadcrumb_Trail_Renderer $renderer ) {
 		$this->renderer = $renderer;
 	}
 
@@ -79,7 +79,7 @@ class Carbon_Breadcrumb_Trail {
 	public function setup() {
 
 		// starting setup
-		do_action('carbon_breadcrumbs_before_setup_trail', $this);
+		do_action( 'carbon_breadcrumbs_before_setup_trail', $this );
 
 		// process post types, terms, authors
 		$locators = array(
@@ -87,67 +87,67 @@ class Carbon_Breadcrumb_Trail {
 			'term',
 			'user'
 		);
-		foreach ($locators as $locator_name) {
-			$locator = Carbon_Breadcrumb_Locator::factory($locator_name);
+		foreach ( $locators as $locator_name ) {
+			$locator = Carbon_Breadcrumb_Locator::factory( $locator_name );
 			$items = $locator->generate_items();
-			if ($items) {
-				$this->add_item($items);	
+			if ( $items ) {
+				$this->add_item( $items );	
 			}
 		}
 
 		// process date archives
-		if (is_date()) {
-			$locator = Carbon_Breadcrumb_Locator::factory('date');
-			$items = $locator->get_items(700);
-			if ($items) {
-				$this->add_item($items);
+		if ( is_date() ) {
+			$locator = Carbon_Breadcrumb_Locator::factory( 'date' );
+			$items = $locator->get_items( 700 );
+			if ( $items ) {
+				$this->add_item( $items );
 			}
 		}
 
 		// process search results
-		if (is_search()) {
-			$search_title = sprintf(__('Search results for: "%1$s"', 'crb'), get_search_query());
-			$this->add_custom_item($search_title, '', 700);
+		if ( is_search() ) {
+			$search_title = sprintf( __( 'Search results for: "%1$s"', 'crb' ), get_search_query() );
+			$this->add_custom_item( $search_title, '', 700 );
 		}
 
 		// process 404 not found
 		if (is_404()) {
-			$not_found_title = __('Error 404 - Not Found', 'crb');
-			$this->add_custom_item($not_found_title, '', 700);
+			$not_found_title = __( 'Error 404 - Not Found', 'crb' );
+			$this->add_custom_item( $not_found_title, '', 700 );
 		}
 
 		// add category hierarchy for single posts
-		if (is_single() && get_post_type() == 'post') {
+		if ( is_single() && get_post_type() == 'post' ) {
 			$taxonomy = 'category';
-			$categories = wp_get_object_terms(get_the_ID(), $taxonomy, 'orderby=term_id');
-			$last_category = array_pop($categories);
-			$locator = Carbon_Breadcrumb_Locator::factory('term', $taxonomy);
-			$items = $locator->get_items(700, $last_category->term_id);
-			if ($items) {
-				$this->add_item($items);
+			$categories = wp_get_object_terms( get_the_ID(), $taxonomy, 'orderby=term_id' );
+			$last_category = array_pop( $categories );
+			$locator = Carbon_Breadcrumb_Locator::factory( 'term', $taxonomy );
+			$items = $locator->get_items( 700, $last_category->term_id );
+			if ( $items ) {
+				$this->add_item( $items );
 			}
 		}
 
 		// process page for posts where necessary
-		if (is_home() || is_category() || is_tag() || is_date() || is_author() || (is_single() && get_post_type() == 'post') ) {
-			if ($page_for_posts = get_option('page_for_posts')) {
-				$locator = Carbon_Breadcrumb_Locator::factory('post', 'page');
-				$items = $locator->get_items(500, $page_for_posts);
-				if ($items) {
-					$this->add_item($items);
+		if ( is_home() || is_category() || is_tag() || is_date() || is_author() || ( is_single() && get_post_type() == 'post' ) ) {
+			if ( $page_for_posts = get_option( 'page_for_posts' ) ) {
+				$locator = Carbon_Breadcrumb_Locator::factory( 'post', 'page' );
+				$items = $locator->get_items( 500, $page_for_posts );
+				if ( $items ) {
+					$this->add_item( $items );
 				}
 			}
 		}
 
 		// add home item (if enabled)
-		if ($this->get_renderer()->get_display_home_item()) {
+		if ( $this->get_renderer()->get_display_home_item() ) {
 			$home_title = $this->get_renderer()->get_home_item_title();
-			$home_link = home_url('/');
-			$this->add_custom_item($home_title, $home_link, 10);
+			$home_link = home_url( '/' );
+			$this->add_custom_item( $home_title, $home_link, 10 );
 		}
 
 		// completing setup
-		do_action('carbon_breadcrumbs_after_setup_trail', $this);
+		do_action( 'carbon_breadcrumbs_after_setup_trail', $this );
 
 	}
 
@@ -158,14 +158,14 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @param mixed $item The item or array of items to add.
 	 */
-	public function add_item($item) {
-		if (is_array($item)) {
-			foreach ($item as $single_item) {
-				$this->add_item($single_item);
+	public function add_item( $item ) {
+		if ( is_array( $item ) ) {
+			foreach ( $item as $single_item ) {
+				$this->add_item( $single_item );
 			}
 		} else {
 			$priority = $item->get_priority();
-			$this->items[$priority][] = $item;
+			$this->items[ $priority ][] = $item;
 		}
 	}
 
@@ -178,12 +178,12 @@ class Carbon_Breadcrumb_Trail {
 	 * @param string $link Breadcrumb item link.
 	 * @param int $priority Breadcrumb item priority.
 	 */
-	public function add_custom_item($title, $link = '', $priority = 1000) {
-		$custom_item = Carbon_Breadcrumb_Item::factory('custom', $priority);
+	public function add_custom_item( $title, $link = '', $priority = 1000 ) {
+		$custom_item = Carbon_Breadcrumb_Item::factory( 'custom', $priority );
 		$custom_item->set_title( $title );
 		$custom_item->set_link( $link );
 		$custom_item->setup();
-		$this->add_item($custom_item);
+		$this->add_item( $custom_item );
 	}
 
 	/**
@@ -194,37 +194,37 @@ class Carbon_Breadcrumb_Trail {
 	 * @param string $title Title to remove breadcrumb item by.
 	 * @param string $link Link URL to remove breadcrumb item by.
 	 */
-	public function remove_item($title = '', $link = '') {
+	public function remove_item( $title = '', $link = '' ) {
 		// if there is nothing specified, skip
-		if (!$title && !$link) {
+		if ( ! $title && ! $link ) {
 			return;
 		}
 
 		// if no link is specified, use remove_item_by_title()
-		if ($title && !$link) {
-			$this->remove_item_by_title($title);
+		if ( $title && ! $link ) {
+			$this->remove_item_by_title( $title );
 			return;
 		}
 
 		// if no title is specified, use remove_item_by_link()
-		if (!$title && $link) {
-			$this->remove_item_by_link($link);
+		if ( ! $title && $link ) {
+			$this->remove_item_by_link( $link );
 			return;
 		}
 
 		// if both title and link are specified, search for exact match
 		$all_items = $this->get_items();
-		foreach ($all_items as $items_priority => $items) {
-			foreach ($items as $item_key => $item) {
-				if ( strcasecmp($item->get_title(), $title) === 0 && strcasecmp($item->get_link(), $link) === 0 ) {
+		foreach ( $all_items as $items_priority => $items ) {
+			foreach ( $items as $item_key => $item ) {
+				if ( strcasecmp( $item->get_title(), $title ) === 0 && strcasecmp( $item->get_link(), $link ) === 0 ) {
 					// if we have a match, remove that item
-					unset($all_items[$items_priority][$item_key]);
+					unset( $all_items[ $items_priority ][ $item_key ] );
 				}
 			}
 		}
 
 		// update the items
-		$this->set_items($all_items);
+		$this->set_items( $all_items );
 	}
 
 	/**
@@ -234,25 +234,25 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @param string $title Title to remove breadcrumb item by.
 	 */
-	public function remove_item_by_title($title = '') {
+	public function remove_item_by_title( $title = '' ) {
 		// if there is no title specified, skip
-		if (!$title) {
+		if ( ! $title ) {
 			return;
 		}
 
 		// search all items for one with the same title
 		$all_items = $this->get_items();
-		foreach ($all_items as $priority => $items) {
-			foreach ($items as $item_key => $item) {
-				if ( strcasecmp($item->get_title(), $title) === 0 ) {
+		foreach ( $all_items as $priority => $items ) {
+			foreach ( $items as $item_key => $item ) {
+				if ( strcasecmp( $item->get_title(), $title ) === 0 ) {
 					// if we have a match, remove that item
-					unset($all_items[$priority][$item_key]);
+					unset( $all_items[ $priority ][ $item_key ] );
 				}
 			}
 		}
 
 		// update the items
-		$this->set_items($all_items);
+		$this->set_items( $all_items );
 	}
 
 	/**
@@ -262,25 +262,25 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @param string $link Link URL to remove breadcrumb item by.
 	 */
-	public function remove_item_by_link($link = '') {
+	public function remove_item_by_link( $link = '' ) {
 		// if there is no link specified, skip
-		if (!$link) {
+		if ( ! $link ) {
 			return;
 		}
 
 		// search all items for one with the same link
 		$all_items = $this->get_items();
-		foreach ($all_items as $priority => $items) {
-			foreach ($items as $item_key => $item) {
-				if ( strcasecmp($item->get_link(), $link) == 0 ) {
+		foreach ( $all_items as $priority => $items ) {
+			foreach ( $items as $item_key => $item ) {
+				if ( strcasecmp( $item->get_link(), $link ) == 0 ) {
 					// if we have a match, remove that item
-					unset($all_items[$priority][$item_key]);
+					unset( $all_items[ $priority ][ $item_key ] );
 				}
 			}
 		}
 
 		// update the items
-		$this->set_items($all_items);
+		$this->set_items( $all_items );
 	}
 
 	/**
@@ -290,21 +290,21 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @param int $priority Priority to remove breadcrumb item by.
 	 */
-	public function remove_item_by_priority($priority = 0) {
+	public function remove_item_by_priority( $priority = 0 ) {
 		// if there is no priority specified, skip
-		if (!$priority) {
+		if ( ! $priority ) {
 			return;
 		}
 
 		// search all items for the same priority
 		$all_items = $this->get_items();
-		if (array_key_exists($priority, $all_items)) {
+		if ( array_key_exists( $priority, $all_items ) ) {
 			// remove all items with that priority
-			unset($all_items[$priority]);
+			unset( $all_items[ $priority ] );
 		}
 
 		// update the items
-		$this->set_items($all_items);
+		$this->set_items( $all_items );
 	}
 
 	/**
@@ -325,7 +325,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @param array $items The new set of breadcrumb items.
 	 */
-	public function set_items($items = array()) {
+	public function set_items( $items = array() ) {
 		$this->items = $items;
 	}
 
@@ -336,8 +336,8 @@ class Carbon_Breadcrumb_Trail {
 	 */
 	public function sort_items() {
 		$items = $this->get_items();
-		ksort($items);
-		$this->set_items($items);
+		ksort( $items );
+		$this->set_items( $items );
 	}
 
 	/**
@@ -350,8 +350,8 @@ class Carbon_Breadcrumb_Trail {
 	public function get_total_items() {
 		$total = 0;
 		$all_items = $this->get_items();
-		foreach ($all_items as $priority => $items) {
-			$total += count($items);
+		foreach ( $all_items as $priority => $items ) {
+			$total += count( $items );
 		}
 		return $total;
 	}
@@ -364,12 +364,12 @@ class Carbon_Breadcrumb_Trail {
 	 * @param bool $return Whether to return the output.
 	 * @return string|void $output The output HTML if $return is true.
 	 */
-	public function render($return = false) {
+	public function render( $return = false ) {
 
 		// get the rendered output
-		$output = $this->get_renderer()->render($this, true);
+		$output = $this->get_renderer()->render( $this, true );
 
-		if ($return) {
+		if ( $return ) {
 			return $output;
 		}
 
@@ -384,8 +384,8 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @param array $args Configuration options to modify the breadcrumb trail output.
 	 */
-	public static function output($args = array()) {
-		$trail = new self($args); 
+	public static function output( $args = array() ) {
+		$trail = new self( $args );
 		$trail->setup();
 		$trail->render();
 	}
