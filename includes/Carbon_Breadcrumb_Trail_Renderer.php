@@ -118,21 +118,21 @@ class Carbon_Breadcrumb_Trail_Renderer {
 			'min_items' => 2,
 			'last_item_link' => true,
 			'display_home_item' => true,
-			'home_item_title' => __('Home', 'crb'),
+			'home_item_title' => __( 'Home', 'crb' ),
 			'renderer' => 'Carbon_Breadcrumb_Trail_Renderer',
 		);
 
 		// allow default options to be filtered
-		$defaults = apply_filters('carbon_breadcrumbs_renderer_default_options', $defaults);
+		$defaults = apply_filters( 'carbon_breadcrumbs_renderer_default_options', $defaults );
 
 		// parse configuration options
 		$args = wp_parse_args( $args, $defaults );
 
 		// set configuration options
-		foreach ($args as $arg_name => $arg_value) {
+		foreach ( $args as $arg_name => $arg_value ) {
 			$method = 'set_' . $arg_name;
-			if (array_key_exists($arg_name, $defaults) && method_exists($this, $method)) {
-				call_user_func(array($this, $method), $arg_value);
+			if ( array_key_exists( $arg_name, $defaults ) && method_exists( $this, $method ) ) {
+				call_user_func( array( $this, $method ), $arg_value );
 			}
 		}
 
@@ -156,7 +156,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 *
 	 * @param string $glue String, used for concatenating the breadcrumb items.
 	 */
-	public function set_glue($glue = '') {
+	public function set_glue( $glue = '' ) {
 		$this->glue = $glue;
 	}
 
@@ -178,7 +178,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 *
 	 * @param string $link_before String before the opening link tag of a breadcrumb item.
 	 */
-	public function set_link_before($link_before = '') {
+	public function set_link_before( $link_before = '' ) {
 		$this->link_before = $link_before;
 	}
 
@@ -200,7 +200,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 *
 	 * @param string $link_after String after the closing link tag of a breadcrumb item.
 	 */
-	public function set_link_after($link_after = '') {
+	public function set_link_after( $link_after = '' ) {
 		$this->link_after = $link_after;
 	}
 
@@ -222,7 +222,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 *
 	 * @param string $wrapper_before String before the breadcrumb items.
 	 */
-	public function set_wrapper_before($wrapper_before = '') {
+	public function set_wrapper_before( $wrapper_before = '' ) {
 		$this->wrapper_before = $wrapper_before;
 	}
 
@@ -244,7 +244,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 *
 	 * @param string $wrapper_after String after the breadcrumb items.
 	 */
-	public function set_wrapper_after($wrapper_after = '') {
+	public function set_wrapper_after( $wrapper_after = '' ) {
 		$this->wrapper_after = $wrapper_after;
 	}
 
@@ -266,7 +266,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 *
 	 * @param string $title_before String before the title of a breadcrumb item.
 	 */
-	public function set_title_before($title_before = '') {
+	public function set_title_before( $title_before = '' ) {
 		$this->title_before = $title_before;
 	}
 
@@ -288,7 +288,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 *
 	 * @param string $title_after String after the title of a breadcrumb item.
 	 */
-	public function set_title_after($title_after = '') {
+	public function set_title_after( $title_after = '' ) {
 		$this->title_after = $title_after;
 	}
 
@@ -310,7 +310,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 *
 	 * @param int $min_items Minimum number of items, necessary to display the trail.
 	 */
-	public function set_min_items($min_items) {
+	public function set_min_items( $min_items ) {
 		$this->min_items = $min_items;
 	}
 
@@ -333,7 +333,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 * @param bool $last_item_link Whether the last item will be displayed as a link.
 	 */
 	public function set_last_item_link($last_item_link) {
-		$this->last_item_link = (bool)$last_item_link;
+		$this->last_item_link = ( bool ) $last_item_link;
 	}
 
 	/**
@@ -344,7 +344,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 * @return bool $display_home_item Whether the home item will be displayed.
 	 */
 	public function get_display_home_item() {
-		return (bool)$this->display_home_item;
+		return ( bool ) $this->display_home_item;
 	}
 
 	/**
@@ -354,8 +354,8 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 *
 	 * @param bool $display_home_item Whether the home item will be displayed.
 	 */
-	public function set_display_home_item($display_home_item) {
-		$this->display_home_item = (bool)$display_home_item;
+	public function set_display_home_item( $display_home_item ) {
+		$this->display_home_item = ( bool ) $display_home_item;
 	}
 
 	/**
@@ -376,7 +376,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 *
 	 * @param string $home_item_title The title of the home item.
 	 */
-	public function set_home_item_title($home_item_title = '') {
+	public function set_home_item_title( $home_item_title = '' ) {
 		$this->home_item_title = $home_item_title;
 	}
 
@@ -389,7 +389,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 * @param bool $return Whether to return the output.
 	 * @return string|void $output The output HTML if $return is true.
 	 */
-	public function render(Carbon_Breadcrumb_Trail $trail, $return = false) {
+	public function render( Carbon_Breadcrumb_Trail $trail, $return = false ) {
 		$total_items = $trail->get_total_items();
 
 		// if the items are less than the minimum, nothing should be rendered
@@ -401,20 +401,20 @@ class Carbon_Breadcrumb_Trail_Renderer {
 		$counter = 0;
 
 		// last chance to modify render settings before rendering
-		do_action('carbon_breadcrumbs_before_render', $this);
+		do_action( 'carbon_breadcrumbs_before_render', $this );
 
 		// whether to auto-sort the items
-		$auto_sort = apply_filters('carbon_breadcrumbs_auto_sort_items', true);
-		if ($auto_sort) {
+		$auto_sort = apply_filters( 'carbon_breadcrumbs_auto_sort_items', true );
+		if ( $auto_sort ) {
 			$trail->sort_items();
 		}
 
 		// prepare all breadcrumb items for display
 		$all_items = $trail->get_items();
-		foreach ($all_items as $priority => $items) {
-			foreach ($items as $item) {
+		foreach ( $all_items as $priority => $items ) {
+			foreach ( $items as $item ) {
 				// allow each item to be filtered right before rendering
-				$item = apply_filters('carbon_breadcrumbs_item', $item);
+				$item = apply_filters( 'carbon_breadcrumbs_item', $item );
 
 				// skip if $item is not a Carbon_Breadcrumb_Item instance
 				if ( ! ( $item instanceof Carbon_Breadcrumb_Item ) ) {
@@ -426,24 +426,24 @@ class Carbon_Breadcrumb_Trail_Renderer {
 				$item_output = '';
 
 				// get the item link
-				$item_link = apply_filters('carbon_breadcrumbs_item_link', $item->get_link(), $item);
+				$item_link = apply_filters( 'carbon_breadcrumbs_item_link', $item->get_link(), $item );
 
 				// get the item attributes
-				$item_attributes = apply_filters('carbon_breadcrumbs_item_attributes', $item->get_attributes(), $item);
+				$item_attributes = apply_filters( 'carbon_breadcrumbs_item_attributes', $item->get_attributes(), $item );
 
 				// prepare the item attributes
 				$attributes_html = '';
-				foreach ($item_attributes as $attr => $attr_value) {
-					$attributes_html .= ' ' . $attr . '="' . esc_attr($attr_value) . '"';
+				foreach ( $item_attributes as $attr => $attr_value ) {
+					$attributes_html .= ' ' . $attr . '="' . esc_attr( $attr_value ) . '"';
 				}
 
 				// HTML before link opening tag
 				$item_output .= $this->get_link_before();
 
 				// link can be optional
-				if ($item_link) {
+				if ( $item_link ) {
 					// last item link can be disabled
-					if ($this->get_last_item_link() || $counter < $total_items) {
+					if ( $this->get_last_item_link() || $counter < $total_items ) {
 						$item_output .= '<a href="' . $item_link . '"' . $attributes_html . '>';
 					}
 				}
@@ -452,15 +452,15 @@ class Carbon_Breadcrumb_Trail_Renderer {
 				$item_output .= $this->get_title_before();
 
 				// breadcrumb item title
-				$item_output .= apply_filters('carbon_breadcrumbs_item_title', $item->get_title(), $item);
+				$item_output .= apply_filters( 'carbon_breadcrumbs_item_title', $item->get_title(), $item );
 
 				// HTML after title
 				$item_output .= $this->get_title_after();
 
 				// link can be optional
-				if ($item_link) {
+				if ( $item_link ) {
 					// last item link can be disabled
-					if ($this->get_last_item_link() || $counter < $total_items) {
+					if ( $this->get_last_item_link() || $counter < $total_items ) {
 						$item_output .= '</a>';
 					}
 				}
@@ -469,7 +469,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 				$item_output .= $this->get_link_after();
 
 				// allow item output to be filtered
-				$item_output = apply_filters('carbon_breadcrumbs_item_output', $item_output, $item);
+				$item_output = apply_filters( 'carbon_breadcrumbs_item_output', $item_output, $item );
 
 				$items_output[] = $item_output;
 			}
@@ -477,10 +477,10 @@ class Carbon_Breadcrumb_Trail_Renderer {
 
 		// implode the breadcrumb items and wrap them with the configured wrappers
 		$output = $this->get_wrapper_before();
-		$output .= implode($this->get_glue(), $items_output);
+		$output .= implode( $this->get_glue(), $items_output );
 		$output .= $this->get_wrapper_after();
 
-		if ($return) {
+		if ( $return ) {
 			return $output;
 		}
 
