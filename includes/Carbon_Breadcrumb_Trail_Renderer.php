@@ -333,7 +333,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 * @param bool $last_item_link Whether the last item will be displayed as a link.
 	 */
 	public function set_last_item_link($last_item_link) {
-		$this->last_item_link = ( bool ) $last_item_link;
+		$this->last_item_link = (bool) $last_item_link;
 	}
 
 	/**
@@ -344,7 +344,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 * @return bool $display_home_item Whether the home item will be displayed.
 	 */
 	public function get_display_home_item() {
-		return ( bool ) $this->display_home_item;
+		return (bool) $this->display_home_item;
 	}
 
 	/**
@@ -355,7 +355,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 * @param bool $display_home_item Whether the home item will be displayed.
 	 */
 	public function set_display_home_item( $display_home_item ) {
-		$this->display_home_item = ( bool ) $display_home_item;
+		$this->display_home_item = (bool) $display_home_item;
 	}
 
 	/**

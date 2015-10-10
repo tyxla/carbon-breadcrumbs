@@ -36,15 +36,15 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field {
 	 * @param string $section The name of the section.
 	 * @param array $args Additional args.
 	 */
-	public function __construct($id, $title, $section = '', $args = array()) {
+	public function __construct( $id, $title, $section = '', $args = array() ) {
 
-		$this->set_id($id);
-		$this->set_title($title);
+		$this->set_id( $id );
+		$this->set_title( $title );
 
 		add_settings_field( 
 			$id,
 			$title,
-			array($this, 'render'),
+			array( $this, 'render' ),
 			Carbon_Breadcrumb_Admin_Settings::get_page_name(),
 			$section,
 			$args
@@ -65,16 +65,16 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field {
 	 * @param array $args Additional args.
 	 * @return Carbon_Breadcrumb_Admin_Settings_Field $field
 	 */
-	static function factory($type, $id, $title, $section = '', $args = array()) {
-		$type = str_replace(" ", '', ucwords(str_replace("_", ' ', $type)));
+	static function factory( $type, $id, $title, $section = '', $args = array() ) {
+		$type = str_replace( " ", '', ucwords( str_replace( "_", ' ', $type ) ) );
 
 		$class = 'Carbon_Breadcrumb_Admin_Settings_Field_' . $type;
 
-		if (!class_exists($class)) {
-			throw new Carbon_Breadcrumb_Exception('Unknown settings field type "' . $type . '".');
+		if ( ! class_exists( $class ) ) {
+			throw new Carbon_Breadcrumb_Exception( 'Unknown settings field type "' . $type . '".' );
 		}
 
-		$field = new $class($id, $title, $section, $args);
+		$field = new $class( $id, $title, $section, $args );
 
 		return $field;
 	}
@@ -97,7 +97,7 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field {
 	 *
 	 * @param string $title The new title.
 	 */
-	public function set_title($title) {
+	public function set_title( $title ) {
 		$this->title = $title;
 	}
 
@@ -119,7 +119,7 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field {
 	 *
 	 * @param string $id The new ID.
 	 */
-	public function set_id($id) {
+	public function set_id( $id ) {
 		$this->id = $id;
 	}
 
@@ -131,12 +131,12 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field {
 	 * @return mixed $value The value of this field.
 	 */
 	public function get_value() {
-		$original_name = str_replace('carbon_breadcrumbs_', '', $this->get_id());
+		$original_name = str_replace( 'carbon_breadcrumbs_', '', $this->get_id() );
 		$field_data = Carbon_Breadcrumb_Admin_Settings::get_field_data();
-		$default = !empty($field_data[$original_name]['default']) ? $field_data[$original_name]['default'] : '';
+		$default = ! empty( $field_data[ $original_name ][ 'default' ] ) ? $field_data[ $original_name ][ 'default' ] : '';
 
-		$value = get_option($this->get_id());
-		if ($value === false) {
+		$value = get_option( $this->get_id() );
+		if ( $value === false ) {
 			$value = $default;
 		}
 
@@ -150,9 +150,9 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field {
 	 */
 	public function render_help() {
 		$field_data = Carbon_Breadcrumb_Admin_Settings::get_field_data();
-		$original_name = str_replace('carbon_breadcrumbs_', '', $this->get_id());
-		$help = !empty($field_data[$original_name]['help']) ? $field_data[$original_name]['help'] : '';
-		if (!$help) {
+		$original_name = str_replace( 'carbon_breadcrumbs_', '', $this->get_id() );
+		$help = ! empty( $field_data[ $original_name ][ 'help' ] ) ? $field_data[ $original_name ][ 'help' ] : '';
+		if ( ! $help ) {
 			return;
 		}
 		?>

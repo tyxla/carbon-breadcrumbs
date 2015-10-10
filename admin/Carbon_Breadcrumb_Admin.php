@@ -38,8 +38,8 @@ final class Carbon_Breadcrumb_Admin {
 
 		// if administration is enabled, initialize
 		if ( $this->is_enabled() ) {
-			add_action('init', array($this, 'init'));
-			add_action('admin_menu', array($this, 'admin_init'), 20);
+			add_action( 'init', array( $this, 'init' ) );
+			add_action( 'admin_menu', array( $this, 'admin_init' ), 20 );
 		}
 	}
 
@@ -52,7 +52,7 @@ final class Carbon_Breadcrumb_Admin {
 	 * @return Carbon_Breadcrumbs $instance_Admin
 	 */
 	public static function get_instance() {
-		if (self::$instance === null) {
+		if ( self::$instance === null ) {
 			self::$instance = new self();
 		}
 		return self::$instance;
@@ -64,7 +64,7 @@ final class Carbon_Breadcrumb_Admin {
 	 * @access public
 	 */
 	public function include_files() {
-		$dir = dirname(__FILE__);
+		$dir = dirname( __FILE__ );
 
 		include_once($dir . '/Carbon_Breadcrumb_Admin_Settings.php');
 		include_once($dir . '/Carbon_Breadcrumb_Admin_Settings_Field.php');
@@ -89,7 +89,7 @@ final class Carbon_Breadcrumb_Admin {
 	 */
 	public function init() {
 		// apply the breadcrumb renderer settings 
-		add_filter('carbon_breadcrumbs_renderer_default_options', array($this, 'apply_settings'), 20);
+		add_filter( 'carbon_breadcrumbs_renderer_default_options', array( $this, 'apply_settings' ), 20 );
 	}
 
 	/**
@@ -110,14 +110,14 @@ final class Carbon_Breadcrumb_Admin {
 	 * @param array $settings The default settings.
 	 * @return array $settings The modified settings.
 	 */
-	public function apply_settings($settings) {
+	public function apply_settings( $settings ) {
 		$settings_fields = Carbon_Breadcrumb_Admin_Settings::get_field_data();
 
-		foreach ($settings_fields as $field_id => $field) {
-			$field_value = get_option('carbon_breadcrumbs_' . $field_id);
-			if ( $field['type'] == 'text' && strlen($field_value) ) {
+		foreach ( $settings_fields as $field_id => $field ) {
+			$field_value = get_option( 'carbon_breadcrumbs_' . $field_id );
+			if ( $field['type'] == 'text' && strlen( $field_value ) ) {
 				$settings[$field_id] = $field_value;
-			} elseif( $field['type'] == 'checkbox' && is_string($field_value) ) {
+			} elseif( $field['type'] == 'checkbox' && is_string( $field_value ) ) {
 				$settings[$field_id] = (bool) $field_value;
 			}
 		}
@@ -135,14 +135,14 @@ final class Carbon_Breadcrumb_Admin {
 	public function is_enabled() {
 
 		// enabled if this plugin is installed as a regular WordPress plugin
-		$plugin_path = untrailingslashit(ABSPATH) . DIRECTORY_SEPARATOR . 'wp-content' . DIRECTORY_SEPARATOR . 'plugins';
-		$current_dir = dirname(__FILE__);
-		if ( strpos($current_dir, $plugin_path) !== false ) {
+		$plugin_path = untrailingslashit( ABSPATH ) . DIRECTORY_SEPARATOR . 'wp-content' . DIRECTORY_SEPARATOR . 'plugins';
+		$current_dir = dirname( __FILE__ );
+		if ( strpos( $current_dir, $plugin_path ) !== false ) {
 			return true;
 		}
 
 		// enabled if the CARBON_BREADCRUMB_ENABLE_ADMIN is defined as `true`
-		if ( defined('CARBON_BREADCRUMB_ENABLE_ADMIN') && CARBON_BREADCRUMB_ENABLE_ADMIN ) {
+		if ( defined( 'CARBON_BREADCRUMB_ENABLE_ADMIN' ) && CARBON_BREADCRUMB_ENABLE_ADMIN ) {
 			return true;
 		}
 

@@ -13,7 +13,7 @@ class Carbon_Breadcrumb_Admin_Settings_Field_Text extends Carbon_Breadcrumb_Admi
 	 */
 	public function render() {
 		?>
-		<input name="<?php echo $this->get_id(); ?>" id="<?php echo $this->get_id(); ?>" type="text" value="<?php echo esc_attr($this->get_value()); ?>" class="regular-text" />
+		<input name="<?php echo $this->get_id(); ?>" id="<?php echo $this->get_id(); ?>" type="text" value="<?php echo esc_attr( $this->get_value() ); ?>" class="regular-text" />
 		<?php
 		$this->render_help();
 	}

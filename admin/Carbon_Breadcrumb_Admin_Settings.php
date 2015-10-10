@@ -162,11 +162,10 @@ class Carbon_Breadcrumb_Admin_Settings {
 	 * @access public
 	 */
 	public function register_settings() {
-
 		// register fields
 		$field_data = self::get_field_data();
-		foreach ($field_data as $field_id => $field) {
-			$this->fields[] = Carbon_Breadcrumb_Admin_Settings_Field::factory($field['type'], 'carbon_breadcrumbs_' . $field_id, $field['title'], self::get_page_name());
+		foreach ( $field_data as $field_id => $field ) {
+			$this->fields[] = Carbon_Breadcrumb_Admin_Settings_Field::factory( $field['type'], 'carbon_breadcrumbs_' . $field_id, $field['title'], self::get_page_name() );
 		}
 	}
 
