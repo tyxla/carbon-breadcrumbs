@@ -26,34 +26,34 @@ class Carbon_Breadcrumb_Locator_Post extends Carbon_Breadcrumb_Locator {
 	 * @param int $id The post ID, used to go up the post type tree.
 	 * @return array $items The items, found by this locator.
 	 */
-	public function get_items($priority = 1000, $post_id = 0) {
+	public function get_items( $priority = 1000, $post_id = 0 ) {
 		$items = array();
 
 		// get the current post ID, if not specified
-		if (!$post_id) {
+		if ( ! $post_id ) {
 			$post_id = get_the_ID();
 		}
 
 		// if this is the front page, skip it, as it is added separately
-		if (is_front_page() && $post_id == get_option('page_on_front')) {
+		if ( is_front_page() && $post_id == get_option( 'page_on_front' ) ) {
 			return array();
 		}
 
 		// walk the tree of ancestors of the post up to the top
 		do {
 
-			$item = Carbon_Breadcrumb_Item::factory($this->get_type(), $priority);
-			$item->set_id($post_id);
-			$item->set_subtype($this->get_subtype());
+			$item = Carbon_Breadcrumb_Item::factory( $this->get_type(), $priority );
+			$item->set_id( $post_id );
+			$item->set_subtype( $this->get_subtype() );
 			$item->setup();
 
 			$items[] = $item;
 
-			$post_id = get_post_field('post_parent', $post_id);
+			$post_id = get_post_field( 'post_parent', $post_id );
 
-		} while ($post_id);
+		} while ( $post_id );
 
-		return array_reverse($items);
+		return array_reverse( $items );
 	}
 
 	/**
@@ -67,15 +67,15 @@ class Carbon_Breadcrumb_Locator_Post extends Carbon_Breadcrumb_Locator {
 	public function generate_items() {
 		$all_items = array();
 
-		$post_types = get_post_types(array(
+		$post_types = get_post_types( array(
 			'public' => true,
-		));
+		) );
 		
-		foreach ($post_types as $post_type) {
-			$locator = Carbon_Breadcrumb_Locator::factory($this->get_type(), $post_type);
-			if ($locator->is_included()) {
+		foreach ( $post_types as $post_type ) {
+			$locator = Carbon_Breadcrumb_Locator::factory( $this->get_type(), $post_type );
+			if ( $locator->is_included() ) {
 				$items = $locator->get_items();
-				$all_items = array_merge($all_items, $items);
+				$all_items = array_merge( $all_items, $items );
 			}
 		}
 

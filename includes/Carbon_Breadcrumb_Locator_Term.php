@@ -14,9 +14,9 @@ class Carbon_Breadcrumb_Locator_Term extends Carbon_Breadcrumb_Locator {
 	 * @return bool $is_included Whether the found items should be included.
 	 */
 	public function is_included() {
-		if (is_tax() || is_category() || is_tag()) {
+		if ( is_tax() || is_category() || is_tag() ) {
 			$queried_object = get_queried_object();
-			if ($queried_object->taxonomy == $this->get_subtype()) {
+			if ( $queried_object->taxonomy == $this->get_subtype() ) {
 				return true;
 			}
 		}
@@ -32,30 +32,30 @@ class Carbon_Breadcrumb_Locator_Term extends Carbon_Breadcrumb_Locator {
 	 * @param int $id The term ID, used to go up the taxonomy term tree.
 	 * @return array $items The items, found by this locator.
 	 */
-	public function get_items($priority = 1000, $term_id = 0) {
+	public function get_items( $priority = 1000, $term_id = 0 ) {
 		$items = array();
 
 		// get the current term ID, if not specified
-		if (!$term_id) {
+		if ( ! $term_id ) {
 			$term_id = get_queried_object_id();
 		}
 
 		// walk the tree of ancestors of the taxonomy term up to the top
 		do {
 
-			$item = Carbon_Breadcrumb_Item::factory($this->get_type(), $priority);
-			$item->set_id($term_id);
-			$item->set_subtype($this->get_subtype());
+			$item = Carbon_Breadcrumb_Item::factory( $this->get_type(), $priority );
+			$item->set_id( $term_id );
+			$item->set_subtype( $this->get_subtype() );
 			$item->setup();
 
 			$items[] = $item;
 
-			$term = get_term_by('id', $term_id, $this->get_subtype());
+			$term = get_term_by( 'id', $term_id, $this->get_subtype() );
 			$term_id = $term->parent;
 
-		} while ($term_id);
+		} while ( $term_id );
 
-		return array_reverse($items);
+		return array_reverse( $items );
 	}
 
 	/**
@@ -69,15 +69,15 @@ class Carbon_Breadcrumb_Locator_Term extends Carbon_Breadcrumb_Locator {
 	public function generate_items() {
 		$all_items = array();
 
-		$taxonomies = get_taxonomies(array(
+		$taxonomies = get_taxonomies( array(
 			'public' => true,
-		));
+		) );
 		
-		foreach ($taxonomies as $taxonomy) {
-			$locator = Carbon_Breadcrumb_Locator::factory($this->get_type(), $taxonomy);
-			if ($locator->is_included()) {
+		foreach ( $taxonomies as $taxonomy ) {
+			$locator = Carbon_Breadcrumb_Locator::factory( $this->get_type(), $taxonomy );
+			if ( $locator->is_included() ) {
 				$items = $locator->get_items();
-				$all_items = array_merge($all_items, $items);
+				$all_items = array_merge( $all_items, $items );
 			}
 		}
 
