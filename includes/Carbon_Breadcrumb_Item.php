@@ -66,16 +66,16 @@ abstract class Carbon_Breadcrumb_Item {
 	 * @param int $priority Priority of this breadcrumb item.
 	 * @return Carbon_Breadcrumb_Item $item The new breadcrumb item.
 	 */
-	public static function factory($type = 'custom', $priority = 1000) {
-		$class_type = str_replace(" ", '', ucwords(str_replace("_", ' ', $type)));
+	public static function factory( $type = 'custom', $priority = 1000 ) {
+		$class_type = str_replace( " ", '', ucwords( str_replace( "_", ' ', $type ) ) );
 		$class = 'Carbon_Breadcrumb_Item_' . $class_type;
 
-		if ( !class_exists($class) ) {
-			throw new Carbon_Breadcrumb_Exception('Unexisting breadcrumb item type: "' . $type . '".');
+		if ( ! class_exists( $class ) ) {
+			throw new Carbon_Breadcrumb_Exception( 'Unexisting breadcrumb item type: "' . $type . '".' );
 		}
 
-		$item = new $class($priority);
-		$item->set_type($type);
+		$item = new $class( $priority );
+		$item->set_type( $type );
 
 		return $item;
 	}
@@ -90,8 +90,8 @@ abstract class Carbon_Breadcrumb_Item {
 	 * @param int $priority Priority of this breadcrumb item.
 	 * @return Carbon_Breadcrumb_Item
 	 */
-	public function __construct($priority = 1000) {
-		$this->set_priority($priority);
+	public function __construct( $priority = 1000 ) {
+		$this->set_priority( $priority );
 	}
 
 	/**
@@ -112,7 +112,7 @@ abstract class Carbon_Breadcrumb_Item {
 	 *
 	 * @param string $title The new title.
 	 */
-	public function set_title($title) {
+	public function set_title( $title ) {
 		$this->title = $title;
 	}
 
@@ -134,7 +134,7 @@ abstract class Carbon_Breadcrumb_Item {
 	 *
 	 * @param string $link The new link URL.
 	 */
-	public function set_link($link = '') {
+	public function set_link( $link = '' ) {
 		$this->link = $link;
 	}
 
@@ -156,7 +156,7 @@ abstract class Carbon_Breadcrumb_Item {
 	 *
 	 * @param array $attributes The new link attributes.
 	 */
-	public function set_attributes($attributes = array()) {
+	public function set_attributes( $attributes = array() ) {
 		$this->attributes = $attributes;
 	}
 
@@ -178,7 +178,7 @@ abstract class Carbon_Breadcrumb_Item {
 	 *
 	 * @param int $priority The new priority.
 	 */
-	public function set_priority($priority) {
+	public function set_priority( $priority ) {
 		$this->priority = $priority;
 	}
 
@@ -200,7 +200,7 @@ abstract class Carbon_Breadcrumb_Item {
 	 *
 	 * @param string $id The new breadcrumb item type.
 	 */
-	public function set_type($type) {
+	public function set_type( $type ) {
 		$this->type = $type;
 	}
 
@@ -222,7 +222,7 @@ abstract class Carbon_Breadcrumb_Item {
 	 *
 	 * @param string $id The new breadcrumb item subtype.
 	 */
-	public function set_subtype($subtype) {
+	public function set_subtype( $subtype ) {
 		$this->subtype = $subtype;
 	}
 

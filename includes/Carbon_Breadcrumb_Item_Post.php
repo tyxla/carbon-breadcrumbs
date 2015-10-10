@@ -21,17 +21,17 @@ class Carbon_Breadcrumb_Item_Post extends Carbon_Breadcrumb_Item implements Carb
 	 */
 	public function setup() {
 		// in order to continue, post ID must be specified
-		if (!$this->get_id()) {
-			throw new Carbon_Breadcrumb_Exception('The post breadcrumb items must have post ID specified.');
+		if ( ! $this->get_id() ) {
+			throw new Carbon_Breadcrumb_Exception( 'The post breadcrumb items must have post ID specified.' );
 		}
 
 		// configure title
-		$title = get_post_field('post_title', $this->get_id());
-		$title = apply_filters('the_title', $title);
+		$title = get_post_field( 'post_title', $this->get_id() );
+		$title = apply_filters( 'the_title', $title );
 		$this->set_title( $title );
 
 		// configure link URL
-		$link = get_permalink($this->get_id());
+		$link = get_permalink( $this->get_id() );
 		$this->set_link( $link );
 	}
 
@@ -53,7 +53,7 @@ class Carbon_Breadcrumb_Item_Post extends Carbon_Breadcrumb_Item implements Carb
 	 *
 	 * @param int $id The new post ID.
 	 */
-	public function set_id($id = 0) {
+	public function set_id( $id = 0 ) {
 		$this->id = $id;
 	}
 

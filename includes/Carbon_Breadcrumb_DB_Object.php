@@ -14,6 +14,6 @@ interface Carbon_Breadcrumb_DB_Object {
 	 *
 	 * @param int $id The database ID of the object.
 	 */
-	public function set_id($id = 0);
+	public function set_id( $id = 0 );
 	
 }
