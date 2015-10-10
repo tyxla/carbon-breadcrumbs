@@ -321,7 +321,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 * @return bool $last_item_link Whether the last item will be displayed as a link.
 	 */
 	public function get_last_item_link() {
-		return (bool)$this->last_item_link;
+		return (bool) $this->last_item_link;
 	}
 
 	/**
@@ -483,7 +483,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 			return $output;
 		}
 
-		echo $output;
+		echo wp_kses( $output, wp_kses_allowed_html( 'post' ) );
 	}
 	
 }

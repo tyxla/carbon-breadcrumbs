@@ -84,7 +84,7 @@ class Carbon_Breadcrumb_Trail {
 		$locators = array(
 			'post',
 			'term',
-			'user'
+			'user',
 		);
 		foreach ( $locators as $locator_name ) {
 			$locator = Carbon_Breadcrumb_Locator::factory( $locator_name );
@@ -110,13 +110,13 @@ class Carbon_Breadcrumb_Trail {
 		}
 
 		// process 404 not found
-		if (is_404()) {
+		if ( is_404() ) {
 			$not_found_title = __( 'Error 404 - Not Found', 'carbon_breadcrumbs' );
 			$this->add_custom_item( $not_found_title, '', 700 );
 		}
 
 		// add category hierarchy for single posts
-		if ( is_single() && get_post_type() == 'post' ) {
+		if ( is_single() && 'post' == get_post_type() ) {
 			$taxonomy = 'category';
 			$categories = wp_get_object_terms( get_the_ID(), $taxonomy, 'orderby=term_id' );
 			$last_category = array_pop( $categories );
@@ -128,7 +128,7 @@ class Carbon_Breadcrumb_Trail {
 		}
 
 		// process page for posts where necessary
-		if ( is_home() || is_category() || is_tag() || is_date() || is_author() || ( is_single() && get_post_type() == 'post' ) ) {
+		if ( is_home() || is_category() || is_tag() || is_date() || is_author() || ( is_single() && 'post' == get_post_type() ) ) {
 			if ( $page_for_posts = get_option( 'page_for_posts' ) ) {
 				$locator = Carbon_Breadcrumb_Locator::factory( 'post', 'page' );
 				$items = $locator->get_items( 500, $page_for_posts );
@@ -215,7 +215,7 @@ class Carbon_Breadcrumb_Trail {
 		$all_items = $this->get_items();
 		foreach ( $all_items as $items_priority => $items ) {
 			foreach ( $items as $item_key => $item ) {
-				if ( strcasecmp( $item->get_title(), $title ) === 0 && strcasecmp( $item->get_link(), $link ) === 0 ) {
+				if ( 0 === strcasecmp( $item->get_title(), $title ) && 0 === strcasecmp( $item->get_link(), $link ) ) {
 					// if we have a match, remove that item
 					unset( $all_items[ $items_priority ][ $item_key ] );
 				}
@@ -243,7 +243,7 @@ class Carbon_Breadcrumb_Trail {
 		$all_items = $this->get_items();
 		foreach ( $all_items as $priority => $items ) {
 			foreach ( $items as $item_key => $item ) {
-				if ( strcasecmp( $item->get_title(), $title ) === 0 ) {
+				if ( 0 === strcasecmp( $item->get_title(), $title ) ) {
 					// if we have a match, remove that item
 					unset( $all_items[ $priority ][ $item_key ] );
 				}
@@ -271,7 +271,7 @@ class Carbon_Breadcrumb_Trail {
 		$all_items = $this->get_items();
 		foreach ( $all_items as $priority => $items ) {
 			foreach ( $items as $item_key => $item ) {
-				if ( strcasecmp( $item->get_link(), $link ) == 0 ) {
+				if ( 0 === strcasecmp( $item->get_link(), $link ) ) {
 					// if we have a match, remove that item
 					unset( $all_items[ $priority ][ $item_key ] );
 				}
@@ -372,7 +372,7 @@ class Carbon_Breadcrumb_Trail {
 			return $output;
 		}
 
-		echo $output;
+		echo wp_kses( $output, wp_kses_allowed_html( 'post' ) );
 	}
 
 	/**

@@ -37,7 +37,7 @@ class Carbon_Breadcrumb_Locator_User extends Carbon_Breadcrumb_Locator {
 		$item->set_id( $user_id );
 		$item->setup();
 
-		return array($item);
+		return array( $item );
 	}
 
 	/**

@@ -134,10 +134,10 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field {
 	public function get_value() {
 		$original_name = str_replace( 'carbon_breadcrumbs_', '', $this->get_id() );
 		$field_data = Carbon_Breadcrumb_Admin_Settings::get_field_data();
-		$default = ! empty( $field_data[ $original_name ][ 'default' ] ) ? $field_data[ $original_name ][ 'default' ] : '';
+		$default = ! empty( $field_data[ $original_name ]['default'] ) ? $field_data[ $original_name ]['default'] : '';
 
 		$value = get_option( $this->get_id() );
-		if ( $value === false ) {
+		if ( false === $value ) {
 			$value = $default;
 		}
 
@@ -152,7 +152,7 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field {
 	public function render_help() {
 		$field_data = Carbon_Breadcrumb_Admin_Settings::get_field_data();
 		$original_name = str_replace( 'carbon_breadcrumbs_', '', $this->get_id() );
-		$help = ! empty( $field_data[ $original_name ][ 'help' ] ) ? $field_data[ $original_name ][ 'help' ] : '';
+		$help = ! empty( $field_data[ $original_name ]['help'] ) ? $field_data[ $original_name ]['help'] : '';
 		if ( ! $help ) {
 			return;
 		}
