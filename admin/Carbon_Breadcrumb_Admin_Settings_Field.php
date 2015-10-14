@@ -157,7 +157,7 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field {
 			return;
 		}
 		?>
-		<p class="description"><?php echo $help; ?></p>
+		<p class="description"><?php echo esc_html( $help ); ?></p>
 		<?php
 	}
 

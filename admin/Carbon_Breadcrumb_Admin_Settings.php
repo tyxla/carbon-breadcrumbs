@@ -177,7 +177,7 @@ class Carbon_Breadcrumb_Admin_Settings {
 	public function settings_page() {
 		?>
 		<div class="wrap">
-			<h2><?php echo apply_filters( 'the_title', self::get_page_title() ); ?></h2>
+			<h2><?php echo esc_html( self::get_page_title() ); ?></h2>
 		</div>
 
 		<form method="POST" action="options.php">
