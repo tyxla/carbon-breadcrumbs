@@ -35,6 +35,7 @@ include_once( $includes_dir . 'Carbon_Breadcrumb_Locator_Date.php' );
 
 // items
 include_once( $includes_dir . 'Carbon_Breadcrumb_Item.php' );
+include_once( $includes_dir . 'Carbon_Breadcrumb_Item_DB_Object.php' );
 include_once( $includes_dir . 'Carbon_Breadcrumb_Item_Post.php' );
 include_once( $includes_dir . 'Carbon_Breadcrumb_Item_Term.php' );
 include_once( $includes_dir . 'Carbon_Breadcrumb_Item_User.php' );

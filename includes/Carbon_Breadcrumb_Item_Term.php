@@ -4,15 +4,15 @@
  * 
  * Used for breadcrumb items that represent a term of any taxonomy.
  */
-class Carbon_Breadcrumb_Item_Term extends Carbon_Breadcrumb_Item implements Carbon_Breadcrumb_DB_Object {
+class Carbon_Breadcrumb_Item_Term extends Carbon_Breadcrumb_Item_DB_Object {
 
 	/**
-	 * ID of the taxonomy term, associated with this breadcrumb item.
+	 * Term object.
 	 *
 	 * @access protected
-	 * @var int
+	 * @var object
 	 */
-	protected $id = 0;
+	protected $term_object;
 
 	/**
 	 * Configure the title and link URL by using the specified term ID.
@@ -30,38 +30,31 @@ class Carbon_Breadcrumb_Item_Term extends Carbon_Breadcrumb_Item implements Carb
 			throw new Carbon_Breadcrumb_Exception( 'The term breadcrumb items must have taxonomy specified.' );
 		}
 
+		// retrieve term object
 		$subtype = $this->get_subtype();
-		$term = get_term_by( 'id', $this->get_id(), $subtype );
+		$this->term_object = get_term_by( 'id', $this->get_id(), $subtype );
 
-		// configure title
-		$title = apply_filters( 'the_title', $term->name );
+		parent::setup();
+	}
+
+	/**
+	 * Setup the title of this item.
+	 *
+	 * @access public
+	 */
+	public function setup_title() {
+		$title = apply_filters( 'the_title', $this->term_object->name );
 		$this->set_title( $title );
+	}
 
-		// configure link URL
-		$link = get_term_link( $term->term_id, $subtype );
+	/**
+	 * Setup the link of this item.
+	 *
+	 * @access public
+	 */
+	public function setup_link() {
+		$link = get_term_link( $this->term_object->term_id, $this->term_object->taxonomy );
 		$this->set_link( $link );
-	}
-
-	/**
-	 * Retrieve the taxonomy term ID.
-	 *
-	 * @access public
-	 *
-	 * @return int $id The ID of the taxonomy term associated with this breadcrumb item.
-	 */
-	public function get_id() {
-		return $this->id;
-	}
-
-	/**
-	 * Modify the ID of the taxonomy term associated with this breadcrumb item.
-	 *
-	 * @access public
-	 *
-	 * @param int $id The new taxonomy term ID.
-	 */
-	public function set_id( $id = 0 ) {
-		$this->id = $id;
 	}
 
 }
