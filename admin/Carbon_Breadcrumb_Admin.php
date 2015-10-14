@@ -117,10 +117,10 @@ final class Carbon_Breadcrumb_Admin {
 
 		foreach ( $settings_fields as $field_id => $field ) {
 			$field_value = get_option( 'carbon_breadcrumbs_' . $field_id );
-			if ( $field['type'] == 'text' && strlen( $field_value ) ) {
-				$settings[$field_id] = $field_value;
-			} elseif( $field['type'] == 'checkbox' && is_string( $field_value ) ) {
-				$settings[$field_id] = (bool) $field_value;
+			if ( 'text' == $field['type'] && strlen( $field_value ) ) {
+				$settings[ $field_id ] = $field_value;
+			} elseif ( 'checkbox' == $field['type'] && is_string( $field_value ) ) {
+				$settings[ $field_id ] = (bool) $field_value;
 			}
 		}
 
