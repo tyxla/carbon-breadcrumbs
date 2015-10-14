@@ -139,7 +139,7 @@ final class Carbon_Breadcrumb_Admin {
 		// enabled if this plugin is installed as a regular WordPress plugin
 		$plugin_path = untrailingslashit( ABSPATH ) . DIRECTORY_SEPARATOR . 'wp-content' . DIRECTORY_SEPARATOR . 'plugins';
 		$current_dir = dirname( __FILE__ );
-		if ( strpos( $current_dir, $plugin_path ) !== false ) {
+		if ( false !== strpos( $current_dir, $plugin_path ) ) {
 			return true;
 		}
 
