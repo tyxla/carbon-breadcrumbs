@@ -395,9 +395,6 @@ class Carbon_Breadcrumb_Trail_Renderer {
 			return;
 		}
 
-		$items_output = array();
-		$counter = 0;
-
 		// last chance to modify render settings before rendering
 		do_action( 'carbon_breadcrumbs_before_render', $this );
 
@@ -406,6 +403,33 @@ class Carbon_Breadcrumb_Trail_Renderer {
 		if ( $auto_sort ) {
 			$trail->sort_items();
 		}
+
+		// render the items
+		$items_output = $this->render_items( $trail );
+
+		// implode the breadcrumb items and wrap them with the configured wrappers
+		$output = $this->get_wrapper_before();
+		$output .= implode( $this->get_glue(), $items_output );
+		$output .= $this->get_wrapper_after();
+
+		if ( $return ) {
+			return $output;
+		}
+
+		echo wp_kses( $output, wp_kses_allowed_html( 'post' ) );
+	}
+
+	/**
+	 * Render the breadcrumb trail items.
+	 *
+	 * @access public
+	 *
+	 * @param Carbon_Breadcrumb_Trail $trail The trail object.
+	 * @return array $output The output elements.
+	 */
+	public function render_items( $trail ) {
+		$items_output = array();
+		$counter = 0;
 
 		// prepare all breadcrumb items for display
 		$all_items = $trail->get_items();
@@ -473,16 +497,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 			}
 		}
 
-		// implode the breadcrumb items and wrap them with the configured wrappers
-		$output = $this->get_wrapper_before();
-		$output .= implode( $this->get_glue(), $items_output );
-		$output .= $this->get_wrapper_after();
-
-		if ( $return ) {
-			return $output;
-		}
-
-		echo wp_kses( $output, wp_kses_allowed_html( 'post' ) );
+		return $items_output;
 	}
 	
 }
