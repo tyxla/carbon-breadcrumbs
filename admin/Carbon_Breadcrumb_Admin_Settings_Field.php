@@ -67,12 +67,7 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field extends Carbon_Breadcrumb_
 	 * @return Carbon_Breadcrumb_Admin_Settings_Field $field
 	 */
 	public static function factory( $type, $id, $title, $section = '', $args = array() ) {
-		$class = self::build_class_name( __CLASS__, $type );
-
-		if ( ! class_exists( $class ) ) {
-			throw new Carbon_Breadcrumb_Exception( 'Unknown settings field type "' . $type . '".' );
-		}
-
+		$class = self::build_class_name( __CLASS__, $type, 'Unknown settings field type "' . $type . '".' );
 		$field = new $class( $id, $title, $section, $args );
 
 		return $field;
