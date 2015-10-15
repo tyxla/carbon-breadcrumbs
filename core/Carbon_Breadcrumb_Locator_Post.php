@@ -27,8 +27,6 @@ class Carbon_Breadcrumb_Locator_Post extends Carbon_Breadcrumb_Locator_Hierarchi
 	 * @return Carbon_Breadcrumb_Item[] $items The items, found by this locator.
 	 */
 	public function get_items( $priority = 1000, $post_id = 0 ) {
-		$items = array();
-
 		// get the current post ID, if not specified
 		if ( ! $post_id ) {
 			$post_id = get_the_ID();

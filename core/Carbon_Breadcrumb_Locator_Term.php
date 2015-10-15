@@ -33,8 +33,6 @@ class Carbon_Breadcrumb_Locator_Term extends Carbon_Breadcrumb_Locator_Hierarchi
 	 * @return Carbon_Breadcrumb_Item[] $items The items, found by this locator.
 	 */
 	public function get_items( $priority = 1000, $term_id = 0 ) {
-		$items = array();
-
 		// get the current term ID, if not specified
 		if ( ! $term_id ) {
 			$term_id = get_queried_object_id();
