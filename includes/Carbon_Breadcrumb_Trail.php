@@ -81,7 +81,7 @@ class Carbon_Breadcrumb_Trail {
 		do_action( 'carbon_breadcrumbs_before_setup_trail', $this );
 
 		// perform setup
-		$trail_setup = new Carbon_Breadcrumb_Trail_Setup( $this );
+		new Carbon_Breadcrumb_Trail_Setup( $this );
 
 		// end setup
 		do_action( 'carbon_breadcrumbs_after_setup_trail', $this );
