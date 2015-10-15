@@ -32,6 +32,7 @@ include_once( $includes_dir . 'Carbon_Breadcrumb_DB_Object.php' );
 
 // locators
 include_once( $includes_dir . 'Carbon_Breadcrumb_Locator.php' );
+include_once( $includes_dir . 'Carbon_Breadcrumb_Locator_Hierarchical.php' );
 include_once( $includes_dir . 'Carbon_Breadcrumb_Locator_Post.php' );
 include_once( $includes_dir . 'Carbon_Breadcrumb_Locator_Term.php' );
 include_once( $includes_dir . 'Carbon_Breadcrumb_Locator_User.php' );

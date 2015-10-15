@@ -4,7 +4,7 @@
  * 
  * Used to locate the breadcrumb items for taxonomy terms.
  */
-class Carbon_Breadcrumb_Locator_Term extends Carbon_Breadcrumb_Locator {
+class Carbon_Breadcrumb_Locator_Term extends Carbon_Breadcrumb_Locator_Hierarchical {
 
 	/**
 	 * Whether this the items of this locator should be included in the trail.
@@ -41,21 +41,7 @@ class Carbon_Breadcrumb_Locator_Term extends Carbon_Breadcrumb_Locator {
 		}
 
 		// walk the tree of ancestors of the taxonomy term up to the top
-		do {
-
-			$item = Carbon_Breadcrumb_Item::factory( $this->get_type(), $priority );
-			$item->set_id( $term_id );
-			$item->set_subtype( $this->get_subtype() );
-			$item->setup();
-
-			$items[] = $item;
-
-			$term = get_term_by( 'id', $term_id, $this->get_subtype() );
-			$term_id = $term->parent;
-
-		} while ( $term_id );
-
-		return array_reverse( $items );
+		return $this->get_item_hierarchy( $term_id, $priority );
 	}
 
 	/**
@@ -74,4 +60,17 @@ class Carbon_Breadcrumb_Locator_Term extends Carbon_Breadcrumb_Locator {
 		return $this->generate_items_for_subtypes( $taxonomies );
 	}
 	
+	/**
+	 * Get the parent ID of a specific term ID
+	 *
+	 * @access public
+	 *
+	 * @param int $id The ID of the term to retrieve the parent of.
+	 * @return int $parent The parent ID.
+	 */
+	public function get_parent_id( $id ) {
+		$term = get_term_by( 'id', $id, $this->get_subtype() );
+		return $term->parent;
+	}
+
 }

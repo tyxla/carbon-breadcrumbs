@@ -4,7 +4,7 @@
  * 
  * Used to locate the breadcrumb items for post types.
  */
-class Carbon_Breadcrumb_Locator_Post extends Carbon_Breadcrumb_Locator {
+class Carbon_Breadcrumb_Locator_Post extends Carbon_Breadcrumb_Locator_Hierarchical {
 
 	/**
 	 * Whether this the items of this locator should be included in the trail.
@@ -40,20 +40,7 @@ class Carbon_Breadcrumb_Locator_Post extends Carbon_Breadcrumb_Locator {
 		}
 
 		// walk the tree of ancestors of the post up to the top
-		do {
-
-			$item = Carbon_Breadcrumb_Item::factory( $this->get_type(), $priority );
-			$item->set_id( $post_id );
-			$item->set_subtype( $this->get_subtype() );
-			$item->setup();
-
-			$items[] = $item;
-
-			$post_id = get_post_field( 'post_parent', $post_id );
-
-		} while ( $post_id );
-
-		return array_reverse( $items );
+		return $this->get_item_hierarchy( $post_id, $priority );
 	}
 
 	/**
@@ -70,6 +57,18 @@ class Carbon_Breadcrumb_Locator_Post extends Carbon_Breadcrumb_Locator {
 		) );
 		
 		return $this->generate_items_for_subtypes( $post_types );
+	}
+
+	/**
+	 * Get the parent ID of a specific post ID
+	 *
+	 * @access public
+	 *
+	 * @param int $id The ID of the post to retrieve the parent of.
+	 * @return int $parent The parent ID.
+	 */
+	public function get_parent_id( $id ) {
+		return get_post_field( 'post_parent', $id ); 
 	}
 	
 }
