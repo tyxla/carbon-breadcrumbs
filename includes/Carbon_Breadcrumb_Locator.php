@@ -4,7 +4,7 @@
  * 
  * Used as a base for all breadcrumb locator types.
  */
-abstract class Carbon_Breadcrumb_Locator {
+abstract class Carbon_Breadcrumb_Locator extends Carbon_Breadcrumb_Factory {
 
 	/**
 	 * Breadcrumb item locator type.
@@ -33,8 +33,7 @@ abstract class Carbon_Breadcrumb_Locator {
 	 * @return Carbon_Breadcrumb_Locator $locator The new breadcrumb item locator.
 	 */
 	public static function factory( $type, $subtype = '' ) {
-		$type = str_replace( ' ', '', ucwords( str_replace( '_', ' ', $type ) ) );
-		$class = 'Carbon_Breadcrumb_Locator_' . $type;
+		$class = self::build_class_name( __CLASS__, $type );
 
 		if ( ! class_exists( $class ) ) {
 			throw new Carbon_Breadcrumb_Exception( 'Unexisting breadcrumb locator type: "' . $type . '".' );

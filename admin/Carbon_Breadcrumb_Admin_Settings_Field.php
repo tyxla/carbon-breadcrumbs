@@ -5,7 +5,7 @@
  *
  * @abstract
  */
-abstract class Carbon_Breadcrumb_Admin_Settings_Field {
+abstract class Carbon_Breadcrumb_Admin_Settings_Field extends Carbon_Breadcrumb_Factory {
 
 	/**
 	 * Field title.
@@ -67,9 +67,7 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field {
 	 * @return Carbon_Breadcrumb_Admin_Settings_Field $field
 	 */
 	public static function factory( $type, $id, $title, $section = '', $args = array() ) {
-		$type = str_replace( ' ', '', ucwords( str_replace( '_', ' ', $type ) ) );
-
-		$class = 'Carbon_Breadcrumb_Admin_Settings_Field_' . $type;
+		$class = self::build_class_name( __CLASS__, $type );
 
 		if ( ! class_exists( $class ) ) {
 			throw new Carbon_Breadcrumb_Exception( 'Unknown settings field type "' . $type . '".' );

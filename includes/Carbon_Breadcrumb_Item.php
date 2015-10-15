@@ -4,7 +4,7 @@
  * 
  * Used as a base for all breadcrumb item types.
  */
-abstract class Carbon_Breadcrumb_Item {
+abstract class Carbon_Breadcrumb_Item extends Carbon_Breadcrumb_Factory {
 
 	/**
 	 * Breadcrumb item title.
@@ -67,8 +67,7 @@ abstract class Carbon_Breadcrumb_Item {
 	 * @return Carbon_Breadcrumb_Item $item The new breadcrumb item.
 	 */
 	public static function factory( $type = 'custom', $priority = 1000 ) {
-		$class_type = str_replace( ' ', '', ucwords( str_replace( '_', ' ', $type ) ) );
-		$class = 'Carbon_Breadcrumb_Item_' . $class_type;
+		$class = self::build_class_name( __CLASS__, $type );
 
 		if ( ! class_exists( $class ) ) {
 			throw new Carbon_Breadcrumb_Exception( 'Unexisting breadcrumb item type: "' . $type . '".' );

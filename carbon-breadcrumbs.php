@@ -19,6 +19,9 @@ if ( class_exists( 'Carbon_Breadcrumb_Trail' ) ) {
 $base_dir = dirname( __FILE__ );
 $includes_dir = $base_dir . '/includes/';
 
+// utility classes
+include_once( $includes_dir . 'Carbon_Breadcrumb_Factory.php' );
+
 // main classes
 include_once( $includes_dir . 'Carbon_Breadcrumb_Trail.php' );
 include_once( $includes_dir . 'Carbon_Breadcrumb_Trail_Setup.php' );
