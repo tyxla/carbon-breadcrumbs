@@ -428,6 +428,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 * @return array $output The output elements.
 	 */
 	public function render_items( $trail ) {
+		$total_items = $trail->get_total_items();
 		$items_output = array();
 		$counter = 0;
 
