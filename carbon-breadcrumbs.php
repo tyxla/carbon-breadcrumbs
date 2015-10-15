@@ -21,6 +21,7 @@ $includes_dir = $base_dir . '/includes/';
 
 // main classes
 include_once( $includes_dir . 'Carbon_Breadcrumb_Trail.php' );
+include_once( $includes_dir . 'Carbon_Breadcrumb_Trail_Setup.php' );
 include_once( $includes_dir . 'Carbon_Breadcrumb_Trail_Renderer.php' );
 
 // interfaces

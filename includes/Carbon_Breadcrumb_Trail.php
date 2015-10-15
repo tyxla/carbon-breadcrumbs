@@ -20,7 +20,7 @@ class Carbon_Breadcrumb_Trail {
 	 * @access protected
 	 * @var Carbon_Breadcrumb_Trail_Renderer
 	 */
-	protected $renderer = array();
+	protected $renderer;
 
 	/**
 	 * Constructor.
@@ -77,75 +77,13 @@ class Carbon_Breadcrumb_Trail {
 	 */
 	public function setup() {
 
-		// starting setup
+		// start setup
 		do_action( 'carbon_breadcrumbs_before_setup_trail', $this );
 
-		// process post types, terms, authors
-		$locators = array(
-			'post',
-			'term',
-			'user',
-		);
-		foreach ( $locators as $locator_name ) {
-			$locator = Carbon_Breadcrumb_Locator::factory( $locator_name );
-			$items = $locator->generate_items();
-			if ( $items ) {
-				$this->add_item( $items );	
-			}
-		}
+		// perform setup
+		$trail_setup = new Carbon_Breadcrumb_Trail_Setup( $this );
 
-		// process date archives
-		if ( is_date() ) {
-			$locator = Carbon_Breadcrumb_Locator::factory( 'date' );
-			$items = $locator->get_items( 700 );
-			if ( $items ) {
-				$this->add_item( $items );
-			}
-		}
-
-		// process search results
-		if ( is_search() ) {
-			$search_title = sprintf( __( 'Search results for: "%1$s"', 'carbon_breadcrumbs' ), get_search_query() );
-			$this->add_custom_item( $search_title, '', 700 );
-		}
-
-		// process 404 not found
-		if ( is_404() ) {
-			$not_found_title = __( 'Error 404 - Not Found', 'carbon_breadcrumbs' );
-			$this->add_custom_item( $not_found_title, '', 700 );
-		}
-
-		// add category hierarchy for single posts
-		if ( is_single() && 'post' == get_post_type() ) {
-			$taxonomy = 'category';
-			$categories = wp_get_object_terms( get_the_ID(), $taxonomy, 'orderby=term_id' );
-			$last_category = array_pop( $categories );
-			$locator = Carbon_Breadcrumb_Locator::factory( 'term', $taxonomy );
-			$items = $locator->get_items( 700, $last_category->term_id );
-			if ( $items ) {
-				$this->add_item( $items );
-			}
-		}
-
-		// process page for posts where necessary
-		if ( is_home() || is_category() || is_tag() || is_date() || is_author() || ( is_single() && 'post' == get_post_type() ) ) {
-			if ( $page_for_posts = get_option( 'page_for_posts' ) ) {
-				$locator = Carbon_Breadcrumb_Locator::factory( 'post', 'page' );
-				$items = $locator->get_items( 500, $page_for_posts );
-				if ( $items ) {
-					$this->add_item( $items );
-				}
-			}
-		}
-
-		// add home item (if enabled)
-		if ( $this->get_renderer()->get_display_home_item() ) {
-			$home_title = $this->get_renderer()->get_home_item_title();
-			$home_link = home_url( '/' );
-			$this->add_custom_item( $home_title, $home_link, 10 );
-		}
-
-		// completing setup
+		// end setup
 		do_action( 'carbon_breadcrumbs_after_setup_trail', $this );
 
 	}
