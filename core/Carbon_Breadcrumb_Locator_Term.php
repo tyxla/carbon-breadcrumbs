@@ -30,7 +30,7 @@ class Carbon_Breadcrumb_Locator_Term extends Carbon_Breadcrumb_Locator_Hierarchi
 	 *
 	 * @param int $priority The priority of the located items.
 	 * @param int $term_id The term ID, used to go up the taxonomy term tree.
-	 * @return array $items The items, found by this locator.
+	 * @return Carbon_Breadcrumb_Item[] $items The items, found by this locator.
 	 */
 	public function get_items( $priority = 1000, $term_id = 0 ) {
 		$items = array();

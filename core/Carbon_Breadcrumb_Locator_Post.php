@@ -24,7 +24,7 @@ class Carbon_Breadcrumb_Locator_Post extends Carbon_Breadcrumb_Locator_Hierarchi
 	 *
 	 * @param int $priority The priority of the located items.
 	 * @param int $post_id The post ID, used to go up the post type tree.
-	 * @return array $items The items, found by this locator.
+	 * @return Carbon_Breadcrumb_Item[] $items The items, found by this locator.
 	 */
 	public function get_items( $priority = 1000, $post_id = 0 ) {
 		$items = array();
