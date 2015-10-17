@@ -132,23 +132,6 @@ class Carbon_Breadcrumb_Trail {
 	 * @param string $link Link URL to remove breadcrumb item by.
 	 */
 	public function remove_item( $title = '', $link = '' ) {
-		// if there is nothing specified, skip
-		if ( ! $title && ! $link ) {
-			return;
-		}
-
-		// if no link is specified, use remove_item_by_title()
-		if ( $title && ! $link ) {
-			$this->remove_item_by_title( $title );
-			return;
-		}
-
-		// if no title is specified, use remove_item_by_link()
-		if ( ! $title && $link ) {
-			$this->remove_item_by_link( $link );
-			return;
-		}
-
 		// if both title and link are specified, search for exact match
 		$all_items = $this->get_items();
 		foreach ( $all_items as $items_priority => $items ) {
