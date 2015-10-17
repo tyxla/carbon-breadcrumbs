@@ -228,11 +228,6 @@ class Carbon_Breadcrumb_Trail {
 	 * @param int $priority Priority to remove breadcrumb item by.
 	 */
 	public function remove_item_by_priority( $priority = 0 ) {
-		// if there is no priority specified, skip
-		if ( ! $priority ) {
-			return;
-		}
-
 		// search all items for the same priority
 		$all_items = $this->get_items();
 		if ( array_key_exists( $priority, $all_items ) ) {
