@@ -172,11 +172,6 @@ class Carbon_Breadcrumb_Trail {
 	 * @param string $title Title to remove breadcrumb item by.
 	 */
 	public function remove_item_by_title( $title = '' ) {
-		// if there is no title specified, skip
-		if ( ! $title ) {
-			return;
-		}
-
 		// search all items for one with the same title
 		$all_items = $this->get_items();
 		foreach ( $all_items as $priority => $items ) {
