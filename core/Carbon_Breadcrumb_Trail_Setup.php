@@ -77,9 +77,9 @@ class Carbon_Breadcrumb_Trail_Setup {
 	public function populate_post_type_archive_items() {
 		if ( is_post_type_archive() ) {
 			$post_type = get_post_type_object( get_query_var( 'post_type' ) );
-		} elseif( is_singular() ) {
+		} elseif ( is_singular() ) {
 			$post_type = get_post_type_object( get_post_type() );
-			if ( ! $post_type->has_archive )  {
+			if ( ! $post_type->has_archive ) {
 				return;
 			}
 		} else {
