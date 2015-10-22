@@ -148,18 +148,20 @@ class Carbon_Breadcrumb_Trail {
 	}
 
 	/**
-	 * Remove an item from the breadcrumb trail by its title.
+	 * Remove an item from the breadcrumb trail by a specified method.
 	 *
 	 * @access public
 	 *
-	 * @param string $title Title to remove breadcrumb item by.
+	 * @param string $method Item method to remove breadcrumb item by.
+	 * @param string $data Additional data to pass to the method.
 	 */
-	public function remove_item_by_title( $title = '' ) {
+	public function remove_item_by_method( $method, $data ) {
 		// search all items for one with the same title
 		$all_items = $this->get_items();
 		foreach ( $all_items as $priority => $items ) {
 			foreach ( $items as $item_key => $item ) {
-				if ( 0 === strcasecmp( $item->get_title(), $title ) ) {
+				$method_result = call_user_func( array( $item, $method ), $data );
+				if ( 0 === strcasecmp( $method_result, $data ) ) {
 					// if we have a match, remove that item
 					unset( $all_items[ $priority ][ $item_key ] );
 				}
@@ -171,6 +173,17 @@ class Carbon_Breadcrumb_Trail {
 	}
 
 	/**
+	 * Remove an item from the breadcrumb trail by its title.
+	 *
+	 * @access public
+	 *
+	 * @param string $title Title to remove breadcrumb item by.
+	 */
+	public function remove_item_by_title( $title = '' ) {
+		$this->remove_item_by_method( 'get_title', $title );
+	}
+
+	/**
 	 * Remove an item from the breadcrumb trail by its link.
 	 *
 	 * @access public
@@ -178,19 +191,7 @@ class Carbon_Breadcrumb_Trail {
 	 * @param string $link Link URL to remove breadcrumb item by.
 	 */
 	public function remove_item_by_link( $link = '' ) {
-		// search all items for one with the same link
-		$all_items = $this->get_items();
-		foreach ( $all_items as $priority => $items ) {
-			foreach ( $items as $item_key => $item ) {
-				if ( 0 === strcasecmp( $item->get_link(), $link ) ) {
-					// if we have a match, remove that item
-					unset( $all_items[ $priority ][ $item_key ] );
-				}
-			}
-		}
-
-		// update the items
-		$this->set_items( $all_items );
+		$this->remove_item_by_method( 'get_link', $link );
 	}
 
 	/**
