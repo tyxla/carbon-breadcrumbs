@@ -28,6 +28,7 @@ class Carbon_Breadcrumb_Trail_Setup {
 
 		$this->populate_db_object_items();
 		$this->populate_date_archive_items();
+		$this->populate_post_type_archive_items();
 		$this->populate_search_items();
 		$this->populate_404_items();
 		$this->populate_category_items();
@@ -67,6 +68,29 @@ class Carbon_Breadcrumb_Trail_Setup {
 		$items = $locator->get_items( 700 );
 		$this->get_trail()->add_item( $items );
 	}
+
+	/**
+	 * Populate post type archives.
+	 *
+	 * @access public
+	 */
+	public function populate_post_type_archive_items() {
+		if ( is_post_type_archive() ) {
+			$post_type = get_post_type_object( get_query_var( 'post_type' ) );
+		} elseif( is_singular() ) {
+			$post_type = get_post_type_object( get_post_type() );
+			if ( !$post_type->has_archive )  {
+				return;
+			}
+		} else {
+			return;
+		}
+
+		$title = $post_type->labels->name;
+		$link = get_post_type_archive_link( $post_type->name );
+		$this->get_trail()->add_custom_item( $title, $link, 700 );
+	}
+
 
 	/**
 	 * Populate search items.
