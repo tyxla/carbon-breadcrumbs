@@ -133,8 +133,10 @@ abstract class Carbon_Breadcrumb_Locator extends Carbon_Breadcrumb_Factory {
 	 *
 	 * @abstract
 	 * @access public
+	 *
+	 * @param int $priority The priority of the located items.
 	 */
-	abstract public function get_items();
+	abstract public function get_items( $priority );
 
 	/**
 	 * Generate a set of breadcrumb items that found by this locator type and any subtype.
