@@ -1,4 +1,4 @@
-# Carbon Breadcrumbs [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/tyxla/carbon-breadcrumbs/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/tyxla/carbon-breadcrumbs/?branch=master)
+# Carbon Breadcrumbs [![Build Status](https://travis-ci.org/tyxla/carbon-breadcrumbs.svg?branch=master)](https://travis-ci.org/tyxla/carbon-breadcrumbs) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/tyxla/carbon-breadcrumbs/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/tyxla/carbon-breadcrumbs/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/tyxla/carbon-breadcrumbs/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/tyxla/carbon-breadcrumbs/?branch=master)
 
 A basic WordPress plugin for breadcrumbs with advanced capabilities for extending.
 Provides the theme and plugin developers an easy way to build and implement highly customizable breadcrumb functionality, specifically tailored to their needs.
