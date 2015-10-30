@@ -1,0 +1,134 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Carbon Breadcrumbs\n"
+"POT-Creation-Date: 2015-10-30 22:47+0200\n"
+"PO-Revision-Date: 2015-10-30 23:50+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: bg_BG\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:42
+msgid "Glue"
+msgstr "Лепило"
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:44
+msgid "This is displayed between the breadcrumb items."
+msgstr "Показва се между елементите на навигацията."
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:48
+msgid "Link Before"
+msgstr "Преди връзката"
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:50
+msgid "This is displayed before the breadcrumb item link."
+msgstr "Показва се преди връзката на всеки от елементите."
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:54
+msgid "Link After"
+msgstr "След връзката"
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:56
+msgid "This is displayed after the breadcrumb item link."
+msgstr "Показва се след връзката на всеки от елементите."
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:60
+msgid "Wrapper Before"
+msgstr "HTML преди навигацията"
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:62
+msgid "This is displayed before displaying the breadcrumb items."
+msgstr "Показва се преди всички елементи на навигацията."
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:66
+msgid "Wrapper After"
+msgstr "HTML след навигацията"
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:68
+msgid "This is displayed after displaying the breadcrumb items."
+msgstr "Показва се след всички елементи на навигацията."
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:72
+msgid "Title Before"
+msgstr "Преди заглавието"
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:74
+msgid "This is displayed before the breadcrumb item title."
+msgstr "Показва се преди заглавието на всеки от елементите."
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:78
+msgid "Title After"
+msgstr "След заглавието"
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:80
+msgid "This is displayed after the breadcrumb item title."
+msgstr "Показва се след заглавието на всеки от елементите."
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:84
+msgid "Min Items"
+msgstr "Минимум елементи"
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:86
+msgid ""
+"Determines the minimum number of items, required to display the breadcrumb "
+"trail."
+msgstr ""
+"Определя минималния брой елементи, нужни за да се покаже навигационната "
+"пътека."
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:90
+msgid "Last Item Link"
+msgstr "Връзка на последния елемент"
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:92
+msgid "Whether the last breadcrumb item should be a link."
+msgstr "Определя дали последния елемент да има връзка."
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:96
+msgid "Display Home Item?"
+msgstr "Показване на елемента Начало?"
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:98
+msgid "Whether the home breadcrumb item should be displayed."
+msgstr "Дали елементът на началната страница трябва да бъде показан."
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:102
+msgid "Home Item Title"
+msgstr "Заглавие на началния елемент"
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:103
+#: core/Carbon_Breadcrumb_Trail_Renderer.php:110
+msgid "Home"
+msgstr "Начало"
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:104
+msgid "Determines the title of the home item."
+msgstr "Определя заглавието на началния елемент."
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:130
+msgid "Carbon Breadcrumbs"
+msgstr "Carbon Breadcrumbs"
+
+#: admin/Carbon_Breadcrumb_Admin_Settings.php:152
+msgid "General Settings"
+msgstr "Основни настройки"
+
+#: core/Carbon_Breadcrumb_Trail_Setup.php:105
+#, php-format
+msgid "Search results for: \"%1$s\""
+msgstr "Резултати от търсенето за: \"%1$s\""
+
+#: core/Carbon_Breadcrumb_Trail_Setup.php:119
+msgid "Error 404 - Not Found"
+msgstr "Грешка 404 - Страницата не е намерена"
