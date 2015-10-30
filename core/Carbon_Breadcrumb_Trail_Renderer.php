@@ -12,7 +12,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 * @access protected
 	 * @var string
 	 */
-	protected $glue = '';
+	protected $glue = ' &gt; ';
 
 	/**
 	 * String before the opening link tag.
@@ -107,16 +107,6 @@ class Carbon_Breadcrumb_Trail_Renderer {
 
 		// default configuration options
 		$defaults = array(
-			'glue' => ' &gt; ',
-			'link_before' => '',
-			'link_after' => '',
-			'wrapper_before' => '',
-			'wrapper_after' => '',
-			'title_before' => '',
-			'title_after' => '',
-			'min_items' => 2,
-			'last_item_link' => true,
-			'display_home_item' => true,
 			'home_item_title' => __( 'Home', 'carbon_breadcrumbs' ),
 		);
 
@@ -129,7 +119,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 		// set configuration options
 		foreach ( $args as $arg_name => $arg_value ) {
 			$method = 'set_' . $arg_name;
-			if ( array_key_exists( $arg_name, $defaults ) && method_exists( $this, $method ) ) {
+			if ( method_exists( $this, $method ) ) {
 				call_user_func( array( $this, $method ), $arg_value );
 			}
 		}
