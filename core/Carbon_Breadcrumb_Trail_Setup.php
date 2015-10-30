@@ -149,11 +149,34 @@ class Carbon_Breadcrumb_Trail_Setup {
 			return;
 		}
 
-		if ( is_home() || is_category() || is_tag() || is_date() || is_author() || ( is_single() && 'post' == get_post_type() ) ) {
+		if ( $this->is_post_context() ) {
 			$locator = Carbon_Breadcrumb_Locator::factory( 'post', 'page' );
 			$items = $locator->get_items( 500, $page_for_posts );
 			$this->get_trail()->add_item( $items );
 		}
+	}
+
+	/**
+	 * True if on a post archive, false otherwise.
+	 * Post archives are: category, tag, date (year, month, day) and author pages.
+	 *
+	 * @access public
+	 *
+	 * @return bool 
+	 */
+	public function is_post_archive() {
+		return is_category() || is_tag() || is_date() || is_author();
+	}
+
+	/**
+	 * True if on a post archive, on posts page or on a single post; false otherwise.
+	 *
+	 * @access public
+	 *
+	 * @return bool 
+	 */
+	public function is_post_context() {
+		return is_home() || $this->is_post_archive() || ( is_single() && 'post' == get_post_type() );
 	}
 
 	/**
