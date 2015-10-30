@@ -420,13 +420,12 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	public function render_items( $trail ) {
 		$items_output = array();
 		$counter = 0;
-
-		// prepare all breadcrumb items for display
 		$all_items = $trail->get_items();
+
 		foreach ( $all_items as $priority => $items ) {
 			foreach ( $items as $item ) {
 				// allow each item to be filtered right before rendering
-				$item = apply_filters( 'carbon_breadcrumbs_item', $item );
+				$item = apply_filters( 'carbon_breadcrumbs_item', $item, $trail, $this, $counter );
 
 				// skip if $item is not a Carbon_Breadcrumb_Item instance
 				if ( ! ( $item instanceof Carbon_Breadcrumb_Item ) ) {

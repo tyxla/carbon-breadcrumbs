@@ -329,6 +329,12 @@ This filter allows you to modify the title of a breadcrumb item right before its
 
 **$item** *(Carbon\_Breadcrumb\_Item)*. The breadcrumb item object.
 
+**$trail** *(Carbon\_Breadcrumb\_Trail)*. The breadcrumb trail object.
+
+**$trail_renderer** *(Carbon\_Breadcrumb\_Trail\_Renderer)*. The breadcrumb trail renderer object.
+
+**$counter** *(int)*. The index of this breadcrumb item.
+
 This filter allows you to modify the link attributes of a breadcrumb item right before its rendering. By default, the `target="_self"` attribute is added. This array expects the attribute name as the array element key, and the attribute value as the array element value. Example: `'target' => '_blank'`.
 
 #### carbon\_breadcrumbs\_item\_output
