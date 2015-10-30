@@ -14,12 +14,12 @@ class Carbon_Breadcrumb_Locator_Term extends Carbon_Breadcrumb_Locator_Hierarchi
 	 * @return bool $is_included Whether the found items should be included.
 	 */
 	public function is_included() {
-		if ( is_tax() || is_category() || is_tag() ) {
-			$queried_object = get_queried_object();
-			if ( $queried_object->taxonomy == $this->get_subtype() ) {
-				return true;
-			}
+		$queried_object = get_queried_object();
+		
+		if ( ! empty( $queried_object->taxonomy ) && $queried_object->taxonomy == $this->get_subtype() ) {
+			return true;
 		}
+
 		return false;
 	}
 
