@@ -29,7 +29,31 @@ class Carbon_Breadcrumb_Locator_Date extends Carbon_Breadcrumb_Locator {
 		$items = array();
 		
 		// prepare the date archive item details
-		$date_archives = array(
+		$date_archives = $this->get_archive_item_details();
+
+		// add the associated date archive breadcrumb items
+		foreach ( $date_archives as $archive_name => $archive_details ) {
+			if ( $archive_details['condition'] ) {
+				$item = Carbon_Breadcrumb_Item::factory( 'custom', $priority );
+				$item->set_title( get_the_time( $archive_details['title_format'] ) );
+				$item->set_link( $archive_details['link'] );
+				$item->setup();
+				$items[] = $item;
+			}
+		}
+
+		return $items;
+	}
+
+	/**
+	 * Prepare the date archive conditions, with the corresponding title format and link.
+	 *
+	 * @access public
+	 *
+	 * @return array $details Date archive details.
+	 */
+	public function get_archive_item_details() {
+		return array(
 			'year' => array(
 				'condition' => is_year() || is_month() || is_day(),
 				'title_format' => 'Y',
@@ -46,19 +70,6 @@ class Carbon_Breadcrumb_Locator_Date extends Carbon_Breadcrumb_Locator {
 				'link' => get_day_link( get_query_var( 'year' ), get_query_var( 'monthnum' ), get_query_var( 'day' ) ),
 			),
 		);
-
-		// add the associated date archive breadcrumb items
-		foreach ( $date_archives as $archive_name => $archive_details ) {
-			if ( $archive_details['condition'] ) {
-				$item = Carbon_Breadcrumb_Item::factory( 'custom', $priority );
-				$item->set_title( get_the_time( $archive_details['title_format'] ) );
-				$item->set_link( $archive_details['link'] );
-				$item->setup();
-				$items[] = $item;
-			}
-		}
-
-		return $items;
 	}
 
 	/**
