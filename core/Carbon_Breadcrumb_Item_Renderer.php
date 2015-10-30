@@ -199,7 +199,7 @@ class Carbon_Breadcrumb_Item_Renderer {
 	 *
 	 * @param int $index Index of this item.
 	 */
-	public function set_index( $index = '' ) {
+	public function set_index( $index = 0 ) {
 		$this->index = $index;
 	}
 
