@@ -337,7 +337,13 @@ This filter allows you to modify the link attributes of a breadcrumb item right 
 
 **$item** *(Carbon\_Breadcrumb\_Item)*. The breadcrumb item object.
 
-This filter allows you to modify the HTML output of a breadcrumb item right before its rendering.
+**$trail** *(Carbon\_Breadcrumb\_Trail)*. The breadcrumb trail object.
+
+**$trail_renderer** *(Carbon\_Breadcrumb\_Trail\_Renderer)*. The breadcrumb trail renderer object.
+
+**$index** *(int)*. The index of this breadcrumb item.
+
+This filter allows you to modify the HTML output of a breadcrumb item right after its rendering.
 
 - - -
 

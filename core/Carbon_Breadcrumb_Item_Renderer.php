@@ -112,7 +112,7 @@ class Carbon_Breadcrumb_Item_Renderer {
 		$item_output .= $trail_renderer->get_link_after();
 
 		// allow item output to be filtered
-		return apply_filters( 'carbon_breadcrumbs_item_output', $item_output, $item );
+		return apply_filters( 'carbon_breadcrumbs_item_output', $item_output, $item, $trail, $trail_renderer, $index );
 	}
 
 	/**
