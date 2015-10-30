@@ -45,6 +45,7 @@ include_once( $core_dir . 'Carbon_Breadcrumb_Item_Post.php' );
 include_once( $core_dir . 'Carbon_Breadcrumb_Item_Term.php' );
 include_once( $core_dir . 'Carbon_Breadcrumb_Item_User.php' );
 include_once( $core_dir . 'Carbon_Breadcrumb_Item_Custom.php' );
+include_once( $core_dir . 'Carbon_Breadcrumb_Item_Renderer.php' );
 
 // exceptions
 include_once( $core_dir . 'Carbon_Breadcrumb_Exception.php' );

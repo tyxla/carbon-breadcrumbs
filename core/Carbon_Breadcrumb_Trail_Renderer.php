@@ -428,7 +428,6 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 * @return array $output The output elements.
 	 */
 	public function render_items( $trail ) {
-		$total_items = $trail->get_total_items();
 		$items_output = array();
 		$counter = 0;
 
@@ -444,57 +443,10 @@ class Carbon_Breadcrumb_Trail_Renderer {
 					continue;
 				}
 
+				// increase the counter and render the item
 				$counter++;
-
-				$item_output = '';
-
-				// get the item link
-				$item_link = apply_filters( 'carbon_breadcrumbs_item_link', $item->get_link(), $item );
-
-				// get the item attributes
-				$item_attributes = apply_filters( 'carbon_breadcrumbs_item_attributes', $item->get_attributes(), $item );
-
-				// prepare the item attributes
-				$attributes_html = '';
-				foreach ( $item_attributes as $attr => $attr_value ) {
-					$attributes_html .= ' ' . $attr . '="' . esc_attr( $attr_value ) . '"';
-				}
-
-				// HTML before link opening tag
-				$item_output .= $this->get_link_before();
-
-				// link can be optional
-				if ( $item_link ) {
-					// last item link can be disabled
-					if ( $this->get_last_item_link() || $counter < $total_items ) {
-						$item_output .= '<a href="' . $item_link . '"' . $attributes_html . '>';
-					}
-				}
-
-				// HTML before title
-				$item_output .= $this->get_title_before();
-
-				// breadcrumb item title
-				$item_output .= apply_filters( 'carbon_breadcrumbs_item_title', $item->get_title(), $item );
-
-				// HTML after title
-				$item_output .= $this->get_title_after();
-
-				// link can be optional
-				if ( $item_link ) {
-					// last item link can be disabled
-					if ( $this->get_last_item_link() || $counter < $total_items ) {
-						$item_output .= '</a>';
-					}
-				}
-
-				// HTML after link closing tag
-				$item_output .= $this->get_link_after();
-
-				// allow item output to be filtered
-				$item_output = apply_filters( 'carbon_breadcrumbs_item_output', $item_output, $item );
-
-				$items_output[] = $item_output;
+				$item_renderer = new Carbon_Breadcrumb_Item_Renderer( $item, $trail, $this, $counter );
+				$items_output[] = $item_renderer->render();
 			}
 		}
 
