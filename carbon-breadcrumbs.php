@@ -8,6 +8,8 @@
  * License: GPL2
  * Requires at least: 3.8
  * Tested up to: 4.3.1
+ * Text Domain: carbon_breadcrumbs
+ * Domain Path: /languages
  */
 
 // allows the plugin to be included as a library in themes
@@ -21,6 +23,7 @@ $core_dir = $base_dir . '/core/';
 
 // utility classes
 include_once( $core_dir . 'Carbon_Breadcrumb_Factory.php' );
+include_once( $core_dir . 'Carbon_Breadcrumb_L10n.php' );
 
 // main classes
 include_once( $core_dir . 'Carbon_Breadcrumb_Trail.php' );
@@ -52,6 +55,9 @@ include_once( $core_dir . 'Carbon_Breadcrumb_Exception.php' );
 
 // administration
 include_once( $base_dir . '/admin/Carbon_Breadcrumb_Admin.php' );
+
+// initialize l10n support
+new Carbon_Breadcrumb_L10n();
 
 // initialize the administration interface
 Carbon_Breadcrumb_Admin::get_instance();
