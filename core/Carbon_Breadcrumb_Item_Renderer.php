@@ -71,24 +71,12 @@ class Carbon_Breadcrumb_Item_Renderer {
 		// get the item link
 		$item_link = apply_filters( 'carbon_breadcrumbs_item_link', $item->get_link(), $item );
 
-		// get the item attributes
-		$item_attributes = apply_filters( 'carbon_breadcrumbs_item_attributes', $item->get_attributes(), $item );
-
-		// prepare the item attributes
-		$attributes_html = '';
-		foreach ( $item_attributes as $attr => $attr_value ) {
-			$attributes_html .= ' ' . $attr . '="' . esc_attr( $attr_value ) . '"';
-		}
-
 		// HTML before link opening tag
 		$item_output .= $trail_renderer->get_link_before();
 
-		// link can be optional
-		if ( $item_link ) {
-			// last item link can be disabled
-			if ( $trail_renderer->get_last_item_link() || $index < $total_items ) {
-				$item_output .= '<a href="' . $item_link . '"' . $attributes_html . '>';
-			}
+		// link can be optional or disabled
+		if ( $item_link && $this->is_link_enabled() ) {
+			$item_output .= '<a href="' . $item_link . '"' . $this->get_item_attributes_html() . '>';
 		}
 
 		// HTML before title
@@ -100,12 +88,9 @@ class Carbon_Breadcrumb_Item_Renderer {
 		// HTML after title
 		$item_output .= $trail_renderer->get_title_after();
 
-		// link can be optional
-		if ( $item_link ) {
-			// last item link can be disabled
-			if ( $trail_renderer->get_last_item_link() || $index < $total_items ) {
-				$item_output .= '</a>';
-			}
+		// link can be optional or disabled
+		if ( $item_link && $this->is_link_enabled() ) {
+			$item_output .= '</a>';
 		}
 
 		// HTML after link closing tag
@@ -113,6 +98,44 @@ class Carbon_Breadcrumb_Item_Renderer {
 
 		// allow item output to be filtered
 		return apply_filters( 'carbon_breadcrumbs_item_output', $item_output, $item, $trail, $trail_renderer, $index );
+	}
+
+	/**
+	 * Retrieve the attributes of the item link.
+	 *
+	 * @access public
+	 *
+	 * @return string $attributes_html The HTML of the item attributes.
+	 */
+	public function get_item_attributes_html() {
+		$item = $this->get_item();
+
+		// get the item attributes
+		$item_attributes = apply_filters( 'carbon_breadcrumbs_item_attributes', $item->get_attributes(), $item );
+
+		// prepare the item attributes
+		$attributes_html = '';
+		foreach ( $item_attributes as $attr => $attr_value ) {
+			$attributes_html .= ' ' . $attr . '="' . esc_attr( $attr_value ) . '"';
+		}
+
+		return $attributes_html;
+	}
+
+	/**
+	 * Whether the link of this item is enabled.
+	 *
+	 * @access public
+	 *
+	 * @return bool
+	 */
+	public function is_link_enabled() {
+		$trail = $this->get_trail();
+		$trail_renderer = $this->get_trail_renderer();
+		$total_items = $trail->get_total_items();
+		$index = $this->get_index();
+
+		return $trail_renderer->get_last_item_link() || $index < $total_items;
 	}
 
 	/**
