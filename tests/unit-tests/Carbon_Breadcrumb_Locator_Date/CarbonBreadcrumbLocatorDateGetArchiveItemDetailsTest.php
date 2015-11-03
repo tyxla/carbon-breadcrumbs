@@ -8,7 +8,7 @@ class CarbonBreadcrumbLocatorDateGetArchiveItemDetailsTest extends WP_UnitTestCa
 		parent::setUp();
 
 		$this->locator = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Locator_Date', array( 'test1', 'test2' ) );
-		$this->post = self::factory()->post->create();
+		$this->post = $this->factory->post->create();
 	}
 
 	public function tearDown() {
@@ -42,7 +42,7 @@ class CarbonBreadcrumbLocatorDateGetArchiveItemDetailsTest extends WP_UnitTestCa
 			),
 		);
 		$actual = $this->locator->get_archive_item_details();
-		
+
 		$this->assertSame( $expected, $actual );
 	}
 
