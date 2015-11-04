@@ -34,9 +34,6 @@ class CarbonBreadcrumbItemDbObjectSetupTest extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_Item_DB_Object::setup
 	 */
 	public function testBeforeAfterSetup() {
-		$this->assertEmpty( $this->mock_title );
-		$this->assertEmpty( $this->mock_link );
-
 		$this->item->setup();
 
 		$this->assertSame( $this->default_mock_title, $this->item->mock_title );
