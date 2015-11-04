@@ -7,6 +7,7 @@ class CarbonBreadcrumbItemFactoryTest extends WP_UnitTestCase {
 	/**
 	 * @covers Carbon_Breadcrumb_Item::factory
 	 * @expectedException Carbon_Breadcrumb_Exception
+	 * @expectedExceptionMessage Unexisting breadcrumb item type: "foobar".
 	 */
 	public function testFactoryUnexistingClass() {
 		Carbon_Breadcrumb_Item::factory('foobar');
