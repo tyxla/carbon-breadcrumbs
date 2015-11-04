@@ -7,31 +7,28 @@
 class Carbon_Breadcrumb_Factory {
 
 	/**
-	 * Build the class name to use in factory.
+	 * Verify the class name to use in factory.
+	 * Make sure that the class exists.
 	 *
 	 * @static
 	 * @access public
 	 *
-	 * @param string $class The main class name.
-	 * @param string $append The fragment to append to the class name.
+	 * @param string $class The class name.
 	 * @param string $message The message to display in the exception if the class does not exist.
-	 * @return string $classname The build class name.
+	 * @return string $class The class name.
 	 *
 	 * @throws Carbon_Breadcrumb_Exception if the built class name does not exist
 	 */
-	public static function build_class_name( $class, $append, $message = '' ) {
-		$append = str_replace( ' ', '', ucwords( str_replace( '_', ' ', $append ) ) );
-		$classname = $class . '_' . $append;
-
+	public static function verify_class_name( $class, $message = '' ) {
 		if ( ! $message ) {
-			$message = 'Unexisting class: ' . $classname;
+			$message = 'Unexisting class: ' . $class;
 		}
 
-		if ( ! class_exists( $classname ) ) {
+		if ( ! class_exists( $class ) ) {
 			throw new Carbon_Breadcrumb_Exception( $message );
 		}
 
-		return $classname;
+		return $class;
 	}
 
 }

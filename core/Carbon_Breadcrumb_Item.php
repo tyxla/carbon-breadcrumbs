@@ -67,7 +67,7 @@ abstract class Carbon_Breadcrumb_Item extends Carbon_Breadcrumb_Factory {
 	 * @return Carbon_Breadcrumb_Item $item The new breadcrumb item.
 	 */
 	public static function factory( $type = 'custom', $priority = 1000 ) {
-		$class = self::build_class_name( __CLASS__, $type, 'Unexisting breadcrumb item type: "' . $type . '".' );
+		$class = self::verify_class_name( __CLASS__ . '_' . $type, 'Unexisting breadcrumb item type: "' . $type . '".' );
 
 		$item = new $class( $priority );
 		$item->set_type( $type );

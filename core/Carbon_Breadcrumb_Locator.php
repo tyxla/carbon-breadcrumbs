@@ -33,7 +33,7 @@ abstract class Carbon_Breadcrumb_Locator extends Carbon_Breadcrumb_Factory {
 	 * @return Carbon_Breadcrumb_Locator $locator The new breadcrumb item locator.
 	 */
 	public static function factory( $type, $subtype = '' ) {
-		$class = self::build_class_name( __CLASS__, $type, 'Unexisting breadcrumb locator type: "' . $type . '".' );
+		$class = self::verify_class_name( __CLASS__ . '_' . $type, 'Unexisting breadcrumb locator type: "' . $type . '".' );
 		$locator = new $class( $type, $subtype );
 
 		return $locator;
