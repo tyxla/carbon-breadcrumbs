@@ -70,33 +70,98 @@ class Carbon_Breadcrumb_Item_Renderer {
 		// get the item link
 		$item_link = apply_filters( 'carbon_breadcrumbs_item_link', $item->get_link(), $item );
 
-		// HTML before link opening tag
-		$item_output .= $trail_renderer->get_link_before();
+		// link before and opening <a>
+		$item_output .= $this->render_link_before();
 
-		// link can be optional or disabled
-		if ( $item_link && $this->is_link_enabled() ) {
-			$item_output .= '<a href="' . $item_link . '"' . $this->get_item_attributes_html() . '>';
-		}
+		// title along with its wrappers
+		$item_output .= $this->render_title();
 
-		// HTML before title
-		$item_output .= $trail_renderer->get_title_before();
-
-		// breadcrumb item title
-		$item_output .= apply_filters( 'carbon_breadcrumbs_item_title', $item->get_title(), $item );
-
-		// HTML after title
-		$item_output .= $trail_renderer->get_title_after();
-
-		// link can be optional or disabled
-		if ( $item_link && $this->is_link_enabled() ) {
-			$item_output .= '</a>';
-		}
-
-		// HTML after link closing tag
-		$item_output .= $trail_renderer->get_link_after();
+		// closing </a> and link after
+		$item_output .= $this->render_link_after();
 
 		// allow item output to be filtered
 		return apply_filters( 'carbon_breadcrumbs_item_output', $item_output, $item, $trail, $trail_renderer, $index );
+	}
+
+	/**
+	 * Retrieve the item link URL.
+	 *
+	 * @access public
+	 *
+	 * @return string $item_link The link URL of this item.
+	 */
+	public function get_item_link() {
+		$item = $this->get_item();
+		$item_link = apply_filters( 'carbon_breadcrumbs_item_link', $item->get_link(), $item );
+		return $item_link;
+	}
+
+	/**
+	 * Render the item link opening tag and its "before" wrapper.
+	 *
+	 * @access public
+	 *
+	 * @return string $output The output HTML.
+	 */
+	public function render_link_before() {
+		$trail_renderer = $this->get_trail_renderer();
+		$item_link = $this->get_item_link();
+
+		// HTML before link opening tag
+		$output = $trail_renderer->get_link_before();
+
+		// link can be optional or disabled
+		if ( $item_link && $this->is_link_enabled() ) {
+			$output .= '<a href="' . $item_link . '"' . $this->get_item_attributes_html() . '>';
+		}
+
+		return $output;
+	}
+
+	/**
+	 * Render the item link closing tag and its "after" wrapper.
+	 *
+	 * @access public
+	 *
+	 * @return string $output The output HTML.
+	 */
+	public function render_link_after() {
+		$trail_renderer = $this->get_trail_renderer();
+		$item_link = $this->get_item_link();
+		$output = '';
+
+		// link can be optional or disabled
+		if ( $item_link && $this->is_link_enabled() ) {
+			$output .= '</a>';
+		}
+
+		// HTML after link closing tag
+		$output .= $trail_renderer->get_link_after();
+
+		return $output;
+	}
+
+	/**
+	 * Render the item title, along with its before & after wrappers.
+	 *
+	 * @access public
+	 *
+	 * @return string $output The output HTML.
+	 */
+	public function render_title() {
+		$item = $this->get_item();
+		$trail_renderer = $this->get_trail_renderer();
+
+		// HTML before title
+		$output = $trail_renderer->get_title_before();
+
+		// breadcrumb item title
+		$output .= apply_filters( 'carbon_breadcrumbs_item_title', $item->get_title(), $item );
+
+		// HTML after title
+		$output .= $trail_renderer->get_title_after();
+
+		return $output;
 	}
 
 	/**
