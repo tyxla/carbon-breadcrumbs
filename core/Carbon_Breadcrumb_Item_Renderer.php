@@ -67,9 +67,6 @@ class Carbon_Breadcrumb_Item_Renderer {
 		$trail = $this->get_trail();
 		$trail_renderer = $this->get_trail_renderer();
 
-		// get the item link
-		$item_link = apply_filters( 'carbon_breadcrumbs_item_link', $item->get_link(), $item );
-
 		// link before and opening <a>
 		$item_output .= $this->render_link_before();
 
