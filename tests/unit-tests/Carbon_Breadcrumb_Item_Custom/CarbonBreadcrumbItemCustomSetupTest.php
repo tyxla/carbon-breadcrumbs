@@ -13,7 +13,7 @@ class CarbonBreadcrumbItemCustomSetupTest extends WP_UnitTestCase {
 	}
 
 	/**
-	 * @covers Carbon_Breadcrumb_Item_Custom::setup()
+	 * @covers Carbon_Breadcrumb_Item_Custom::setup
 	 */
 	public function testConstructor() {
 		$item_clone_a = clone $this->item;
