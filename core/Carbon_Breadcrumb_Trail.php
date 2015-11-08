@@ -225,6 +225,23 @@ class Carbon_Breadcrumb_Trail {
 	}
 
 	/**
+	 * Retrieve the breadcrumb items in a flat list.
+	 *
+	 * @access public
+	 *
+	 * @return array $flat_items The breadcrumb items, contained in the trail.
+	 */
+	public function get_flat_items() {
+		$flat_items = array();
+
+		foreach ( $this->items as $priority => $items ) {
+			$flat_items = array_merge( $flat_items, $items );
+		}
+
+		return $flat_items;
+	}
+
+	/**
 	 * Modify the currently loaded breadcrumb items.
 	 *
 	 * @access public
@@ -254,12 +271,8 @@ class Carbon_Breadcrumb_Trail {
 	 * @return int $total_items Number of items in the breadcrumb trail.
 	 */
 	public function get_total_items() {
-		$total = 0;
-		$all_items = $this->get_items();
-		foreach ( $all_items as $priority => $items ) {
-			$total += count( $items );
-		}
-		return $total;
+		$all_items = $this->get_flat_items();
+		return count( $all_items );
 	}
 
 	/**
