@@ -369,6 +369,26 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	}
 
 	/**
+	 * Prepare for rendering.
+	 * Allows renderer to be modified in the last second.
+	 * Also autosorts the trail items, if autosorting is enabled.
+	 *
+	 * @access public
+	 *
+	 * @param Carbon_Breadcrumb_Trail $trail Trail object.
+	 */
+	public function prepare_for_rendering( $trail ) {
+		// last chance to modify render settings before rendering
+		do_action( 'carbon_breadcrumbs_before_render', $this );
+
+		// whether to auto-sort the items
+		$auto_sort = apply_filters( 'carbon_breadcrumbs_auto_sort_items', true );
+		if ( $auto_sort ) {
+			$trail->sort_items();
+		}
+	}
+
+	/**
 	 * Render the given breadcrumb trail.
 	 *
 	 * @access public
@@ -378,21 +398,13 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 * @return string|void $output The output HTML if $return is true.
 	 */
 	public function render( Carbon_Breadcrumb_Trail $trail, $return = false ) {
-		$total_items = $trail->get_total_items();
-
 		// if the items are less than the minimum, nothing should be rendered
-		if ( $total_items < $this->get_min_items() ) {
+		if ( $trail->get_total_items() < $this->get_min_items() ) {
 			return;
 		}
 
-		// last chance to modify render settings before rendering
-		do_action( 'carbon_breadcrumbs_before_render', $this );
-
-		// whether to auto-sort the items
-		$auto_sort = apply_filters( 'carbon_breadcrumbs_auto_sort_items', true );
-		if ( $auto_sort ) {
-			$trail->sort_items();
-		}
+		// prepare the trail & renderer for rendering
+		$this->prepare_for_rendering( $trail );
 
 		// render the items
 		$items_output = $this->render_items( $trail );
