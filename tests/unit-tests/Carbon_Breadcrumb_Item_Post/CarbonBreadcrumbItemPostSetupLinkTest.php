@@ -2,7 +2,7 @@
 /**
  * @group item
  */
-class CarbonBreadcrumbItemPostSetupTitleTest extends WP_UnitTestCase {
+class CarbonBreadcrumbItemPostSetupLinkTest extends WP_UnitTestCase {
 
 	public function setUp() {
 		parent::setUp();
@@ -20,15 +20,14 @@ class CarbonBreadcrumbItemPostSetupTitleTest extends WP_UnitTestCase {
 	}
 
 	/**
-	 * @covers Carbon_Breadcrumb_Item_Post::setup_title
+	 * @covers Carbon_Breadcrumb_Item_Post::setup_link
 	 */
-	public function testItemTitle() {
-		$this->assertSame( null, $this->item->get_title() );
+	public function testItemLink() {
+		$this->assertSame( null, $this->item->get_link() );
 
-		$this->item->setup_title();
+		$this->item->setup_link();
 
-		$title = apply_filters( 'the_title', get_post_field( 'post_title', $this->post ) );
-		$this->assertSame( $title, $this->item->get_title() );
+		$this->assertSame( get_permalink( $this->post ), $this->item->get_link() );
 	}
 
 }
