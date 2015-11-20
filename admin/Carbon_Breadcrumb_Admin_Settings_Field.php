@@ -41,7 +41,7 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field extends Carbon_Breadcrumb_
 		$this->set_id( $id );
 		$this->set_title( $title );
 
-		add_settings_field( 
+		add_settings_field(
 			$id,
 			$title,
 			array( $this, 'render' ),

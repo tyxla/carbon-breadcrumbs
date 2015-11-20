@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Carbon_Breadcrumb_Item_Renderer {
 

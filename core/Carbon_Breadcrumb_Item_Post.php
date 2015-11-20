@@ -1,7 +1,7 @@
 <?php
 /**
  * Breadcrumb item class for posts.
- * 
+ *
  * Used for breadcrumb items that represent a post of any post type.
  */
 class Carbon_Breadcrumb_Item_Post extends Carbon_Breadcrumb_Item_DB_Object {

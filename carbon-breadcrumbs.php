@@ -31,7 +31,7 @@ include_once( $core_dir . 'Carbon_Breadcrumb_Trail_Setup.php' );
 include_once( $core_dir . 'Carbon_Breadcrumb_Trail_Renderer.php' );
 
 // interfaces
-include_once( $core_dir . 'Carbon_Breadcrumb_DB_Object.php' );	
+include_once( $core_dir . 'Carbon_Breadcrumb_DB_Object.php' );
 
 // locators
 include_once( $core_dir . 'Carbon_Breadcrumb_Locator.php' );

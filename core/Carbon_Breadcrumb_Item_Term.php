@@ -1,7 +1,7 @@
 <?php
 /**
  * Breadcrumb item class for taxonomy terms.
- * 
+ *
  * Used for breadcrumb items that represent a term of any taxonomy.
  */
 class Carbon_Breadcrumb_Item_Term extends Carbon_Breadcrumb_Item_DB_Object {

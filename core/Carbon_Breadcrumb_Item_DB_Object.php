@@ -1,7 +1,7 @@
 <?php
 /**
  * Breadcrumb item class for objects from the database.
- * 
+ *
  * Should be extended by any database object class (for example post, term, user).
  */
 abstract class Carbon_Breadcrumb_Item_DB_Object extends Carbon_Breadcrumb_Item implements Carbon_Breadcrumb_DB_Object {

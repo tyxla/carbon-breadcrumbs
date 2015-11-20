@@ -1,7 +1,7 @@
 <?php
 /**
  * The main breadcrumb administration class.
- * 
+ *
  * Includes, wraps and manages the administration functionality.
  */
 final class Carbon_Breadcrumb_Admin {
@@ -90,7 +90,7 @@ final class Carbon_Breadcrumb_Admin {
 	 * @access public
 	 */
 	public function init() {
-		// apply the breadcrumb renderer settings 
+		// apply the breadcrumb renderer settings
 		add_filter( 'carbon_breadcrumbs_renderer_default_options', array( $this, 'apply_settings' ), 20 );
 	}
 
@@ -101,7 +101,7 @@ final class Carbon_Breadcrumb_Admin {
 	 */
 	public function register_settings() {
 		// register the settings page and fields
-		self::$settings = new Carbon_Breadcrumb_Admin_Settings(); 
+		self::$settings = new Carbon_Breadcrumb_Admin_Settings();
 	}
 
 	/**
@@ -126,7 +126,7 @@ final class Carbon_Breadcrumb_Admin {
 
 		return $settings;
 	}
-	
+
 	/**
 	 * Whether the administration interface should be enabled.
 	 *
