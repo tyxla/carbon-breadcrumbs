@@ -9,6 +9,7 @@
 		<blacklist>
 			<directory suffix=".php">./tests/</directory>
 			<directory suffix=".php">./tmp/</directory>
+			<directory suffix=".php">./languages/</directory>
 		</blacklist>
 	</filter>
 </phpunit>
