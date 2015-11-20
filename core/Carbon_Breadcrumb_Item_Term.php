@@ -9,10 +9,10 @@ class Carbon_Breadcrumb_Item_Term extends Carbon_Breadcrumb_Item_DB_Object {
 	/**
 	 * Term object.
 	 *
-	 * @access protected
+	 * @access public
 	 * @var object
 	 */
-	protected $term_object;
+	public $term_object;
 
 	/**
 	 * Configure the title and link URL by using the specified term ID.
