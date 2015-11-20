@@ -1,7 +1,7 @@
 <?php
 /**
  * The main breadcrumb trail setup class.
- * 
+ *
  * Generates and populates the default breadcrumb trail items.
  */
 class Carbon_Breadcrumb_Trail_Setup {

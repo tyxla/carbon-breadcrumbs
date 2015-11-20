@@ -1,7 +1,7 @@
 <?php
 /**
  * Abstract breadcrumb item class.
- * 
+ *
  * Used as a base for all breadcrumb item types.
  */
 abstract class Carbon_Breadcrumb_Item extends Carbon_Breadcrumb_Factory {

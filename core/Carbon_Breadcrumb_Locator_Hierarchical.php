@@ -1,7 +1,7 @@
 <?php
 /**
  * Abstract breadcrumb item locator class for hierarchical types.
- * 
+ *
  * Used as a base for taxonomy, post type and other hierarchical locators.
  */
 abstract class Carbon_Breadcrumb_Locator_Hierarchical extends Carbon_Breadcrumb_Locator {
@@ -40,5 +40,5 @@ abstract class Carbon_Breadcrumb_Locator_Hierarchical extends Carbon_Breadcrumb_
 	 * @param int $id The ID of the item to retrieve the parent of.
 	 */
 	abstract public function get_parent_id( $id );
-	
+
 }

@@ -1,7 +1,7 @@
 <?php
 /**
  * Author archive breadcrumb item locator class.
- * 
+ *
  * Used to locate the breadcrumb items for author archives.
  */
 class Carbon_Breadcrumb_Locator_User extends Carbon_Breadcrumb_Locator {
@@ -52,8 +52,8 @@ class Carbon_Breadcrumb_Locator_User extends Carbon_Breadcrumb_Locator {
 		if ( ! $this->is_included() ) {
 			return array();
 		}
-		
+
 		return $this->get_items();
 	}
-	
+
 }

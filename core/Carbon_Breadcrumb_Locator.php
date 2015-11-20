@@ -1,7 +1,7 @@
 <?php
 /**
  * Abstract breadcrumb item locator class.
- * 
+ *
  * Used as a base for all breadcrumb locator types.
  */
 abstract class Carbon_Breadcrumb_Locator extends Carbon_Breadcrumb_Factory {
@@ -127,7 +127,7 @@ abstract class Carbon_Breadcrumb_Locator extends Carbon_Breadcrumb_Factory {
 	 * @access public
 	 */
 	abstract public function is_included();
-	
+
 	/**
 	 * Get the breadcrumb items, found by this locator.
 	 *
@@ -145,5 +145,5 @@ abstract class Carbon_Breadcrumb_Locator extends Carbon_Breadcrumb_Factory {
 	 * @access public
 	 */
 	abstract public function generate_items();
-	
+
 }

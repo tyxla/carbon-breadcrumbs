@@ -1,7 +1,7 @@
 <?php
 /**
  * Taxonomy term breadcrumb item locator class.
- * 
+ *
  * Used to locate the breadcrumb items for taxonomy terms.
  */
 class Carbon_Breadcrumb_Locator_Term extends Carbon_Breadcrumb_Locator_Hierarchical {
@@ -54,10 +54,10 @@ class Carbon_Breadcrumb_Locator_Term extends Carbon_Breadcrumb_Locator_Hierarchi
 		$taxonomies = get_taxonomies( array(
 			'public' => true,
 		) );
-		
+
 		return $this->generate_items_for_subtypes( $taxonomies );
 	}
-	
+
 	/**
 	 * Get the parent ID of a specific term ID
 	 *

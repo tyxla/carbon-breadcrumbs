@@ -451,5 +451,5 @@ class Carbon_Breadcrumb_Trail_Renderer {
 
 		return $items_output;
 	}
-	
+
 }

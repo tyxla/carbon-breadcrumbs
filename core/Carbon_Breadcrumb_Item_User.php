@@ -1,7 +1,7 @@
 <?php
 /**
  * Breadcrumb item class for author archives.
- * 
+ *
  * Used for breadcrumb items that represent a certain author archive page.
  */
 class Carbon_Breadcrumb_Item_User extends Carbon_Breadcrumb_Item_DB_Object {

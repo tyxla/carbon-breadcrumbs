@@ -1,7 +1,7 @@
 <?php
 /**
  * The main breadcrumb trail class.
- * 
+ *
  * Contains and manages the breadcrumb trail settings and breadcrumb items.
  */
 class Carbon_Breadcrumb_Trail {
@@ -308,5 +308,5 @@ class Carbon_Breadcrumb_Trail {
 		$trail->setup();
 		$trail->render();
 	}
-	
+
 }

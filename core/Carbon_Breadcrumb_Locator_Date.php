@@ -1,7 +1,7 @@
 <?php
 /**
  * Date archive breadcrumb item locator class.
- * 
+ *
  * Used to locate the breadcrumb items for date archives.
  */
 class Carbon_Breadcrumb_Locator_Date extends Carbon_Breadcrumb_Locator {
@@ -27,7 +27,7 @@ class Carbon_Breadcrumb_Locator_Date extends Carbon_Breadcrumb_Locator {
 	 */
 	public function get_items( $priority = 1000 ) {
 		$items = array();
-		
+
 		// prepare the date archive item details
 		$date_archives = $this->get_archive_item_details();
 
@@ -84,8 +84,8 @@ class Carbon_Breadcrumb_Locator_Date extends Carbon_Breadcrumb_Locator {
 		if ( ! $this->is_included() ) {
 			return array();
 		}
-		
+
 		return $this->get_items();
 	}
-	
+
 }

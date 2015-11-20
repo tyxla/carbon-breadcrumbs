@@ -1,7 +1,7 @@
 <?php
 /**
  * Post breadcrumb item locator class.
- * 
+ *
  * Used to locate the breadcrumb items for post types.
  */
 class Carbon_Breadcrumb_Locator_Post extends Carbon_Breadcrumb_Locator_Hierarchical {
@@ -53,7 +53,7 @@ class Carbon_Breadcrumb_Locator_Post extends Carbon_Breadcrumb_Locator_Hierarchi
 		$post_types = get_post_types( array(
 			'public' => true,
 		) );
-		
+
 		return $this->generate_items_for_subtypes( $post_types );
 	}
 
@@ -66,7 +66,7 @@ class Carbon_Breadcrumb_Locator_Post extends Carbon_Breadcrumb_Locator_Hierarchi
 	 * @return int $parent The parent ID.
 	 */
 	public function get_parent_id( $id ) {
-		return get_post_field( 'post_parent', $id ); 
+		return get_post_field( 'post_parent', $id );
 	}
-	
+
 }
