@@ -15,7 +15,7 @@ class Carbon_Breadcrumb_Locator_Term extends Carbon_Breadcrumb_Locator_Hierarchi
 	 */
 	public function is_included() {
 		$queried_object = get_queried_object();
-		
+
 		if ( ! empty( $queried_object->taxonomy ) && $queried_object->taxonomy == $this->get_subtype() ) {
 			return true;
 		}

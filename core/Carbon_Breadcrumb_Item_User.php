@@ -26,8 +26,7 @@ class Carbon_Breadcrumb_Item_User extends Carbon_Breadcrumb_Item_DB_Object {
 	 * @access public
 	 */
 	public function setup_title() {
-		$title = get_the_author_meta( 'display_name', $this->get_id() );
-		$title = apply_filters( 'the_title', $title );
+		$title = apply_filters( 'the_title', get_the_author_meta( 'display_name', $this->get_id() ) );
 		$this->set_title( $title );
 	}
 
@@ -37,8 +36,7 @@ class Carbon_Breadcrumb_Item_User extends Carbon_Breadcrumb_Item_DB_Object {
 	 * @access public
 	 */
 	public function setup_link() {
-		$link = get_author_posts_url( $this->get_id() );
-		$this->set_link( $link );
+		$this->set_link( get_author_posts_url( $this->get_id() ) );
 	}
 
 }

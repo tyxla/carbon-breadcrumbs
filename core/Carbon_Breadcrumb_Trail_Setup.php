@@ -47,10 +47,10 @@ class Carbon_Breadcrumb_Trail_Setup {
 			'term',
 			'user',
 		);
-		
+
 		foreach ( $locators as $locator_name ) {
 			$items = $this->generate_locator_items( $locator_name );
-			$this->get_trail()->add_item( $items );	
+			$this->get_trail()->add_item( $items );
 		}
 	}
 
@@ -162,7 +162,7 @@ class Carbon_Breadcrumb_Trail_Setup {
 	 *
 	 * @access public
 	 *
-	 * @return bool 
+	 * @return bool
 	 */
 	public function is_post_archive() {
 		return is_category() || is_tag() || is_date() || is_author();
@@ -173,7 +173,7 @@ class Carbon_Breadcrumb_Trail_Setup {
 	 *
 	 * @access public
 	 *
-	 * @return bool 
+	 * @return bool
 	 */
 	public function is_post_context() {
 		return is_home() || $this->is_post_archive() || ( is_single() && 'post' == get_post_type() );

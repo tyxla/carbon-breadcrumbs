@@ -1,7 +1,7 @@
 <?php
 /**
  * The breadcrumb trail render class.
- * 
+ *
  * Responsible for the breadcrumb trail rendering settings and process.
  */
 class Carbon_Breadcrumb_Trail_Renderer {

@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Localization class.
  * Adds support for translations.
@@ -7,7 +7,7 @@ class Carbon_Breadcrumb_L10n {
 
 	/**
 	 * Constructor.
-	 *	
+	 *
 	 * Initializes and hooks the plugin localization functionality.
 	 *
 	 * @access public
