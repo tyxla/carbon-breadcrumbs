@@ -71,7 +71,7 @@ class CarbonBreadcrumbLocatorTermIsIncludedTest extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_Locator_Term::is_included
 	 */
 	public function testOnSingleTerm() {
-		$this->go_to('/?p=' . $this->post );
+		$this->go_to('/?p=1' );
 		$this->assertFalse( $this->locator->is_included() );
 	}
 
