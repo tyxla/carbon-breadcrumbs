@@ -38,6 +38,7 @@ class CarbonBreadcrumbTrailSetupPopulateDateArchiveItemsTest extends WP_UnitTest
 			$this->assertSame( $item->get_type(), $actual_item->get_type() );
 			$this->assertSame( $item->get_subtype(), $actual_item->get_subtype() );
 			$this->assertSame( get_class($item), get_class($actual_item) );
+			$this->assertSame( 700, $actual_item->get_priority() );
 		}
 	}
 
@@ -57,6 +58,7 @@ class CarbonBreadcrumbTrailSetupPopulateDateArchiveItemsTest extends WP_UnitTest
 			$this->assertSame( $item->get_type(), $actual_item->get_type() );
 			$this->assertSame( $item->get_subtype(), $actual_item->get_subtype() );
 			$this->assertSame( get_class($item), get_class($actual_item) );
+			$this->assertSame( 700, $actual_item->get_priority() );
 		}
 	}
 
@@ -76,6 +78,7 @@ class CarbonBreadcrumbTrailSetupPopulateDateArchiveItemsTest extends WP_UnitTest
 			$this->assertSame( $item->get_type(), $actual_item->get_type() );
 			$this->assertSame( $item->get_subtype(), $actual_item->get_subtype() );
 			$this->assertSame( get_class($item), get_class($actual_item) );
+			$this->assertSame( 700, $actual_item->get_priority() );
 		}
 	}
 
