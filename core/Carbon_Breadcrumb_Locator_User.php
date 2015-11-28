@@ -27,7 +27,7 @@ class Carbon_Breadcrumb_Locator_User extends Carbon_Breadcrumb_Locator {
 	 * @return array $items The items, found by this locator.
 	 */
 	public function get_items( $priority = 1000, $user_id = 0 ) {
-		// get the current post ID, if not specified
+		// get the current author ID, if not specified
 		if ( ! $user_id ) {
 			$user_id = get_queried_object_id();
 		}
