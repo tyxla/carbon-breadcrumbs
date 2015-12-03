@@ -4,10 +4,11 @@
  * Description: A basic plugin for breadcrumbs with advanced capabilities for extending.
  * Version: 1.0
  * Author: tyxla
- * Author URI: https://github.com/tyxla
+ * Author URI: http://marinatanasov.com/
+ * Plugin URI: https://github.com/tyxla/carbon-breadcrumbs
  * License: GPL2
  * Requires at least: 3.8
- * Tested up to: 4.3.1
+ * Tested up to: 4.4
  * Text Domain: carbon_breadcrumbs
  * Domain Path: /languages
  */
