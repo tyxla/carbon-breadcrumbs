@@ -21,6 +21,9 @@ matrix:
   include:
   - php: 5.3
     env: WP_VERSION=latest WP_MULTISITE=1
+  exclude:
+  - php: 7.0
+    env: WP_VERSION=4.2 WP_MULTISITE=0
 
 before_script:
   - mysql -e "create database IF NOT EXISTS carbon_breadcrumbs_tests;" -uroot
