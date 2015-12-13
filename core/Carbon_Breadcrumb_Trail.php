@@ -124,7 +124,7 @@ class Carbon_Breadcrumb_Trail {
 	}
 
 	/**
-	 * Remove an item from the breadcrumb trail by either link or title, or both.
+	 * Remove an item from the breadcrumb trail by both title and link.
 	 *
 	 * @access public
 	 *
