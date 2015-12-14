@@ -23,9 +23,10 @@ class Carbon_Breadcrumb_Locator_Date extends Carbon_Breadcrumb_Locator {
 	 * @access public
 	 *
 	 * @param int $priority The priority of the located items.
+	 * @param int $id Not used.
 	 * @return array $items The items, found by this locator.
 	 */
-	public function get_items( $priority = 1000 ) {
+	public function get_items( $priority = 1000, $id = 0 ) {
 		$items = array();
 
 		// prepare the date archive item details
