@@ -35,7 +35,7 @@ class CarbonBreadcrumbLocatorDateGenerateItemsTest extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_Locator_Date::generate_items
 	 */
 	public function testWithIsIncludedFalse() {
-		$this->locator->expects($this->any())
+		$this->locator->expects($this->once())
 			->method('is_included')
 			->will($this->returnValue(false));
 
@@ -46,7 +46,7 @@ class CarbonBreadcrumbLocatorDateGenerateItemsTest extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_Locator_Date::generate_items
 	 */
 	public function testWithIsIncludedTrue() {
-		$this->locator->expects($this->any())
+		$this->locator->expects($this->once())
 			->method('is_included')
 			->will($this->returnValue(true));
 
