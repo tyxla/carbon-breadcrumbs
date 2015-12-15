@@ -351,6 +351,12 @@ This filter allows you to modify the link attributes of a breadcrumb item right 
 
 This filter allows you to modify the HTML output of a breadcrumb item right after its rendering.
 
+#### carbon_breadcrumb_enable_admin
+
+**$enabled** *(bool)*. Whether to enable the administration interface.
+
+This filter allows you to enable/disable manually the administration interface. When you enable/disable the administration interface, you also enable/disable the admin settings when displaying the breadcrumb trail.
+
 - - -
 
 ### Actions
