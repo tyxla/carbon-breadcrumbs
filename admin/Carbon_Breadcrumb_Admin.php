@@ -133,20 +133,22 @@ final class Carbon_Breadcrumb_Admin {
 	 * @return bool $is_enabled True if the admin interface is enabled.
 	 */
 	public function is_enabled() {
+		$enabled = false;
+
 		// enabled if this plugin is installed as a regular WordPress plugin
 		$plugin_path = untrailingslashit( ABSPATH ) . DIRECTORY_SEPARATOR . 'wp-content' . DIRECTORY_SEPARATOR . 'plugins';
 		$current_dir = dirname( __FILE__ );
 		if ( false !== strpos( $current_dir, $plugin_path ) ) {
-			return true;
+			$enabled = true;
 		}
 
 		// enabled if the CARBON_BREADCRUMB_ENABLE_ADMIN is defined as `true`
 		if ( defined( 'CARBON_BREADCRUMB_ENABLE_ADMIN' ) && CARBON_BREADCRUMB_ENABLE_ADMIN ) {
-			return true;
+			$enabled = true;
 		}
 
-		// disabled otherwise
-		return false;
+		// allow manual enabling/disabling
+		return apply_filters( 'carbon_breadcrumb_enable_admin', $enabled );
 	}
 
 	/**
