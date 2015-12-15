@@ -116,11 +116,9 @@ final class Carbon_Breadcrumb_Admin {
 		$settings_fields = Carbon_Breadcrumb_Admin_Settings::get_field_data();
 
 		foreach ( $settings_fields as $field_id => $field ) {
-			$field_value = get_option( 'carbon_breadcrumbs_' . $field_id );
-			if ( 'text' == $field['type'] && strlen( $field_value ) ) {
-				$settings[ $field_id ] = $field_value;
-			} elseif ( 'checkbox' == $field['type'] && is_string( $field_value ) ) {
-				$settings[ $field_id ] = (bool) $field_value;
+			$settings[ $field_id ] = get_option( 'carbon_breadcrumbs_' . $field_id );
+			if ( 'checkbox' == $field['type'] ) {
+				$settings[ $field_id ] = (bool) $settings[ $field_id ];
 			}
 		}
 
@@ -135,7 +133,6 @@ final class Carbon_Breadcrumb_Admin {
 	 * @return bool $is_enabled True if the admin interface is enabled.
 	 */
 	public function is_enabled() {
-
 		// enabled if this plugin is installed as a regular WordPress plugin
 		$plugin_path = untrailingslashit( ABSPATH ) . DIRECTORY_SEPARATOR . 'wp-content' . DIRECTORY_SEPARATOR . 'plugins';
 		$current_dir = dirname( __FILE__ );
