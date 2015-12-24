@@ -9,11 +9,11 @@ class Carbon_Breadcrumb_Admin {
 	/**
 	 * Settings container.
 	 *
-	 * @access protected
+	 * @access public
 	 *
 	 * @var Carbon_Breadcrumb_Admin_Settings
 	 */
-	protected $settings = null;
+	public $settings = null;
 
 	/**
 	 * Constructor.
