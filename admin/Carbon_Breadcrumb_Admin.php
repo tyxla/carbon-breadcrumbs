@@ -29,7 +29,7 @@ class Carbon_Breadcrumb_Admin {
 		// if administration is enabled, initialize
 		if ( $this->is_enabled() ) {
 			add_action( 'init', array( $this, 'init' ) );
-			add_action( 'admin_menu', array( $this, 'admin_init' ), 20 );
+			add_action( 'admin_menu', array( $this, 'admin_menu' ), 20 );
 		}
 	}
 
@@ -52,7 +52,7 @@ class Carbon_Breadcrumb_Admin {
 	 *
 	 * @access public
 	 */
-	public function admin_init() {
+	public function admin_menu() {
 		// register settings
 		$this->register_settings();
 	}
