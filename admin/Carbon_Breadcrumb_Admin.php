@@ -4,37 +4,25 @@
  *
  * Includes, wraps and manages the administration functionality.
  */
-final class Carbon_Breadcrumb_Admin {
-
-	/**
-	 * Instance container.
-	 *
-	 * @static
-	 * @access private
-	 *
-	 * @var Carbon_Breadcrumb_Admin
-	 */
-	private static $instance = null;
+class Carbon_Breadcrumb_Admin {
 
 	/**
 	 * Settings container.
 	 *
-	 * @static
-	 * @access public
+	 * @access protected
 	 *
 	 * @var Carbon_Breadcrumb_Admin_Settings
 	 */
-	public static $settings = null;
+	protected $settings = null;
 
 	/**
 	 * Constructor.
-	 * Private so only the get_instance() can instantiate it.
 	 *
 	 * Creates the administration functionality wrapper.
 	 *
-	 * @access private
+	 * @access public
 	 */
-	private function __construct() {
+	public function __construct() {
 		// include the plugin files
 		$this->include_files();
 
@@ -43,21 +31,6 @@ final class Carbon_Breadcrumb_Admin {
 			add_action( 'init', array( $this, 'init' ) );
 			add_action( 'admin_menu', array( $this, 'admin_init' ), 20 );
 		}
-	}
-
-	/**
-	 * Retrieve or create the Carbon_Breadcrumb_Admin instance.
-	 *
-	 * @static
-	 * @access public
-	 *
-	 * @return Carbon_Breadcrumb_Admin $instance
-	 */
-	public static function get_instance() {
-		if ( self::$instance === null ) {
-			self::$instance = new self();
-		}
-		return self::$instance;
 	}
 
 	/**
@@ -101,7 +74,7 @@ final class Carbon_Breadcrumb_Admin {
 	 */
 	public function register_settings() {
 		// register the settings page and fields
-		self::$settings = new Carbon_Breadcrumb_Admin_Settings();
+		$this->settings = new Carbon_Breadcrumb_Admin_Settings();
 	}
 
 	/**
@@ -150,19 +123,5 @@ final class Carbon_Breadcrumb_Admin {
 		// allow manual enabling/disabling
 		return apply_filters( 'carbon_breadcrumb_enable_admin', $enabled );
 	}
-
-	/**
-	 * Private __clone() to prevent cloning the singleton instance.
-	 *
-	 * @access private
-	 */
-	private function __clone() {}
-
-	/**
-	 * Private __wakeup() to prevent singleton instance unserialization.
-	 *
-	 * @access private
-	 */
-	private function __wakeup() {}
 
 }

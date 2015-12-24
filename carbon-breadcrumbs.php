@@ -61,4 +61,4 @@ include_once( $base_dir . '/admin/Carbon_Breadcrumb_Admin.php' );
 new Carbon_Breadcrumb_L10n();
 
 // initialize the administration interface
-Carbon_Breadcrumb_Admin::get_instance();
+new Carbon_Breadcrumb_Admin();
