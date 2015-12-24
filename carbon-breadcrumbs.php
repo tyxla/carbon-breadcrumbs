@@ -58,7 +58,9 @@ include_once( $core_dir . 'Carbon_Breadcrumb_Exception.php' );
 include_once( $base_dir . '/admin/Carbon_Breadcrumb_Admin.php' );
 
 // initialize l10n support
-new Carbon_Breadcrumb_L10n();
+global $carbon_breadcrumb_l10n;
+$carbon_breadcrumb_l10n = new Carbon_Breadcrumb_L10n();
 
 // initialize the administration interface
-new Carbon_Breadcrumb_Admin();
+global $carbon_breadcrumb_admin;
+$carbon_breadcrumb_admin = new Carbon_Breadcrumb_Admin();
