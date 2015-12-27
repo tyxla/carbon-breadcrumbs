@@ -19,7 +19,7 @@ class CarbonBreadcrumbTrailRendererConstructTest extends WP_UnitTestCase {
 	}
 
 	/**
-	 * @covers Carbon_Breadcrumb_Trail_Renderer::construct
+	 * @covers Carbon_Breadcrumb_Trail_Renderer::__construct
 	 */
 	public function testDefaultSettings() {
 		$this->renderer->__construct();
@@ -27,7 +27,7 @@ class CarbonBreadcrumbTrailRendererConstructTest extends WP_UnitTestCase {
 	}
 
 	/**
-	 * @covers Carbon_Breadcrumb_Trail_Renderer::construct
+	 * @covers Carbon_Breadcrumb_Trail_Renderer::__construct
 	 */
 	public function testWithSomeUnexistingSettings() {
 		$this->renderer->__construct(array(
@@ -39,7 +39,7 @@ class CarbonBreadcrumbTrailRendererConstructTest extends WP_UnitTestCase {
 	}
 
 	/**
-	 * @covers Carbon_Breadcrumb_Trail_Renderer::construct
+	 * @covers Carbon_Breadcrumb_Trail_Renderer::__construct
 	 */
 	public function testWithSomeExistingSettings() {
 		$this->renderer->__construct(array(
@@ -55,7 +55,7 @@ class CarbonBreadcrumbTrailRendererConstructTest extends WP_UnitTestCase {
 	}
 
 	/**
-	 * @covers Carbon_Breadcrumb_Trail_Renderer::construct
+	 * @covers Carbon_Breadcrumb_Trail_Renderer::__construct
 	 */
 	public function testArgumentFilter() {
 		add_filter( 'carbon_breadcrumbs_renderer_default_options', array( $this, 'carbon_breadcrumbs_renderer_default_options' ) );
@@ -68,7 +68,7 @@ class CarbonBreadcrumbTrailRendererConstructTest extends WP_UnitTestCase {
 	}
 
 	/**
-	 * @covers Carbon_Breadcrumb_Trail_Renderer::construct
+	 * @covers Carbon_Breadcrumb_Trail_Renderer::__construct
 	 */
 	public function testArgumentArgsPriorityToFilter() {
 		add_filter( 'carbon_breadcrumbs_renderer_default_options', array( $this, 'carbon_breadcrumbs_renderer_default_options' ) );
