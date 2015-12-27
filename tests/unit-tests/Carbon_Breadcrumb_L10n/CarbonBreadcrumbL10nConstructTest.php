@@ -16,18 +16,9 @@ class CarbonBreadcrumbL10nConstructTest extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_L10n::__construct
 	 */
 	public function testHookRegistered() {
-		global $wp_filter;
+		$this->l10n->__construct();
 
-		$this->l10n->__construct('foo', 'bar');
-
-		$expected = array(
-			'function' => array(
-				0 => $this->l10n,
-				1 => 'plugins_loaded',
-			),
-			'accepted_args' => 1,
-		);
-		$this->assertContains( $expected, $wp_filter['plugins_loaded'][10] );
+		$this->assertSame( 10, has_filter( 'plugins_loaded', array( $this->l10n, 'plugins_loaded' ) ) );
 	}
 
 }
