@@ -43,8 +43,8 @@ class CarbonBreadcrumbTrailRendererRenderItemsTest extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::render_items
 	 */
 	public function testDefaultOutput() {
-		$renderer1 = new Carbon_Breadcrumb_Item_Renderer($this->item1, $this->trail, $this->renderer, 1);
-		$renderer2 = new Carbon_Breadcrumb_Item_Renderer($this->item2, $this->trail, $this->renderer, 2);
+		$renderer1 = $this->getMock( 'Carbon_Breadcrumb_Item_Renderer', null, array($this->item1, $this->trail, $this->renderer, 1) );
+		$renderer2 = $this->getMock( 'Carbon_Breadcrumb_Item_Renderer', null, array($this->item2, $this->trail, $this->renderer, 2) );
 
 		$expected = array(
 			$renderer1->render(),
