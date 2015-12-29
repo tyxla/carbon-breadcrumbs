@@ -54,4 +54,18 @@ class CarbonBreadcrumbLocatorPostGetItemsTest extends WP_UnitTestCase {
 		}
 	}
 
+	/**
+	 * @covers Carbon_Breadcrumb_Locator_Post::get_items
+	 */
+	public function testWithHomePage() {
+		$this->go_to('/');
+
+		update_option( 'page_on_front', $this->post1 );
+
+		$expected = array();
+		$actual = $this->locator->get_items( 1000, $this->post1 );
+
+		$this->assertSame( $expected, $actual );
+	}
+
 }
