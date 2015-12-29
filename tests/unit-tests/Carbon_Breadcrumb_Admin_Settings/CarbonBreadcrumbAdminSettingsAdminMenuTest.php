@@ -12,7 +12,7 @@ class CarbonBreadcrumbAdminSettingsAdminMenuTest extends WP_UnitTestCase {
 
 	public function tearDown() {
 		parent::tearDown();
-		
+
 		unset( $this->adminSettings );
 	}
 
@@ -26,7 +26,7 @@ class CarbonBreadcrumbAdminSettingsAdminMenuTest extends WP_UnitTestCase {
 		$page_name = Carbon_Breadcrumb_Admin_Settings::get_page_name();
 
 		$current_user = get_current_user_id();
-		wp_set_current_user( self::factory()->user->create( array( 'role' => 'administrator' ) ) );
+		wp_set_current_user( $this->factory->user->create( array( 'role' => 'administrator' ) ) );
 
 		$this->adminSettings->admin_menu();
 		
