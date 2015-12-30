@@ -5,7 +5,7 @@
 class CarbonBreadcrumbAdminIncludeFilesTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->admin = $this->getMock('Carbon_Breadcrumb_Admin', array(), array(), '', false);
+		$this->admin = $this->getMock('Carbon_Breadcrumb_Admin', null, array(), '', false);
 	}
 
 	public function tearDown() {
