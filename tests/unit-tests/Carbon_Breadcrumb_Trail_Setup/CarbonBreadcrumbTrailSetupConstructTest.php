@@ -2,7 +2,7 @@
 /**
  * @group trail_setup
  */
-class CarbonBreadcrumbTrailSetupGetSetTrailTest extends WP_UnitTestCase {
+class CarbonBreadcrumbTrailSetupConstructTest extends WP_UnitTestCase {
 
 	public function setUp() {
 		$this->trail = $this->getMock('Carbon_Breadcrumb_Trail', null);
@@ -15,11 +15,10 @@ class CarbonBreadcrumbTrailSetupGetSetTrailTest extends WP_UnitTestCase {
 	}
 
 	/**
-	 * @covers Carbon_Breadcrumb_Trail_Setup::get_trail
-	 * @covers Carbon_Breadcrumb_Trail_Setup::set_trail
+	 * @covers Carbon_Breadcrumb_Trail_Setup::__construct
 	 */
-	public function testGetSetTrail() {
-		$this->setup->set_trail( $this->trail );
+	public function testTrailSet() {
+		$this->setup->__construct( $this->trail );
 		$this->assertSame( $this->trail, $this->setup->get_trail() );
 	}
 
