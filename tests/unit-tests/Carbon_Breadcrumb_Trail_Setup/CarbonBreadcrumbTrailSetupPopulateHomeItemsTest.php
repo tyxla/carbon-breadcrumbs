@@ -19,6 +19,7 @@ class CarbonBreadcrumbTrailSetupPopulateHomeItemsTest extends WP_UnitTestCase {
 
 	public function tearDown() {
 		unset( $this->trail );
+		unset( $this->renderer );
 		unset( $this->setup );
 		unset( $this->post );
 
