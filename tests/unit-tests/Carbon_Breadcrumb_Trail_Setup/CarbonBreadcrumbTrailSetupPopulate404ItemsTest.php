@@ -10,11 +10,13 @@ class CarbonBreadcrumbTrailSetupPopulate404ItemsTest extends WP_UnitTestCase {
 		$this->trail = $this->getMock('Carbon_Breadcrumb_Trail', null);
 		$this->setup = $this->getMock('Carbon_Breadcrumb_Trail_Setup', null, array(), '', false);
 		$this->setup->set_trail( $this->trail );
+		$this->post = $this->factory->post->create();
 	}
 
 	public function tearDown() {
 		unset( $this->trail );
 		unset( $this->setup );
+		unset( $this->post );
 
 		parent::tearDown();
 	}
