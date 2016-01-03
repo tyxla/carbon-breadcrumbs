@@ -27,6 +27,18 @@ class CarbonBreadcrumbTrailSetupPopulateSearchItemsTest extends WP_UnitTestCase 
 	/**
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_search_items
 	 */
+	public function testOnNonSearch() {
+		$this->go_to('/?p=' . $this->post );
+
+		$this->setup->populate_search_items();
+
+		$actual_items = array_values($this->trail->get_items());
+		$this->assertSame( array(), $actual_items );
+	}
+
+	/**
+	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_search_items
+	 */
 	public function testSearchItem() {
 		$this->go_to( '/?s=foo' );
 
