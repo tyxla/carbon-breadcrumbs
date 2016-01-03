@@ -25,6 +25,18 @@ class CarbonBreadcrumbTrailSetupPopulateDateArchiveItemsTest extends WP_UnitTest
 	/**
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_date_archive_items
 	 */
+	public function testOnNonDateArchive() {
+		$this->go_to('/?p=' . $this->post );
+
+		$this->setup->populate_date_archive_items();
+
+		$actual_items = array_values($this->trail->get_items());
+		$this->assertSame( array(), $actual_items );
+	}
+
+	/**
+	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_date_archive_items
+	 */
 	public function testWithYearArchive() {
 		$this->go_to('/?year=' . date('Y') );
 
