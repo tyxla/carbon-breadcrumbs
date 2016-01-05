@@ -85,7 +85,7 @@ class Carbon_Breadcrumb_Admin {
 	 * @param array $settings The default settings.
 	 * @return array $settings The modified settings.
 	 */
-	public function apply_settings( $settings ) {
+	public function apply_settings( $settings = array() ) {
 		$settings_fields = Carbon_Breadcrumb_Admin_Settings::get_field_data();
 
 		foreach ( $settings_fields as $field_id => $field ) {
