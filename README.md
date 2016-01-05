@@ -172,6 +172,8 @@ The following example will create, setup and render a breadcrumb trail with a cu
 	$trail->render();
 	?>
 
+**Note:** The Carbon_Breadcrumb_Trail items are preserved in a multidimensional array, where the array keys contain the priority, and the value is an array with all items of that priority, ordered by the date of their addition (oldest to newest). 
+
 - - -
 
 Configuration Options
