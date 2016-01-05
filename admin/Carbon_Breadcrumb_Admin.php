@@ -110,7 +110,7 @@ class Carbon_Breadcrumb_Admin {
 
 		// enabled if this plugin is installed as a regular WordPress plugin
 		$plugin_path = untrailingslashit( ABSPATH ) . DIRECTORY_SEPARATOR . 'wp-content' . DIRECTORY_SEPARATOR . 'plugins';
-		$current_dir = dirname( __FILE__ );
+		$current_dir = $this->current_dir();
 		if ( false !== strpos( $current_dir, $plugin_path ) ) {
 			$enabled = true;
 		}
@@ -122,6 +122,18 @@ class Carbon_Breadcrumb_Admin {
 
 		// allow manual enabling/disabling
 		return apply_filters( 'carbon_breadcrumb_enable_admin', $enabled );
+	}
+
+	/**
+	 * Returns the current directory.
+	 * Useful for covering multiple cases in unit tests.
+	 *
+	 * @access public
+	 *
+	 * @return string The absolute directory of the current file.
+	 */
+	public function current_dir() {
+		return dirname( __FILE__ );
 	}
 
 }
