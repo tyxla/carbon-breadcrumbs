@@ -1,0 +1,18 @@
+{
+    "name": "tyxla/carbon-breadcrumbs",
+    "description": "A basic WordPress plugin for breadcrumbs with advanced capabilities for extending.",
+    "keywords": ["wordpress", "breadcrumb", "breadcrumbs", "carbon", "admin", "trail", "settings", "developer", "configuration", "extending", "advanced", "glue", "before", "after", "auto"],
+    "homepage": "https://github.com/tyxla/carbon-breadcrumbs",
+    "type": "library",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Marin Atanasov",
+            "email": "contact@marinatanasov.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "files": ["carbon-breadcrumbs.php"]
+    }
+}
