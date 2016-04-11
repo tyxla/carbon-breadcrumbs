@@ -2,8 +2,8 @@
 Contributors: tyxla
 Tags: breadcrumb, breadcrumbs, carbon, admin, trail, settings, developer, configuration, extending, advanced, glue, before, after, auto
 Requires at least: 3.8
-Tested up to: 4.4.2
-Stable tag: 1.0.1
+Tested up to: 4.5
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,6 +59,9 @@ If you have an idea for a new feature, or you want to report a bug, feel free to
 https://github.com/tyxla/carbon-breadcrumbs
 
 == Changelog ==
+
+= 1.0.2 =
+Tested with WordPress 4.5.
 
 = 1.0.1 =
 Add some `.gitattributes` to make exporting lighter.
