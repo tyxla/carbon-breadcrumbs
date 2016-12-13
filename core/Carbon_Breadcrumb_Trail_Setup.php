@@ -131,7 +131,7 @@ class Carbon_Breadcrumb_Trail_Setup {
 		}
 
 		$taxonomy = 'category';
-		$categories = wp_get_object_terms( get_the_ID(), $taxonomy, 'orderby=term_id' );
+		$categories = wp_get_object_terms( get_the_ID(), $taxonomy, array( 'orderby' => 'term_id' ) );
 		$last_category = array_pop( $categories );
 		$locator = Carbon_Breadcrumb_Locator::factory( 'term', $taxonomy );
 		$items = $locator->get_items( 700, $last_category->term_id );
