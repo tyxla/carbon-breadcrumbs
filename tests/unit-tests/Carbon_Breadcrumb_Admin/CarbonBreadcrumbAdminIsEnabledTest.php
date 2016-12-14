@@ -19,6 +19,17 @@ class CarbonBreadcrumbAdminIsEnabledTest extends WP_UnitTestCase {
 	/**
 	 * @covers Carbon_Breadcrumb_Admin::is_enabled
 	 */
+	public function testWithNoEnabledConditions() {
+		$this->admin->expects($this->any())
+			->method('current_dir')
+			->will($this->returnValue(ABSPATH));
+
+		$this->assertFalse( $this->admin->is_enabled() );
+	}
+
+	/**
+	 * @covers Carbon_Breadcrumb_Admin::is_enabled
+	 */
 	public function testWhenInstalledAsPlugin() {
 		$plugins_path = untrailingslashit( ABSPATH ) . DIRECTORY_SEPARATOR . 'wp-content' . DIRECTORY_SEPARATOR . 'plugins';
 		$this->admin->expects($this->any())
@@ -54,17 +65,6 @@ class CarbonBreadcrumbAdminIsEnabledTest extends WP_UnitTestCase {
 		$this->assertTrue( $this->admin->is_enabled() );
 		
 		remove_filter( 'carbon_breadcrumb_enable_admin', array( $this, '__return_true' ) );
-	}
-
-	/**
-	 * @covers Carbon_Breadcrumb_Admin::is_enabled
-	 */
-	public function testWithNoEnabledConditions() {
-		$this->admin->expects($this->any())
-			->method('current_dir')
-			->will($this->returnValue(ABSPATH));
-
-		$this->assertFalse( $this->admin->is_enabled() );
 	}
 
 	public function __return_true() {
