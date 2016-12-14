@@ -17,7 +17,7 @@ BASEDIR="${PWD}"
 
 # Handle Windows drive paths
 if [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ]; then
-	BASEDIR=$(echo $BASEDIR | sed -r 's/\/([a-zA-Z])\//\1:\//g')
+	BASEDIR=$(echo $BASEDIR | sed 's/\/([a-zA-Z])\//\1:\//g')
 fi
 
 # Setup directory vars
@@ -83,7 +83,7 @@ install_test_suite() {
 	download http://develop.svn.wordpress.org/${testsurl}/wp-tests-config-sample.php wp-tests-config.php
 
 	# Make sure colons are escaped (they might exist in Windows environments)
-	WP_CORE_DIR=$(echo $WP_CORE_DIR | sed -r 's/:/\\:/g')
+	WP_CORE_DIR=$(echo $WP_CORE_DIR | sed 's/:/\\:/g')
 
 	# Replace variables in the config file
 	sed $ioption "s:dirname( __FILE__ ) . '/src/':'$WP_CORE_DIR':" wp-tests-config.php 2> /dev/null
