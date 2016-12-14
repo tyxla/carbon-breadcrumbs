@@ -25,9 +25,13 @@ class CarbonBreadcrumbItemRendererRenderTest extends WP_UnitTestCase {
 		$this->item_renderer = $this->getMock('Carbon_Breadcrumb_Item_Renderer', null, $args);
 
 		$this->trail->add_item($this->item);
+		
+		parent::setUp();
 	}
 
 	public function tearDown() {
+		parent::tearDown();
+		
 		unset( $this->trail );
 		unset( $this->item );
 		unset( $this->item_renderer );

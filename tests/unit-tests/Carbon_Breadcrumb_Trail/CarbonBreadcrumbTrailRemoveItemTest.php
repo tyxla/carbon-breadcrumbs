@@ -23,9 +23,13 @@ class CarbonBreadcrumbTrailRemoveItemTest extends WP_UnitTestCase {
 			$this->item2,
 			$this->item3,
 		));
+		
+		parent::setUp();
 	}
 
 	public function tearDown() {
+		parent::tearDown();
+		
 		unset( $this->trail );
 		unset( $this->item1 );
 		unset( $this->item2 );

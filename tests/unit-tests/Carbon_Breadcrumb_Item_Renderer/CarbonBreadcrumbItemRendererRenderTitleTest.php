@@ -28,9 +28,13 @@ class CarbonBreadcrumbItemRendererRenderTitleTest extends WP_UnitTestCase {
 		$this->item_renderer = $this->getMock('Carbon_Breadcrumb_Item_Renderer', null, array(), '', false);
 		$this->item_renderer->set_item($this->item);
 		$this->item_renderer->set_trail_renderer( $this->trail_renderer );
+		
+		parent::setUp();
 	}
 
 	public function tearDown() {
+		parent::tearDown();
+		
 		unset( $this->item );
 		unset( $this->title );
 		unset( $this->trail_renderer );

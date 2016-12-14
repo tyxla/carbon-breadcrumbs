@@ -6,9 +6,13 @@ class CarbonBreadcrumbAdminIsEnabledTest extends WP_UnitTestCase {
 
 	public function setUp() {
 		$this->admin = $this->getMock('Carbon_Breadcrumb_Admin', array('current_dir'), array(), '', false);
+		
+		parent::setUp();
 	}
 
 	public function tearDown() {
+		parent::tearDown();
+		
 		unset( $this->admin );
 	}
 
@@ -26,7 +30,6 @@ class CarbonBreadcrumbAdminIsEnabledTest extends WP_UnitTestCase {
 
 	/**
 	 * @covers Carbon_Breadcrumb_Admin::is_enabled
-	 * @runInSeparateProcess
 	 */
 	public function testWithAdminConstantDefined() {
 		$this->admin->expects($this->any())

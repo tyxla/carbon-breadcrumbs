@@ -11,9 +11,13 @@ class CarbonBreadcrumbAdminSettingsFieldFactoryTest extends WP_UnitTestCase {
 
 	public function setUp() {
 		$this->adminField = Carbon_Breadcrumb_Admin_Settings_Field::factory( $this->type, $this->id, $this->title, $this->section, $this->args );
+		
+		parent::setUp();
 	}
 
 	public function tearDown() {
+		parent::tearDown();
+		
 		unset( $this->adminField );
 	}
 

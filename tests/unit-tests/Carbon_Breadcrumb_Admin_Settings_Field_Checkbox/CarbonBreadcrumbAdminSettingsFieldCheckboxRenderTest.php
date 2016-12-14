@@ -11,9 +11,13 @@ class CarbonBreadcrumbAdminSettingsFieldCheckboxRenderTest extends WP_UnitTestCa
 		$this->field->expects( $this->any() )
 			->method( 'get_id' )
 			->will( $this->returnValue( $this->id ) );
+			
+		parent::setUp();
 	}
 
 	public function tearDown() {
+		parent::tearDown();
+		
 		unset( $this->field );
 	}
 

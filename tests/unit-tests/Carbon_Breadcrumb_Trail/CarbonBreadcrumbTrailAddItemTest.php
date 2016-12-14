@@ -13,9 +13,13 @@ class CarbonBreadcrumbTrailAddItemTest extends WP_UnitTestCase {
 		$this->item1->set_priority( 750 );
 		$this->item2->set_priority( 500 );
 		$this->item3->set_priority( 750 );
+		
+		parent::setUp();
 	}
 
 	public function tearDown() {
+		parent::tearDown();
+		
 		unset( $this->trail );
 		unset( $this->item1 );
 		unset( $this->item2 );

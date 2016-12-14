@@ -16,9 +16,13 @@ class CarbonBreadcrumbItemRendererGetItemLinkTest extends WP_UnitTestCase {
 
 		$this->link = 'http://example.com/foo/bar/';
 		$this->item->set_link( $this->link );
+		
+		parent::setUp();
 	}
 
 	public function tearDown() {
+		parent::tearDown();
+		
 		unset( $this->item );
 		unset( $this->item_renderer );
 		unset( $this->link );

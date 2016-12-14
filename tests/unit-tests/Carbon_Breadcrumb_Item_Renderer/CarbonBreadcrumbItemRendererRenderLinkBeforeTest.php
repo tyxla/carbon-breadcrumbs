@@ -15,9 +15,13 @@ class CarbonBreadcrumbItemRendererRenderLinkBeforeTest extends WP_UnitTestCase {
 		$this->link = 'http://example.com/foo/bar/';
 		$this->link_before = '<span class="foo">';
 		$this->trail_renderer->set_link_before($this->link_before);
+		
+		parent::setUp();
 	}
 
 	public function tearDown() {
+		parent::tearDown();
+		
 		unset( $this->item_renderer );
 		unset( $this->item );
 		unset( $this->trail_renderer );

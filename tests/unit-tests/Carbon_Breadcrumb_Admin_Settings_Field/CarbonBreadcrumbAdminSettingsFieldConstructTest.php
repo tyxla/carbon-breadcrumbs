@@ -12,9 +12,13 @@ class CarbonBreadcrumbAdminSettingsFieldConstructTest extends WP_UnitTestCase {
 		$this->adminField = $this->getMockForAbstractClass('Carbon_Breadcrumb_Admin_Settings_Field', array(), '', false );
 
 		$this->adminField->__construct($this->id, $this->title, $this->section, $this->args);
+		
+		parent::setUp();
 	}
 
 	public function tearDown() {
+		parent::tearDown();
+		
 		unset( $this->adminField );
 	}
 

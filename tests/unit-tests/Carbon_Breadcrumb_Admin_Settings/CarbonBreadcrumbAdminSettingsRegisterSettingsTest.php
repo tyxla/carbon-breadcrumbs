@@ -6,9 +6,13 @@ class CarbonBreadcrumbAdminSettingsRegisterSettingsTest extends WP_UnitTestCase 
 
 	public function setUp() {
 		$this->adminSettings = $this->getMock('Carbon_Breadcrumb_Admin_Settings', null, array(), '', false);
+		
+		parent::setUp();
 	}
 
 	public function tearDown() {
+		parent::tearDown();
+		
 		unset( $this->adminSettings );
 	}
 
