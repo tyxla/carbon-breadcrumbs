@@ -77,7 +77,7 @@ install_test_suite() {
 	# Prepare target directory and checkout WP test suite
 	mkdir -p $WP_TESTS_DIR
 	cd $WP_TESTS_DIR
-	svn co --quiet http://develop.svn.wordpress.org/${testsurl}/tests/
+	svn co --quiet http://develop.svn.wordpress.org/${testsurl}/tests/phpunit/includes/
 
 	# Download base configuration file
 	download http://develop.svn.wordpress.org/${testsurl}/wp-tests-config-sample.php wp-tests-config.php
