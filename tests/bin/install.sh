@@ -84,7 +84,7 @@ install_test_suite() {
 
 	if [ $WP_VERSION == '4.7' ]; then
 		echo 'Unprops @pento ...'
-		curl 'https://core.trac.wordpress.org/changeset/39626?format=diff&new=39626' | sed 's=/trunk/tests/=/tmp/=g' | patch -f -R -p2
+		curl 'https://core.trac.wordpress.org/changeset/39626?format=diff&new=39626' | sed 's=/trunk/tests/phpunit.=/tmp/=g' | patch -f -R -p2
 		echo 'Unprops complete'
 	fi
 
