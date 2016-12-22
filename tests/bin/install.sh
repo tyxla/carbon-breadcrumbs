@@ -77,14 +77,14 @@ install_test_suite() {
 	# Prepare target directory and checkout WP test suite
 	mkdir -p $WP_TESTS_DIR
 	cd $WP_TESTS_DIR
-	svn co --quiet http://develop.svn.wordpress.org/${testsurl}/tests/phpunit/
+	svn co --quiet http://develop.svn.wordpress.org/${testsurl}/tests/
 
 	# Download base configuration file
 	download http://develop.svn.wordpress.org/${testsurl}/wp-tests-config-sample.php wp-tests-config.php
 
 	if [ $WP_VERSION == '4.7' ]; then
 		echo 'Unprops @pento ...'
-		curl 'https://core.trac.wordpress.org/changeset/39626?format=diff&new=39626' | sed 's=/trunk/tests/=/tmp/=g' | patch -R -p2
+		curl 'https://core.trac.wordpress.org/changeset/39626?format=diff&new=39626' | sed 's=/trunk/tests/=/tmp/=g' | patch -f -R -p2
 		echo 'Unprops complete'
 	fi
 
