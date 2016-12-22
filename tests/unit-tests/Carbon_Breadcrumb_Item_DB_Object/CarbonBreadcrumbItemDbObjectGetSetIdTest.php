@@ -6,9 +6,13 @@ class CarbonBreadcrumbItemDbObjectGetSetIdTest extends WP_UnitTestCase {
 
 	public function setUp() {
 		$this->item = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item_DB_Object');
+		
+		parent::setUp();
 	}
 
 	public function tearDown() {
+		parent::tearDown();
+		
 		unset( $this->item );
 	}
 

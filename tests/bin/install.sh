@@ -82,6 +82,51 @@ install_test_suite() {
 	# Download base configuration file
 	download http://develop.svn.wordpress.org/${testsurl}/wp-tests-config-sample.php wp-tests-config.php
 
+	if [ $WP_VERSION == '4.7' ]; then
+		svn patch "Index: /tmp/includes/testcase.php
+===================================================================
+--- /tmp/includes/testcase.php	(revision 39625)
++++ /tmp/includes/testcase.php	(revision 39626)
+@@ -58,4 +58,11 @@
+ 
+ 	public static function setUpBeforeClass() {
++		global $wpdb;
++
++		$wpdb->suppress_errors = false;
++		$wpdb->show_errors = true;
++		$wpdb->db_connect();
++		ini_set('display_errors', 1 );
++
+ 		parent::setUpBeforeClass();
+ 
+@@ -99,9 +106,6 @@
+ 		}
+ 
+-		global $wpdb, $wp_rewrite;
+-		$wpdb->suppress_errors = false;
+-		$wpdb->show_errors = true;
+-		$wpdb->db_connect();
+-		ini_set('display_errors', 1 );
++		global $wp_rewrite;
++
+ 		$this->clean_up_global_scope();
+ 
+Index: /tmp/includes/utils.php
+===================================================================
+--- /tmp/includes/utils.php	(revision 39625)
++++ /tmp/includes/utils.php	(revision 39626)
+@@ -390,4 +390,9 @@
+ 		$this->field_types = $wpdb->field_types;
+ 		$this->charset = $wpdb->charset;
++
++		$this->dbuser = $wpdb->dbuser;
++		$this->dbpassword = $wpdb->dbpassword;
++		$this->dbname = $wpdb->dbname;
++		$this->dbhost = $wpdb->dbhost;
+ 	}
+"
+	fi
+
 	# Make sure colons are escaped (they might exist in Windows environments)
 	WP_CORE_DIR=$(echo $WP_CORE_DIR | sed 's/:/\\:/g')
 

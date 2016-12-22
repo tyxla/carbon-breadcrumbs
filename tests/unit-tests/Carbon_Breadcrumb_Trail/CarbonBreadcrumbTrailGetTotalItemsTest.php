@@ -9,9 +9,13 @@ class CarbonBreadcrumbTrailGetTotalItemsTest extends WP_UnitTestCase {
 		$this->item1 = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item');
 		$this->item2 = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item');
 		$this->item3 = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item');
+		
+		parent::setUp();
 	}
 
 	public function tearDown() {
+		parent::tearDown();
+		
 		unset( $this->trail );
 		unset( $this->item1 );
 		unset( $this->item2 );

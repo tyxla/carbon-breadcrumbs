@@ -5,9 +5,13 @@
 class CarbonBreadcrumbAdminSettingsFieldTextRenderTest extends WP_UnitTestCase {
 	public function setUp() {
 		$this->field = $this->getMock('Carbon_Breadcrumb_Admin_Settings_Field_Text', array('get_id', 'get_value'), array(), '', false );
+		
+		parent::setUp();
 	}
 
 	public function tearDown() {
+		parent::tearDown();
+		
 		unset( $this->field );
 	}
 

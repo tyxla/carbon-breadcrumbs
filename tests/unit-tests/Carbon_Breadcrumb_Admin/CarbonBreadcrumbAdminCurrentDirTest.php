@@ -6,9 +6,13 @@ class CarbonBreadcrumbAdminCurrentDirTest extends WP_UnitTestCase {
 
 	public function setUp() {
 		$this->admin = $this->getMock('Carbon_Breadcrumb_Admin', null, array(), '', false);
+		
+		parent::setUp();
 	}
 
 	public function tearDown() {
+		parent::tearDown();
+		
 		unset( $this->admin );
 	}
 

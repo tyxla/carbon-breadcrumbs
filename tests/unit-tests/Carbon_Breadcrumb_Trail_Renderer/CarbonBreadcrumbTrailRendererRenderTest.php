@@ -25,9 +25,13 @@ class CarbonBreadcrumbTrailRendererRenderTest extends WP_UnitTestCase {
 			$this->item1,
 			$this->item2,
 		));
+		
+		parent::setUp();
 	}
 
 	public function tearDown() {
+		parent::tearDown();
+		
 		unset( $this->renderer );
 		unset( $this->trail );
 		unset( $this->item1 );
