@@ -82,6 +82,12 @@ install_test_suite() {
 	# Download base configuration file
 	download http://develop.svn.wordpress.org/${testsurl}/wp-tests-config-sample.php wp-tests-config.php
 
+	if [ $WP_VERSION == '4.7' ]; then
+		echo 'Unprops @pento ...'
+		curl 'https://core.trac.wordpress.org/changeset/39626?format=diff&new=39626' | patch -R -p2
+		echo 'Unprops complete'
+	fi
+
 	# Make sure colons are escaped (they might exist in Windows environments)
 	WP_CORE_DIR=$(echo $WP_CORE_DIR | sed 's/:/\\:/g')
 
