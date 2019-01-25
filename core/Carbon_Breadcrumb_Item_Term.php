@@ -43,7 +43,14 @@ class Carbon_Breadcrumb_Item_Term extends Carbon_Breadcrumb_Item_DB_Object {
 	 * @access public
 	 */
 	public function setup_title() {
-		$title = apply_filters( 'the_title', $this->term_object->name );
+		$filter_name = 'single_term_title';
+		if ( $this->term_object->taxonomy === 'category' ) {
+			$filter_name = 'single_cat_title';
+		} elseif ( $this->term_object->taxonomy === 'post_tag' ) {
+			$filter_name = 'single_tag_title';
+		}
+
+		$title = apply_filters( $filter_name, $this->term_object->name );
 		$this->set_title( $title );
 	}
 
