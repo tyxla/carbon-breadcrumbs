@@ -27,7 +27,7 @@ class Carbon_Breadcrumb_Item_Post extends Carbon_Breadcrumb_Item_DB_Object {
 	 */
 	public function setup_title() {
 		$title = get_post_field( 'post_title', $this->get_id() );
-		$title = apply_filters( 'the_title', $title );
+		$title = apply_filters( 'the_title', $title, $this->get_id() );
 		$this->set_title( $title );
 	}
 
