@@ -26,7 +26,7 @@ class Carbon_Breadcrumb_Item_User extends Carbon_Breadcrumb_Item_DB_Object {
 	 * @access public
 	 */
 	public function setup_title() {
-		$title = apply_filters( 'the_title', get_the_author_meta( 'display_name', $this->get_id() ) );
+		$title = apply_filters( 'the_author', get_the_author_meta( 'display_name', $this->get_id() ) );
 		$this->set_title( $title );
 	}
 
