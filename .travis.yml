@@ -1,37 +1,62 @@
+sudo: false
+dist: trusty
+
 language: php
 
-sudo: false
+notifications:
+  email:
+    on_success: never
+    on_failure: change
 
-php:
-  - 5.2
-  - 5.3
-  - 5.4
-  - 5.5
-  - 5.6
-  - 7.0
-  - hhvm
-
-env:
-  - WP_VERSION=latest WP_MULTISITE=0
-  - WP_VERSION=4.7 WP_MULTISITE=0
-  - WP_VERSION=4.6 WP_MULTISITE=0
-  - WP_VERSION=4.5 WP_MULTISITE=0
-  - WP_VERSION=4.4 WP_MULTISITE=0
+cache:
+  directories:
+    - $HOME/.composer/cache
 
 matrix:
   include:
-  - php: 5.3
-    env: WP_VERSION=latest WP_MULTISITE=1
-  exclude:
-  - php: 7.0
-    env: WP_VERSION=4.2 WP_MULTISITE=0
+    - php: 7.1
+      env: WP_VERSION=latest
+    - php: 7.0
+      env: WP_VERSION=latest
+    - php: 5.6
+      env: WP_VERSION=4.0
+    - php: 5.6
+      env: WP_VERSION=latest
+    - php: 5.6
+      env: WP_VERSION=trunk
+    - php: 5.6
+      env: WP_TRAVISCI=phpcs
+    - php: 5.3
+      env: WP_VERSION=latest
+      dist: precise
 
 before_script:
-  - mysql -e "create database IF NOT EXISTS carbon_breadcrumbs_tests;" -uroot
-  - bash tests/bin/install.sh carbon_breadcrumbs_tests root '' localhost $WP_VERSION
+  - echo 'xdebug.coverage_enable=1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+  - |
+    if [[ ! -z "$WP_VERSION" ]] ; then
+      bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
+      composer global require "phpunit/phpunit=4.8.*|5.7.*"
+    fi
+  - |
+    if [[ "$WP_TRAVISCI" == "phpcs" ]] ; then
+      composer global require wp-coding-standards/wpcs
+      phpcs --config-set installed_paths $HOME/.composer/vendor/wp-coding-standards/wpcs
+    fi
 
-script: phpunit --coverage-clover=./tmp/clover.xml
+script:
+  - |
+    if [[ ! -z "$WP_VERSION" ]] ; then
+      phpunit --coverage-clover=coverage.xml
+      WP_MULTISITE=1 phpunit
+    fi
+  - |
+    if [[ "$WP_TRAVISCI" == "phpcs" ]] ; then
+      phpcs
+    fi
 
-after_script:
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
   - wget https://scrutinizer-ci.com/ocular.phar
   - php ocular.phar code-coverage:upload --format=php-clover ./tmp/clover.xml
+  
