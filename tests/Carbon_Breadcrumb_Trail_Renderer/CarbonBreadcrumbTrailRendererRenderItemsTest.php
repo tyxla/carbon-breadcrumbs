@@ -9,12 +9,12 @@ class CarbonBreadcrumbTrailRendererRenderItemsTest extends WP_UnitTestCase {
 	}
 
 	public function setUp() {
-		$this->renderer = $this->getMock('Carbon_Breadcrumb_Trail_Renderer', array('get_priority'), array(), '', false);
+		$this->renderer = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail_Renderer' )->setMethods( array( 'get_priority' ) )->disableOriginalConstructor()->getMock();
 		$this->renderer->expects($this->any())
 			->method('get_priority')
 			->will($this->returnValue(1000));
 
-		$this->trail = $this->getMock('Carbon_Breadcrumb_Trail', null);
+		$this->trail = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
 
 		$this->item1 = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item');
 		$this->item2 = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item');
@@ -43,8 +43,8 @@ class CarbonBreadcrumbTrailRendererRenderItemsTest extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::render_items
 	 */
 	public function testDefaultOutput() {
-		$renderer1 = $this->getMock( 'Carbon_Breadcrumb_Item_Renderer', null, array($this->item1, $this->trail, $this->renderer, 1) );
-		$renderer2 = $this->getMock( 'Carbon_Breadcrumb_Item_Renderer', null, array($this->item2, $this->trail, $this->renderer, 2) );
+		$renderer1 = $this->getMockBuilder( 'Carbon_Breadcrumb_Item_Renderer' )->setMethods( null )->setConstructorArgs( array( $this->item1, $this->trail, $this->renderer, 1 ) )->getMock();
+		$renderer2 = $this->getMockBuilder( 'Carbon_Breadcrumb_Item_Renderer' )->setMethods( null )->setConstructorArgs( array( $this->item2, $this->trail, $this->renderer, 2 ) )->getMock();
 
 		$expected = array(
 			$renderer1->render(),

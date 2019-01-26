@@ -20,7 +20,7 @@ class CarbonBreadcrumbL10nPluginsLoadedTest extends WP_UnitTestCase {
 	}
 
 	public function setUp() {
-		$this->l10n = $this->getMock('Carbon_Breadcrumb_L10n', null, array(), '', false);
+		$this->l10n = $this->getMockBuilder( 'Carbon_Breadcrumb_L10n' )->setMethods( null )->disableOriginalConstructor()->getMock();
 	}
 
 	public function tearDown() {
@@ -31,12 +31,13 @@ class CarbonBreadcrumbL10nPluginsLoadedTest extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_L10n::plugins_loaded
 	 */
 	public function testTextdomainLoaded() {
+		$this->markTestSkipped( 'Plugin localizations are now automatically loaded.' );
+
 		add_filter( 'locale', array( $this, 'locale' ) );
 		add_filter( 'load_textdomain_mofile', array( $this, 'load_textdomain_mofile' ), 10, 2 );
 
 		$this->l10n->plugins_loaded();
 
-		global $l10n;
 		$this->assertArrayHasKey( 'carbon_breadcrumbs', $l10n );
 
 		remove_filter( 'locale', array( $this, 'locale' ) );

@@ -5,7 +5,7 @@
 class CarbonBreadcrumbTrailOutputTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->trail = $this->getMock('Carbon_Breadcrumb_Trail', null);
+		$this->trail = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
 
 		$this->item1 = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item');
 		$this->item2 = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item');
@@ -33,7 +33,7 @@ class CarbonBreadcrumbTrailOutputTest extends WP_UnitTestCase {
 	 */
 	public function testDefaultArgs() {
 		ob_start();
-		$trail = $this->getMock('Carbon_Breadcrumb_Trail', null);
+		$trail = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
 		$trail->setup();
 		$trail->render();
 		$expected = ob_get_clean();
@@ -54,7 +54,9 @@ class CarbonBreadcrumbTrailOutputTest extends WP_UnitTestCase {
 		);
 
 		ob_start();
-		$trail = $this->getMock('Carbon_Breadcrumb_Trail', null, array($args));
+		$renderer = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail_Renderer' )->setMethods( null )->setConstructorArgs( $args )->getMock();
+		$trail = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
+		$trail->set_renderer( $renderer );
 		$trail->setup();
 		$trail->render();
 		$expected = ob_get_clean();

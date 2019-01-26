@@ -5,7 +5,7 @@
 class CarbonBreadcrumbAdminSettingsGetPageNameTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->adminSettings = $this->getMock('Carbon_Breadcrumb_Admin_Settings', null, array(), '', false);
+		$this->adminSettings = $this->getMockBuilder( 'Carbon_Breadcrumb_Admin_Settings' )->setMethods(null)->disableOriginalConstructor()->getMock();
 	}
 
 	public function tearDown() {

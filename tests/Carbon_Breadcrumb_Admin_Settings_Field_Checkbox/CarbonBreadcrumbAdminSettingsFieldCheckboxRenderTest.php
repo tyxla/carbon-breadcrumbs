@@ -6,7 +6,7 @@ class CarbonBreadcrumbAdminSettingsFieldCheckboxRenderTest extends WP_UnitTestCa
 	protected $id = 'foobar';
 
 	public function setUp() {
-		$this->field = $this->getMock('Carbon_Breadcrumb_Admin_Settings_Field_Checkbox', array('get_id', 'get_value'), array(), '', false );
+		$this->field = $this->getMockBuilder( 'Carbon_Breadcrumb_Admin_Settings_Field_Checkbox' )->setMethods( array( 'get_id', 'get_value' ) )->disableOriginalConstructor()->getMock();
 
 		$this->field->expects( $this->any() )
 			->method( 'get_id' )

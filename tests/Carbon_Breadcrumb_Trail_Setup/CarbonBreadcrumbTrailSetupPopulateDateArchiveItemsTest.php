@@ -7,8 +7,8 @@ class CarbonBreadcrumbTrailSetupPopulateDateArchiveItemsTest extends WP_UnitTest
 	public function setUp() {
 		parent::setUp();
 
-		$this->trail = $this->getMock('Carbon_Breadcrumb_Trail', null);
-		$this->setup = $this->getMock('Carbon_Breadcrumb_Trail_Setup', null, array(), '', false);
+		$this->trail = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
+		$this->setup = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail_Setup' )->setMethods( null )->disableOriginalConstructor()->getMock();
 		$this->post = $this->factory->post->create();
 
 		$this->setup->set_trail( $this->trail );

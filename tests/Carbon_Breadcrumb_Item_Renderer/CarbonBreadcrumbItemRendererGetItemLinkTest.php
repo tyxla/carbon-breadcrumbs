@@ -11,7 +11,7 @@ class CarbonBreadcrumbItemRendererGetItemLinkTest extends WP_UnitTestCase {
 	public function setUp() {
 		$this->item = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item');
 
-		$this->item_renderer = $this->getMock('Carbon_Breadcrumb_Item_Renderer', null, array(), '', false);
+		$this->item_renderer = $this->getMockBuilder( 'Carbon_Breadcrumb_Item_Renderer' )->setMethods( null )->disableOriginalConstructor()->getMock();
 		$this->item_renderer->set_item($this->item);
 
 		$this->link = 'http://example.com/foo/bar/';

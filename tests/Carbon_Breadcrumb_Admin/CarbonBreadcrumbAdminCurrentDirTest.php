@@ -5,7 +5,7 @@
 class CarbonBreadcrumbAdminCurrentDirTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->admin = $this->getMock('Carbon_Breadcrumb_Admin', null, array(), '', false);
+		$this->admin = $this->getMockBuilder( 'Carbon_Breadcrumb_Admin' )->setMethods(null)->disableOriginalConstructor()->getMock();
 	}
 
 	public function tearDown() {
@@ -16,7 +16,7 @@ class CarbonBreadcrumbAdminCurrentDirTest extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_Admin::current_dir
 	 */
 	public function testCurrentDir() {
-		$expected = dirname( dirname( dirname( dirname( __FILE__ ) ) ) ) . DIRECTORY_SEPARATOR . 'admin';
+		$expected = dirname( dirname( dirname( __FILE__ ) ) ) . DIRECTORY_SEPARATOR . 'admin';
 		$actual = $this->admin->current_dir();
 		$this->assertSame( $expected, $actual );
 	}

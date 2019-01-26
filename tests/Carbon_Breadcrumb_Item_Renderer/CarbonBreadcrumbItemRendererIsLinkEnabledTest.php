@@ -9,9 +9,9 @@ class CarbonBreadcrumbItemRendererIsLinkEnabledTest extends WP_UnitTestCase {
 		$this->item2 = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item');
 
 		$this->trail = $this->getMockForAbstractClass('Carbon_Breadcrumb_Trail');
-		$this->trail_renderer = $this->getMock('Carbon_Breadcrumb_Trail_Renderer', null, array(), '', false);
+		$this->trail_renderer = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail_Renderer' )->setMethods( null )->disableOriginalConstructor()->getMock();
 
-		$this->item_renderer = $this->getMock('Carbon_Breadcrumb_Item_Renderer', null, array(), '', false);
+		$this->item_renderer = $this->getMockBuilder( 'Carbon_Breadcrumb_Item_Renderer' )->setMethods( null )->disableOriginalConstructor()->getMock();
 	}
 
 	public function tearDown() {

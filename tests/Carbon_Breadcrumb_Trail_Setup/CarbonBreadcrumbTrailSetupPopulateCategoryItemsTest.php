@@ -7,8 +7,8 @@ class CarbonBreadcrumbTrailSetupPopulateCategoryItemsTest extends WP_UnitTestCas
 	public function setUp() {
 		parent::setUp();
 
-		$this->trail = $this->getMock('Carbon_Breadcrumb_Trail', null);
-		$this->setup = $this->getMock('Carbon_Breadcrumb_Trail_Setup', null, array(), '', false);
+		$this->trail = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
+		$this->setup = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail_Setup' )->setMethods( null )->disableOriginalConstructor()->getMock();
 		$this->setup->set_trail( $this->trail );
 		$this->parent_cat = $this->factory->category->create();
 		$this->child_cat = $this->factory->category->create(array(

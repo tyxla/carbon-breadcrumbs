@@ -7,10 +7,10 @@ class CarbonBreadcrumbTrailSetupPopulateDbObjectItemsTest extends WP_UnitTestCas
 	public function setUp() {
 		parent::setUp();
 
-		$this->trail = $this->getMock('Carbon_Breadcrumb_Trail', null);
-		$this->setup = $this->getMock('Carbon_Breadcrumb_Trail_Setup', null, array(), '', false);
+		$this->trail = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
+		$this->setup = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail_Setup' )->setMethods( null )->disableOriginalConstructor()->getMock();
 		$this->setup->set_trail( $this->trail );
-		$this->setup_exposed = $this->getMock('Carbon_Breadcrumb_Trail_Setup_Exposed', null, array(), '', false);
+		$this->setup_exposed = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail_Setup_Exposed' )->setMethods( null )->disableOriginalConstructor()->getMock();
 	}
 
 	public function tearDown() {

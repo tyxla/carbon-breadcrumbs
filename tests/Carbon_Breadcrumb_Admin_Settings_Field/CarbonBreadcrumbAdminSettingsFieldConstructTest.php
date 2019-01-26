@@ -49,7 +49,7 @@ class CarbonBreadcrumbAdminSettingsFieldConstructTest extends WP_UnitTestCase {
 			'callback' => array( $this->adminField, 'render' ),
 			'args' => $this->args
 		);
-		$this->assertSame( $expected, $wp_settings_fields[ $page ][ $this->section ][ $this->id ] );
+		$this->assertEquals( $expected, $wp_settings_fields[ $page ][ $this->section ][ $this->id ] );
 	}
 
 	/**
@@ -60,7 +60,7 @@ class CarbonBreadcrumbAdminSettingsFieldConstructTest extends WP_UnitTestCase {
 		$page = Carbon_Breadcrumb_Admin_Settings::get_page_name();
 
 		$this->assertArrayHasKey( $page, $new_whitelist_options );
-		$this->assertSame( array($this->id), $new_whitelist_options[ $page ] );
+		$this->assertContains( $this->id, $new_whitelist_options[ $page ] );
 	}
 
 }

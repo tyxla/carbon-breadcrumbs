@@ -7,7 +7,7 @@ class CarbonBreadcrumbTrailSetupIsPostContextTest extends WP_UnitTestCase {
 	public function setUp() {
 		parent::setUp();
 
-		$this->setup = $this->getMock('Carbon_Breadcrumb_Trail_Setup', null, array(), '', false);
+		$this->setup = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail_Setup' )->setMethods( null )->disableOriginalConstructor()->getMock();
 		$this->post = $this->factory->post->create();
 		$this->page = $this->factory->post->create(array(
 			'post_type' => 'page',

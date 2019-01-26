@@ -7,9 +7,9 @@ class CarbonBreadcrumbTrailSetupPopulatePageForPostsItemsTest extends WP_UnitTes
 	public function setUp() {
 		parent::setUp();
 
-		$this->trail = $this->getMock('Carbon_Breadcrumb_Trail', null);
-		$this->renderer = $this->getMock('Carbon_Breadcrumb_Trail_Renderer', null);
-		$this->setup = $this->getMock('Carbon_Breadcrumb_Trail_Setup', array('is_post_context'), array(), '', false);
+		$this->trail = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
+		$this->renderer = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail_Renderer' )->setMethods( null )->getMock();
+		$this->setup = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail_Setup' )->setMethods( array( 'is_post_context' ) )->disableOriginalConstructor()->getMock();
 
 		$this->setup->set_trail( $this->trail );
 		$this->trail->set_renderer( $this->renderer );

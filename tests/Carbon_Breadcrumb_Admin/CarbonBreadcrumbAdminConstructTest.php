@@ -5,7 +5,7 @@
 class CarbonBreadcrumbAdminConstructTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->admin = $this->getMock('Carbon_Breadcrumb_Admin', array( 'is_enabled' ), array(), '', false);
+		$this->admin = $this->getMockBuilder( 'Carbon_Breadcrumb_Admin' )->setMethods(array('is_enabled'))->disableOriginalConstructor()->getMock();
 	}
 
 	public function tearDown() {

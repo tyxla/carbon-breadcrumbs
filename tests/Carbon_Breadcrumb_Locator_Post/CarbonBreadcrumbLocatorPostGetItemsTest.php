@@ -7,7 +7,7 @@ class CarbonBreadcrumbLocatorPostGetItemsTest extends WP_UnitTestCase {
 	public function setUp() {
 		parent::setUp();
 
-		$this->locator = $this->getMock( 'Carbon_Breadcrumb_Locator_Post', null, array( 'post', 'post' ) );
+		$this->locator = $this->getMockBuilder( 'Carbon_Breadcrumb_Locator_Post' )->setMethods( null )->setConstructorArgs( array( 'post', 'post' ) )->getMock();
 		$this->post1 = $this->factory->post->create();
 		$this->post2 = $this->factory->post->create();
 	}

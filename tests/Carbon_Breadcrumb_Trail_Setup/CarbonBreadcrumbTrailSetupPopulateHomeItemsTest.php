@@ -7,9 +7,9 @@ class CarbonBreadcrumbTrailSetupPopulateHomeItemsTest extends WP_UnitTestCase {
 	public function setUp() {
 		parent::setUp();
 
-		$this->trail = $this->getMock('Carbon_Breadcrumb_Trail', null);
-		$this->renderer = $this->getMock('Carbon_Breadcrumb_Trail_Renderer', array('get_display_home_item'));
-		$this->setup = $this->getMock('Carbon_Breadcrumb_Trail_Setup', null, array(), '', false);
+		$this->trail = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
+		$this->renderer = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail_Renderer' )->setMethods( array( 'get_display_home_item' ) )->getMock();
+		$this->setup = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail_Setup' )->setMethods( null )->disableOriginalConstructor()->getMock();
 
 		$this->setup->set_trail( $this->trail );
 		$this->trail->set_renderer( $this->renderer );

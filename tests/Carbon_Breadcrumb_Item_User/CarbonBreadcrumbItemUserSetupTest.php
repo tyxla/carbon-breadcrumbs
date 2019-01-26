@@ -16,7 +16,7 @@ class CarbonBreadcrumbItemUserSetupTest extends WP_UnitTestCase {
 	}
 
 	public function setUp() {
-		$this->item = $this->getMock('Carbon_Breadcrumb_Item_User', array('setup_title', 'setup_link', 'get_id'));
+		$this->item = $this->getMockBuilder( 'Carbon_Breadcrumb_Item_User' )->setMethods( array( 'setup_title', 'setup_link', 'get_id' ) )->getMock();
 	}
 
 	public function tearDown() {

@@ -5,7 +5,7 @@
 class CarbonBreadcrumbTrailAddCustomItemTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->trail = $this->getMock('Carbon_Breadcrumb_Trail', null);
+		$this->trail = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
 	}
 
 	public function tearDown() {

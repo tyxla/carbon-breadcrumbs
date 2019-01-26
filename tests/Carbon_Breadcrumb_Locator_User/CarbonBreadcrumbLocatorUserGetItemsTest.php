@@ -7,7 +7,7 @@ class CarbonBreadcrumbLocatorUserGetItemsTest extends WP_UnitTestCase {
 	public function setUp() {
 		parent::setUp();
 
-		$this->locator = $this->getMock( 'Carbon_Breadcrumb_Locator_User', null, array( 'user', 'user' ) );
+		$this->locator = $this->getMockBuilder( 'Carbon_Breadcrumb_Locator_User' )->setMethods( null )->setConstructorArgs( array( 'user', 'user' ) )->getMock();
 		$this->user1 = $this->factory->user->create();
 		$this->user2 = $this->factory->user->create();
 	}

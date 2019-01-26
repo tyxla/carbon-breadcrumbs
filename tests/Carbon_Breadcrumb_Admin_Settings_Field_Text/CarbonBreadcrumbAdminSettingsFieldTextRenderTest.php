@@ -4,7 +4,7 @@
  */
 class CarbonBreadcrumbAdminSettingsFieldTextRenderTest extends WP_UnitTestCase {
 	public function setUp() {
-		$this->field = $this->getMock('Carbon_Breadcrumb_Admin_Settings_Field_Text', array('get_id', 'get_value'), array(), '', false );
+		$this->field = $this->getMockBuilder( 'Carbon_Breadcrumb_Admin_Settings_Field_Text' )->setMethods( array( 'get_id', 'get_value' ) )->disableOriginalConstructor()->getMock();
 	}
 
 	public function tearDown() {

@@ -5,7 +5,7 @@
 class CarbonBreadcrumbItemRendererGetSetIndexTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->item_renderer = $this->getMock('Carbon_Breadcrumb_Item_Renderer', null, array(), '', false);
+		$this->item_renderer = $this->getMockBuilder( 'Carbon_Breadcrumb_Item_Renderer' )->setMethods( null )->disableOriginalConstructor()->getMock();
 	}
 
 	public function tearDown() {
