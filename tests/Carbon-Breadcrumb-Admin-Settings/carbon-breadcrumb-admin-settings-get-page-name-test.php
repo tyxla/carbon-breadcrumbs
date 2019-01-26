@@ -5,18 +5,18 @@
 class CarbonBreadcrumbAdminSettingsGetPageNameTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->adminSettings = $this->getMockBuilder( 'Carbon_Breadcrumb_Admin_Settings' )->setMethods( null )->disableOriginalConstructor()->getMock();
+		$this->admin_settings = $this->getMockBuilder( 'Carbon_Breadcrumb_Admin_Settings' )->setMethods( null )->disableOriginalConstructor()->getMock();
 	}
 
 	public function tearDown() {
-		unset( $this->adminSettings );
+		unset( $this->admin_settings );
 	}
 
 	/**
 	 * @covers Carbon_Breadcrumb_Admin_Settings::get_page_name
 	 */
 	public function testGetPageName() {
-		$this->assertSame( 'carbon_breadcrumbs_settings', $this->adminSettings->get_page_name() );
+		$this->assertSame( 'carbon_breadcrumbs_settings', $this->admin_settings->get_page_name() );
 	}
 
 }

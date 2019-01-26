@@ -10,7 +10,7 @@ class CarbonBreadcrumbLocatorDateGetItemsTest extends WP_UnitTestCase {
 		$this->locator = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Locator_Date', array( 'test1', 'test2' ), '', true, true, true, array( 'get_archive_item_details' ) );
 		$this->post    = $this->factory->post->create();
 		$this->go_to( '/?p=' . $this->post );
-		$this->archiveItemDetails = array(
+		$this->archive_item_details = array(
 			0 => array(
 				'condition'    => true,
 				'title_format' => 'Y/m/d',
@@ -33,13 +33,13 @@ class CarbonBreadcrumbLocatorDateGetItemsTest extends WP_UnitTestCase {
 
 		$this->locator->expects( $this->any() )
 			->method( 'get_archive_item_details' )
-			->will( $this->returnValue( $this->archiveItemDetails ) );
+			->will( $this->returnValue( $this->archive_item_details ) );
 	}
 
 	public function tearDown() {
 		unset( $this->locator );
 		unset( $this->post );
-		unset( $this->archiveItemDetails );
+		unset( $this->archive_item_details );
 
 		parent::tearDown();
 	}
@@ -58,8 +58,8 @@ class CarbonBreadcrumbLocatorDateGetItemsTest extends WP_UnitTestCase {
 
 		for ( $i = 0; $i < 2; $i++ ) {
 			$this->assertInstanceOf( 'Carbon_Breadcrumb_Item_Custom', $items[ $i ] );
-			$this->assertSame( $this->archiveItemDetails[ $i ]['link'], $items[ $i ]->get_link() );
-			$this->assertRegExp( $this->archiveItemDetails[ $i ]['title_regex'], $items[ $i ]->get_title() );
+			$this->assertSame( $this->archive_item_details[ $i ]['link'], $items[ $i ]->get_link() );
+			$this->assertRegExp( $this->archive_item_details[ $i ]['title_regex'], $items[ $i ]->get_title() );
 			$this->assertSame( 123, $items[ $i ]->get_priority() );
 		}
 	}

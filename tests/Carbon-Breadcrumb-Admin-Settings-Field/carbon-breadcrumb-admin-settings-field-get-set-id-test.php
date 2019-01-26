@@ -5,11 +5,11 @@
 class CarbonBreadcrumbAdminSettingsFieldGetSetIdTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->adminField = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Admin_Settings_Field', array( 123, 'test' ) );
+		$this->admin_field = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Admin_Settings_Field', array( 123, 'test' ) );
 	}
 
 	public function tearDown() {
-		unset( $this->adminField );
+		unset( $this->admin_field );
 	}
 
 	/**
@@ -18,8 +18,8 @@ class CarbonBreadcrumbAdminSettingsFieldGetSetIdTest extends WP_UnitTestCase {
 	 */
 	public function testGetSetId() {
 		$expected = 123;
-		$this->adminField->set_id( $expected );
-		$this->assertSame( $expected, $this->adminField->get_id() );
+		$this->admin_field->set_id( $expected );
+		$this->assertSame( $expected, $this->admin_field->get_id() );
 	}
 
 }

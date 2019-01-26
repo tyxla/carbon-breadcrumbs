@@ -3,15 +3,15 @@
  * @group trail
  */
 class CarbonBreadcrumbTrailSetupTest extends WP_UnitTestCase {
-	protected $glueBefore = ' => ';
-	protected $glueAfter  = ' -> ';
+	protected $glue_before = ' => ';
+	protected $glue_after  = ' -> ';
 
 	public function modifyTrailGlueBefore() {
-		$this->trail->get_renderer()->set_glue( $this->glueBefore );
+		$this->trail->get_renderer()->set_glue( $this->glue_before );
 	}
 
 	public function modifyTrailGlueAfter() {
-		$this->trail->get_renderer()->set_glue( $this->glueAfter );
+		$this->trail->get_renderer()->set_glue( $this->glue_after );
 	}
 
 	public function setUp() {
@@ -28,15 +28,15 @@ class CarbonBreadcrumbTrailSetupTest extends WP_UnitTestCase {
 	public function testSetupProcess() {
 		$this->trail->setup();
 
-		$mockTrail      = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
-		$mockTrailSetup = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail_Setup' )->setMethods( null )->setConstructorArgs( array( $mockTrail ) )->getMock();
+		$mock_trail       = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
+		$mock_trail_setup = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail_Setup' )->setMethods( null )->setConstructorArgs( array( $mock_trail ) )->getMock();
 
-		$trailItems     = $this->trail->get_items();
-		$mockTrailItems = $mockTrail->get_items();
+		$trailItems       = $this->trail->get_items();
+		$mock_trail_items = $mock_trail->get_items();
 
-		$this->assertSame( count( $mockTrailItems ), count( $trailItems ) );
+		$this->assertSame( count( $mock_trail_items ), count( $trailItems ) );
 
-		foreach ( $mockTrailItems as $priority => $items ) {
+		foreach ( $mock_trail_items as $priority => $items ) {
 			foreach ( $items as $key => $item ) {
 				$this->assertInstanceOf( get_class( $item ), $trailItems[ $priority ][ $key ] );
 			}
@@ -50,7 +50,7 @@ class CarbonBreadcrumbTrailSetupTest extends WP_UnitTestCase {
 		add_action( 'carbon_breadcrumbs_before_setup_trail', array( $this, 'modifyTrailGlueBefore' ) );
 
 		$this->trail->setup();
-		$this->assertSame( $this->glueBefore, $this->trail->get_renderer()->get_glue() );
+		$this->assertSame( $this->glue_before, $this->trail->get_renderer()->get_glue() );
 
 		remove_action( 'carbon_breadcrumbs_before_setup_trail', array( $this, 'modifyTrailGlueBefore' ) );
 	}
@@ -63,7 +63,7 @@ class CarbonBreadcrumbTrailSetupTest extends WP_UnitTestCase {
 		add_action( 'carbon_breadcrumbs_after_setup_trail', array( $this, 'modifyTrailGlueAfter' ) );
 
 		$this->trail->setup();
-		$this->assertSame( $this->glueAfter, $this->trail->get_renderer()->get_glue() );
+		$this->assertSame( $this->glue_after, $this->trail->get_renderer()->get_glue() );
 
 		remove_action( 'carbon_breadcrumbs_before_setup_trail', array( $this, 'modifyTrailGlueBefore' ) );
 		remove_action( 'carbon_breadcrumbs_after_setup_trail', array( $this, 'modifyTrailGlueAfter' ) );

@@ -10,32 +10,32 @@ class CarbonBreadcrumbAdminSettingsFieldFactoryTest extends WP_UnitTestCase {
 	protected $args    = array( 'foo' => 'bar' );
 
 	public function setUp() {
-		$this->adminField = Carbon_Breadcrumb_Admin_Settings_Field::factory( $this->type, $this->id, $this->title, $this->section, $this->args );
+		$this->admin_field = Carbon_Breadcrumb_Admin_Settings_Field::factory( $this->type, $this->id, $this->title, $this->section, $this->args );
 	}
 
 	public function tearDown() {
-		unset( $this->adminField );
+		unset( $this->admin_field );
 	}
 
 	/**
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field::factory
 	 */
 	public function testType() {
-		$this->assertSame( 'Carbon_Breadcrumb_Admin_Settings_Field_Text', get_class( $this->adminField ) );
+		$this->assertSame( 'Carbon_Breadcrumb_Admin_Settings_Field_Text', get_class( $this->admin_field ) );
 	}
 
 	/**
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field::factory
 	 */
 	public function testId() {
-		$this->assertSame( $this->id, $this->adminField->get_id() );
+		$this->assertSame( $this->id, $this->admin_field->get_id() );
 	}
 
 	/**
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field::factory
 	 */
 	public function testTitle() {
-		$this->assertSame( $this->title, $this->adminField->get_title() );
+		$this->assertSame( $this->title, $this->admin_field->get_title() );
 	}
 
 	/**

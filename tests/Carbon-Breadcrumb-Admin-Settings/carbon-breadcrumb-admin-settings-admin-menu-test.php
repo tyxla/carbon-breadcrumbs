@@ -5,7 +5,7 @@
 class CarbonBreadcrumbAdminSettingsAdminMenuTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->adminSettings = $this->getMockBuilder( 'Carbon_Breadcrumb_Admin_Settings' )->setMethods( null )->disableOriginalConstructor()->getMock();
+		$this->admin_settings = $this->getMockBuilder( 'Carbon_Breadcrumb_Admin_Settings' )->setMethods( null )->disableOriginalConstructor()->getMock();
 
 		parent::setUp();
 	}
@@ -13,7 +13,7 @@ class CarbonBreadcrumbAdminSettingsAdminMenuTest extends WP_UnitTestCase {
 	public function tearDown() {
 		parent::tearDown();
 
-		unset( $this->adminSettings );
+		unset( $this->admin_settings );
 	}
 
 	/**
@@ -28,7 +28,7 @@ class CarbonBreadcrumbAdminSettingsAdminMenuTest extends WP_UnitTestCase {
 		$current_user = get_current_user_id();
 		wp_set_current_user( $this->factory->user->create( array( 'role' => 'administrator' ) ) );
 
-		$this->adminSettings->admin_menu();
+		$this->admin_settings->admin_menu();
 
 		$this->assertArrayHasKey( 'admin_page_' . $page_name, $_registered_pages );
 		$this->assertTrue( $_registered_pages[ 'admin_page_' . $page_name ] );
@@ -51,7 +51,7 @@ class CarbonBreadcrumbAdminSettingsAdminMenuTest extends WP_UnitTestCase {
 
 		$page_name = Carbon_Breadcrumb_Admin_Settings::get_page_name();
 
-		$this->adminSettings->admin_menu();
+		$this->admin_settings->admin_menu();
 
 		$sectionItem = array(
 			'id'       => $page_name,

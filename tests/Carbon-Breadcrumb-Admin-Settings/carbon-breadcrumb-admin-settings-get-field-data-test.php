@@ -5,11 +5,11 @@
 class CarbonBreadcrumbAdminSettingsGetFieldDataTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->adminSettings = $this->getMockBuilder( 'Carbon_Breadcrumb_Admin_Settings' )->setMethods( null )->disableOriginalConstructor()->getMock();
+		$this->admin_settings = $this->getMockBuilder( 'Carbon_Breadcrumb_Admin_Settings' )->setMethods( null )->disableOriginalConstructor()->getMock();
 	}
 
 	public function tearDown() {
-		unset( $this->adminSettings );
+		unset( $this->admin_settings );
 	}
 
 	/**
@@ -85,7 +85,7 @@ class CarbonBreadcrumbAdminSettingsGetFieldDataTest extends WP_UnitTestCase {
 			),
 		);
 
-		$this->assertSame( $expected, $this->adminSettings->get_field_data() );
+		$this->assertSame( $expected, $this->admin_settings->get_field_data() );
 	}
 
 }

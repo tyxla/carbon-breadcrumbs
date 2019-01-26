@@ -9,27 +9,27 @@ class CarbonBreadcrumbAdminSettingsFieldConstructTest extends WP_UnitTestCase {
 	protected $args    = array( 'foo' => 'bar' );
 
 	public function setUp() {
-		$this->adminField = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Admin_Settings_Field', array(), '', false );
+		$this->admin_field = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Admin_Settings_Field', array(), '', false );
 
-		$this->adminField->__construct( $this->id, $this->title, $this->section, $this->args );
+		$this->admin_field->__construct( $this->id, $this->title, $this->section, $this->args );
 	}
 
 	public function tearDown() {
-		unset( $this->adminField );
+		unset( $this->admin_field );
 	}
 
 	/**
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field::__construct
 	 */
 	public function testSetId() {
-		$this->assertSame( $this->id, $this->adminField->get_id() );
+		$this->assertSame( $this->id, $this->admin_field->get_id() );
 	}
 
 	/**
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field::__construct
 	 */
 	public function testSetTitle() {
-		$this->assertSame( $this->title, $this->adminField->get_title() );
+		$this->assertSame( $this->title, $this->admin_field->get_title() );
 	}
 
 	/**
@@ -46,7 +46,7 @@ class CarbonBreadcrumbAdminSettingsFieldConstructTest extends WP_UnitTestCase {
 		$expected = array(
 			'id'       => $this->id,
 			'title'    => $this->title,
-			'callback' => array( $this->adminField, 'render' ),
+			'callback' => array( $this->admin_field, 'render' ),
 			'args'     => $this->args,
 		);
 		$this->assertEquals( $expected, $wp_settings_fields[ $page ][ $this->section ][ $this->id ] );

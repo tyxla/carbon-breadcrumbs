@@ -29,11 +29,11 @@ class CarbonBreadcrumbLocatorTermGetItemsTest extends WP_UnitTestCase {
 		$expected = $this->locator->get_item_hierarchy( $this->category1, 1000 );
 		$actual   = $this->locator->get_items();
 
-		foreach ( $expected as $key => $expectedItem ) {
-			$this->assertInstanceOf( get_class( $expectedItem ), $actual[ $key ] );
-			$this->assertSame( $expectedItem->get_id(), $actual[ $key ]->get_id() );
-			$this->assertSame( $expectedItem->get_type(), $actual[ $key ]->get_type() );
-			$this->assertSame( $expectedItem->get_subtype(), $actual[ $key ]->get_subtype() );
+		foreach ( $expected as $key => $expected_item ) {
+			$this->assertInstanceOf( get_class( $expected_item ), $actual[ $key ] );
+			$this->assertSame( $expected_item->get_id(), $actual[ $key ]->get_id() );
+			$this->assertSame( $expected_item->get_type(), $actual[ $key ]->get_type() );
+			$this->assertSame( $expected_item->get_subtype(), $actual[ $key ]->get_subtype() );
 		}
 	}
 
@@ -46,11 +46,11 @@ class CarbonBreadcrumbLocatorTermGetItemsTest extends WP_UnitTestCase {
 		$expected = $this->locator->get_item_hierarchy( $this->category1, 1000 );
 		$actual   = $this->locator->get_items( 1000, $this->category1 );
 
-		foreach ( $expected as $key => $expectedItem ) {
-			$this->assertInstanceOf( get_class( $expectedItem ), $actual[ $key ] );
-			$this->assertSame( $expectedItem->get_id(), $actual[ $key ]->get_id() );
-			$this->assertSame( $expectedItem->get_type(), $actual[ $key ]->get_type() );
-			$this->assertSame( $expectedItem->get_subtype(), $actual[ $key ]->get_subtype() );
+		foreach ( $expected as $key => $expected_item ) {
+			$this->assertInstanceOf( get_class( $expected_item ), $actual[ $key ] );
+			$this->assertSame( $expected_item->get_id(), $actual[ $key ]->get_id() );
+			$this->assertSame( $expected_item->get_type(), $actual[ $key ]->get_type() );
+			$this->assertSame( $expected_item->get_subtype(), $actual[ $key ]->get_subtype() );
 		}
 	}
 
