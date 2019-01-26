@@ -3,13 +3,18 @@
  * @group admin_settings_field
  */
 class CarbonBreadcrumbAdminSettingsFieldRenderHelpTest extends WP_UnitTestCase {
-
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		parent::setUp();
 
 		$this->admin_field = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Admin_Settings_Field', array( 'testfield', 'Test Field' ), '', true, true, true, array( 'get_id' ) );
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->admin_field );
 

@@ -3,7 +3,9 @@
  * @group item
  */
 class CarbonBreadcrumbItemTermSetupTitleTest extends WP_UnitTestCase {
-
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		parent::setUp();
 
@@ -14,6 +16,9 @@ class CarbonBreadcrumbItemTermSetupTitleTest extends WP_UnitTestCase {
 		$this->item->term_object = get_term_by( 'id', $this->category, 'category' );
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->item );
 		unset( $this->category );

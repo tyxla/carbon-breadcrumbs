@@ -3,12 +3,17 @@
  * @group trail_setup
  */
 class CarbonBreadcrumbTrailSetupGetSetTrailTest extends WP_UnitTestCase {
-
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		$this->trail = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
 		$this->setup = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail_Setup' )->setMethods( null )->disableOriginalConstructor()->getMock();
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->trail );
 		unset( $this->setup );

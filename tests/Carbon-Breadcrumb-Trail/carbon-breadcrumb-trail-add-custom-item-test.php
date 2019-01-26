@@ -3,11 +3,16 @@
  * @group trail
  */
 class CarbonBreadcrumbTrailAddCustomItemTest extends WP_UnitTestCase {
-
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		$this->trail = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->trail );
 	}

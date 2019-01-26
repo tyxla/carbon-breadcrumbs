@@ -15,10 +15,16 @@ class CarbonBreadcrumbItemUserSetupTest extends WP_UnitTestCase {
 		$this->item->mock_link = $this->default_mock_link;
 	}
 
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		$this->item = $this->getMockBuilder( 'Carbon_Breadcrumb_Item_User' )->setMethods( array( 'setup_title', 'setup_link', 'get_id' ) )->getMock();
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->item );
 	}

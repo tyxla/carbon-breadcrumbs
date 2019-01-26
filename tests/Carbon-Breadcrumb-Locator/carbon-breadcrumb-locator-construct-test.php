@@ -3,11 +3,16 @@
  * @group locator
  */
 class CarbonBreadcrumbLocatorConstructTest extends WP_UnitTestCase {
-
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		$this->locator = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Locator', array(), '', false );
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->locator );
 	}

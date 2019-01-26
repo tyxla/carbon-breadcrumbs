@@ -5,6 +5,9 @@
 class CarbonBreadcrumbAdminSettingsFieldCheckboxRenderTest extends WP_UnitTestCase {
 	protected $id = 'foobar';
 
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		$this->field = $this->getMockBuilder( 'Carbon_Breadcrumb_Admin_Settings_Field_Checkbox' )->setMethods( array( 'get_id', 'get_value' ) )->disableOriginalConstructor()->getMock();
 
@@ -13,6 +16,9 @@ class CarbonBreadcrumbAdminSettingsFieldCheckboxRenderTest extends WP_UnitTestCa
 			->will( $this->returnValue( $this->id ) );
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->field );
 	}

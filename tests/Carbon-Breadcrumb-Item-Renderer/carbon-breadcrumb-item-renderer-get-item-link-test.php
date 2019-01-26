@@ -8,6 +8,9 @@ class CarbonBreadcrumbItemRendererGetItemLinkTest extends WP_UnitTestCase {
 		return 'http://another.example.net/bar/foo/';
 	}
 
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		$this->item = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item' );
 
@@ -18,6 +21,9 @@ class CarbonBreadcrumbItemRendererGetItemLinkTest extends WP_UnitTestCase {
 		$this->item->set_link( $this->link );
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->item );
 		unset( $this->item_renderer );

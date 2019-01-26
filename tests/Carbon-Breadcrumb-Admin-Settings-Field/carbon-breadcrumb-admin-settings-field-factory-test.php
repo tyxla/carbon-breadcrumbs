@@ -9,10 +9,16 @@ class CarbonBreadcrumbAdminSettingsFieldFactoryTest extends WP_UnitTestCase {
 	protected $section = 'Test';
 	protected $args    = array( 'foo' => 'bar' );
 
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		$this->admin_field = Carbon_Breadcrumb_Admin_Settings_Field::factory( $this->type, $this->id, $this->title, $this->section, $this->args );
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->admin_field );
 	}

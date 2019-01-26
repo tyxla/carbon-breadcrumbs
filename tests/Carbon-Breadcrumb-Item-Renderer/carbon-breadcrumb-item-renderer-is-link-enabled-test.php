@@ -3,7 +3,9 @@
  * @group item_renderer
  */
 class CarbonBreadcrumbItemRendererIsLinkEnabledTest extends WP_UnitTestCase {
-
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		$this->item1 = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item' );
 		$this->item2 = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item' );
@@ -14,6 +16,9 @@ class CarbonBreadcrumbItemRendererIsLinkEnabledTest extends WP_UnitTestCase {
 		$this->item_renderer = $this->getMockBuilder( 'Carbon_Breadcrumb_Item_Renderer' )->setMethods( null )->disableOriginalConstructor()->getMock();
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->item1 );
 		unset( $this->item2 );

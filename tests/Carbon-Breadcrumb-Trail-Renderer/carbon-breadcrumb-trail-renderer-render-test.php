@@ -8,6 +8,9 @@ class CarbonBreadcrumbTrailRendererRenderTest extends WP_UnitTestCase {
 		$this->trail->remove_item_by_title( 'Foo' );
 	}
 
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		$this->renderer = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail_Renderer' )->setMethods( array( 'get_min_items', 'get_wrapper_before', 'get_wrapper_after', 'get_glue' ) )->disableOriginalConstructor()->getMock();
 		$this->trail    = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
@@ -29,6 +32,9 @@ class CarbonBreadcrumbTrailRendererRenderTest extends WP_UnitTestCase {
 		);
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->renderer );
 		unset( $this->trail );

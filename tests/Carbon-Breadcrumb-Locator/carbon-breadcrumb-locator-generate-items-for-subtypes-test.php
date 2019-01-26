@@ -3,13 +3,18 @@
  * @group locator
  */
 class CarbonBreadcrumbLocatorGenerateItemsForSubtypesTest extends WP_UnitTestCase {
-
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		$this->locator = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Locator', array( 'test1', 'test2' ), '', false, true, true, array( 'get_type' ) );
 
 		parent::setUp();
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		parent::tearDown();
 

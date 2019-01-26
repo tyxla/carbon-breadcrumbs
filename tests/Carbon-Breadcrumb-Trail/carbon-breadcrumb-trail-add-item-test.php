@@ -3,7 +3,9 @@
  * @group trail
  */
 class CarbonBreadcrumbTrailAddItemTest extends WP_UnitTestCase {
-
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		$this->trail = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
 		$this->item1 = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item' );
@@ -15,6 +17,9 @@ class CarbonBreadcrumbTrailAddItemTest extends WP_UnitTestCase {
 		$this->item3->set_priority( 750 );
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->trail );
 		unset( $this->item1 );

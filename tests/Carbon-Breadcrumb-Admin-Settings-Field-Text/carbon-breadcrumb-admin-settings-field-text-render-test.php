@@ -3,10 +3,16 @@
  * @group admin_settings_field_text
  */
 class CarbonBreadcrumbAdminSettingsFieldTextRenderTest extends WP_UnitTestCase {
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		$this->field = $this->getMockBuilder( 'Carbon_Breadcrumb_Admin_Settings_Field_Text' )->setMethods( array( 'get_id', 'get_value' ) )->disableOriginalConstructor()->getMock();
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->field );
 	}

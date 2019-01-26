@@ -3,7 +3,9 @@
  * @group item
  */
 class CarbonBreadcrumbItemUserSetupTitleTest extends WP_UnitTestCase {
-
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		parent::setUp();
 
@@ -12,6 +14,9 @@ class CarbonBreadcrumbItemUserSetupTitleTest extends WP_UnitTestCase {
 		$this->item->set_id( $this->user );
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->item );
 		unset( $this->user );

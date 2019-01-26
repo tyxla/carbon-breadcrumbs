@@ -3,7 +3,9 @@
  * @group locator
  */
 class CarbonBreadcrumbLocatorDateGetArchiveItemDetailsTest extends WP_UnitTestCase {
-
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		parent::setUp();
 
@@ -11,6 +13,9 @@ class CarbonBreadcrumbLocatorDateGetArchiveItemDetailsTest extends WP_UnitTestCa
 		$this->post    = $this->factory->post->create();
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->locator );
 		unset( $this->post );

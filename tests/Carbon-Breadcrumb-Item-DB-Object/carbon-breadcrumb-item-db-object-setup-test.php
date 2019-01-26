@@ -14,6 +14,9 @@ class CarbonBreadcrumbItemDbObjectSetupTest extends WP_UnitTestCase {
 		$this->item->mock_link = $this->default_mock_link;
 	}
 
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		$this->item = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item_DB_Object' );
 
@@ -26,6 +29,9 @@ class CarbonBreadcrumbItemDbObjectSetupTest extends WP_UnitTestCase {
 			->will( $this->returnCallback( array( $this, 'mockSetupLink' ) ) );
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->item );
 	}

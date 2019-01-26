@@ -8,6 +8,9 @@ class CarbonBreadcrumbItemRendererRenderTitleTest extends WP_UnitTestCase {
 		return 'Foo Bar Example Here';
 	}
 
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		$this->item  = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item' );
 		$this->title = 'Demo Title';
@@ -30,6 +33,9 @@ class CarbonBreadcrumbItemRendererRenderTitleTest extends WP_UnitTestCase {
 		$this->item_renderer->set_trail_renderer( $this->trail_renderer );
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->item );
 		unset( $this->title );

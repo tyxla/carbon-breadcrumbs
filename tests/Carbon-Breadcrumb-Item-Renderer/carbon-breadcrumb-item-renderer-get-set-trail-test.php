@@ -3,12 +3,17 @@
  * @group item_renderer
  */
 class CarbonBreadcrumbItemRendererGetSetTrailTest extends WP_UnitTestCase {
-
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		$this->trail         = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Trail' );
 		$this->item_renderer = $this->getMockBuilder( 'Carbon_Breadcrumb_Item_Renderer' )->setMethods( null )->disableOriginalConstructor()->getMock();
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->trail );
 		unset( $this->item_renderer );

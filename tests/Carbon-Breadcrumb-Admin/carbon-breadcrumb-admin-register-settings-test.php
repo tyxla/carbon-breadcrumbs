@@ -1,13 +1,20 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Admin::register_settings() and Carbon_Breadcrumb_Admin::admin_menu()
+ *
  * @group admin
  */
 class CarbonBreadcrumbAdminRegisterSettingsTest extends WP_UnitTestCase {
-
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		$this->admin = $this->getMockBuilder( 'Carbon_Breadcrumb_Admin' )->setMethods( null )->disableOriginalConstructor()->getMock();
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->admin );
 	}

@@ -3,7 +3,9 @@
  * @group locator
  */
 class CarbonBreadcrumbLocatorUserIsIncludedTest extends WP_UnitTestCase {
-
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		parent::setUp();
 
@@ -11,6 +13,9 @@ class CarbonBreadcrumbLocatorUserIsIncludedTest extends WP_UnitTestCase {
 		$this->post    = $this->factory->post->create();
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->locator );
 		unset( $this->post );

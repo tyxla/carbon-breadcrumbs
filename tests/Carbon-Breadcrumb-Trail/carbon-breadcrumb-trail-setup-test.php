@@ -14,10 +14,16 @@ class CarbonBreadcrumbTrailSetupTest extends WP_UnitTestCase {
 		$this->trail->get_renderer()->set_glue( $this->glue_after );
 	}
 
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		$this->trail = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->trail );
 	}

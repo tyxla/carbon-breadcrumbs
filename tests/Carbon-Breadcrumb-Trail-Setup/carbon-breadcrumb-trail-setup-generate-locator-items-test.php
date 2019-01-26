@@ -3,7 +3,9 @@
  * @group trail_setup
  */
 class CarbonBreadcrumbTrailSetupGenerateLocatorItemsTest extends WP_UnitTestCase {
-
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		parent::setUp();
 
@@ -12,6 +14,9 @@ class CarbonBreadcrumbTrailSetupGenerateLocatorItemsTest extends WP_UnitTestCase
 		$this->post  = $this->factory->post->create();
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		parent::tearDown();
 

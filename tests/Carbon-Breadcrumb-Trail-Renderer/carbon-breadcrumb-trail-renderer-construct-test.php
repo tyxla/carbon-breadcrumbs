@@ -10,10 +10,16 @@ class CarbonBreadcrumbTrailRendererConstructTest extends WP_UnitTestCase {
 		);
 	}
 
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		$this->renderer = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail_Renderer' )->setMethods( null )->disableOriginalConstructor()->getMock();
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->renderer );
 	}

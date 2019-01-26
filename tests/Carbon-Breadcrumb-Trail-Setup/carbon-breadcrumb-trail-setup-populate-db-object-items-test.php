@@ -3,7 +3,9 @@
  * @group trail_setup
  */
 class CarbonBreadcrumbTrailSetupPopulateDbObjectItemsTest extends WP_UnitTestCase {
-
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		parent::setUp();
 
@@ -13,6 +15,9 @@ class CarbonBreadcrumbTrailSetupPopulateDbObjectItemsTest extends WP_UnitTestCas
 		$this->setup_exposed = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail_Setup_Exposed' )->setMethods( null )->disableOriginalConstructor()->getMock();
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->trail );
 		unset( $this->setup );

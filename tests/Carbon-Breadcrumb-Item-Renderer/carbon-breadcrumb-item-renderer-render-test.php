@@ -8,6 +8,9 @@ class CarbonBreadcrumbItemRendererRenderTest extends WP_UnitTestCase {
 		return $item_output . 'foobar';
 	}
 
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		$this->item = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item' );
 		$this->item->set_title( 'Foo' );
@@ -27,6 +30,9 @@ class CarbonBreadcrumbItemRendererRenderTest extends WP_UnitTestCase {
 		$this->trail->add_item( $this->item );
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->trail );
 		unset( $this->item );

@@ -3,7 +3,9 @@
  * @group trail_setup
  */
 class CarbonBreadcrumbTrailSetupPopulatePageForPostsItemsTest extends WP_UnitTestCase {
-
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		parent::setUp();
 
@@ -17,6 +19,9 @@ class CarbonBreadcrumbTrailSetupPopulatePageForPostsItemsTest extends WP_UnitTes
 		$this->page = $this->factory->post->create( array( 'post_type' => 'page' ) );
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->trail );
 		unset( $this->setup );

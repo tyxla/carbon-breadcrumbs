@@ -8,10 +8,16 @@ class CarbonBreadcrumbTrailConstruct extends WP_UnitTestCase {
 		return 'Carbon_Breadcrumb_Trail_Renderer_Custom';
 	}
 
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		$this->trail = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->trail );
 	}

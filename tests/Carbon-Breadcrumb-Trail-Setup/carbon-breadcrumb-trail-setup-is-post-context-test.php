@@ -3,7 +3,9 @@
  * @group trail_setup
  */
 class CarbonBreadcrumbTrailSetupIsPostContextTest extends WP_UnitTestCase {
-
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		parent::setUp();
 
@@ -16,6 +18,9 @@ class CarbonBreadcrumbTrailSetupIsPostContextTest extends WP_UnitTestCase {
 		);
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->setup );
 		unset( $this->post );

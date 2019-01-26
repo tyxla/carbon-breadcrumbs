@@ -3,13 +3,18 @@
  * @group item
  */
 class CarbonBreadcrumbItemTermSetupTest extends WP_UnitTestCase {
-
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		parent::setUp();
 
 		$this->item = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item_Term' );
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->item );
 

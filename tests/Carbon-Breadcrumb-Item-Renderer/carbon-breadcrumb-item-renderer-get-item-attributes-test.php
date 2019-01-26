@@ -10,6 +10,9 @@ class CarbonBreadcrumbItemRendererGetItemAttributesTest extends WP_UnitTestCase 
 		return $attributes;
 	}
 
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		$this->item = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item' );
 
@@ -17,6 +20,9 @@ class CarbonBreadcrumbItemRendererGetItemAttributesTest extends WP_UnitTestCase 
 		$this->item_renderer->set_item( $this->item );
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->item );
 		unset( $this->item_renderer );

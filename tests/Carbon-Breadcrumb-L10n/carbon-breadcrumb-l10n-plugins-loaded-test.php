@@ -19,10 +19,16 @@ class CarbonBreadcrumbL10nPluginsLoadedTest extends WP_UnitTestCase {
 		return $mofile;
 	}
 
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
 		$this->l10n = $this->getMockBuilder( 'Carbon_Breadcrumb_L10n' )->setMethods( null )->disableOriginalConstructor()->getMock();
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->l10n );
 	}
