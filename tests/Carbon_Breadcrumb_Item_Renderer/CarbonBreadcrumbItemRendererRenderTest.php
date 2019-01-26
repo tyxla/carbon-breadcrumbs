@@ -4,27 +4,27 @@
  */
 class CarbonBreadcrumbItemRendererRenderTest extends WP_UnitTestCase {
 
-	public function carbon_breadcrumbs_item_output($item_output) {
+	public function carbon_breadcrumbs_item_output( $item_output ) {
 		return $item_output . 'foobar';
 	}
 
 	public function setUp() {
-		$this->item = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item');
+		$this->item = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item' );
 		$this->item->set_title( 'Foo' );
 		$this->item->set_link( '#' );
 
-		$this->trail = $this->getMockForAbstractClass('Carbon_Breadcrumb_Trail');
+		$this->trail          = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Trail' );
 		$this->trail_renderer = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail_Renderer' )->setMethods( null )->disableOriginalConstructor()->getMock();
 
-		$args = array(
+		$args                = array(
 			$this->item,
 			$this->trail,
 			$this->trail_renderer,
-			0
+			0,
 		);
 		$this->item_renderer = $this->getMockBuilder( 'Carbon_Breadcrumb_Item_Renderer' )->setMethods( null )->setConstructorArgs( $args )->getMock();
 
-		$this->trail->add_item($this->item);
+		$this->trail->add_item( $this->item );
 	}
 
 	public function tearDown() {
@@ -38,7 +38,7 @@ class CarbonBreadcrumbItemRendererRenderTest extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_Item_Renderer::render
 	 */
 	public function testDefaultOutput() {
-		$expected = $this->item_renderer->render_link_before();
+		$expected  = $this->item_renderer->render_link_before();
 		$expected .= $this->item_renderer->render_title();
 		$expected .= $this->item_renderer->render_link_after();
 
@@ -51,10 +51,10 @@ class CarbonBreadcrumbItemRendererRenderTest extends WP_UnitTestCase {
 	public function testFilteredOutput() {
 		add_filter( 'carbon_breadcrumbs_item_output', array( $this, 'carbon_breadcrumbs_item_output' ) );
 
-		$expected = $this->item_renderer->render_link_before();
+		$expected  = $this->item_renderer->render_link_before();
 		$expected .= $this->item_renderer->render_title();
 		$expected .= $this->item_renderer->render_link_after();
-		$expected = $this->carbon_breadcrumbs_item_output($expected);
+		$expected  = $this->carbon_breadcrumbs_item_output( $expected );
 
 		$this->assertSame( $expected, $this->item_renderer->render() );
 

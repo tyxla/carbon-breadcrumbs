@@ -63,7 +63,7 @@ abstract class Carbon_Breadcrumb_Item extends Carbon_Breadcrumb_Factory {
 	 * @access public
 	 *
 	 * @param string $type Type of the breadcrumb item.
-	 * @param int $priority Priority of this breadcrumb item.
+	 * @param int    $priority Priority of this breadcrumb item.
 	 * @return Carbon_Breadcrumb_Item $item The new breadcrumb item.
 	 */
 	public static function factory( $type = 'custom', $priority = 1000 ) {

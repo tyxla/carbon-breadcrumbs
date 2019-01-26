@@ -10,7 +10,7 @@ class CarbonBreadcrumbLocatorFactoryTest extends WP_UnitTestCase {
 	 * @expectedExceptionMessage Unexisting breadcrumb locator type: "foobar".
 	 */
 	public function testFactoryUnexistingClass() {
-		Carbon_Breadcrumb_Locator::factory('foobar');
+		Carbon_Breadcrumb_Locator::factory( 'foobar' );
 	}
 
 	/**

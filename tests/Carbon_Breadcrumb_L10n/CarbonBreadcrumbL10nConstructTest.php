@@ -5,7 +5,7 @@
 class CarbonBreadcrumbL10nConstructTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->l10n = $this->getMockForAbstractClass('Carbon_Breadcrumb_L10n', array(), '', false);
+		$this->l10n = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_L10n', array(), '', false );
 	}
 
 	public function tearDown() {

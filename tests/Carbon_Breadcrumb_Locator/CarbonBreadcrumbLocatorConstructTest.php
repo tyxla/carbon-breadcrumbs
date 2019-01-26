@@ -5,7 +5,7 @@
 class CarbonBreadcrumbLocatorConstructTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->locator = $this->getMockForAbstractClass('Carbon_Breadcrumb_Locator', array(), '', false);
+		$this->locator = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Locator', array(), '', false );
 	}
 
 	public function tearDown() {
@@ -16,7 +16,7 @@ class CarbonBreadcrumbLocatorConstructTest extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_Locator::__construct
 	 */
 	public function testConstructor() {
-		$this->locator->__construct('foo', 'bar');
+		$this->locator->__construct( 'foo', 'bar' );
 
 		$this->assertSame( 'foo', $this->locator->get_type() );
 		$this->assertSame( 'bar', $this->locator->get_subtype() );

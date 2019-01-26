@@ -7,7 +7,7 @@ class CarbonBreadcrumbItemUserSetupTitleTest extends WP_UnitTestCase {
 	public function setUp() {
 		parent::setUp();
 
-		$this->item = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item_User', array(), '', false);
+		$this->item = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item_User', array(), '', false );
 		$this->user = $this->factory->user->create();
 		$this->item->set_id( $this->user );
 	}

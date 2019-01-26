@@ -5,7 +5,7 @@
 class CarbonBreadcrumbItemConstructTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->item = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item', array(), '', false);
+		$this->item = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item', array(), '', false );
 	}
 
 	public function tearDown() {
@@ -16,7 +16,7 @@ class CarbonBreadcrumbItemConstructTest extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_Item::__construct
 	 */
 	public function testConstructor() {
-		$this->item->__construct(123);
+		$this->item->__construct( 123 );
 		$this->assertSame( 123, $this->item->get_priority() );
 	}
 

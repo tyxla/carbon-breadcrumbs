@@ -5,7 +5,7 @@
 class CarbonBreadcrumbAdminSettingsAdminMenuTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->adminSettings = $this->getMockBuilder( 'Carbon_Breadcrumb_Admin_Settings' )->setMethods(null)->disableOriginalConstructor()->getMock();
+		$this->adminSettings = $this->getMockBuilder( 'Carbon_Breadcrumb_Admin_Settings' )->setMethods( null )->disableOriginalConstructor()->getMock();
 
 		parent::setUp();
 	}
@@ -23,21 +23,21 @@ class CarbonBreadcrumbAdminSettingsAdminMenuTest extends WP_UnitTestCase {
 		global $_registered_pages, $submenu;
 
 		$page_title = Carbon_Breadcrumb_Admin_Settings::get_page_title();
-		$page_name = Carbon_Breadcrumb_Admin_Settings::get_page_name();
+		$page_name  = Carbon_Breadcrumb_Admin_Settings::get_page_name();
 
 		$current_user = get_current_user_id();
 		wp_set_current_user( $this->factory->user->create( array( 'role' => 'administrator' ) ) );
 
 		$this->adminSettings->admin_menu();
-		
+
 		$this->assertArrayHasKey( 'admin_page_' . $page_name, $_registered_pages );
-		$this->assertTrue( $_registered_pages['admin_page_' . $page_name] );
+		$this->assertTrue( $_registered_pages[ 'admin_page_' . $page_name ] );
 
 		$submenuItem = array(
 			$page_title,
 			'manage_options',
 			$page_name,
-			$page_title
+			$page_title,
 		);
 		$this->assertArrayHasKey( 'options-general.php', $submenu );
 		$this->assertContains( $submenuItem, $submenu['options-general.php'] );
@@ -54,13 +54,13 @@ class CarbonBreadcrumbAdminSettingsAdminMenuTest extends WP_UnitTestCase {
 		$this->adminSettings->admin_menu();
 
 		$sectionItem = array(
-			'id' => $page_name,
-			'title' => 'General Settings',
-			'callback' => ''
+			'id'       => $page_name,
+			'title'    => 'General Settings',
+			'callback' => '',
 		);
 		$this->assertArrayHasKey( $page_name, $wp_settings_sections );
-		$this->assertArrayHasKey( $page_name, $wp_settings_sections[$page_name] );
-		$this->assertSame( $sectionItem, $wp_settings_sections[$page_name][$page_name] );
+		$this->assertArrayHasKey( $page_name, $wp_settings_sections[ $page_name ] );
+		$this->assertSame( $sectionItem, $wp_settings_sections[ $page_name ][ $page_name ] );
 	}
 
 }

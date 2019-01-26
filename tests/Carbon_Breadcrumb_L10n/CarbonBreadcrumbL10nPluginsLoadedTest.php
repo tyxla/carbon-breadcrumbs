@@ -4,15 +4,15 @@
  */
 class CarbonBreadcrumbL10nPluginsLoadedTest extends WP_UnitTestCase {
 
-	public function locale($locale) {
+	public function locale( $locale ) {
 		return 'bg_BG';
 	}
 
-	public function load_textdomain_mofile($mofile, $domain) {
+	public function load_textdomain_mofile( $mofile, $domain ) {
 		if ( $domain === 'carbon_breadcrumbs' ) {
-			$filename = basename( $mofile );
+			$filename   = basename( $mofile );
 			$plugin_dir = dirname( dirname( dirname( dirname( __FILE__ ) ) ) );
-			$path = $plugin_dir . DIRECTORY_SEPARATOR . 'languages' . DIRECTORY_SEPARATOR . $filename;
+			$path       = $plugin_dir . DIRECTORY_SEPARATOR . 'languages' . DIRECTORY_SEPARATOR . $filename;
 			return $path;
 		}
 

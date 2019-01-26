@@ -34,7 +34,7 @@ class Carbon_Breadcrumb_Trail {
 	public function __construct( $settings = array() ) {
 
 		// make sure renderer is specified
-		if ( ! isset($settings['renderer'] ) ) {
+		if ( ! isset( $settings['renderer'] ) ) {
 			$settings['renderer'] = 'Carbon_Breadcrumb_Trail_Renderer';
 		}
 
@@ -101,7 +101,7 @@ class Carbon_Breadcrumb_Trail {
 				$this->add_item( $single_item );
 			}
 		} else {
-			$priority = $item->get_priority();
+			$priority                   = $item->get_priority();
 			$this->items[ $priority ][] = $item;
 		}
 	}
@@ -113,7 +113,7 @@ class Carbon_Breadcrumb_Trail {
 	 *
 	 * @param string $title Breadcrumb item title.
 	 * @param string $link Breadcrumb item link.
-	 * @param int $priority Breadcrumb item priority.
+	 * @param int    $priority Breadcrumb item priority.
 	 */
 	public function add_custom_item( $title, $link = '', $priority = 1000 ) {
 		$custom_item = Carbon_Breadcrumb_Item::factory( 'custom', $priority );

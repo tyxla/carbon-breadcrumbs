@@ -7,14 +7,18 @@ class CarbonBreadcrumbLocatorPostGenerateItemsTest extends WP_UnitTestCase {
 	public function setUp() {
 		parent::setUp();
 
-		$this->locator = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Locator_Post', array( 'post', 'post' ) );
-		$this->post = $this->factory->post->create();
-		$this->page = $this->factory->post->create(array(
-			'post_type' => 'page',
-		));
-		$this->attachment = $this->factory->post->create(array(
-			'post_type' => 'attachment',
-		));
+		$this->locator    = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Locator_Post', array( 'post', 'post' ) );
+		$this->post       = $this->factory->post->create();
+		$this->page       = $this->factory->post->create(
+			array(
+				'post_type' => 'page',
+			)
+		);
+		$this->attachment = $this->factory->post->create(
+			array(
+				'post_type' => 'attachment',
+			)
+		);
 	}
 
 	public function tearDown() {
@@ -36,17 +40,17 @@ class CarbonBreadcrumbLocatorPostGenerateItemsTest extends WP_UnitTestCase {
 			'attachment',
 		);
 
-		foreach ($post_types as $pt) {
-			$this->go_to('/?p=' . $this->$pt );
+		foreach ( $post_types as $pt ) {
+			$this->go_to( '/?p=' . $this->$pt );
 			$items = $this->locator->generate_items_for_subtypes( $post_types );
 
 			$expected = $items;
-			$actual = $this->locator->generate_items();
+			$actual   = $this->locator->generate_items();
 
-			$this->assertSame( count($expected), count($actual) );
-			foreach ($items as $key => $item) {
+			$this->assertSame( count( $expected ), count( $actual ) );
+			foreach ( $items as $key => $item ) {
 				$this->assertArrayHasKey( $key, $actual );
-				$this->assertSame( $item->get_id(), $actual[$key]->get_id() );
+				$this->assertSame( $item->get_id(), $actual[ $key ]->get_id() );
 			}
 		}
 	}
@@ -55,31 +59,36 @@ class CarbonBreadcrumbLocatorPostGenerateItemsTest extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_Locator_Post::generate_items
 	 */
 	public function testWithCustomPostTypes() {
-		register_post_type('example_cpt', array(
-			'public' => true,
-		));
-		$this->example_cpt = $this->factory->post->create(array(
-			'post_type' => 'example_cpt',
-		));
-		$post_types = array(
+		register_post_type(
+			'example_cpt',
+			array(
+				'public' => true,
+			)
+		);
+		$this->example_cpt = $this->factory->post->create(
+			array(
+				'post_type' => 'example_cpt',
+			)
+		);
+		$post_types        = array(
 			'example_cpt',
 		);
 
-		foreach ($post_types as $pt) {
-			$this->go_to('/?p=' . $this->$pt );
+		foreach ( $post_types as $pt ) {
+			$this->go_to( '/?p=' . $this->$pt );
 			$items = $this->locator->generate_items_for_subtypes( $post_types );
 
 			$expected = $items;
-			$actual = $this->locator->generate_items();
+			$actual   = $this->locator->generate_items();
 
-			$this->assertSame( count($expected), count($actual) );
-			foreach ($items as $key => $item) {
+			$this->assertSame( count( $expected ), count( $actual ) );
+			foreach ( $items as $key => $item ) {
 				$this->assertArrayHasKey( $key, $actual );
-				$this->assertSame( $item->get_id(), $actual[$key]->get_id() );
+				$this->assertSame( $item->get_id(), $actual[ $key ]->get_id() );
 			}
 		}
 
-		unset($this->example_cpt);
+		unset( $this->example_cpt );
 	}
 
 }

@@ -5,7 +5,7 @@
 class CarbonBreadcrumbItemRendererGetSetTrailTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->trail = $this->getMockForAbstractClass('Carbon_Breadcrumb_Trail');
+		$this->trail         = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Trail' );
 		$this->item_renderer = $this->getMockBuilder( 'Carbon_Breadcrumb_Item_Renderer' )->setMethods( null )->disableOriginalConstructor()->getMock();
 	}
 

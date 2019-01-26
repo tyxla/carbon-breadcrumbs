@@ -4,29 +4,29 @@
  */
 class CarbonBreadcrumbItemRendererRenderTitleTest extends WP_UnitTestCase {
 
-	public function custom_item_title_filter($title = '') {
+	public function custom_item_title_filter( $title = '' ) {
 		return 'Foo Bar Example Here';
 	}
 
 	public function setUp() {
-		$this->item = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item');
+		$this->item  = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item' );
 		$this->title = 'Demo Title';
-		$this->item->set_title($this->title);
+		$this->item->set_title( $this->title );
 
 		$this->trail_renderer = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail_Renderer' )->setMethods( array( 'get_title_before', 'get_title_after' ) )->disableOriginalConstructor()->getMock();
-		$this->title_before = '<span class="before">';
-		$this->title_after = '</span>';
+		$this->title_before   = '<span class="before">';
+		$this->title_after    = '</span>';
 		$this->trail_renderer
-			->expects($this->any())
-			->method('get_title_before')
-			->will($this->returnValue($this->title_before));
+			->expects( $this->any() )
+			->method( 'get_title_before' )
+			->will( $this->returnValue( $this->title_before ) );
 		$this->trail_renderer
-			->expects($this->any())
-			->method('get_title_after')
-			->will($this->returnValue($this->title_after));
+			->expects( $this->any() )
+			->method( 'get_title_after' )
+			->will( $this->returnValue( $this->title_after ) );
 
 		$this->item_renderer = $this->getMockBuilder( 'Carbon_Breadcrumb_Item_Renderer' )->setMethods( null )->disableOriginalConstructor()->getMock();
-		$this->item_renderer->set_item($this->item);
+		$this->item_renderer->set_item( $this->item );
 		$this->item_renderer->set_trail_renderer( $this->trail_renderer );
 	}
 

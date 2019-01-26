@@ -16,8 +16,8 @@ class CarbonBreadcrumbTrailAddCustomItemTest extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_Trail::add_custom_item
 	 */
 	public function testCustomItemAddition() {
-		$title = 'Foo Bar';
-		$link = 'http://example.com/foobar';
+		$title    = 'Foo Bar';
+		$link     = 'http://example.com/foobar';
 		$priority = 123;
 		$this->trail->add_custom_item( $title, $link, $priority );
 
@@ -25,7 +25,7 @@ class CarbonBreadcrumbTrailAddCustomItemTest extends WP_UnitTestCase {
 		$this->assertArrayHasKey( $priority, $items );
 		$this->assertArrayHasKey( 0, $items[ $priority ] );
 
-		$item = $items[ $priority ][ 0 ];
+		$item = $items[ $priority ][0];
 		$this->assertInstanceOf( 'Carbon_Breadcrumb_Item', $item );
 		$this->assertInstanceOf( 'Carbon_Breadcrumb_Item_Custom', $item );
 		$this->assertSame( $title, $item->get_title() );

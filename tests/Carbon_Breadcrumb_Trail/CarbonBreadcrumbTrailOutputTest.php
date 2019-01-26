@@ -7,8 +7,8 @@ class CarbonBreadcrumbTrailOutputTest extends WP_UnitTestCase {
 	public function setUp() {
 		$this->trail = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
 
-		$this->item1 = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item');
-		$this->item2 = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item');
+		$this->item1 = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item' );
+		$this->item2 = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item' );
 
 		$this->item1->set_link( '#1' );
 		$this->item2->set_link( '#2' );
@@ -16,10 +16,12 @@ class CarbonBreadcrumbTrailOutputTest extends WP_UnitTestCase {
 		$this->item1->set_title( 'Item 1' );
 		$this->item2->set_title( 'Item 2' );
 
-		$this->trail->add_item(array(
-			$this->item1,
-			$this->item2,
-		));
+		$this->trail->add_item(
+			array(
+				$this->item1,
+				$this->item2,
+			)
+		);
 	}
 
 	public function tearDown() {
@@ -55,7 +57,7 @@ class CarbonBreadcrumbTrailOutputTest extends WP_UnitTestCase {
 
 		ob_start();
 		$renderer = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail_Renderer' )->setMethods( null )->setConstructorArgs( $args )->getMock();
-		$trail = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
+		$trail    = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
 		$trail->set_renderer( $renderer );
 		$trail->setup();
 		$trail->render();

@@ -41,10 +41,10 @@ class Carbon_Breadcrumb_Item_Renderer {
 	 *
 	 * @access public
 	 *
-	 * @param Carbon_Breadcrumb_Item $item The item to render.
-	 * @param Carbon_Breadcrumb_Trail $trail The trail this item belongs to.
+	 * @param Carbon_Breadcrumb_Item           $item The item to render.
+	 * @param Carbon_Breadcrumb_Trail          $trail The trail this item belongs to.
 	 * @param Carbon_Breadcrumb_Trail_Renderer $trail_renderer The trail renderer.
-	 * @param int $index Index of this item.
+	 * @param int                              $index Index of this item.
 	 */
 	public function __construct( Carbon_Breadcrumb_Item $item, Carbon_Breadcrumb_Trail $trail, Carbon_Breadcrumb_Trail_Renderer $trail_renderer, $index = 0 ) {
 		$this->set_item( $item );
@@ -61,10 +61,10 @@ class Carbon_Breadcrumb_Item_Renderer {
 	 * @return string $item_output The HTML of this item.
 	 */
 	public function render() {
-		$item_output = '';
-		$item = $this->get_item();
-		$index = $this->get_index();
-		$trail = $this->get_trail();
+		$item_output    = '';
+		$item           = $this->get_item();
+		$index          = $this->get_index();
+		$trail          = $this->get_trail();
 		$trail_renderer = $this->get_trail_renderer();
 
 		// link before and opening <a>
@@ -88,7 +88,7 @@ class Carbon_Breadcrumb_Item_Renderer {
 	 * @return string $item_link The link URL of this item.
 	 */
 	public function get_item_link() {
-		$item = $this->get_item();
+		$item      = $this->get_item();
 		$item_link = apply_filters( 'carbon_breadcrumbs_item_link', $item->get_link(), $item );
 		return $item_link;
 	}
@@ -102,7 +102,7 @@ class Carbon_Breadcrumb_Item_Renderer {
 	 */
 	public function render_link_before() {
 		$trail_renderer = $this->get_trail_renderer();
-		$item_link = $this->get_item_link();
+		$item_link      = $this->get_item_link();
 
 		// HTML before link opening tag
 		$output = $trail_renderer->get_link_before();
@@ -124,8 +124,8 @@ class Carbon_Breadcrumb_Item_Renderer {
 	 */
 	public function render_link_after() {
 		$trail_renderer = $this->get_trail_renderer();
-		$item_link = $this->get_item_link();
-		$output = '';
+		$item_link      = $this->get_item_link();
+		$output         = '';
 
 		// link can be optional or disabled
 		if ( $item_link && $this->is_link_enabled() ) {
@@ -146,7 +146,7 @@ class Carbon_Breadcrumb_Item_Renderer {
 	 * @return string $output The output HTML.
 	 */
 	public function render_title() {
-		$item = $this->get_item();
+		$item           = $this->get_item();
 		$trail_renderer = $this->get_trail_renderer();
 
 		// HTML before title
@@ -191,10 +191,10 @@ class Carbon_Breadcrumb_Item_Renderer {
 	 * @return bool
 	 */
 	public function is_link_enabled() {
-		$trail = $this->get_trail();
+		$trail          = $this->get_trail();
 		$trail_renderer = $this->get_trail_renderer();
-		$total_items = $trail->get_total_items();
-		$index = $this->get_index();
+		$total_items    = $trail->get_total_items();
+		$index          = $this->get_index();
 
 		return $trail_renderer->get_last_item_link() || $index < $total_items;
 	}

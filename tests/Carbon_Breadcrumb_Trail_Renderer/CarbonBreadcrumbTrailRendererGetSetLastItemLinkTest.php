@@ -20,13 +20,13 @@ class CarbonBreadcrumbTrailRendererGetSetLastItemLinkTest extends WP_UnitTestCas
 		$this->trail_renderer->set_last_item_link( 0 );
 		$this->assertSame( false, $this->trail_renderer->get_last_item_link() );
 
-		$this->trail_renderer->set_last_item_link( "" );
+		$this->trail_renderer->set_last_item_link( '' );
 		$this->assertSame( false, $this->trail_renderer->get_last_item_link() );
 
 		$this->trail_renderer->set_last_item_link( 1 );
 		$this->assertSame( true, $this->trail_renderer->get_last_item_link() );
 
-		$this->trail_renderer->set_last_item_link( "foo" );
+		$this->trail_renderer->set_last_item_link( 'foo' );
 		$this->assertSame( true, $this->trail_renderer->get_last_item_link() );
 	}
 

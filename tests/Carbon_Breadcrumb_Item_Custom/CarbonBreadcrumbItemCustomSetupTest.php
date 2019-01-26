@@ -5,7 +5,7 @@
 class CarbonBreadcrumbItemCustomSetupTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->item = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item_Custom', array(), '', false);
+		$this->item = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item_Custom', array(), '', false );
 	}
 
 	public function tearDown() {
@@ -21,7 +21,7 @@ class CarbonBreadcrumbItemCustomSetupTest extends WP_UnitTestCase {
 		$item_clone_a->setup();
 
 		$expected = serialize( $item_clone_a );
-		$actual = serialize( $item_clone_b );
+		$actual   = serialize( $item_clone_b );
 		$this->assertSame( $expected, $actual );
 	}
 

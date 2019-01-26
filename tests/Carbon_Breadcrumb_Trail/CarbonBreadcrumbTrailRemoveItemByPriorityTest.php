@@ -6,7 +6,7 @@ class CarbonBreadcrumbTrailRemoveItemByPriorityTest extends WP_UnitTestCase {
 
 	public function setUp() {
 		$this->trail = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
-		$this->item = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item');
+		$this->item  = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item' );
 	}
 
 	public function tearDown() {
@@ -18,18 +18,18 @@ class CarbonBreadcrumbTrailRemoveItemByPriorityTest extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_Trail::remove_item_by_priority
 	 */
 	public function testWithDefaultPriority() {
-		$original = array( 
-			5 => array( $this->item ), 
-			0 => array( $this->item ), 
+		$original = array(
+			5    => array( $this->item ),
+			0    => array( $this->item ),
 			1000 => array( $this->item ),
 		);
 		$this->trail->set_items( $original );
 
 		$this->trail->remove_item_by_priority();
 
-		$expected = array( 
-			5 => array( $this->item ), 
-			1000 => array( $this->item ) 
+		$expected = array(
+			5    => array( $this->item ),
+			1000 => array( $this->item ),
 		);
 		$this->assertSame( $expected, $this->trail->get_items() );
 	}
@@ -38,18 +38,18 @@ class CarbonBreadcrumbTrailRemoveItemByPriorityTest extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_Trail::remove_item_by_priority
 	 */
 	public function testWithCustomPriority() {
-		$original = array( 
-			5 => array( $this->item ), 
-			0 => array( $this->item ), 
+		$original = array(
+			5    => array( $this->item ),
+			0    => array( $this->item ),
 			1000 => array( $this->item ),
 		);
 		$this->trail->set_items( $original );
 
 		$this->trail->remove_item_by_priority( 5 );
 
-		$expected = array( 
-			0 => array( $this->item ), 
-			1000 => array( $this->item ) 
+		$expected = array(
+			0    => array( $this->item ),
+			1000 => array( $this->item ),
 		);
 		$this->assertSame( $expected, $this->trail->get_items() );
 	}

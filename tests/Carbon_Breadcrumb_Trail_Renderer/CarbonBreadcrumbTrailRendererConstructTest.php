@@ -30,11 +30,13 @@ class CarbonBreadcrumbTrailRendererConstructTest extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::__construct
 	 */
 	public function testWithSomeUnexistingSettings() {
-		$this->renderer->__construct(array(
-			'home_item_title' => 'Foo',
-			'foo' => 'Bar',
-		));
-		
+		$this->renderer->__construct(
+			array(
+				'home_item_title' => 'Foo',
+				'foo'             => 'Bar',
+			)
+		);
+
 		$this->assertSame( 'Foo', $this->renderer->get_home_item_title() );
 	}
 
@@ -42,12 +44,14 @@ class CarbonBreadcrumbTrailRendererConstructTest extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::__construct
 	 */
 	public function testWithSomeExistingSettings() {
-		$this->renderer->__construct(array(
-			'glue' => ' => ',
-			'min_items' => 3,
-			'last_item_link' => false,
-		));
-		
+		$this->renderer->__construct(
+			array(
+				'glue'           => ' => ',
+				'min_items'      => 3,
+				'last_item_link' => false,
+			)
+		);
+
 		$this->assertSame( 'Home', $this->renderer->get_home_item_title() );
 		$this->assertSame( ' => ', $this->renderer->get_glue() );
 		$this->assertSame( 3, $this->renderer->get_min_items() );
@@ -61,7 +65,7 @@ class CarbonBreadcrumbTrailRendererConstructTest extends WP_UnitTestCase {
 		add_filter( 'carbon_breadcrumbs_renderer_default_options', array( $this, 'carbon_breadcrumbs_renderer_default_options' ) );
 
 		$this->renderer->__construct();
-		
+
 		$this->assertSame( 5, $this->renderer->get_min_items() );
 
 		remove_filter( 'carbon_breadcrumbs_renderer_default_options', array( $this, 'carbon_breadcrumbs_renderer_default_options' ) );
@@ -73,10 +77,12 @@ class CarbonBreadcrumbTrailRendererConstructTest extends WP_UnitTestCase {
 	public function testArgumentArgsPriorityToFilter() {
 		add_filter( 'carbon_breadcrumbs_renderer_default_options', array( $this, 'carbon_breadcrumbs_renderer_default_options' ) );
 
-		$this->renderer->__construct(array(
-			'min_items' => 3,
-		));
-		
+		$this->renderer->__construct(
+			array(
+				'min_items' => 3,
+			)
+		);
+
 		$this->assertSame( 3, $this->renderer->get_min_items() );
 
 		remove_filter( 'carbon_breadcrumbs_renderer_default_options', array( $this, 'carbon_breadcrumbs_renderer_default_options' ) );

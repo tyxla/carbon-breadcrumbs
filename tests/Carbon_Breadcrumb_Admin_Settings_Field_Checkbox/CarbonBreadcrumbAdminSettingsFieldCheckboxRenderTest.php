@@ -28,7 +28,7 @@ class CarbonBreadcrumbAdminSettingsFieldCheckboxRenderTest extends WP_UnitTestCa
 
 		ob_start();
 		$this->field->render();
-		$actual = trim( ob_get_clean() );
+		$actual   = trim( ob_get_clean() );
 		$expected = '<input name="' . $this->id . '" id="' . $this->id . '" type="checkbox" value="1" class="code"  />';
 		$this->assertSame( $expected, $actual );
 	}
@@ -45,7 +45,7 @@ class CarbonBreadcrumbAdminSettingsFieldCheckboxRenderTest extends WP_UnitTestCa
 
 		ob_start();
 		$this->field->render();
-		$actual = trim( ob_get_clean() );
+		$actual   = trim( ob_get_clean() );
 		$expected = '<input name="' . $this->id . '" id="' . $this->id . '" type="checkbox" value="1" class="code" ' . esc_html( checked( 1, 1, false ) ) . ' />';
 		$this->assertSame( $expected, $actual );
 	}

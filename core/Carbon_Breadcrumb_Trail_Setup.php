@@ -65,7 +65,7 @@ class Carbon_Breadcrumb_Trail_Setup {
 		}
 
 		$locator = Carbon_Breadcrumb_Locator::factory( 'date' );
-		$items = $locator->get_items( 700 );
+		$items   = $locator->get_items( 700 );
 		$this->get_trail()->add_item( $items );
 	}
 
@@ -87,7 +87,7 @@ class Carbon_Breadcrumb_Trail_Setup {
 		}
 
 		$title = $post_type->labels->name;
-		$link = get_post_type_archive_link( $post_type->name );
+		$link  = get_post_type_archive_link( $post_type->name );
 		$this->get_trail()->add_custom_item( $title, $link, 700 );
 	}
 
@@ -130,11 +130,11 @@ class Carbon_Breadcrumb_Trail_Setup {
 			return;
 		}
 
-		$taxonomy = 'category';
-		$categories = wp_get_object_terms( get_the_ID(), $taxonomy, array( 'orderby' => 'term_id' ) );
+		$taxonomy      = 'category';
+		$categories    = wp_get_object_terms( get_the_ID(), $taxonomy, array( 'orderby' => 'term_id' ) );
 		$last_category = array_pop( $categories );
-		$locator = Carbon_Breadcrumb_Locator::factory( 'term', $taxonomy );
-		$items = $locator->get_items( 700, $last_category->term_id );
+		$locator       = Carbon_Breadcrumb_Locator::factory( 'term', $taxonomy );
+		$items         = $locator->get_items( 700, $last_category->term_id );
 		$this->get_trail()->add_item( $items );
 	}
 
@@ -151,7 +151,7 @@ class Carbon_Breadcrumb_Trail_Setup {
 
 		if ( $this->is_post_context() ) {
 			$locator = Carbon_Breadcrumb_Locator::factory( 'post', 'page' );
-			$items = $locator->get_items( 500, $page_for_posts );
+			$items   = $locator->get_items( 500, $page_for_posts );
 			$this->get_trail()->add_item( $items );
 		}
 	}
@@ -185,14 +185,14 @@ class Carbon_Breadcrumb_Trail_Setup {
 	 * @access public
 	 */
 	public function populate_home_items() {
-		$trail = $this->get_trail();
+		$trail    = $this->get_trail();
 		$renderer = $trail->get_renderer();
 		if ( ! $renderer->get_display_home_item() ) {
 			return;
 		}
 
 		$home_title = $renderer->get_home_item_title();
-		$home_link = home_url( '/' );
+		$home_link  = home_url( '/' );
 		$trail->add_custom_item( $home_title, $home_link, 10 );
 	}
 
@@ -206,7 +206,7 @@ class Carbon_Breadcrumb_Trail_Setup {
 	 */
 	protected function generate_locator_items( $locator_name ) {
 		$locator = Carbon_Breadcrumb_Locator::factory( $locator_name );
-		$items = $locator->generate_items();
+		$items   = $locator->generate_items();
 
 		if ( $items ) {
 			return $items;

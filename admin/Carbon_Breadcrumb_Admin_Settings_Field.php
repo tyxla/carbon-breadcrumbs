@@ -34,7 +34,7 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field extends Carbon_Breadcrumb_
 	 * @param string $id The ID of the field.
 	 * @param string $title The title of the field.
 	 * @param string $section The name of the section.
-	 * @param array $args Additional args.
+	 * @param array  $args Additional args.
 	 */
 	public function __construct( $id, $title, $section = '', $args = array() ) {
 
@@ -63,7 +63,7 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field extends Carbon_Breadcrumb_
 	 * @param string $id The ID of the field.
 	 * @param string $title The title of the field.
 	 * @param string $section The name of the section.
-	 * @param array $args Additional args.
+	 * @param array  $args Additional args.
 	 * @return Carbon_Breadcrumb_Admin_Settings_Field $field
 	 */
 	public static function factory( $type, $id, $title, $section = '', $args = array() ) {
@@ -126,8 +126,8 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field extends Carbon_Breadcrumb_
 	 */
 	public function get_value() {
 		$original_name = str_replace( 'carbon_breadcrumbs_', '', $this->get_id() );
-		$field_data = Carbon_Breadcrumb_Admin_Settings::get_field_data();
-		$default = ! empty( $field_data[ $original_name ]['default'] ) ? $field_data[ $original_name ]['default'] : '';
+		$field_data    = Carbon_Breadcrumb_Admin_Settings::get_field_data();
+		$default       = ! empty( $field_data[ $original_name ]['default'] ) ? $field_data[ $original_name ]['default'] : '';
 
 		$value = get_option( $this->get_id() );
 		if ( false === $value ) {
@@ -143,9 +143,9 @@ abstract class Carbon_Breadcrumb_Admin_Settings_Field extends Carbon_Breadcrumb_
 	 * @access public
 	 */
 	public function render_help() {
-		$field_data = Carbon_Breadcrumb_Admin_Settings::get_field_data();
+		$field_data    = Carbon_Breadcrumb_Admin_Settings::get_field_data();
 		$original_name = str_replace( 'carbon_breadcrumbs_', '', $this->get_id() );
-		$help = ! empty( $field_data[ $original_name ]['help'] ) ? $field_data[ $original_name ]['help'] : '';
+		$help          = ! empty( $field_data[ $original_name ]['help'] ) ? $field_data[ $original_name ]['help'] : '';
 		if ( ! $help ) {
 			return;
 		}

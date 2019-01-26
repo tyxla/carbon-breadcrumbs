@@ -7,14 +7,18 @@ class CarbonBreadcrumbLocatorTermGetParentIdTest extends WP_UnitTestCase {
 	public function setUp() {
 		parent::setUp();
 
-		$this->locator = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Locator_Term', array( 'term', 'category' ) );
-		$this->parent = $this->factory->category->create();
-		$this->child = $this->factory->category->create(array(
-			'parent' => $this->parent
-		));
-		$this->subchild = $this->factory->category->create(array(
-			'parent' => $this->child
-		));
+		$this->locator  = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Locator_Term', array( 'term', 'category' ) );
+		$this->parent   = $this->factory->category->create();
+		$this->child    = $this->factory->category->create(
+			array(
+				'parent' => $this->parent,
+			)
+		);
+		$this->subchild = $this->factory->category->create(
+			array(
+				'parent' => $this->child,
+			)
+		);
 	}
 
 	public function tearDown() {

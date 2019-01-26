@@ -8,7 +8,7 @@ class CarbonBreadcrumbLocatorDateGetArchiveItemDetailsTest extends WP_UnitTestCa
 		parent::setUp();
 
 		$this->locator = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Locator_Date', array( 'test1', 'test2' ) );
-		$this->post = $this->factory->post->create();
+		$this->post    = $this->factory->post->create();
 	}
 
 	public function tearDown() {
@@ -22,26 +22,26 @@ class CarbonBreadcrumbLocatorDateGetArchiveItemDetailsTest extends WP_UnitTestCa
 	 * @covers Carbon_Breadcrumb_Locator_Date::get_archive_item_details
 	 */
 	public function testOnYearArchive() {
-		$this->go_to('/?year=' . date( 'Y' ) );
+		$this->go_to( '/?year=' . date( 'Y' ) );
 
 		$expected = array(
-			'year' => array(
-				'condition' => true,
+			'year'  => array(
+				'condition'    => true,
 				'title_format' => 'Y',
-				'link' => get_year_link( date( 'Y' ) ),
+				'link'         => get_year_link( date( 'Y' ) ),
 			),
 			'month' => array(
-				'condition' => false,
+				'condition'    => false,
 				'title_format' => 'F',
-				'link' => get_month_link( date( 'Y' ), date( 'm' ) ),
+				'link'         => get_month_link( date( 'Y' ), date( 'm' ) ),
 			),
-			'day' => array(
-				'condition' => false,
+			'day'   => array(
+				'condition'    => false,
 				'title_format' => 'd',
-				'link' => get_day_link( date( 'Y' ), date( 'm' ), date( 'd' ) ),
+				'link'         => get_day_link( date( 'Y' ), date( 'm' ), date( 'd' ) ),
 			),
 		);
-		$actual = $this->locator->get_archive_item_details();
+		$actual   = $this->locator->get_archive_item_details();
 
 		$this->assertSame( $expected, $actual );
 	}
@@ -50,26 +50,26 @@ class CarbonBreadcrumbLocatorDateGetArchiveItemDetailsTest extends WP_UnitTestCa
 	 * @covers Carbon_Breadcrumb_Locator_Date::get_archive_item_details
 	 */
 	public function testOnMonthArchive() {
-		$this->go_to('/?year=' . date( 'Y' ) . '&monthnum=' . date( 'm' ) );
+		$this->go_to( '/?year=' . date( 'Y' ) . '&monthnum=' . date( 'm' ) );
 
 		$expected = array(
-			'year' => array(
-				'condition' => true,
+			'year'  => array(
+				'condition'    => true,
 				'title_format' => 'Y',
-				'link' => get_year_link( date( 'Y' ) ),
+				'link'         => get_year_link( date( 'Y' ) ),
 			),
 			'month' => array(
-				'condition' => true,
+				'condition'    => true,
 				'title_format' => 'F',
-				'link' => get_month_link( date( 'Y' ), date( 'm' ) ),
+				'link'         => get_month_link( date( 'Y' ), date( 'm' ) ),
 			),
-			'day' => array(
-				'condition' => false,
+			'day'   => array(
+				'condition'    => false,
 				'title_format' => 'd',
-				'link' => get_day_link( date( 'Y' ), date( 'm' ), date( 'd' ) ),
+				'link'         => get_day_link( date( 'Y' ), date( 'm' ), date( 'd' ) ),
 			),
 		);
-		$actual = $this->locator->get_archive_item_details();
+		$actual   = $this->locator->get_archive_item_details();
 
 		$this->assertSame( $expected, $actual );
 	}
@@ -78,26 +78,26 @@ class CarbonBreadcrumbLocatorDateGetArchiveItemDetailsTest extends WP_UnitTestCa
 	 * @covers Carbon_Breadcrumb_Locator_Date::get_archive_item_details
 	 */
 	public function testOnDayArchive() {
-		$this->go_to('/?year=' . date( 'Y' ) . '&monthnum=' . date( 'm' ) . '&day=' . date( 'd' ) );
+		$this->go_to( '/?year=' . date( 'Y' ) . '&monthnum=' . date( 'm' ) . '&day=' . date( 'd' ) );
 
 		$expected = array(
-			'year' => array(
-				'condition' => true,
+			'year'  => array(
+				'condition'    => true,
 				'title_format' => 'Y',
-				'link' => get_year_link( date( 'Y' ) ),
+				'link'         => get_year_link( date( 'Y' ) ),
 			),
 			'month' => array(
-				'condition' => true,
+				'condition'    => true,
 				'title_format' => 'F',
-				'link' => get_month_link( date( 'Y' ), date( 'm' ) ),
+				'link'         => get_month_link( date( 'Y' ), date( 'm' ) ),
 			),
-			'day' => array(
-				'condition' => true,
+			'day'   => array(
+				'condition'    => true,
 				'title_format' => 'd',
-				'link' => get_day_link( date( 'Y' ), date( 'm' ), date( 'd' ) ),
+				'link'         => get_day_link( date( 'Y' ), date( 'm' ), date( 'd' ) ),
 			),
 		);
-		$actual = $this->locator->get_archive_item_details();
+		$actual   = $this->locator->get_archive_item_details();
 
 		$this->assertSame( $expected, $actual );
 	}

@@ -4,7 +4,7 @@
  */
 class CarbonBreadcrumbItemDbObjectSetupTest extends WP_UnitTestCase {
 	public $default_mock_title = 'foobar';
-	public $default_mock_link = 'http://example.com/';
+	public $default_mock_link  = 'http://example.com/';
 
 	public function mockSetupTitle() {
 		$this->item->mock_title = $this->default_mock_title;
@@ -15,7 +15,7 @@ class CarbonBreadcrumbItemDbObjectSetupTest extends WP_UnitTestCase {
 	}
 
 	public function setUp() {
-		$this->item = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item_DB_Object');
+		$this->item = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item_DB_Object' );
 
 		$this->item->expects( $this->any() )
 			->method( 'setup_title' )

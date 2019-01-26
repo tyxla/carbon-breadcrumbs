@@ -17,21 +17,21 @@ class CarbonBreadcrumbTrailSortItemsTest extends WP_UnitTestCase {
 	 */
 	public function testSortItems() {
 		$original = array(
-			5 => array(),
-			3 => array(),
+			5  => array(),
+			3  => array(),
 			10 => array(),
-			1 => array(),
+			1  => array(),
 			21 => array(),
-			9 => array()
+			9  => array(),
 		);
 		$this->trail->set_items( $original );
 		$this->trail->sort_items();
 
 		$expected = array(
-			1 => array(),
-			3 => array(),
-			5 => array(),
-			9 => array(),
+			1  => array(),
+			3  => array(),
+			5  => array(),
+			9  => array(),
 			10 => array(),
 			21 => array(),
 		);

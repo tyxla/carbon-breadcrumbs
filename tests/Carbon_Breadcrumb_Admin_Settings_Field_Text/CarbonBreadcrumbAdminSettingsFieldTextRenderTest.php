@@ -27,7 +27,7 @@ class CarbonBreadcrumbAdminSettingsFieldTextRenderTest extends WP_UnitTestCase {
 
 		ob_start();
 		$this->field->render();
-		$actual = trim( ob_get_clean() );
+		$actual   = trim( ob_get_clean() );
 		$expected = '<input name="' . $id . '" id="' . $id . '" type="text" value="' . $value . '" class="regular-text" />';
 		$this->assertSame( $expected, $actual );
 	}

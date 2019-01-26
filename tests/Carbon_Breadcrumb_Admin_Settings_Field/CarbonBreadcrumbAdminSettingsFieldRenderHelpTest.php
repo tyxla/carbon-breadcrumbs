@@ -7,12 +7,12 @@ class CarbonBreadcrumbAdminSettingsFieldRenderHelpTest extends WP_UnitTestCase {
 	public function setUp() {
 		parent::setUp();
 
-		$this->adminField = $this->getMockForAbstractClass('Carbon_Breadcrumb_Admin_Settings_Field', array('testfield', 'Test Field'), '', true, true, true, array('get_id') );
+		$this->adminField = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Admin_Settings_Field', array( 'testfield', 'Test Field' ), '', true, true, true, array( 'get_id' ) );
 	}
 
 	public function tearDown() {
 		unset( $this->adminField );
-		
+
 		parent::tearDown();
 	}
 
@@ -20,9 +20,9 @@ class CarbonBreadcrumbAdminSettingsFieldRenderHelpTest extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field::render_help
 	 */
 	public function testWithNoHelp() {
-		$this->adminField->expects($this->any())
-			->method('get_id')
-			->will($this->returnValue('foo_bar'));
+		$this->adminField->expects( $this->any() )
+			->method( 'get_id' )
+			->will( $this->returnValue( 'foo_bar' ) );
 
 		ob_start();
 		$this->adminField->render_help();
@@ -35,9 +35,9 @@ class CarbonBreadcrumbAdminSettingsFieldRenderHelpTest extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field::render_help
 	 */
 	public function testWithHelp() {
-		$this->adminField->expects($this->any())
-			->method('get_id')
-			->will($this->returnValue('carbon_breadcrumbs_glue'));
+		$this->adminField->expects( $this->any() )
+			->method( 'get_id' )
+			->will( $this->returnValue( 'carbon_breadcrumbs_glue' ) );
 
 		ob_start();
 		$this->adminField->render_help();

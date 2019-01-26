@@ -320,7 +320,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 *
 	 * @param bool $last_item_link Whether the last item will be displayed as a link.
 	 */
-	public function set_last_item_link($last_item_link) {
+	public function set_last_item_link( $last_item_link ) {
 		$this->last_item_link = (bool) $last_item_link;
 	}
 
@@ -394,7 +394,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 * @access public
 	 *
 	 * @param Carbon_Breadcrumb_Trail $trail The trail object.
-	 * @param bool $return Whether to return the output.
+	 * @param bool                    $return Whether to return the output.
 	 * @return string|void $output The output HTML if $return is true.
 	 */
 	public function render( Carbon_Breadcrumb_Trail $trail, $return = false ) {
@@ -410,7 +410,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 		$items_output = $this->render_items( $trail );
 
 		// implode the breadcrumb items and wrap them with the configured wrappers
-		$output = $this->get_wrapper_before();
+		$output  = $this->get_wrapper_before();
 		$output .= implode( $this->get_glue(), $items_output );
 		$output .= $this->get_wrapper_after();
 
@@ -431,8 +431,8 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 */
 	public function render_items( $trail ) {
 		$items_output = array();
-		$counter = 0;
-		$all_items = $trail->get_flat_items();
+		$counter      = 0;
+		$all_items    = $trail->get_flat_items();
 
 		foreach ( $all_items as $item ) {
 			// allow each item to be filtered right before rendering
@@ -445,7 +445,7 @@ class Carbon_Breadcrumb_Trail_Renderer {
 
 			// increase the counter and render the item
 			$counter++;
-			$item_renderer = new Carbon_Breadcrumb_Item_Renderer( $item, $trail, $this, $counter );
+			$item_renderer  = new Carbon_Breadcrumb_Item_Renderer( $item, $trail, $this, $counter );
 			$items_output[] = $item_renderer->render();
 		}
 

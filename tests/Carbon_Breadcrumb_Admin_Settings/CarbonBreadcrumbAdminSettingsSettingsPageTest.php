@@ -5,14 +5,14 @@
 class CarbonBreadcrumbAdminSettingsSettingsPageTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->adminSettings = $this->getMockBuilder( 'Carbon_Breadcrumb_Admin_Settings' )->setMethods(null)->disableOriginalConstructor()->getMock();
+		$this->adminSettings = $this->getMockBuilder( 'Carbon_Breadcrumb_Admin_Settings' )->setMethods( null )->disableOriginalConstructor()->getMock();
 
 		parent::setUp();
 	}
 
 	public function tearDown() {
-		parent::tearDown(); 
-		
+		parent::tearDown();
+
 		unset( $this->adminSettings );
 	}
 
@@ -23,7 +23,7 @@ class CarbonBreadcrumbAdminSettingsSettingsPageTest extends WP_UnitTestCase {
 		ob_start();
 		$this->adminSettings->settings_page();
 		$content = ob_get_clean();
-		
+
 		$this->assertContains( esc_html( Carbon_Breadcrumb_Admin_Settings::get_page_title() ), $content );
 		$this->assertContains( '<form', $content );
 		$this->assertContains( '</form>', $content );

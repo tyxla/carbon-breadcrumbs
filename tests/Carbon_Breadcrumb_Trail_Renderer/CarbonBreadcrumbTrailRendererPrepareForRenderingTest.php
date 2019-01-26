@@ -6,31 +6,33 @@ class CarbonBreadcrumbTrailRendererPrepareForRenderingTest extends WP_UnitTestCa
 
 	public $glue = ' => ';
 
-	public function carbon_breadcrumbs_before_render($trail_renderer) {
+	public function carbon_breadcrumbs_before_render( $trail_renderer ) {
 		$trail_renderer->set_glue( $this->glue );
 	}
 
-	public function carbon_breadcrumbs_auto_sort_items($sort) {
+	public function carbon_breadcrumbs_auto_sort_items( $sort ) {
 		return false;
 	}
 
 	public function setUp() {
-		$this->trail = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
+		$this->trail          = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
 		$this->trail_renderer = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail_Renderer' )->setMethods( null )->getMock();
 
-		$this->item1 = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item');
-		$this->item2 = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item');
-		$this->item3 = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item');
+		$this->item1 = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item' );
+		$this->item2 = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item' );
+		$this->item3 = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item' );
 
 		$this->item1->set_priority( 500 );
 		$this->item2->set_priority( 200 );
 		$this->item3->set_priority( 300 );
 
-		$this->trail->add_item( array(
-			$this->item1,
-			$this->item2,
-			$this->item3,
-		) );
+		$this->trail->add_item(
+			array(
+				$this->item1,
+				$this->item2,
+				$this->item3,
+			)
+		);
 	}
 
 	public function tearDown() {
@@ -45,13 +47,13 @@ class CarbonBreadcrumbTrailRendererPrepareForRenderingTest extends WP_UnitTestCa
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::prepare_for_rendering
 	 */
 	public function testBeforeRenderHook() {
-		add_action( 'carbon_breadcrumbs_before_render', array($this, 'carbon_breadcrumbs_before_render') );
+		add_action( 'carbon_breadcrumbs_before_render', array( $this, 'carbon_breadcrumbs_before_render' ) );
 
 		$this->trail_renderer->prepare_for_rendering( $this->trail );
 
 		$this->assertSame( $this->glue, $this->trail_renderer->get_glue() );
 
-		remove_action( 'carbon_breadcrumbs_before_render', array($this, 'carbon_breadcrumbs_before_render') );
+		remove_action( 'carbon_breadcrumbs_before_render', array( $this, 'carbon_breadcrumbs_before_render' ) );
 	}
 
 	/**
@@ -72,7 +74,7 @@ class CarbonBreadcrumbTrailRendererPrepareForRenderingTest extends WP_UnitTestCa
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::prepare_for_rendering
 	 */
 	public function testSortingDisabledByFilter() {
-		add_filter( 'carbon_breadcrumbs_auto_sort_items', array($this, 'carbon_breadcrumbs_auto_sort_items') );
+		add_filter( 'carbon_breadcrumbs_auto_sort_items', array( $this, 'carbon_breadcrumbs_auto_sort_items' ) );
 
 		$this->trail_renderer->prepare_for_rendering( $this->trail );
 
@@ -83,7 +85,7 @@ class CarbonBreadcrumbTrailRendererPrepareForRenderingTest extends WP_UnitTestCa
 		);
 		$this->assertSame( $expected, $this->trail->get_flat_items() );
 
-		remove_filter( 'carbon_breadcrumbs_auto_sort_items', array($this, 'carbon_breadcrumbs_auto_sort_items') );
+		remove_filter( 'carbon_breadcrumbs_auto_sort_items', array( $this, 'carbon_breadcrumbs_auto_sort_items' ) );
 	}
 
 }

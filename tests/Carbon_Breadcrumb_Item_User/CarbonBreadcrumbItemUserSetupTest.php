@@ -5,7 +5,7 @@
 class CarbonBreadcrumbItemUserSetupTest extends WP_UnitTestCase {
 
 	public $default_mock_title = 'foobar';
-	public $default_mock_link = 'http://example.com/';
+	public $default_mock_link  = 'http://example.com/';
 
 	public function mockSetupTitle() {
 		$this->item->mock_title = $this->default_mock_title;

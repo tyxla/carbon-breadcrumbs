@@ -55,20 +55,20 @@ class Carbon_Breadcrumb_Locator_Date extends Carbon_Breadcrumb_Locator {
 	 */
 	public function get_archive_item_details() {
 		return array(
-			'year' => array(
-				'condition' => is_year() || is_month() || is_day(),
+			'year'  => array(
+				'condition'    => is_year() || is_month() || is_day(),
 				'title_format' => 'Y',
-				'link' => get_year_link( get_query_var( 'year' ) ),
+				'link'         => get_year_link( get_query_var( 'year' ) ),
 			),
 			'month' => array(
-				'condition' => is_month() || is_day(),
+				'condition'    => is_month() || is_day(),
 				'title_format' => 'F',
-				'link' => get_month_link( get_query_var( 'year' ), get_query_var( 'monthnum' ) ),
+				'link'         => get_month_link( get_query_var( 'year' ), get_query_var( 'monthnum' ) ),
 			),
-			'day' => array(
-				'condition' => is_day(),
+			'day'   => array(
+				'condition'    => is_day(),
 				'title_format' => 'd',
-				'link' => get_day_link( get_query_var( 'year' ), get_query_var( 'monthnum' ), get_query_var( 'day' ) ),
+				'link'         => get_day_link( get_query_var( 'year' ), get_query_var( 'monthnum' ), get_query_var( 'day' ) ),
 			),
 		);
 	}

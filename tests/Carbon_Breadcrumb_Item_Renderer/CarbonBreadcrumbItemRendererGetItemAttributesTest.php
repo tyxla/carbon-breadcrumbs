@@ -4,17 +4,17 @@
  */
 class CarbonBreadcrumbItemRendererGetItemAttributesTest extends WP_UnitTestCase {
 
-	public function custom_attributes_filter($attributes = '') {
+	public function custom_attributes_filter( $attributes = '' ) {
 		$attributes['class'] = 'foo-bar';
-		$attributes['id'] = 'FooBar';
+		$attributes['id']    = 'FooBar';
 		return $attributes;
 	}
 
 	public function setUp() {
-		$this->item = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item');
+		$this->item = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item' );
 
 		$this->item_renderer = $this->getMockBuilder( 'Carbon_Breadcrumb_Item_Renderer' )->setMethods( null )->disableOriginalConstructor()->getMock();
-		$this->item_renderer->set_item($this->item);
+		$this->item_renderer->set_item( $this->item );
 	}
 
 	public function tearDown() {

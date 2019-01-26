@@ -31,7 +31,7 @@ class Carbon_Breadcrumb_Item_Term extends Carbon_Breadcrumb_Item_DB_Object {
 		}
 
 		// retrieve term object
-		$subtype = $this->get_subtype();
+		$subtype           = $this->get_subtype();
 		$this->term_object = get_term_by( 'id', $this->get_id(), $subtype );
 
 		parent::setup();

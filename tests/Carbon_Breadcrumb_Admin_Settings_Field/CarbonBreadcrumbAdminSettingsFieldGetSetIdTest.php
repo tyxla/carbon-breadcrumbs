@@ -5,7 +5,7 @@
 class CarbonBreadcrumbAdminSettingsFieldGetSetIdTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->adminField = $this->getMockForAbstractClass('Carbon_Breadcrumb_Admin_Settings_Field', array(123, 'test') );
+		$this->adminField = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Admin_Settings_Field', array( 123, 'test' ) );
 	}
 
 	public function tearDown() {

@@ -3,15 +3,15 @@
  * @group admin_settings_field
  */
 class CarbonBreadcrumbAdminSettingsFieldConstructTest extends WP_UnitTestCase {
-	protected $id = 'foo_bar';
-	protected $title = 'Foo Bar';
+	protected $id      = 'foo_bar';
+	protected $title   = 'Foo Bar';
 	protected $section = 'Test';
-	protected $args = array('foo' => 'bar');
+	protected $args    = array( 'foo' => 'bar' );
 
 	public function setUp() {
-		$this->adminField = $this->getMockForAbstractClass('Carbon_Breadcrumb_Admin_Settings_Field', array(), '', false );
+		$this->adminField = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Admin_Settings_Field', array(), '', false );
 
-		$this->adminField->__construct($this->id, $this->title, $this->section, $this->args);
+		$this->adminField->__construct( $this->id, $this->title, $this->section, $this->args );
 	}
 
 	public function tearDown() {
@@ -44,10 +44,10 @@ class CarbonBreadcrumbAdminSettingsFieldConstructTest extends WP_UnitTestCase {
 		$this->assertArrayHasKey( $this->id, $wp_settings_fields[ $page ][ $this->section ] );
 
 		$expected = array(
-			'id' => $this->id,
-			'title' => $this->title,
+			'id'       => $this->id,
+			'title'    => $this->title,
 			'callback' => array( $this->adminField, 'render' ),
-			'args' => $this->args
+			'args'     => $this->args,
 		);
 		$this->assertEquals( $expected, $wp_settings_fields[ $page ][ $this->section ][ $this->id ] );
 	}

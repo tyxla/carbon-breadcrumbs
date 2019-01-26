@@ -5,7 +5,7 @@
 class CarbonBreadcrumbItemGetSetAttributesTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->item = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item');
+		$this->item = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item' );
 	}
 
 	public function tearDown() {
@@ -19,7 +19,7 @@ class CarbonBreadcrumbItemGetSetAttributesTest extends WP_UnitTestCase {
 	public function testGetSetAttributes() {
 		$expected = array(
 			'target' => '_blank',
-			'class' => 'foo-bar',
+			'class'  => 'foo-bar',
 		);
 		$this->item->set_attributes( $expected );
 		$this->assertSame( $expected, $this->item->get_attributes() );

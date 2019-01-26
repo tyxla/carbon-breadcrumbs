@@ -29,9 +29,11 @@ class CarbonBreadcrumbTrailConstruct extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_Trail::__construct
 	 */
 	public function testCustomRenderer() {
-		$this->trail->__construct(array(
-			'renderer' => 'Carbon_Breadcrumb_Trail_Renderer_Custom',
-		));
+		$this->trail->__construct(
+			array(
+				'renderer' => 'Carbon_Breadcrumb_Trail_Renderer_Custom',
+			)
+		);
 
 		$this->assertInstanceOf( 'Carbon_Breadcrumb_Trail_Renderer_Custom', $this->trail->get_renderer() );
 		$this->assertInstanceOf( 'Carbon_Breadcrumb_Trail_Renderer', $this->trail->get_renderer() );
@@ -41,15 +43,17 @@ class CarbonBreadcrumbTrailConstruct extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_Trail::__construct
 	 */
 	public function testCustomRendererFilter() {
-		add_filter('carbon_breadcrumbs_renderer_class', array($this, 'customRenderer'));
+		add_filter( 'carbon_breadcrumbs_renderer_class', array( $this, 'customRenderer' ) );
 
-		$this->trail->__construct(array(
-			'renderer' => 'Carbon_Breadcrumb_Trail_Renderer',
-		));
+		$this->trail->__construct(
+			array(
+				'renderer' => 'Carbon_Breadcrumb_Trail_Renderer',
+			)
+		);
 
 		$this->assertInstanceOf( 'Carbon_Breadcrumb_Trail_Renderer_Custom', $this->trail->get_renderer() );
 
-		remove_filter('carbon_breadcrumbs_renderer_class', array($this, 'customRenderer'));
+		remove_filter( 'carbon_breadcrumbs_renderer_class', array( $this, 'customRenderer' ) );
 	}
 
 	/**
@@ -57,9 +61,11 @@ class CarbonBreadcrumbTrailConstruct extends WP_UnitTestCase {
 	 */
 	public function testRendererSettings() {
 		$glue = ' => ';
-		$this->trail->__construct( array(
-			'glue' => $glue,
-		) );
+		$this->trail->__construct(
+			array(
+				'glue' => $glue,
+			)
+		);
 
 		$this->assertSame( $glue, $this->trail->get_renderer()->get_glue() );
 	}

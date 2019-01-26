@@ -3,11 +3,11 @@
  * @group admin_settings_field
  */
 class CarbonBreadcrumbAdminSettingsFieldFactoryTest extends WP_UnitTestCase {
-	protected $type = 'Text';
-	protected $id = 'foo_bar';
-	protected $title = 'Foo Bar';
+	protected $type    = 'Text';
+	protected $id      = 'foo_bar';
+	protected $title   = 'Foo Bar';
 	protected $section = 'Test';
-	protected $args = array('foo' => 'bar');
+	protected $args    = array( 'foo' => 'bar' );
 
 	public function setUp() {
 		$this->adminField = Carbon_Breadcrumb_Admin_Settings_Field::factory( $this->type, $this->id, $this->title, $this->section, $this->args );
@@ -44,7 +44,7 @@ class CarbonBreadcrumbAdminSettingsFieldFactoryTest extends WP_UnitTestCase {
 	public function testSection() {
 		global $wp_settings_fields;
 		$page = Carbon_Breadcrumb_Admin_Settings::get_page_name();
-		
+
 		$this->assertArrayHasKey( $this->section, $wp_settings_fields[ $page ] );
 	}
 
@@ -54,7 +54,7 @@ class CarbonBreadcrumbAdminSettingsFieldFactoryTest extends WP_UnitTestCase {
 	public function testArgs() {
 		global $wp_settings_fields;
 		$page = Carbon_Breadcrumb_Admin_Settings::get_page_name();
-		
+
 		$this->assertArrayHasKey( $this->id, $wp_settings_fields[ $page ][ $this->section ] );
 	}
 }

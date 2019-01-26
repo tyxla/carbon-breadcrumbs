@@ -37,71 +37,71 @@ class Carbon_Breadcrumb_Admin_Settings {
 	 */
 	public static function get_field_data() {
 		return array(
-			'glue' => array(
-				'type' => 'text',
-				'title' => __( 'Glue', 'carbon_breadcrumbs' ),
+			'glue'              => array(
+				'type'    => 'text',
+				'title'   => __( 'Glue', 'carbon_breadcrumbs' ),
 				'default' => ' > ',
-				'help' => __( 'This is displayed between the breadcrumb items.', 'carbon_breadcrumbs' ),
+				'help'    => __( 'This is displayed between the breadcrumb items.', 'carbon_breadcrumbs' ),
 			),
-			'link_before' => array(
-				'type' => 'text',
-				'title' => __( 'Link Before', 'carbon_breadcrumbs' ),
+			'link_before'       => array(
+				'type'    => 'text',
+				'title'   => __( 'Link Before', 'carbon_breadcrumbs' ),
 				'default' => '',
-				'help' => __( 'This is displayed before the breadcrumb item link.', 'carbon_breadcrumbs' ),
+				'help'    => __( 'This is displayed before the breadcrumb item link.', 'carbon_breadcrumbs' ),
 			),
-			'link_after' => array(
-				'type' => 'text',
-				'title' => __( 'Link After', 'carbon_breadcrumbs' ),
+			'link_after'        => array(
+				'type'    => 'text',
+				'title'   => __( 'Link After', 'carbon_breadcrumbs' ),
 				'default' => '',
-				'help' => __( 'This is displayed after the breadcrumb item link.', 'carbon_breadcrumbs' ),
+				'help'    => __( 'This is displayed after the breadcrumb item link.', 'carbon_breadcrumbs' ),
 			),
-			'wrapper_before' => array(
-				'type' => 'text',
-				'title' => __( 'Wrapper Before', 'carbon_breadcrumbs' ),
+			'wrapper_before'    => array(
+				'type'    => 'text',
+				'title'   => __( 'Wrapper Before', 'carbon_breadcrumbs' ),
 				'default' => '',
-				'help' => __( 'This is displayed before displaying the breadcrumb items.', 'carbon_breadcrumbs' ),
+				'help'    => __( 'This is displayed before displaying the breadcrumb items.', 'carbon_breadcrumbs' ),
 			),
-			'wrapper_after' => array(
-				'type' => 'text',
-				'title' => __( 'Wrapper After', 'carbon_breadcrumbs' ),
+			'wrapper_after'     => array(
+				'type'    => 'text',
+				'title'   => __( 'Wrapper After', 'carbon_breadcrumbs' ),
 				'default' => '',
-				'help' => __( 'This is displayed after displaying the breadcrumb items.', 'carbon_breadcrumbs' ),
+				'help'    => __( 'This is displayed after displaying the breadcrumb items.', 'carbon_breadcrumbs' ),
 			),
-			'title_before' => array(
-				'type' => 'text',
-				'title' => __( 'Title Before', 'carbon_breadcrumbs' ),
+			'title_before'      => array(
+				'type'    => 'text',
+				'title'   => __( 'Title Before', 'carbon_breadcrumbs' ),
 				'default' => '',
-				'help' => __( 'This is displayed before the breadcrumb item title.', 'carbon_breadcrumbs' ),
+				'help'    => __( 'This is displayed before the breadcrumb item title.', 'carbon_breadcrumbs' ),
 			),
-			'title_after' => array(
-				'type' => 'text',
-				'title' => __( 'Title After', 'carbon_breadcrumbs' ),
+			'title_after'       => array(
+				'type'    => 'text',
+				'title'   => __( 'Title After', 'carbon_breadcrumbs' ),
 				'default' => '',
-				'help' => __( 'This is displayed after the breadcrumb item title.', 'carbon_breadcrumbs' ),
+				'help'    => __( 'This is displayed after the breadcrumb item title.', 'carbon_breadcrumbs' ),
 			),
-			'min_items' => array(
-				'type' => 'text',
-				'title' => __( 'Min Items', 'carbon_breadcrumbs' ),
+			'min_items'         => array(
+				'type'    => 'text',
+				'title'   => __( 'Min Items', 'carbon_breadcrumbs' ),
 				'default' => 2,
-				'help' => __( 'Determines the minimum number of items, required to display the breadcrumb trail.', 'carbon_breadcrumbs' ),
+				'help'    => __( 'Determines the minimum number of items, required to display the breadcrumb trail.', 'carbon_breadcrumbs' ),
 			),
-			'last_item_link' => array(
-				'type' => 'checkbox',
-				'title' => __( 'Last Item Link', 'carbon_breadcrumbs' ),
+			'last_item_link'    => array(
+				'type'    => 'checkbox',
+				'title'   => __( 'Last Item Link', 'carbon_breadcrumbs' ),
 				'default' => true,
-				'help' => __( 'Whether the last breadcrumb item should be a link.', 'carbon_breadcrumbs' ),
+				'help'    => __( 'Whether the last breadcrumb item should be a link.', 'carbon_breadcrumbs' ),
 			),
 			'display_home_item' => array(
-				'type' => 'checkbox',
-				'title' => __( 'Display Home Item?', 'carbon_breadcrumbs' ),
+				'type'    => 'checkbox',
+				'title'   => __( 'Display Home Item?', 'carbon_breadcrumbs' ),
 				'default' => true,
-				'help' => __( 'Whether the home breadcrumb item should be displayed.', 'carbon_breadcrumbs' ),
+				'help'    => __( 'Whether the home breadcrumb item should be displayed.', 'carbon_breadcrumbs' ),
 			),
-			'home_item_title' => array(
-				'type' => 'text',
-				'title' => __( 'Home Item Title', 'carbon_breadcrumbs' ),
+			'home_item_title'   => array(
+				'type'    => 'text',
+				'title'   => __( 'Home Item Title', 'carbon_breadcrumbs' ),
 				'default' => __( 'Home', 'carbon_breadcrumbs' ),
-				'help' => __( 'Determines the title of the home item.', 'carbon_breadcrumbs' ),
+				'help'    => __( 'Determines the title of the home item.', 'carbon_breadcrumbs' ),
 			),
 		);
 	}

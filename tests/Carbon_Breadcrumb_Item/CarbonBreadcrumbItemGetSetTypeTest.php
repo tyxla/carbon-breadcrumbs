@@ -5,7 +5,7 @@
 class CarbonBreadcrumbItemGetSetTypeTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->item = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item');
+		$this->item = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item' );
 	}
 
 	public function tearDown() {

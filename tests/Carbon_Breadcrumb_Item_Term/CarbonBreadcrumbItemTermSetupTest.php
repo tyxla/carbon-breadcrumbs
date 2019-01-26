@@ -7,7 +7,7 @@ class CarbonBreadcrumbItemTermSetupTest extends WP_UnitTestCase {
 	public function setUp() {
 		parent::setUp();
 
-		$this->item = $this->getMockForAbstractClass('Carbon_Breadcrumb_Item_Term');
+		$this->item = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Item_Term' );
 	}
 
 	public function tearDown() {
@@ -31,7 +31,7 @@ class CarbonBreadcrumbItemTermSetupTest extends WP_UnitTestCase {
 	 * @expectedExceptionMessage The term breadcrumb items must have taxonomy specified.
 	 */
 	public function testSetupWithoutSubtype() {
-		$this->item->set_id(123);
+		$this->item->set_id( 123 );
 		$this->item->setup();
 	}
 
@@ -40,8 +40,8 @@ class CarbonBreadcrumbItemTermSetupTest extends WP_UnitTestCase {
 	 */
 	public function testSetupWithTerm() {
 		$term = $this->factory->category->create();
-		$this->item->set_id($term);
-		$this->item->set_subtype('category');
+		$this->item->set_id( $term );
+		$this->item->set_subtype( 'category' );
 
 		$this->item->setup();
 

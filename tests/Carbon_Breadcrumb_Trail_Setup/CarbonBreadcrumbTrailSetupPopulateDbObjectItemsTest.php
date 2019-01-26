@@ -26,47 +26,49 @@ class CarbonBreadcrumbTrailSetupPopulateDbObjectItemsTest extends WP_UnitTestCas
 	 */
 	public function testWithPostItems() {
 		$this->post = $this->factory->post->create();
-		$this->go_to('/?p=' . $this->post );
+		$this->go_to( '/?p=' . $this->post );
 
 		$this->setup->populate_db_object_items();
 
 		$expected_items = $this->setup_exposed->exposed_generate_locator_items( 'post' );
-		$actual_items = array_values($this->trail->get_items());
-		foreach ($expected_items as $key => $item) {
-			$actual_item = $actual_items[0][$key];
+		$actual_items   = array_values( $this->trail->get_items() );
+		foreach ( $expected_items as $key => $item ) {
+			$actual_item = $actual_items[0][ $key ];
 
 			$this->assertSame( $item->get_id(), $actual_item->get_id() );
 			$this->assertSame( $item->get_type(), $actual_item->get_type() );
 			$this->assertSame( $item->get_subtype(), $actual_item->get_subtype() );
-			$this->assertSame( get_class($item), get_class($actual_item) );
+			$this->assertSame( get_class( $item ), get_class( $actual_item ) );
 		}
 
-		unset($this->post);
+		unset( $this->post );
 	}
 
 	/**
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_db_object_items
 	 */
 	public function testWithPageItems() {
-		$this->page = $this->factory->post->create(array(
-			'post_type' => 'page',
-		));
-		$this->go_to('/?page_id=' . $this->page );
+		$this->page = $this->factory->post->create(
+			array(
+				'post_type' => 'page',
+			)
+		);
+		$this->go_to( '/?page_id=' . $this->page );
 
 		$this->setup->populate_db_object_items();
 
 		$expected_items = $this->setup_exposed->exposed_generate_locator_items( 'post' );
-		$actual_items = array_values($this->trail->get_items());
-		foreach ($expected_items as $key => $item) {
-			$actual_item = $actual_items[0][$key];
+		$actual_items   = array_values( $this->trail->get_items() );
+		foreach ( $expected_items as $key => $item ) {
+			$actual_item = $actual_items[0][ $key ];
 
 			$this->assertSame( $item->get_id(), $actual_item->get_id() );
 			$this->assertSame( $item->get_type(), $actual_item->get_type() );
 			$this->assertSame( $item->get_subtype(), $actual_item->get_subtype() );
-			$this->assertSame( get_class($item), get_class($actual_item) );
+			$this->assertSame( get_class( $item ), get_class( $actual_item ) );
 		}
 
-		unset($this->page);
+		unset( $this->page );
 	}
 
 	/**
@@ -74,22 +76,22 @@ class CarbonBreadcrumbTrailSetupPopulateDbObjectItemsTest extends WP_UnitTestCas
 	 */
 	public function testWithTermItems() {
 		$this->category = $this->factory->category->create();
-		$this->go_to('/?cat=' . $this->category );
+		$this->go_to( '/?cat=' . $this->category );
 
 		$this->setup->populate_db_object_items();
 
 		$expected_items = $this->setup_exposed->exposed_generate_locator_items( 'term' );
-		$actual_items = array_values($this->trail->get_items());
-		foreach ($expected_items as $key => $item) {
-			$actual_item = $actual_items[0][$key];
+		$actual_items   = array_values( $this->trail->get_items() );
+		foreach ( $expected_items as $key => $item ) {
+			$actual_item = $actual_items[0][ $key ];
 
 			$this->assertSame( $item->get_id(), $actual_item->get_id() );
 			$this->assertSame( $item->get_type(), $actual_item->get_type() );
 			$this->assertSame( $item->get_subtype(), $actual_item->get_subtype() );
-			$this->assertSame( get_class($item), get_class($actual_item) );
+			$this->assertSame( get_class( $item ), get_class( $actual_item ) );
 		}
 
-		unset($this->category);
+		unset( $this->category );
 	}
 
 	/**
@@ -97,22 +99,22 @@ class CarbonBreadcrumbTrailSetupPopulateDbObjectItemsTest extends WP_UnitTestCas
 	 */
 	public function testWithUserItems() {
 		$this->user = $this->factory->user->create();
-		$this->go_to('/?author=' . $this->user );
+		$this->go_to( '/?author=' . $this->user );
 
 		$this->setup->populate_db_object_items();
 
 		$expected_items = $this->setup_exposed->exposed_generate_locator_items( 'user' );
-		$actual_items = array_values($this->trail->get_items());
-		foreach ($expected_items as $key => $item) {
-			$actual_item = $actual_items[0][$key];
+		$actual_items   = array_values( $this->trail->get_items() );
+		foreach ( $expected_items as $key => $item ) {
+			$actual_item = $actual_items[0][ $key ];
 
 			$this->assertSame( $item->get_id(), $actual_item->get_id() );
 			$this->assertSame( $item->get_type(), $actual_item->get_type() );
 			$this->assertSame( $item->get_subtype(), $actual_item->get_subtype() );
-			$this->assertSame( get_class($item), get_class($actual_item) );
+			$this->assertSame( get_class( $item ), get_class( $actual_item ) );
 		}
 
-		unset($this->user);
+		unset( $this->user );
 	}
 
 }

@@ -7,12 +7,12 @@ class CarbonBreadcrumbAdminSettingsFieldGetValueTest extends WP_UnitTestCase {
 	public function setUp() {
 		parent::setUp();
 
-		$this->adminField = $this->getMockForAbstractClass('Carbon_Breadcrumb_Admin_Settings_Field', array('testfield', 'Test Field'), '', true, true, true, array('get_id') );
+		$this->adminField = $this->getMockForAbstractClass( 'Carbon_Breadcrumb_Admin_Settings_Field', array( 'testfield', 'Test Field' ), '', true, true, true, array( 'get_id' ) );
 	}
 
 	public function tearDown() {
 		unset( $this->adminField );
-		
+
 		parent::tearDown();
 	}
 
@@ -20,9 +20,9 @@ class CarbonBreadcrumbAdminSettingsFieldGetValueTest extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field::get_value
 	 */
 	public function testWithNoValueAndNoDefaultValue() {
-		$this->adminField->expects($this->any())
-			->method('get_id')
-			->will($this->returnValue('carbon_breadcrumbs_link_before'));
+		$this->adminField->expects( $this->any() )
+			->method( 'get_id' )
+			->will( $this->returnValue( 'carbon_breadcrumbs_link_before' ) );
 
 		$this->assertSame( '', $this->adminField->get_value() );
 	}
@@ -31,9 +31,9 @@ class CarbonBreadcrumbAdminSettingsFieldGetValueTest extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field::get_value
 	 */
 	public function testWithNoValueAndDefaultValue() {
-		$this->adminField->expects($this->any())
-			->method('get_id')
-			->will($this->returnValue('carbon_breadcrumbs_min_items'));
+		$this->adminField->expects( $this->any() )
+			->method( 'get_id' )
+			->will( $this->returnValue( 'carbon_breadcrumbs_min_items' ) );
 
 		$this->assertSame( 2, $this->adminField->get_value() );
 	}
@@ -42,11 +42,11 @@ class CarbonBreadcrumbAdminSettingsFieldGetValueTest extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field::get_value
 	 */
 	public function testWithValue() {
-		$this->adminField->expects($this->any())
-			->method('get_id')
-			->will($this->returnValue('carbon_breadcrumbs_min_items'));
+		$this->adminField->expects( $this->any() )
+			->method( 'get_id' )
+			->will( $this->returnValue( 'carbon_breadcrumbs_min_items' ) );
 
-		update_option('carbon_breadcrumbs_min_items', 5);
+		update_option( 'carbon_breadcrumbs_min_items', 5 );
 
 		$this->assertSame( 5, $this->adminField->get_value() );
 

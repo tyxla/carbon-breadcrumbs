@@ -25,11 +25,11 @@ class CarbonBreadcrumbTrailSetupPopulate404ItemsTest extends WP_UnitTestCase {
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_404_items
 	 */
 	public function testOnNon404() {
-		$this->go_to('/?p=' . $this->post );
+		$this->go_to( '/?p=' . $this->post );
 
 		$this->setup->populate_404_items();
 
-		$actual_items = array_values($this->trail->get_items());
+		$actual_items = array_values( $this->trail->get_items() );
 		$this->assertSame( array(), $actual_items );
 	}
 
@@ -41,8 +41,8 @@ class CarbonBreadcrumbTrailSetupPopulate404ItemsTest extends WP_UnitTestCase {
 
 		$this->setup->populate_404_items();
 
-		$actual_items = array_values($this->trail->get_items());
-		$actual_item = $actual_items[0][0];
+		$actual_items = array_values( $this->trail->get_items() );
+		$actual_item  = $actual_items[0][0];
 
 		$expected_title = __( 'Error 404 - Not Found', 'carbon_breadcrumbs' );
 		$this->assertSame( $expected_title, $actual_item->get_title() );

@@ -20,13 +20,13 @@ class CarbonBreadcrumbTrailRendererGetSetDisplayHomeItemTest extends WP_UnitTest
 		$this->trail_renderer->set_display_home_item( 0 );
 		$this->assertSame( false, $this->trail_renderer->get_display_home_item() );
 
-		$this->trail_renderer->set_display_home_item( "" );
+		$this->trail_renderer->set_display_home_item( '' );
 		$this->assertSame( false, $this->trail_renderer->get_display_home_item() );
 
 		$this->trail_renderer->set_display_home_item( 1 );
 		$this->assertSame( true, $this->trail_renderer->get_display_home_item() );
 
-		$this->trail_renderer->set_display_home_item( "foo" );
+		$this->trail_renderer->set_display_home_item( 'foo' );
 		$this->assertSame( true, $this->trail_renderer->get_display_home_item() );
 	}
 
