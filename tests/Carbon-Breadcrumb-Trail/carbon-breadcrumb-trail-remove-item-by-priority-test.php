@@ -20,6 +20,8 @@ class CarbonBreadcrumbTrailRemoveItemByPriorityTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail::remove_item_by_priority().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail::remove_item_by_priority
 	 */
 	public function testWithDefaultPriority() {
@@ -40,6 +42,8 @@ class CarbonBreadcrumbTrailRemoveItemByPriorityTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail::remove_item_by_priority().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail::remove_item_by_priority
 	 */
 	public function testWithCustomPriority() {

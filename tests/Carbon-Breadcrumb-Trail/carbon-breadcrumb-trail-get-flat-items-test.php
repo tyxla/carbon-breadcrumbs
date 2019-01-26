@@ -20,6 +20,8 @@ class CarbonBreadcrumbTrailGetFlatItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail::get_flat_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail::get_flat_items
 	 */
 	public function testGetFlatItems() {

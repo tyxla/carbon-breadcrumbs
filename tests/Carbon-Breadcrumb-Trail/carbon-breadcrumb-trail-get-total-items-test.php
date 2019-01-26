@@ -24,6 +24,8 @@ class CarbonBreadcrumbTrailGetTotalItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail::get_total_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail::get_total_items
 	 */
 	public function testTotalItems() {

@@ -39,6 +39,8 @@ class CarbonBreadcrumbTrailSetupPopulateCategoryItemsTest extends WP_UnitTestCas
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::populate_category_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_category_items
 	 */
 	public function testOnCategoryPage() {
@@ -52,6 +54,8 @@ class CarbonBreadcrumbTrailSetupPopulateCategoryItemsTest extends WP_UnitTestCas
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::populate_category_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_category_items
 	 */
 	public function testOnSinglePost() {

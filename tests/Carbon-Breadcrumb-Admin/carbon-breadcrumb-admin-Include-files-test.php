@@ -20,6 +20,8 @@ class CarbonBreadcrumbAdminIncludeFilesTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin::include_files().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin::include_files
 	 */
 	public function testIncludeFiles() {

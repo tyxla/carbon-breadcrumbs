@@ -50,6 +50,8 @@ class CarbonBreadcrumbLocatorDateGetItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Date::get_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Date::get_items
 	 */
 	public function testGetItems() {

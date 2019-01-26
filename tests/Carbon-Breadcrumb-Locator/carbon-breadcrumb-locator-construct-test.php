@@ -18,6 +18,8 @@ class CarbonBreadcrumbLocatorConstructTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator::__construct().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator::__construct
 	 */
 	public function testConstructor() {

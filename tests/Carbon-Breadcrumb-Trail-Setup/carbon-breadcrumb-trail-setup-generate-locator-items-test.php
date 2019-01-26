@@ -26,6 +26,8 @@ class CarbonBreadcrumbTrailSetupGenerateLocatorItemsTest extends WP_UnitTestCase
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::generate_locator_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::generate_locator_items
 	 */
 	public function testLocatorGenerationPost() {
@@ -46,6 +48,8 @@ class CarbonBreadcrumbTrailSetupGenerateLocatorItemsTest extends WP_UnitTestCase
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::generate_locator_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::generate_locator_items
 	 */
 	public function testLocatorGeneration404() {

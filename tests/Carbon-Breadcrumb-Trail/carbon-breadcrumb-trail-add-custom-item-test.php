@@ -18,6 +18,8 @@ class CarbonBreadcrumbTrailAddCustomItemTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail::add_custom_item().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail::add_custom_item
 	 */
 	public function testCustomItemAddition() {

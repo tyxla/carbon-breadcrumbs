@@ -22,6 +22,8 @@ class CarbonBreadcrumbAdminSettingsAdminMenuTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin_Settings::admin_menu().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin_Settings::admin_menu
 	 */
 	public function testSettingsPageRegistered() {
@@ -49,6 +51,8 @@ class CarbonBreadcrumbAdminSettingsAdminMenuTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin_Settings::admin_menu().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin_Settings::admin_menu
 	 */
 	public function testSettingsSectionRegistered() {

@@ -26,6 +26,8 @@ class CarbonBreadcrumbLocatorUserGetItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_User::get_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_User::get_items
 	 */
 	public function testWithCurrentUser() {
@@ -44,6 +46,8 @@ class CarbonBreadcrumbLocatorUserGetItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_User::get_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_User::get_items
 	 */
 	public function testWithSpecificUser() {

@@ -28,6 +28,8 @@ class CarbonBreadcrumbTrailSetupPopulateDateArchiveItemsTest extends WP_UnitTest
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::populate_date_archive_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_date_archive_items
 	 */
 	public function testOnNonDateArchive() {
@@ -40,6 +42,8 @@ class CarbonBreadcrumbTrailSetupPopulateDateArchiveItemsTest extends WP_UnitTest
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::populate_date_archive_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_date_archive_items
 	 */
 	public function testWithYearArchive() {
@@ -60,6 +64,8 @@ class CarbonBreadcrumbTrailSetupPopulateDateArchiveItemsTest extends WP_UnitTest
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::populate_date_archive_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_date_archive_items
 	 */
 	public function testWithMonthArchive() {
@@ -80,6 +86,8 @@ class CarbonBreadcrumbTrailSetupPopulateDateArchiveItemsTest extends WP_UnitTest
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::populate_date_archive_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_date_archive_items
 	 */
 	public function testWithDayArchive() {

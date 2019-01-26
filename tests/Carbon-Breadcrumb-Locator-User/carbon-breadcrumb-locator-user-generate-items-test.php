@@ -34,6 +34,8 @@ class CarbonBreadcrumbLocatorUserGenerateItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_User::generate_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_User::generate_items
 	 */
 	public function testOnNonAuthorPage() {
@@ -42,6 +44,8 @@ class CarbonBreadcrumbLocatorUserGenerateItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_User::generate_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_User::generate_items
 	 */
 	public function testOnAuthorPage() {

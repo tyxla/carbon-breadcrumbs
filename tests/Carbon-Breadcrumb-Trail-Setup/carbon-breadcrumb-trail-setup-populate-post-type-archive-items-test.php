@@ -65,6 +65,8 @@ class CarbonBreadcrumbTrailSetupPopulatePostTypeArchiveItemsTest extends WP_Unit
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::populate_post_type_archive_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_post_type_archive_items
 	 */
 	public function testOnPostTypeArchive() {
@@ -83,6 +85,8 @@ class CarbonBreadcrumbTrailSetupPopulatePostTypeArchiveItemsTest extends WP_Unit
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::populate_post_type_archive_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_post_type_archive_items
 	 */
 	public function testOnSinglePostTypeWithArchive() {
@@ -102,6 +106,8 @@ class CarbonBreadcrumbTrailSetupPopulatePostTypeArchiveItemsTest extends WP_Unit
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::populate_post_type_archive_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_post_type_archive_items
 	 */
 	public function testOnSinglePostTypeWithoutArchive() {
@@ -115,6 +121,8 @@ class CarbonBreadcrumbTrailSetupPopulatePostTypeArchiveItemsTest extends WP_Unit
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::populate_post_type_archive_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_post_type_archive_items
 	 */
 	public function testOnNonPostTypeArchiveContext() {

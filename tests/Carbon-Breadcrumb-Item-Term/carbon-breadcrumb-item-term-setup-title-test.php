@@ -27,6 +27,8 @@ class CarbonBreadcrumbItemTermSetupTitleTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_Term::setup_title().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_Term::setup_title
 	 */
 	public function testItemTitle() {

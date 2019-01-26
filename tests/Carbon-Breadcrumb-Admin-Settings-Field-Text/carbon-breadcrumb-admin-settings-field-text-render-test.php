@@ -18,6 +18,8 @@ class CarbonBreadcrumbAdminSettingsFieldTextRenderTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin_Settings_Field_Text::render().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field_Text::render
 	 */
 	public function testRenderMarkup() {

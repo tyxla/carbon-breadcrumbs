@@ -24,6 +24,8 @@ class CarbonBreadcrumbAdminApplySettingsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin::apply_settings().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin::apply_settings
 	 */
 	public function testDefaultApplySettings() {
@@ -45,6 +47,8 @@ class CarbonBreadcrumbAdminApplySettingsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin::apply_settings().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin::apply_settings
 	 */
 	public function testStringSetting() {
@@ -58,6 +62,8 @@ class CarbonBreadcrumbAdminApplySettingsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin::apply_settings().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin::apply_settings
 	 */
 	public function testNumberSetting() {
@@ -71,6 +77,8 @@ class CarbonBreadcrumbAdminApplySettingsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin::apply_settings().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin::apply_settings
 	 */
 	public function testBooleanSetting() {

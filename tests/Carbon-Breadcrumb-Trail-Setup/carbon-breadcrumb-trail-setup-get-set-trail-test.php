@@ -20,6 +20,8 @@ class CarbonBreadcrumbTrailSetupGetSetTrailTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::get_trail().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::get_trail
 	 * @covers Carbon_Breadcrumb_Trail_Setup::set_trail
 	 */

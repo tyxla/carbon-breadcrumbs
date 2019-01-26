@@ -18,6 +18,8 @@ class CarbonBreadcrumbItemDbObjectGetSetIdTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_DB_Object::get_id().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_DB_Object::get_id
 	 * @covers Carbon_Breadcrumb_Item_DB_Object::set_id
 	 */

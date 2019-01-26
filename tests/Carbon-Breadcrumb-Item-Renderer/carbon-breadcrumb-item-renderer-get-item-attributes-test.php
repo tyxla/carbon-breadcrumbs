@@ -29,6 +29,8 @@ class CarbonBreadcrumbItemRendererGetItemAttributesTest extends WP_UnitTestCase 
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_Renderer::get_item_attributes_html().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_Renderer::get_item_attributes_html
 	 */
 	public function testDefaultAttributes() {
@@ -37,6 +39,8 @@ class CarbonBreadcrumbItemRendererGetItemAttributesTest extends WP_UnitTestCase 
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_Renderer::get_item_attributes_html().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_Renderer::get_item_attributes_html
 	 */
 	public function testAttributesFilter() {

@@ -37,6 +37,8 @@ class CarbonBreadcrumbItemDbObjectSetupTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_DB_Object::setup().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_DB_Object::setup
 	 */
 	public function testBeforeAfterSetup() {

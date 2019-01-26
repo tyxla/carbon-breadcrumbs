@@ -5,6 +5,8 @@
 class CarbonBreadcrumbItemFactoryTest extends WP_UnitTestCase {
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item::factory().
+	 *
 	 * @covers Carbon_Breadcrumb_Item::factory
 	 * @expectedException Carbon_Breadcrumb_Exception
 	 * @expectedExceptionMessage Unexisting breadcrumb item type: "foobar".
@@ -14,6 +16,8 @@ class CarbonBreadcrumbItemFactoryTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item::factory().
+	 *
 	 * @covers Carbon_Breadcrumb_Item::factory
 	 */
 	public function testFactoryDefaultSetup() {
@@ -24,6 +28,8 @@ class CarbonBreadcrumbItemFactoryTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item::factory().
+	 *
 	 * @covers Carbon_Breadcrumb_Item::factory
 	 */
 	public function testFactoryCustomSetup() {

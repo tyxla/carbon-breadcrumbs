@@ -30,6 +30,8 @@ class CarbonBreadcrumbTrailSetupIsPostContextTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::is_post_context().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::is_post_context
 	 */
 	public function testOnYearArchive() {
@@ -38,6 +40,8 @@ class CarbonBreadcrumbTrailSetupIsPostContextTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::is_post_context().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::is_post_context
 	 */
 	public function testOnMonthArchive() {
@@ -46,6 +50,8 @@ class CarbonBreadcrumbTrailSetupIsPostContextTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::is_post_context().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::is_post_context
 	 */
 	public function testOnDayArchive() {
@@ -54,6 +60,8 @@ class CarbonBreadcrumbTrailSetupIsPostContextTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::is_post_context().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::is_post_context
 	 */
 	public function testOnCategoryArchive() {
@@ -62,6 +70,8 @@ class CarbonBreadcrumbTrailSetupIsPostContextTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::is_post_context().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::is_post_context
 	 */
 	public function testOnAuthorArchive() {
@@ -70,6 +80,8 @@ class CarbonBreadcrumbTrailSetupIsPostContextTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::is_post_context().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::is_post_context
 	 */
 	public function testOnSinglePost() {
@@ -78,6 +90,8 @@ class CarbonBreadcrumbTrailSetupIsPostContextTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::is_post_context().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::is_post_context
 	 */
 	public function testOnPage() {
@@ -86,6 +100,8 @@ class CarbonBreadcrumbTrailSetupIsPostContextTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::is_post_context().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::is_post_context
 	 */
 	public function testOnSearchResults() {
@@ -94,6 +110,8 @@ class CarbonBreadcrumbTrailSetupIsPostContextTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::is_post_context().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::is_post_context
 	 */
 	public function testOn404() {

@@ -18,6 +18,8 @@ class CarbonBreadcrumbItemCustomSetupTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_Custom::setup().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_Custom::setup
 	 */
 	public function testConstructor() {

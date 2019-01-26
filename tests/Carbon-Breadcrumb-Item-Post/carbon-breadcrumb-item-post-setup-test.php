@@ -29,6 +29,8 @@ class CarbonBreadcrumbItemPostSetupTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_Post::setup().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_Post::setup
 	 * @expectedException Carbon_Breadcrumb_Exception
 	 * @expectedExceptionMessage The post breadcrumb items must have post ID specified.
@@ -38,6 +40,8 @@ class CarbonBreadcrumbItemPostSetupTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_Post::setup().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_Post::setup
 	 */
 	public function testSetupWithId() {

@@ -36,6 +36,8 @@ class CarbonBreadcrumbLocatorPostGenerateItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Post::generate_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Post::generate_items
 	 */
 	public function testWithDefaultPostTypes() {
@@ -61,6 +63,8 @@ class CarbonBreadcrumbLocatorPostGenerateItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Post::generate_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Post::generate_items
 	 */
 	public function testWithCustomPostTypes() {

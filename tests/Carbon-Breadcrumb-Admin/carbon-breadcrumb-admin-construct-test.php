@@ -20,6 +20,8 @@ class CarbonBreadcrumbAdminConstructTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin::__construct().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin::__construct
 	 */
 	public function testIncludeFiles() {
@@ -28,6 +30,8 @@ class CarbonBreadcrumbAdminConstructTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin::__construct().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin::__construct
 	 */
 	public function testWithEnabledAdmin() {
@@ -42,6 +46,8 @@ class CarbonBreadcrumbAdminConstructTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin::__construct().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin::__construct
 	 */
 	public function testWithDisabledAdmin() {

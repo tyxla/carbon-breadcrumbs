@@ -18,6 +18,8 @@ class CarbonBreadcrumbItemGetSetLinkTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item::get_link().
+	 *
 	 * @covers Carbon_Breadcrumb_Item::get_link
 	 * @covers Carbon_Breadcrumb_Item::set_link
 	 */

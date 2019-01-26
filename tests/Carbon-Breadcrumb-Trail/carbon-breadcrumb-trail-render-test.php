@@ -42,6 +42,8 @@ class CarbonBreadcrumbTrailRenderTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail::render().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail::render
 	 */
 	public function testReturnedOutput() {
@@ -52,6 +54,8 @@ class CarbonBreadcrumbTrailRenderTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail::render().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail::render
 	 */
 	public function testEchoedOutput() {

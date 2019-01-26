@@ -48,6 +48,8 @@ class CarbonBreadcrumbTrailRendererRenderItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Renderer::render_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::render_items
 	 */
 	public function testDefaultOutput() {
@@ -63,6 +65,8 @@ class CarbonBreadcrumbTrailRendererRenderItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Renderer::render_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::render_items
 	 */
 	public function testItemFilter() {

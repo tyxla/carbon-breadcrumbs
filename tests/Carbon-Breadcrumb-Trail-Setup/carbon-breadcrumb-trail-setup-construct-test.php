@@ -20,6 +20,8 @@ class CarbonBreadcrumbTrailSetupConstructTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::__construct().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::__construct
 	 */
 	public function testTrailSet() {

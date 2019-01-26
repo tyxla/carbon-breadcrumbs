@@ -18,6 +18,8 @@ class CarbonBreadcrumbAdminSettingsConstructTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin_Settings::__construct().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin_Settings::__construct
 	 */
 	public function testHookedMethods() {

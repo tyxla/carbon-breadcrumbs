@@ -32,6 +32,8 @@ class CarbonBreadcrumbTrailSetupPopulateSearchItemsTest extends WP_UnitTestCase 
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::populate_search_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_search_items
 	 */
 	public function testOnNonSearch() {
@@ -44,6 +46,8 @@ class CarbonBreadcrumbTrailSetupPopulateSearchItemsTest extends WP_UnitTestCase 
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::populate_search_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_search_items
 	 */
 	public function testSearchItem() {

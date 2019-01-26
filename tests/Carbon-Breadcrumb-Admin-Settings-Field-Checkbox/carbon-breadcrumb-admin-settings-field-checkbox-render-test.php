@@ -24,6 +24,8 @@ class CarbonBreadcrumbAdminSettingsFieldCheckboxRenderTest extends WP_UnitTestCa
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin_Settings_Field_Checkbox::render().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field_Checkbox::render
 	 */
 	public function testNotChecked() {
@@ -40,6 +42,8 @@ class CarbonBreadcrumbAdminSettingsFieldCheckboxRenderTest extends WP_UnitTestCa
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin_Settings_Field_Checkbox::render().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field_Checkbox::render
 	 */
 	public function testChecked() {

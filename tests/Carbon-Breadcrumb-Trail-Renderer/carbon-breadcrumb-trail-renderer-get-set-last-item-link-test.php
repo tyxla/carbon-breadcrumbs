@@ -18,6 +18,8 @@ class CarbonBreadcrumbTrailRendererGetSetLastItemLinkTest extends WP_UnitTestCas
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Renderer::get_last_item_link().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::get_last_item_link
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::set_last_item_link
 	 */

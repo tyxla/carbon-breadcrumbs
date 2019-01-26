@@ -18,6 +18,8 @@ class CarbonBreadcrumbAdminSettingsFieldGetSetTitleTest extends WP_UnitTestCase 
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin_Settings_Field::get_title().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field::get_title
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field::set_title
 	 */

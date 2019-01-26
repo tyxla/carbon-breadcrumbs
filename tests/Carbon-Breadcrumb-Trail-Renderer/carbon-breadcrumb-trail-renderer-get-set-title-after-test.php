@@ -18,6 +18,8 @@ class CarbonBreadcrumbTrailRendererGetSetTitleAfterTest extends WP_UnitTestCase 
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Renderer::get_title_after().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::get_title_after
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::set_title_after
 	 */

@@ -36,6 +36,8 @@ class CarbonBreadcrumbLocatorTermGetParentIdTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Term::get_parent_id().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Term::get_parent_id
 	 */
 	public function testWithParentTerm() {
@@ -43,6 +45,8 @@ class CarbonBreadcrumbLocatorTermGetParentIdTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Term::get_parent_id().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Term::get_parent_id
 	 */
 	public function testWithChildTerm() {
@@ -50,6 +54,8 @@ class CarbonBreadcrumbLocatorTermGetParentIdTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Term::get_parent_id().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Term::get_parent_id
 	 */
 	public function testWithSubChildTerm() {

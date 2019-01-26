@@ -20,6 +20,8 @@ class CarbonBreadcrumbItemRendererGetSetItemTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_Renderer::get_item().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_Renderer::get_item
 	 * @covers Carbon_Breadcrumb_Item_Renderer::set_item
 	 */

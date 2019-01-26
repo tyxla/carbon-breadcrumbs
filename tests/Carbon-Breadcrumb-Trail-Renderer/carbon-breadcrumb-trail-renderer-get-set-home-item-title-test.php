@@ -18,6 +18,8 @@ class CarbonBreadcrumbTrailRendererGetSetHomeItemTitleTest extends WP_UnitTestCa
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Renderer::get_home_item_title().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::get_home_item_title
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::set_home_item_title
 	 */

@@ -20,6 +20,8 @@ class CarbonBreadcrumbAdminRegisterSettingsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin::admin_menu().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin::admin_menu
 	 * @covers Carbon_Breadcrumb_Admin::register_settings
 	 */

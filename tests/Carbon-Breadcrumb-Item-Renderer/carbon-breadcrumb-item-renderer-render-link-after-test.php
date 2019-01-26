@@ -31,6 +31,8 @@ class CarbonBreadcrumbItemRendererRenderLinkAfterTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_Renderer::render_link_after().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_Renderer::render_link_after
 	 */
 	public function testWithNoLink() {
@@ -45,6 +47,8 @@ class CarbonBreadcrumbItemRendererRenderLinkAfterTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_Renderer::render_link_after().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_Renderer::render_link_after
 	 */
 	public function testWithLinkDisabled() {
@@ -59,6 +63,8 @@ class CarbonBreadcrumbItemRendererRenderLinkAfterTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_Renderer::render_link_after().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_Renderer::render_link_after
 	 */
 	public function testWithLinkEnabled() {

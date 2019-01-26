@@ -18,6 +18,8 @@ class CarbonBreadcrumbTrailRendererGetSetGlueTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Renderer::get_glue().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::get_glue
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::set_glue
 	 */

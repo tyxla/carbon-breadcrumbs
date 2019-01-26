@@ -18,6 +18,8 @@ class CarbonBreadcrumbLocatorGetSetTypeTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator::get_type().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator::get_type
 	 * @covers Carbon_Breadcrumb_Locator::set_type
 	 */

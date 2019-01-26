@@ -18,6 +18,8 @@ class CarbonBreadcrumbAdminSettingsGetFieldDataTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin_Settings::get_field_data().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin_Settings::get_field_data
 	 */
 	public function testGetFieldData() {

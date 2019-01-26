@@ -22,6 +22,8 @@ class CarbonBreadcrumbLocatorGenerateItemsForSubtypesTest extends WP_UnitTestCas
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator::generate_items_for_subtypes().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator::generate_items_for_subtypes
 	 */
 	public function testWithPosts() {
@@ -43,6 +45,8 @@ class CarbonBreadcrumbLocatorGenerateItemsForSubtypesTest extends WP_UnitTestCas
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator::generate_items_for_subtypes().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator::generate_items_for_subtypes
 	 */
 	public function testWithPageHierarchy() {
@@ -72,6 +76,8 @@ class CarbonBreadcrumbLocatorGenerateItemsForSubtypesTest extends WP_UnitTestCas
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator::generate_items_for_subtypes().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator::generate_items_for_subtypes
 	 */
 	public function testWithCategoryHierarchy() {

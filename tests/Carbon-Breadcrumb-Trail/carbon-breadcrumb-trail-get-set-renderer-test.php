@@ -20,6 +20,8 @@ class CarbonBreadcrumbTrailGetSetRendererTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail::get_renderer().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail::get_renderer
 	 * @covers Carbon_Breadcrumb_Trail::set_renderer
 	 */

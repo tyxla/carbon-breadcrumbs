@@ -20,6 +20,8 @@ class CarbonBreadcrumbAdminIsEnabledTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin::is_enabled().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin::is_enabled
 	 */
 	public function testWhenInstalledAsPlugin() {
@@ -32,6 +34,8 @@ class CarbonBreadcrumbAdminIsEnabledTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin::is_enabled().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin::is_enabled
 	 * @runInSeparateProcess
 	 */
@@ -46,6 +50,8 @@ class CarbonBreadcrumbAdminIsEnabledTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin::is_enabled().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin::is_enabled
 	 */
 	public function testWithEnablingFilter() {
@@ -61,6 +67,8 @@ class CarbonBreadcrumbAdminIsEnabledTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin::is_enabled().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin::is_enabled
 	 */
 	public function testWithNoEnabledConditions() {

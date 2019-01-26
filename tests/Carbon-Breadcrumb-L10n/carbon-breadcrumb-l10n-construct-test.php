@@ -18,6 +18,8 @@ class CarbonBreadcrumbL10nConstructTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_L10n::__construct().
+	 *
 	 * @covers Carbon_Breadcrumb_L10n::__construct
 	 */
 	public function testHookRegistered() {

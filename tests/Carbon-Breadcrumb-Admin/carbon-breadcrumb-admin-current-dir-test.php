@@ -20,6 +20,8 @@ class CarbonBreadcrumbAdminCurrentDirTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin::current_dir().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin::current_dir
 	 */
 	public function testCurrentDir() {

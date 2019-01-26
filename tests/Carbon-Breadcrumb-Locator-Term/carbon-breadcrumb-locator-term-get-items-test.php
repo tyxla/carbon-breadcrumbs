@@ -26,6 +26,8 @@ class CarbonBreadcrumbLocatorTermGetItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Term::get_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Term::get_items
 	 */
 	public function testWithCurrentTerm() {
@@ -43,6 +45,8 @@ class CarbonBreadcrumbLocatorTermGetItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Term::get_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Term::get_items
 	 */
 	public function testWithSpecificTerm() {

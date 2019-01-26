@@ -46,6 +46,8 @@ class CarbonBreadcrumbItemRendererRenderTitleTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_Renderer::render_title().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_Renderer::render_title
 	 */
 	public function testWithoutFilter() {
@@ -54,6 +56,8 @@ class CarbonBreadcrumbItemRendererRenderTitleTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_Renderer::render_title().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_Renderer::render_title
 	 */
 	public function testWithFilter() {

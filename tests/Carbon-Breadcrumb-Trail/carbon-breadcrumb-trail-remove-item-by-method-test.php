@@ -36,6 +36,8 @@ class CarbonBreadcrumbTrailRemoveItemByMethodTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail::remove_item_by_method().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail::remove_item_by_method
 	 */
 	public function testRemoveItemByTitleEmpty() {
@@ -52,6 +54,8 @@ class CarbonBreadcrumbTrailRemoveItemByMethodTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail::remove_item_by_method().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail::remove_item_by_method
 	 */
 	public function testRemoveItemByTitleSpecific() {

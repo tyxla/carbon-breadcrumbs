@@ -27,6 +27,8 @@ class CarbonBreadcrumbTrailSetupPopulateDbObjectItemsTest extends WP_UnitTestCas
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::populate_db_object_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_db_object_items
 	 */
 	public function testWithPostItems() {
@@ -50,6 +52,8 @@ class CarbonBreadcrumbTrailSetupPopulateDbObjectItemsTest extends WP_UnitTestCas
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::populate_db_object_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_db_object_items
 	 */
 	public function testWithPageItems() {
@@ -77,6 +81,8 @@ class CarbonBreadcrumbTrailSetupPopulateDbObjectItemsTest extends WP_UnitTestCas
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::populate_db_object_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_db_object_items
 	 */
 	public function testWithTermItems() {
@@ -100,6 +106,8 @@ class CarbonBreadcrumbTrailSetupPopulateDbObjectItemsTest extends WP_UnitTestCas
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::populate_db_object_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_db_object_items
 	 */
 	public function testWithUserItems() {

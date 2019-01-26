@@ -22,6 +22,8 @@ class CarbonBreadcrumbAdminSettingsFieldGetValueTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin_Settings_Field::get_value().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field::get_value
 	 */
 	public function testWithNoValueAndNoDefaultValue() {
@@ -33,6 +35,8 @@ class CarbonBreadcrumbAdminSettingsFieldGetValueTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin_Settings_Field::get_value().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field::get_value
 	 */
 	public function testWithNoValueAndDefaultValue() {
@@ -44,6 +48,8 @@ class CarbonBreadcrumbAdminSettingsFieldGetValueTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin_Settings_Field::get_value().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field::get_value
 	 */
 	public function testWithValue() {

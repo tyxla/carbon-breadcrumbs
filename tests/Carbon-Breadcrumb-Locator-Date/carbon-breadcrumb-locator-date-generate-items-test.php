@@ -41,6 +41,8 @@ class CarbonBreadcrumbLocatorDateGenerateItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Date::generate_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Date::generate_items
 	 */
 	public function testWithIsIncludedFalse() {
@@ -52,6 +54,8 @@ class CarbonBreadcrumbLocatorDateGenerateItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Date::generate_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Date::generate_items
 	 */
 	public function testWithIsIncludedTrue() {

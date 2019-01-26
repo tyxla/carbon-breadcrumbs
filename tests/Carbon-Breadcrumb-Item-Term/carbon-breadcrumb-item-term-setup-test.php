@@ -22,6 +22,8 @@ class CarbonBreadcrumbItemTermSetupTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_Term::setup().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_Term::setup
 	 * @expectedException Carbon_Breadcrumb_Exception
 	 * @expectedExceptionMessage The term breadcrumb items must have term ID specified.
@@ -31,6 +33,8 @@ class CarbonBreadcrumbItemTermSetupTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_Term::setup().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_Term::setup
 	 * @expectedException Carbon_Breadcrumb_Exception
 	 * @expectedExceptionMessage The term breadcrumb items must have taxonomy specified.
@@ -41,6 +45,8 @@ class CarbonBreadcrumbItemTermSetupTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_Term::setup().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_Term::setup
 	 */
 	public function testSetupWithTerm() {

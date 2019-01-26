@@ -20,6 +20,8 @@ class CarbonBreadcrumbAdminInitTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin::init().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin::init
 	 */
 	public function testIfApplySettingsIsHooked() {

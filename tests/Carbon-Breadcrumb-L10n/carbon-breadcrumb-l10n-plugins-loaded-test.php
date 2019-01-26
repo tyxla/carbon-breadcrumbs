@@ -34,6 +34,8 @@ class CarbonBreadcrumbL10nPluginsLoadedTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_L10n::plugins_loaded().
+	 *
 	 * @covers Carbon_Breadcrumb_L10n::plugins_loaded
 	 */
 	public function testTextdomainLoaded() {

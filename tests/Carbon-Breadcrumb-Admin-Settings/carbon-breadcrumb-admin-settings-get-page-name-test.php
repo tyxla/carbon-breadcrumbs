@@ -18,6 +18,8 @@ class CarbonBreadcrumbAdminSettingsGetPageNameTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin_Settings::get_page_name().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin_Settings::get_page_name
 	 */
 	public function testGetPageName() {

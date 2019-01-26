@@ -18,6 +18,8 @@ class CarbonBreadcrumbTrailRendererGetSetLinkBeforeTest extends WP_UnitTestCase 
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Renderer::get_link_before().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::get_link_before
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::set_link_before
 	 */

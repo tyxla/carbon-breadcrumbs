@@ -24,6 +24,8 @@ class CarbonBreadcrumbAdminSettingsFieldFactoryTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin_Settings_Field::factory().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field::factory
 	 */
 	public function testType() {
@@ -31,6 +33,8 @@ class CarbonBreadcrumbAdminSettingsFieldFactoryTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin_Settings_Field::factory().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field::factory
 	 */
 	public function testId() {
@@ -38,6 +42,8 @@ class CarbonBreadcrumbAdminSettingsFieldFactoryTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin_Settings_Field::factory().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field::factory
 	 */
 	public function testTitle() {
@@ -45,6 +51,8 @@ class CarbonBreadcrumbAdminSettingsFieldFactoryTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin_Settings_Field::factory().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field::factory
 	 */
 	public function testSection() {
@@ -55,6 +63,8 @@ class CarbonBreadcrumbAdminSettingsFieldFactoryTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin_Settings_Field::factory().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field::factory
 	 */
 	public function testArgs() {

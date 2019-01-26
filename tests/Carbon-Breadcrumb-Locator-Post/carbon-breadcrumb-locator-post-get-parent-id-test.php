@@ -36,6 +36,8 @@ class CarbonBreadcrumbLocatorPostGetParentIdTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Post::get_parent_id().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Post::get_parent_id
 	 */
 	public function testWithParentPost() {
@@ -43,6 +45,8 @@ class CarbonBreadcrumbLocatorPostGetParentIdTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Post::get_parent_id().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Post::get_parent_id
 	 */
 	public function testWithChildPost() {
@@ -50,6 +54,8 @@ class CarbonBreadcrumbLocatorPostGetParentIdTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Post::get_parent_id().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Post::get_parent_id
 	 */
 	public function testWithSubChildPost() {

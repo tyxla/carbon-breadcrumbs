@@ -18,6 +18,8 @@ class CarbonBreadcrumbItemGetSetTypeTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item::get_type().
+	 *
 	 * @covers Carbon_Breadcrumb_Item::get_type
 	 * @covers Carbon_Breadcrumb_Item::set_type
 	 */

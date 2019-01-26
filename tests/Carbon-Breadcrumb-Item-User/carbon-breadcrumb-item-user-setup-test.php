@@ -30,6 +30,8 @@ class CarbonBreadcrumbItemUserSetupTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_User::setup().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_User::setup
 	 * @expectedException Carbon_Breadcrumb_Exception
 	 * @expectedExceptionMessage The author breadcrumb items must have author ID specified.
@@ -39,6 +41,8 @@ class CarbonBreadcrumbItemUserSetupTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_User::setup().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_User::setup
 	 */
 	public function testSetupWithId() {

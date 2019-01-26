@@ -22,6 +22,8 @@ class CarbonBreadcrumbAdminSettingsSettingsPageTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin_Settings::settings_page().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin_Settings::settings_page
 	 */
 	public function testSettingsPageContents() {

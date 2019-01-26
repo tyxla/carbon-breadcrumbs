@@ -5,6 +5,8 @@
 class CarbonBreadcrumbLocatorHierarchicalGetItemHierarchyTest extends WP_UnitTestCase {
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Hierarchical::get_item_hierarchy().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Hierarchical::get_item_hierarchy
 	 */
 	public function testWithPosts() {
@@ -30,6 +32,8 @@ class CarbonBreadcrumbLocatorHierarchicalGetItemHierarchyTest extends WP_UnitTes
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Hierarchical::get_item_hierarchy().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Hierarchical::get_item_hierarchy
 	 */
 	public function testWithCategories() {

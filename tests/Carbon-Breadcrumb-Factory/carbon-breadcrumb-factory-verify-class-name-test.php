@@ -5,6 +5,8 @@
 class CarbonBreadcrumbFactoryVerifyClassNameTest extends WP_UnitTestCase {
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Factory::verify_class_name().
+	 *
 	 * @covers Carbon_Breadcrumb_Factory::verify_class_name
 	 * @expectedException Carbon_Breadcrumb_Exception
 	 * @expectedExceptionMessage Unexisting class: foobar
@@ -14,6 +16,8 @@ class CarbonBreadcrumbFactoryVerifyClassNameTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Factory::verify_class_name().
+	 *
 	 * @covers Carbon_Breadcrumb_Factory::verify_class_name
 	 */
 	public function testWithExistingClass() {

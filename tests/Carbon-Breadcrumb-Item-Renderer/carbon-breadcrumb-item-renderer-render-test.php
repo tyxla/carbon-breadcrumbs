@@ -41,6 +41,8 @@ class CarbonBreadcrumbItemRendererRenderTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_Renderer::render().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_Renderer::render
 	 */
 	public function testDefaultOutput() {
@@ -52,6 +54,8 @@ class CarbonBreadcrumbItemRendererRenderTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_Renderer::render().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_Renderer::render
 	 */
 	public function testFilteredOutput() {

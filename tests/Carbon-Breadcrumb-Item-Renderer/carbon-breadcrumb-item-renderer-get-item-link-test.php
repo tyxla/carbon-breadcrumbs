@@ -31,6 +31,8 @@ class CarbonBreadcrumbItemRendererGetItemLinkTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_Renderer::get_item_link().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_Renderer::get_item_link
 	 */
 	public function testLink() {
@@ -38,6 +40,8 @@ class CarbonBreadcrumbItemRendererGetItemLinkTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_Renderer::get_item_link().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_Renderer::get_item_link
 	 */
 	public function testLinkFilter() {

@@ -18,6 +18,8 @@ class CarbonBreadcrumbTrailRendererGetSetDisplayHomeItemTest extends WP_UnitTest
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Renderer::get_display_home_item().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::get_display_home_item
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::set_display_home_item
 	 */

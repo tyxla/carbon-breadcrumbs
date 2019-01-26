@@ -43,6 +43,8 @@ class CarbonBreadcrumbTrailRendererRenderTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Renderer::render().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::render
 	 */
 	public function testTotalItemsLimitation() {
@@ -55,6 +57,8 @@ class CarbonBreadcrumbTrailRendererRenderTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Renderer::render().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::render
 	 */
 	public function testTrailPreparation() {
@@ -70,6 +74,8 @@ class CarbonBreadcrumbTrailRendererRenderTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Renderer::render().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::render
 	 */
 	public function testFullOutputReturned() {
@@ -99,6 +105,8 @@ class CarbonBreadcrumbTrailRendererRenderTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Renderer::render().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::render
 	 */
 	public function testFullOutputEchoed() {

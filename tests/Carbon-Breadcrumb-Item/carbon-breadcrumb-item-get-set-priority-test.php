@@ -18,6 +18,8 @@ class CarbonBreadcrumbItemGetSetPriorityTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item::get_priority().
+	 *
 	 * @covers Carbon_Breadcrumb_Item::get_priority
 	 * @covers Carbon_Breadcrumb_Item::set_priority
 	 */

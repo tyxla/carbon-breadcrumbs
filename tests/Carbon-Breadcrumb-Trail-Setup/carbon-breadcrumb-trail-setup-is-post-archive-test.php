@@ -24,6 +24,8 @@ class CarbonBreadcrumbTrailSetupIsPostArchiveTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::is_post_archive().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::is_post_archive
 	 */
 	public function testOnYearArchive() {
@@ -32,6 +34,8 @@ class CarbonBreadcrumbTrailSetupIsPostArchiveTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::is_post_archive().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::is_post_archive
 	 */
 	public function testOnMonthArchive() {
@@ -40,6 +44,8 @@ class CarbonBreadcrumbTrailSetupIsPostArchiveTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::is_post_archive().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::is_post_archive
 	 */
 	public function testOnDayArchive() {
@@ -48,6 +54,8 @@ class CarbonBreadcrumbTrailSetupIsPostArchiveTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::is_post_archive().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::is_post_archive
 	 */
 	public function testOnCategoryArchive() {
@@ -56,6 +64,8 @@ class CarbonBreadcrumbTrailSetupIsPostArchiveTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::is_post_archive().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::is_post_archive
 	 */
 	public function testOnAuthorArchive() {
@@ -64,6 +74,8 @@ class CarbonBreadcrumbTrailSetupIsPostArchiveTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::is_post_archive().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::is_post_archive
 	 */
 	public function testOnSinglePost() {
@@ -72,6 +84,8 @@ class CarbonBreadcrumbTrailSetupIsPostArchiveTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::is_post_archive().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::is_post_archive
 	 */
 	public function testOnSearchResults() {
@@ -80,6 +94,8 @@ class CarbonBreadcrumbTrailSetupIsPostArchiveTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::is_post_archive().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::is_post_archive
 	 */
 	public function testOn404() {

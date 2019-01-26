@@ -24,6 +24,8 @@ class CarbonBreadcrumbItemRendererConstructTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_Renderer::__construct().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_Renderer::__construct
 	 */
 	public function testProperVariableSetting() {

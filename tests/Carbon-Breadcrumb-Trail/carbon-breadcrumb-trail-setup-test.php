@@ -29,6 +29,8 @@ class CarbonBreadcrumbTrailSetupTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail::setup().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail::setup
 	 */
 	public function testSetupProcess() {
@@ -50,6 +52,8 @@ class CarbonBreadcrumbTrailSetupTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail::setup().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail::setup
 	 */
 	public function testBeforeSetupHook() {
@@ -62,6 +66,8 @@ class CarbonBreadcrumbTrailSetupTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail::setup().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail::setup
 	 */
 	public function testAfterSetupHook() {

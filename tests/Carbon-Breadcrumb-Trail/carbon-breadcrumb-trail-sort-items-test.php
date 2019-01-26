@@ -18,6 +18,8 @@ class CarbonBreadcrumbTrailSortItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail::sort_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail::sort_items
 	 */
 	public function testSortItems() {

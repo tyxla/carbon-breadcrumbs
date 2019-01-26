@@ -24,6 +24,8 @@ class CarbonBreadcrumbLocatorPostIsIncludedTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Post::is_included().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Post::is_included
 	 */
 	public function testOnYearArchive() {
@@ -32,6 +34,8 @@ class CarbonBreadcrumbLocatorPostIsIncludedTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Post::is_included().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Post::is_included
 	 */
 	public function testOnMonthArchive() {
@@ -40,6 +44,8 @@ class CarbonBreadcrumbLocatorPostIsIncludedTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Post::is_included().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Post::is_included
 	 */
 	public function testOnDayArchive() {
@@ -48,6 +54,8 @@ class CarbonBreadcrumbLocatorPostIsIncludedTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Post::is_included().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Post::is_included
 	 */
 	public function testOnCategoryArchive() {
@@ -56,6 +64,8 @@ class CarbonBreadcrumbLocatorPostIsIncludedTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Post::is_included().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Post::is_included
 	 */
 	public function testOnAuthorArchive() {
@@ -64,6 +74,8 @@ class CarbonBreadcrumbLocatorPostIsIncludedTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Post::is_included().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Post::is_included
 	 */
 	public function testOnSinglePost() {
@@ -72,6 +84,8 @@ class CarbonBreadcrumbLocatorPostIsIncludedTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Post::is_included().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Post::is_included
 	 */
 	public function testOnSearchResults() {

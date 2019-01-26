@@ -32,6 +32,8 @@ class CarbonBreadcrumbTrailSetupPopulateHomeItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::populate_home_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_home_items
 	 */
 	public function testWithHomeEnabled() {
@@ -50,6 +52,8 @@ class CarbonBreadcrumbTrailSetupPopulateHomeItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::populate_home_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_home_items
 	 */
 	public function testWithHomeDisabled() {

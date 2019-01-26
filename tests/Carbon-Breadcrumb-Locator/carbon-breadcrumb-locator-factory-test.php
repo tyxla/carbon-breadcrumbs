@@ -5,6 +5,8 @@
 class CarbonBreadcrumbLocatorFactoryTest extends WP_UnitTestCase {
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator::factory().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator::factory
 	 * @expectedException Carbon_Breadcrumb_Exception
 	 * @expectedExceptionMessage Unexisting breadcrumb locator type: "foobar".
@@ -14,6 +16,8 @@ class CarbonBreadcrumbLocatorFactoryTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator::factory().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator::factory
 	 */
 	public function testFactoryDefaultSetup() {
@@ -25,6 +29,8 @@ class CarbonBreadcrumbLocatorFactoryTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator::factory().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator::factory
 	 */
 	public function testFactoryCustomSetup() {

@@ -28,6 +28,8 @@ class CarbonBreadcrumbTrailAddItemTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail::add_item().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail::add_item
 	 */
 	public function testAddArrayOfItems() {
@@ -47,6 +49,8 @@ class CarbonBreadcrumbTrailAddItemTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail::add_item().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail::add_item
 	 */
 	public function testAddSingleItem() {

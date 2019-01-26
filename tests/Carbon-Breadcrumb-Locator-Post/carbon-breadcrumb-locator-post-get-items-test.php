@@ -26,6 +26,8 @@ class CarbonBreadcrumbLocatorPostGetItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Post::get_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Post::get_items
 	 */
 	public function testWithCurrentPost() {
@@ -43,6 +45,8 @@ class CarbonBreadcrumbLocatorPostGetItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Post::get_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Post::get_items
 	 */
 	public function testWithSpecificPost() {
@@ -60,6 +64,8 @@ class CarbonBreadcrumbLocatorPostGetItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Post::get_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Post::get_items
 	 */
 	public function testWithHomePage() {

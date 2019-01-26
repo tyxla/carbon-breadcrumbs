@@ -18,6 +18,8 @@ class CarbonBreadcrumbItemGetSetTitleTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item::get_title().
+	 *
 	 * @covers Carbon_Breadcrumb_Item::get_title
 	 * @covers Carbon_Breadcrumb_Item::set_title
 	 */

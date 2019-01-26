@@ -25,6 +25,8 @@ class CarbonBreadcrumbItemUserSetupLinkTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_User::setup_link().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_User::setup_link
 	 */
 	public function testItemLink() {

@@ -18,6 +18,8 @@ class CarbonBreadcrumbAdminSettingsRegisterSettingsTest extends WP_UnitTestCase 
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin_Settings::register_settings().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin_Settings::register_settings
 	 */
 	public function testRegisteredFields() {

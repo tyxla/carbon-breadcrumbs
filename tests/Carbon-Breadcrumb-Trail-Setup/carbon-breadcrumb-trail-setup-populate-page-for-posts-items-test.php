@@ -31,6 +31,8 @@ class CarbonBreadcrumbTrailSetupPopulatePageForPostsItemsTest extends WP_UnitTes
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::populate_page_for_posts_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_page_for_posts_items
 	 */
 	public function testWithPostsPageInPostContext() {
@@ -53,6 +55,8 @@ class CarbonBreadcrumbTrailSetupPopulatePageForPostsItemsTest extends WP_UnitTes
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::populate_page_for_posts_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_page_for_posts_items
 	 */
 	public function testWithNoPostContext() {
@@ -72,6 +76,8 @@ class CarbonBreadcrumbTrailSetupPopulatePageForPostsItemsTest extends WP_UnitTes
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::populate_page_for_posts_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_page_for_posts_items
 	 */
 	public function testWithNoPageForPosts() {

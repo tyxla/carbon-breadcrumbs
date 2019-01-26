@@ -24,6 +24,8 @@ class CarbonBreadcrumbLocatorDateGetArchiveItemDetailsTest extends WP_UnitTestCa
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Date::get_archive_item_details().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Date::get_archive_item_details
 	 */
 	public function testOnYearArchive() {
@@ -52,6 +54,8 @@ class CarbonBreadcrumbLocatorDateGetArchiveItemDetailsTest extends WP_UnitTestCa
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Date::get_archive_item_details().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Date::get_archive_item_details
 	 */
 	public function testOnMonthArchive() {
@@ -80,6 +84,8 @@ class CarbonBreadcrumbLocatorDateGetArchiveItemDetailsTest extends WP_UnitTestCa
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Date::get_archive_item_details().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Date::get_archive_item_details
 	 */
 	public function testOnDayArchive() {

@@ -40,6 +40,8 @@ class CarbonBreadcrumbTrailRemoveItemTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail::remove_item().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail::remove_item
 	 */
 	public function testRemoveItemByTitle() {
@@ -56,6 +58,8 @@ class CarbonBreadcrumbTrailRemoveItemTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail::remove_item().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail::remove_item
 	 */
 	public function testRemoveItemByLink() {
@@ -72,6 +76,8 @@ class CarbonBreadcrumbTrailRemoveItemTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail::remove_item().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail::remove_item
 	 */
 	public function testRemoveItemByTitleAndLink() {

@@ -22,6 +22,8 @@ class CarbonBreadcrumbAdminSettingsFieldRenderHelpTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin_Settings_Field::render_help().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field::render_help
 	 */
 	public function testWithNoHelp() {
@@ -37,6 +39,8 @@ class CarbonBreadcrumbAdminSettingsFieldRenderHelpTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin_Settings_Field::render_help().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field::render_help
 	 */
 	public function testWithHelp() {

@@ -18,6 +18,8 @@ class CarbonBreadcrumbItemRendererGetSetIndexTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_Renderer::get_index().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_Renderer::get_index
 	 * @covers Carbon_Breadcrumb_Item_Renderer::set_index
 	 */
@@ -27,6 +29,8 @@ class CarbonBreadcrumbItemRendererGetSetIndexTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item_Renderer::get_index().
+	 *
 	 * @covers Carbon_Breadcrumb_Item_Renderer::get_index
 	 * @covers Carbon_Breadcrumb_Item_Renderer::set_index
 	 */

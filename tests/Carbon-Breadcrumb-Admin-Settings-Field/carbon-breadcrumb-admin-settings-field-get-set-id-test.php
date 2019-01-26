@@ -18,6 +18,8 @@ class CarbonBreadcrumbAdminSettingsFieldGetSetIdTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Admin_Settings_Field::get_id().
+	 *
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field::get_id
 	 * @covers Carbon_Breadcrumb_Admin_Settings_Field::set_id
 	 */

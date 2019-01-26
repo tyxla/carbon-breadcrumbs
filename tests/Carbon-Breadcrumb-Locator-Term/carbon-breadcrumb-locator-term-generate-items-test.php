@@ -26,6 +26,8 @@ class CarbonBreadcrumbLocatorTermGenerateItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Term::generate_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Term::generate_items
 	 */
 	public function testWithDefaultTaxonomies() {
@@ -50,6 +52,8 @@ class CarbonBreadcrumbLocatorTermGenerateItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Term::generate_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Term::generate_items
 	 */
 	public function testWithCustomTaxonomies() {

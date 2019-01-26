@@ -25,6 +25,8 @@ class CarbonBreadcrumbLocatorTermIsIncludedTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Term::is_included().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Term::is_included
 	 */
 	public function testOnYearArchive() {
@@ -33,6 +35,8 @@ class CarbonBreadcrumbLocatorTermIsIncludedTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Term::is_included().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Term::is_included
 	 */
 	public function testOnMonthArchive() {
@@ -41,6 +45,8 @@ class CarbonBreadcrumbLocatorTermIsIncludedTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Term::is_included().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Term::is_included
 	 */
 	public function testOnDayArchive() {
@@ -49,6 +55,8 @@ class CarbonBreadcrumbLocatorTermIsIncludedTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Term::is_included().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Term::is_included
 	 */
 	public function testOnCategoryArchive() {
@@ -57,6 +65,8 @@ class CarbonBreadcrumbLocatorTermIsIncludedTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Term::is_included().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Term::is_included
 	 */
 	public function testOnTagArchive() {
@@ -65,6 +75,8 @@ class CarbonBreadcrumbLocatorTermIsIncludedTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Term::is_included().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Term::is_included
 	 */
 	public function testOnAuthorArchive() {
@@ -73,6 +85,8 @@ class CarbonBreadcrumbLocatorTermIsIncludedTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Term::is_included().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Term::is_included
 	 */
 	public function testOnSingleTerm() {
@@ -81,6 +95,8 @@ class CarbonBreadcrumbLocatorTermIsIncludedTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Locator_Term::is_included().
+	 *
 	 * @covers Carbon_Breadcrumb_Locator_Term::is_included
 	 */
 	public function testOnSearchResults() {

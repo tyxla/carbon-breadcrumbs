@@ -18,6 +18,8 @@ class CarbonBreadcrumbItemGetSetAttributesTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item::get_attributes().
+	 *
 	 * @covers Carbon_Breadcrumb_Item::get_attributes
 	 * @covers Carbon_Breadcrumb_Item::set_attributes
 	 */

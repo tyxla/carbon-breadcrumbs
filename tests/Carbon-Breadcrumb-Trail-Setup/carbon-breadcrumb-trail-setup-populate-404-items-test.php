@@ -27,6 +27,8 @@ class CarbonBreadcrumbTrailSetupPopulate404ItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::populate_404_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_404_items
 	 */
 	public function testOnNon404() {
@@ -39,6 +41,8 @@ class CarbonBreadcrumbTrailSetupPopulate404ItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Setup::populate_404_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Setup::populate_404_items
 	 */
 	public function test404Item() {

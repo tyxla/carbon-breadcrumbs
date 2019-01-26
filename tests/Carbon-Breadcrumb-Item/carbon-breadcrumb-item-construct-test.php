@@ -18,6 +18,8 @@ class CarbonBreadcrumbItemConstructTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Item::__construct().
+	 *
 	 * @covers Carbon_Breadcrumb_Item::__construct
 	 */
 	public function testConstructor() {

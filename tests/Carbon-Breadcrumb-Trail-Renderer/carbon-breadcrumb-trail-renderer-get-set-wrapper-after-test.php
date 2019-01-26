@@ -18,6 +18,8 @@ class CarbonBreadcrumbTrailRendererGetSetWrapperAfterTest extends WP_UnitTestCas
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Renderer::get_wrapper_after().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::get_wrapper_after
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::set_wrapper_after
 	 */

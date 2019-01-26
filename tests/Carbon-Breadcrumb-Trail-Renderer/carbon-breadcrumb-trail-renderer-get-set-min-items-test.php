@@ -18,6 +18,8 @@ class CarbonBreadcrumbTrailRendererGetSetMinItemsTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Tests for Carbon_Breadcrumb_Trail_Renderer::get_min_items().
+	 *
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::get_min_items
 	 * @covers Carbon_Breadcrumb_Trail_Renderer::set_min_items
 	 */
