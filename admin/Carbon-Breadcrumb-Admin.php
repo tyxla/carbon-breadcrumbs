@@ -41,10 +41,10 @@ class Carbon_Breadcrumb_Admin {
 	public function include_files() {
 		$dir = dirname( __FILE__ );
 
-		include_once( $dir . '/Carbon_Breadcrumb_Admin_Settings.php' );
-		include_once( $dir . '/Carbon_Breadcrumb_Admin_Settings_Field.php' );
-		include_once( $dir . '/Carbon_Breadcrumb_Admin_Settings_Field_Text.php' );
-		include_once( $dir . '/Carbon_Breadcrumb_Admin_Settings_Field_Checkbox.php' );
+		include_once( $dir . '/Carbon-Breadcrumb-Admin-Settings.php' );
+		include_once( $dir . '/Carbon-Breadcrumb-Admin-Settings-Field.php' );
+		include_once( $dir . '/Carbon-Breadcrumb-Admin-Settings-Field-Text.php' );
+		include_once( $dir . '/Carbon-Breadcrumb-Admin-Settings-Field-Checkbox.php' );
 	}
 
 	/**
