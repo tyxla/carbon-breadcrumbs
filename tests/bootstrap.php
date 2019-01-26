@@ -1,85 +1,31 @@
 <?php
 /**
- * Carbon Breadcrumbs Unit Tests Bootstrap
+ * PHPUnit bootstrap file
+ *
+ * @package Carbon_Breadcrumbs
  */
-class Carbon_Breadcrumbs_Tests_Bootstrap {
 
-	/** 
-	 * The bootstrap instance.
-	 *
-	 * @var Carbon_Breadcrumbs_Tests_Bootstrap
-	 */
-	protected static $instance = null;
+$_tests_dir = getenv( 'WP_TESTS_DIR' );
 
-	/** 
-	 * Directory where wordpress-tests-lib is installed
-	 *
-	 * @var string
-	 */
-	public $wp_tests_dir;
-
-	/** 
-	 * Testing directory.
-	 *
-	 * @var string
-	 */
-	public $tests_dir;
-
-	/** 
-	 * Plugin directory.
-	 *
-	 * @var string
-	 */
-	public $plugin_dir;
-
-	/**
-	 * Setup the unit testing environment
-	 */
-	private function __construct() {
-
-		ini_set( 'display_errors','on' );
-		error_reporting( E_ALL );
-
-		$this->tests_dir    = dirname( __FILE__ );
-		$this->plugin_dir   = dirname( $this->tests_dir );
-		$this->wp_tests_dir = getenv( 'WP_TESTS_DIR' ) ? getenv( 'WP_TESTS_DIR' ) : $this->plugin_dir . '/tmp/wordpress-tests-lib';
-
-		// load test function so tests_add_filter() is available
-		require_once( $this->wp_tests_dir . '/includes/functions.php' );
-
-		// load plugin
-		tests_add_filter( 'muplugins_loaded', array( $this, 'load_plugin' ) );
-
-		// load the WP testing environment
-		require_once( $this->wp_tests_dir . '/includes/bootstrap.php' );
-
-		// make sure query vars are prepared
-		global $wp;
-		if ( !is_array( $wp->query_vars ) ) {
-			$wp->query_vars = array();
-		}
-	}
-
-	/**
-	 * Load the plugin
-	 */
-	public function load_plugin() {
-		require_once( $this->plugin_dir . '/carbon-breadcrumbs.php' );
-	}
-
-	/**
-	 * Get the single tests boostrap instance
-	 *
-	 * @return Carbon_Breadcrumbs_Tests_Bootstrap
-	 */
-	public static function instance() {
-		if ( is_null( self::$instance ) ) {
-			self::$instance = new self();
-		}
-
-		return self::$instance;
-	}
-
+if ( ! $_tests_dir ) {
+	$_tests_dir = rtrim( sys_get_temp_dir(), '/\\' ) . '/wordpress-tests-lib';
 }
 
-Carbon_Breadcrumbs_Tests_Bootstrap::instance();
+if ( ! file_exists( $_tests_dir . '/includes/functions.php' ) ) {
+	echo "Could not find $_tests_dir/includes/functions.php, have you run bin/install-wp-tests.sh ?" . PHP_EOL;
+	exit( 1 );
+}
+
+// Give access to tests_add_filter() function.
+require_once $_tests_dir . '/includes/functions.php';
+
+/**
+ * Manually load the plugin being tested.
+ */
+function _manually_load_plugin() {
+	require dirname( dirname( __FILE__ ) ) . '/carbon-breadcrumbs.php';
+}
+tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );
+
+// Start up the WP testing environment.
+require $_tests_dir . '/includes/bootstrap.php';
