@@ -1,5 +1,11 @@
 <?php
 /**
+ * Breadcrumb trail.
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
  * The main breadcrumb trail class.
  *
  * Contains and manages the breadcrumb trail settings and breadcrumb items.
@@ -33,18 +39,18 @@ class Carbon_Breadcrumb_Trail {
 	 */
 	public function __construct( $settings = array() ) {
 
-		// make sure renderer is specified
+		// Make sure renderer is specified.
 		if ( ! isset( $settings['renderer'] ) ) {
 			$settings['renderer'] = 'Carbon_Breadcrumb_Trail_Renderer';
 		}
 
-		// determine the renderer class
+		// Determine the renderer class.
 		$renderer_class = apply_filters( 'carbon_breadcrumbs_renderer_class', $settings['renderer'] );
 
-		// build a new renderer
+		// Build a new renderer.
 		$renderer = new $renderer_class( $settings );
 
-		// set the renderer
+		// Set the renderer.
 		$this->set_renderer( $renderer );
 	}
 
@@ -77,13 +83,13 @@ class Carbon_Breadcrumb_Trail {
 	 */
 	public function setup() {
 
-		// start setup
+		// Start setup.
 		do_action( 'carbon_breadcrumbs_before_setup_trail', $this );
 
-		// perform setup
+		// Perform setup.
 		new Carbon_Breadcrumb_Trail_Setup( $this );
 
-		// end setup
+		// End setup.
 		do_action( 'carbon_breadcrumbs_after_setup_trail', $this );
 
 	}
@@ -132,18 +138,18 @@ class Carbon_Breadcrumb_Trail {
 	 * @param string $link Link URL to remove breadcrumb item by.
 	 */
 	public function remove_item( $title = '', $link = '' ) {
-		// if both title and link are specified, search for exact match
+		// If both title and link are specified, search for exact match.
 		$all_items = $this->get_items();
 		foreach ( $all_items as $items_priority => $items ) {
 			foreach ( $items as $item_key => $item ) {
 				if ( 0 === strcasecmp( $item->get_title(), $title ) && 0 === strcasecmp( $item->get_link(), $link ) ) {
-					// if we have a match, remove that item
+					// If we have a match, remove that item.
 					unset( $all_items[ $items_priority ][ $item_key ] );
 				}
 			}
 		}
 
-		// update the items
+		// Update the items.
 		$this->set_items( $all_items );
 	}
 
@@ -156,19 +162,19 @@ class Carbon_Breadcrumb_Trail {
 	 * @param string $data Additional data to pass to the method.
 	 */
 	public function remove_item_by_method( $method, $data ) {
-		// search all items for one with the same title
+		// Search all items for one with the same title.
 		$all_items = $this->get_items();
 		foreach ( $all_items as $priority => $items ) {
 			foreach ( $items as $item_key => $item ) {
 				$method_result = call_user_func( array( $item, $method ), $data );
 				if ( 0 === strcasecmp( $method_result, $data ) ) {
-					// if we have a match, remove that item
+					// If we have a match, remove that item.
 					unset( $all_items[ $priority ][ $item_key ] );
 				}
 			}
 		}
 
-		// update the items
+		// Update the items.
 		$this->set_items( $all_items );
 	}
 
@@ -202,14 +208,14 @@ class Carbon_Breadcrumb_Trail {
 	 * @param int $priority Priority to remove breadcrumb item by.
 	 */
 	public function remove_item_by_priority( $priority = 0 ) {
-		// search all items for the same priority
+		// Search all items for the same priority.
 		$all_items = $this->get_items();
 		if ( array_key_exists( $priority, $all_items ) ) {
-			// remove all items with that priority
+			// Remove all items with that priority.
 			unset( $all_items[ $priority ] );
 		}
 
-		// update the items
+		// Update the items.
 		$this->set_items( $all_items );
 	}
 
@@ -285,7 +291,7 @@ class Carbon_Breadcrumb_Trail {
 	 */
 	public function render( $return = false ) {
 
-		// get the rendered output
+		// Get the rendered output.
 		$output = $this->get_renderer()->render( $this, true );
 
 		if ( $return ) {

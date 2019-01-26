@@ -1,5 +1,11 @@
 <?php
 /**
+ * Base breadcrumb item locator
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
  * Abstract breadcrumb item locator class.
  *
  * Used as a base for all breadcrumb locator types.

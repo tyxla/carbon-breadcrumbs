@@ -1,5 +1,11 @@
 <?php
 /**
+ * Abstract breadcrumb item
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
  * Abstract breadcrumb item class.
  *
  * Used as a base for all breadcrumb item types.

@@ -1,5 +1,11 @@
 <?php
 /**
+ * User breadcrumb item
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
  * Breadcrumb item class for author archives.
  *
  * Used for breadcrumb items that represent a certain author archive page.
@@ -10,9 +16,10 @@ class Carbon_Breadcrumb_Item_User extends Carbon_Breadcrumb_Item_DB_Object {
 	 * Configure the title and link URL by using the specified author user ID.
 	 *
 	 * @access public
+	 * @throws Carbon_Breadcrumb_Exception When user ID isn't specified.
 	 */
 	public function setup() {
-		// in order to continue, author user ID must be specified
+		// In order to continue, author user ID must be specified.
 		if ( ! $this->get_id() ) {
 			throw new Carbon_Breadcrumb_Exception( 'The author breadcrumb items must have author ID specified.' );
 		}

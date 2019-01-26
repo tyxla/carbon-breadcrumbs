@@ -1,5 +1,15 @@
 <?php
+/**
+ * Breadcrumb item renderer.
+ *
+ * @package carbon-breadcrumbs
+ */
 
+/**
+ * Breadcrumb item renderer class.
+ *
+ * Used to render a particular item of the breadcrumb trail.
+ */
 class Carbon_Breadcrumb_Item_Renderer {
 
 	/**
@@ -67,16 +77,16 @@ class Carbon_Breadcrumb_Item_Renderer {
 		$trail          = $this->get_trail();
 		$trail_renderer = $this->get_trail_renderer();
 
-		// link before and opening <a>
+		// Link before and opening <a>.
 		$item_output .= $this->render_link_before();
 
-		// title along with its wrappers
+		// Title along with its wrappers.
 		$item_output .= $this->render_title();
 
-		// closing </a> and link after
+		// Closing </a> and link after.
 		$item_output .= $this->render_link_after();
 
-		// allow item output to be filtered
+		// Allow item output to be filtered.
 		return apply_filters( 'carbon_breadcrumbs_item_output', $item_output, $item, $trail, $trail_renderer, $index );
 	}
 
@@ -104,10 +114,10 @@ class Carbon_Breadcrumb_Item_Renderer {
 		$trail_renderer = $this->get_trail_renderer();
 		$item_link      = $this->get_item_link();
 
-		// HTML before link opening tag
+		// HTML before link opening tag.
 		$output = $trail_renderer->get_link_before();
 
-		// link can be optional or disabled
+		// Link can be optional or disabled.
 		if ( $item_link && $this->is_link_enabled() ) {
 			$output .= '<a href="' . $item_link . '"' . $this->get_item_attributes_html() . '>';
 		}
@@ -127,12 +137,12 @@ class Carbon_Breadcrumb_Item_Renderer {
 		$item_link      = $this->get_item_link();
 		$output         = '';
 
-		// link can be optional or disabled
+		// Link can be optional or disabled.
 		if ( $item_link && $this->is_link_enabled() ) {
 			$output .= '</a>';
 		}
 
-		// HTML after link closing tag
+		// HTML after link closing tag.
 		$output .= $trail_renderer->get_link_after();
 
 		return $output;
@@ -149,13 +159,13 @@ class Carbon_Breadcrumb_Item_Renderer {
 		$item           = $this->get_item();
 		$trail_renderer = $this->get_trail_renderer();
 
-		// HTML before title
+		// HTML before title.
 		$output = $trail_renderer->get_title_before();
 
-		// breadcrumb item title
+		// Breadcrumb item title.
 		$output .= apply_filters( 'carbon_breadcrumbs_item_title', $item->get_title(), $item );
 
-		// HTML after title
+		// HTML after title.
 		$output .= $trail_renderer->get_title_after();
 
 		return $output;
@@ -171,10 +181,10 @@ class Carbon_Breadcrumb_Item_Renderer {
 	public function get_item_attributes_html() {
 		$item = $this->get_item();
 
-		// get the item attributes
+		// Get the item attributes.
 		$item_attributes = apply_filters( 'carbon_breadcrumbs_item_attributes', $item->get_attributes(), $item );
 
-		// prepare the item attributes
+		// Prepare the item attributes.
 		$attributes_html = '';
 		foreach ( $item_attributes as $attr => $attr_value ) {
 			$attributes_html .= ' ' . $attr . '="' . esc_attr( $attr_value ) . '"';

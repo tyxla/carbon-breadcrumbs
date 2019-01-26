@@ -1,5 +1,11 @@
 <?php
 /**
+ * Breadcrumb trail setup.
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
  * The main breadcrumb trail setup class.
  *
  * Generates and populates the default breadcrumb trail items.
@@ -102,6 +108,7 @@ class Carbon_Breadcrumb_Trail_Setup {
 			return;
 		}
 
+		// Translators: %1$s - search query.
 		$search_title = sprintf( __( 'Search results for: "%1$s"', 'carbon_breadcrumbs' ), get_search_query() );
 		$this->get_trail()->add_custom_item( $search_title, '', 700 );
 	}

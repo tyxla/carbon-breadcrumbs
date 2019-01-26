@@ -1,5 +1,11 @@
 <?php
 /**
+ * Post breadcrumb item locator
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
  * Post breadcrumb item locator class.
  *
  * Used to locate the breadcrumb items for post types.
@@ -14,7 +20,7 @@ class Carbon_Breadcrumb_Locator_Post extends Carbon_Breadcrumb_Locator_Hierarchi
 	 * @return bool $is_included Whether the found items should be included.
 	 */
 	public function is_included() {
-		return is_singular() && get_post_type() == $this->get_subtype();
+		return is_singular() && get_post_type() === $this->get_subtype();
 	}
 
 	/**
@@ -27,17 +33,17 @@ class Carbon_Breadcrumb_Locator_Post extends Carbon_Breadcrumb_Locator_Hierarchi
 	 * @return Carbon_Breadcrumb_Item[] $items The items, found by this locator.
 	 */
 	public function get_items( $priority = 1000, $post_id = 0 ) {
-		// get the current post ID, if not specified
+		// Get the current post ID, if not specified.
 		if ( ! $post_id ) {
 			$post_id = get_the_ID();
 		}
 
-		// if this is the front page, skip it, as it is added separately
-		if ( is_front_page() && $post_id == get_option( 'page_on_front' ) ) {
+		// If this is the front page, skip it, as it is added separately.
+		if ( is_front_page() && get_option( 'page_on_front' ) === $post_id ) {
 			return array();
 		}
 
-		// walk the tree of ancestors of the post up to the top
+		// Walk the tree of ancestors of the post up to the top.
 		return $this->get_item_hierarchy( $post_id, $priority );
 	}
 

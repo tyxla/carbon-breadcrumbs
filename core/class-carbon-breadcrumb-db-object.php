@@ -1,5 +1,11 @@
 <?php
 /**
+ * Database object interface.
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
  * Represents an item that corresponds to a database object.
  */
 interface Carbon_Breadcrumb_DB_Object {

@@ -1,5 +1,11 @@
 <?php
 /**
+ * Breadcrumb trail renderer.
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
  * The breadcrumb trail render class.
  *
  * Responsible for the breadcrumb trail rendering settings and process.
@@ -105,18 +111,18 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 */
 	public function __construct( $args = array() ) {
 
-		// default configuration options
+		// Default configuration options.
 		$defaults = array(
 			'home_item_title' => __( 'Home', 'carbon_breadcrumbs' ),
 		);
 
-		// allow default options to be filtered
+		// Allow default options to be filtered.
 		$defaults = apply_filters( 'carbon_breadcrumbs_renderer_default_options', $defaults );
 
-		// parse configuration options
+		// Parse configuration options.
 		$args = wp_parse_args( $args, $defaults );
 
-		// set configuration options
+		// Set configuration options.
 		foreach ( $args as $arg_name => $arg_value ) {
 			$method = 'set_' . $arg_name;
 			if ( method_exists( $this, $method ) ) {
@@ -378,10 +384,10 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 * @param Carbon_Breadcrumb_Trail $trail Trail object.
 	 */
 	public function prepare_for_rendering( $trail ) {
-		// last chance to modify render settings before rendering
+		// Last chance to modify render settings before rendering.
 		do_action( 'carbon_breadcrumbs_before_render', $this );
 
-		// whether to auto-sort the items
+		// Whether to auto-sort the items.
 		$auto_sort = apply_filters( 'carbon_breadcrumbs_auto_sort_items', true );
 		if ( $auto_sort ) {
 			$trail->sort_items();
@@ -398,18 +404,18 @@ class Carbon_Breadcrumb_Trail_Renderer {
 	 * @return string|void $output The output HTML if $return is true.
 	 */
 	public function render( Carbon_Breadcrumb_Trail $trail, $return = false ) {
-		// if the items are less than the minimum, nothing should be rendered
+		// If the items are less than the minimum, nothing should be rendered.
 		if ( $trail->get_total_items() < $this->get_min_items() ) {
 			return;
 		}
 
-		// prepare the trail & renderer for rendering
+		// Prepare the trail & renderer for rendering.
 		$this->prepare_for_rendering( $trail );
 
-		// render the items
+		// Render the items.
 		$items_output = $this->render_items( $trail );
 
-		// implode the breadcrumb items and wrap them with the configured wrappers
+		// Implode the breadcrumb items and wrap them with the configured wrappers.
 		$output  = $this->get_wrapper_before();
 		$output .= implode( $this->get_glue(), $items_output );
 		$output .= $this->get_wrapper_after();
@@ -435,15 +441,15 @@ class Carbon_Breadcrumb_Trail_Renderer {
 		$all_items    = $trail->get_flat_items();
 
 		foreach ( $all_items as $item ) {
-			// allow each item to be filtered right before rendering
+			// Allow each item to be filtered right before rendering.
 			$item = apply_filters( 'carbon_breadcrumbs_item', $item, $trail, $this, $counter );
 
-			// skip if $item is not a Carbon_Breadcrumb_Item instance
+			// Skip if $item is not a Carbon_Breadcrumb_Item instance.
 			if ( ! ( $item instanceof Carbon_Breadcrumb_Item ) ) {
 				continue;
 			}
 
-			// increase the counter and render the item
+			// Increase the counter and render the item.
 			$counter++;
 			$item_renderer  = new Carbon_Breadcrumb_Item_Renderer( $item, $trail, $this, $counter );
 			$items_output[] = $item_renderer->render();

@@ -1,5 +1,11 @@
 <?php
 /**
+ * Breadcrumb item in the database.
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
  * Breadcrumb item class for objects from the database.
  *
  * Should be extended by any database object class (for example post, term, user).
@@ -20,10 +26,10 @@ abstract class Carbon_Breadcrumb_Item_DB_Object extends Carbon_Breadcrumb_Item i
 	 * @access public
 	 */
 	public function setup() {
-		// setup item title
+		// Setup item title.
 		$this->setup_title();
 
-		// setup item link
+		// Setup item link.
 		$this->setup_link();
 	}
 

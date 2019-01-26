@@ -1,5 +1,11 @@
 <?php
 /**
+ * Hierarchical breadcrumb item locator
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
  * Abstract breadcrumb item locator class for hierarchical types.
  *
  * Used as a base for taxonomy, post type and other hierarchical locators.

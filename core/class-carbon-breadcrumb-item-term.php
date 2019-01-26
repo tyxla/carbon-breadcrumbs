@@ -1,5 +1,11 @@
 <?php
 /**
+ * Term breadcrumb item
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
  * Breadcrumb item class for taxonomy terms.
  *
  * Used for breadcrumb items that represent a term of any taxonomy.
@@ -18,19 +24,20 @@ class Carbon_Breadcrumb_Item_Term extends Carbon_Breadcrumb_Item_DB_Object {
 	 * Configure the title and link URL by using the specified term ID.
 	 *
 	 * @access public
+	 * @throws Carbon_Breadcrumb_Exception When term ID or taxonomy isn't specified.
 	 */
 	public function setup() {
-		// in order to continue, taxonomy term ID must be specified
+		// In order to continue, taxonomy term ID must be specified.
 		if ( ! $this->get_id() ) {
 			throw new Carbon_Breadcrumb_Exception( 'The term breadcrumb items must have term ID specified.' );
 		}
 
-		// in order to continue, taxonomy must be specified
+		// In order to continue, taxonomy must be specified.
 		if ( ! $this->get_subtype() ) {
 			throw new Carbon_Breadcrumb_Exception( 'The term breadcrumb items must have taxonomy specified.' );
 		}
 
-		// retrieve term object
+		// Retrieve term object.
 		$subtype           = $this->get_subtype();
 		$this->term_object = get_term_by( 'id', $this->get_id(), $subtype );
 
@@ -44,9 +51,9 @@ class Carbon_Breadcrumb_Item_Term extends Carbon_Breadcrumb_Item_DB_Object {
 	 */
 	public function setup_title() {
 		$filter_name = 'single_term_title';
-		if ( $this->term_object->taxonomy === 'category' ) {
+		if ( 'category' === $this->term_object->taxonomy ) {
 			$filter_name = 'single_cat_title';
-		} elseif ( $this->term_object->taxonomy === 'post_tag' ) {
+		} elseif ( 'post_tag' === $this->term_object->taxonomy ) {
 			$filter_name = 'single_tag_title';
 		}
 

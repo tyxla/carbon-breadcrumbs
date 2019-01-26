@@ -1,5 +1,11 @@
 <?php
 /**
+ * L10n
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
  * Localization class.
  * Adds support for translations.
  */
@@ -13,7 +19,7 @@ class Carbon_Breadcrumb_L10n {
 	 * @access public
 	 */
 	public function __construct() {
-		// register our plugins_loaded method
+		// Register our plugins_loaded method.
 		add_action( 'plugins_loaded', array( $this, 'plugins_loaded' ) );
 	}
 
@@ -23,7 +29,7 @@ class Carbon_Breadcrumb_L10n {
 	 * @access public
 	 */
 	public function plugins_loaded() {
-		// initialize translations
+		// Initialize translations.
 		$path = dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages';
 		load_plugin_textdomain( 'carbon_breadcrumbs', false, $path );
 	}

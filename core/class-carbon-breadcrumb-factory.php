@@ -1,5 +1,11 @@
 <?php
 /**
+ * A base for factories.
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
  * Factory base class.
  *
  * Used as a base for breadcrumb classes that include factories.
@@ -17,7 +23,7 @@ class Carbon_Breadcrumb_Factory {
 	 * @param string $message The message to display in the exception if the class does not exist.
 	 * @return string $class The class name.
 	 *
-	 * @throws Carbon_Breadcrumb_Exception if the built class name does not exist
+	 * @throws Carbon_Breadcrumb_Exception If the built class name does not exist.
 	 */
 	public static function verify_class_name( $class, $message = '' ) {
 		if ( ! $message ) {

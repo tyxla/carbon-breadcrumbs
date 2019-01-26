@@ -1,5 +1,11 @@
 <?php
 /**
+ * Main breadcrumb administration - text settings field.
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
  * Manages and renders a text settings field.
  *
  * @uses Carbon_Breadcrumb_Admin_Settings_Field

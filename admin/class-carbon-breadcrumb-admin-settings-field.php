@@ -1,5 +1,11 @@
 <?php
 /**
+ * Main breadcrumb administration settings field registration.
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
  * Manages breadcrumb administration settings field registration.
  * Should be extended for each field type.
  *

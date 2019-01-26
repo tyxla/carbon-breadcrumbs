@@ -1,5 +1,11 @@
 <?php
 /**
+ * Main breadcrumb administration.
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
  * The main breadcrumb administration class.
  *
  * Includes, wraps and manages the administration functionality.
@@ -23,10 +29,10 @@ class Carbon_Breadcrumb_Admin {
 	 * @access public
 	 */
 	public function __construct() {
-		// include the plugin files
+		// Include the plugin files.
 		$this->include_files();
 
-		// if administration is enabled, initialize
+		// If administration is enabled, initialize.
 		if ( $this->is_enabled() ) {
 			add_action( 'init', array( $this, 'init' ) );
 			add_action( 'admin_menu', array( $this, 'admin_menu' ), 20 );
@@ -53,7 +59,7 @@ class Carbon_Breadcrumb_Admin {
 	 * @access public
 	 */
 	public function admin_menu() {
-		// register settings
+		// Register settings.
 		$this->register_settings();
 	}
 
@@ -63,7 +69,7 @@ class Carbon_Breadcrumb_Admin {
 	 * @access public
 	 */
 	public function init() {
-		// apply the breadcrumb renderer settings
+		// Apply the breadcrumb renderer settings.
 		add_filter( 'carbon_breadcrumbs_renderer_default_options', array( $this, 'apply_settings' ), 20 );
 	}
 
@@ -73,7 +79,7 @@ class Carbon_Breadcrumb_Admin {
 	 * @access public
 	 */
 	public function register_settings() {
-		// register the settings page and fields
+		// Register the settings page and fields.
 		$this->settings = new Carbon_Breadcrumb_Admin_Settings();
 	}
 
@@ -108,19 +114,19 @@ class Carbon_Breadcrumb_Admin {
 	public function is_enabled() {
 		$enabled = false;
 
-		// enabled if this plugin is installed as a regular WordPress plugin
+		// Enabled if this plugin is installed as a regular WordPress plugin.
 		$plugin_path = untrailingslashit( ABSPATH ) . DIRECTORY_SEPARATOR . 'wp-content' . DIRECTORY_SEPARATOR . 'plugins';
 		$current_dir = $this->current_dir();
 		if ( false !== strpos( $current_dir, $plugin_path ) ) {
 			$enabled = true;
 		}
 
-		// enabled if the CARBON_BREADCRUMB_ENABLE_ADMIN is defined as `true`
+		// Enabled if the CARBON_BREADCRUMB_ENABLE_ADMIN is defined as `true`.
 		if ( defined( 'CARBON_BREADCRUMB_ENABLE_ADMIN' ) && CARBON_BREADCRUMB_ENABLE_ADMIN ) {
 			$enabled = true;
 		}
 
-		// allow manual enabling/disabling
+		// Allow manual enabling/disabling.
 		return apply_filters( 'carbon_breadcrumb_enable_admin', $enabled );
 	}
 

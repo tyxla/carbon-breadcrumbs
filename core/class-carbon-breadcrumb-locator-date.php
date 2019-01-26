@@ -1,5 +1,11 @@
 <?php
 /**
+ * Date archive breadcrumb item locator
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
  * Date archive breadcrumb item locator class.
  *
  * Used to locate the breadcrumb items for date archives.
@@ -29,10 +35,10 @@ class Carbon_Breadcrumb_Locator_Date extends Carbon_Breadcrumb_Locator {
 	public function get_items( $priority = 1000, $id = 0 ) {
 		$items = array();
 
-		// prepare the date archive item details
+		// Prepare the date archive item details.
 		$date_archives = $this->get_archive_item_details();
 
-		// add the associated date archive breadcrumb items
+		// Add the associated date archive breadcrumb items.
 		foreach ( $date_archives as $archive_name => $archive_details ) {
 			if ( $archive_details['condition'] ) {
 				$item = Carbon_Breadcrumb_Item::factory( 'custom', $priority );

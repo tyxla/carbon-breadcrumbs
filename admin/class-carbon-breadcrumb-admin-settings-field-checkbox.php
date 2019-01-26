@@ -1,5 +1,11 @@
 <?php
 /**
+ * Main breadcrumb administration - checkbox settings field.
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
  * Manages and renders a checkbox settings field.
  *
  * @uses Carbon_Breadcrumb_Admin_Settings_Field

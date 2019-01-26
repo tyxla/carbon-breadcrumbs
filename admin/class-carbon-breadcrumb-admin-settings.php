@@ -1,6 +1,12 @@
 <?php
 /**
  * Manages breadcrumb administration settings.
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Class that manages breadcrumb administration settings.
  */
 class Carbon_Breadcrumb_Admin_Settings {
 
@@ -20,10 +26,10 @@ class Carbon_Breadcrumb_Admin_Settings {
 	 * @access public
 	 */
 	public function __construct() {
-		// register settings page
+		// Register settings page.
 		add_action( 'admin_menu', array( $this, 'admin_menu' ), 30 );
 
-		// register settings fields & sections
+		// Register settings fields & sections.
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 	}
 
@@ -137,7 +143,7 @@ class Carbon_Breadcrumb_Admin_Settings {
 	 */
 	public function admin_menu() {
 
-		// register settings page
+		// Register settings page.
 		add_options_page(
 			self::get_page_title(),
 			self::get_page_title(),
@@ -146,7 +152,7 @@ class Carbon_Breadcrumb_Admin_Settings {
 			array( $this, 'settings_page' )
 		);
 
-		// register settings section
+		// Register settings section.
 		add_settings_section(
 			self::get_page_name(),
 			__( 'General Settings', 'carbon_breadcrumbs' ),
@@ -162,7 +168,7 @@ class Carbon_Breadcrumb_Admin_Settings {
 	 * @access public
 	 */
 	public function register_settings() {
-		// register fields
+		// Register fields.
 		$field_data = self::get_field_data();
 		foreach ( $field_data as $field_id => $field ) {
 			$this->fields[] = Carbon_Breadcrumb_Admin_Settings_Field::factory( $field['type'], 'carbon_breadcrumbs_' . $field_id, $field['title'], self::get_page_name() );
