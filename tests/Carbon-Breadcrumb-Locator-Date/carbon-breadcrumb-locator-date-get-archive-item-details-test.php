@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Locator_Date::get_archive_item_details()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Locator_Date::get_archive_item_details()
+ *
  * @group locator
  */
 class CarbonBreadcrumbLocatorDateGetArchiveItemDetailsTest extends WP_UnitTestCase {

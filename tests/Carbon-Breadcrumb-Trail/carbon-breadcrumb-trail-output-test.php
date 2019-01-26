@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Trail::output()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Trail::output()
+ *
  * @group trail
  */
 class CarbonBreadcrumbTrailOutputTest extends WP_UnitTestCase {

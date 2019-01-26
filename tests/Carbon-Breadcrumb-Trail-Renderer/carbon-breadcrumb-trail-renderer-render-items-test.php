@@ -1,8 +1,25 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Trail_Renderer::render_items()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Trail_Renderer::render_items()
+ *
  * @group trail_renderer
  */
 class CarbonBreadcrumbTrailRendererRenderItemsTest extends WP_UnitTestCase {
+	/**
+	 * Filter to modify a breadcrumb item.
+	 *
+	 * @param Carbon_Breadcrumb_Item           $item Breadcrumb item.
+	 * @param Carbon_Breadcrumb_Trail          $trail Breadcrumb trail object.
+	 * @param Carbon_Breadcrumb_Trail_Renderer $renderer Breadcrumb trail renderer object.
+	 * @param integer                          $counter Index of the item in the trail.
+	 * @return Carbon_Breadcrumb_Item Filtered item.
+	 */
 	public function carbon_breadcrumbs_item( $item, $trail, $renderer, $counter ) {
 		$item->testvalue = 123;
 		return $item;

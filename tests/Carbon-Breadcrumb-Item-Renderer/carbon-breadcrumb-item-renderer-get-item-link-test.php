@@ -1,9 +1,22 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Item_Renderer::get_item_link()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Item_Renderer::get_item_link()
+ *
  * @group item_renderer
  */
 class CarbonBreadcrumbItemRendererGetItemLinkTest extends WP_UnitTestCase {
-
+	/**
+	 * Alter the item link.
+	 *
+	 * @param string $old_link Default link.
+	 * @return string Filtered link.
+	 */
 	public function custom_link_filter( $old_link = '' ) {
 		return 'http://another.example.net/bar/foo/';
 	}

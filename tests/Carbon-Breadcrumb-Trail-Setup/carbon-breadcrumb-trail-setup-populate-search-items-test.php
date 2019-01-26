@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Trail_Setup::populate_search_items()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Trail_Setup::populate_search_items()
+ *
  * @group trail_setup
  */
 class CarbonBreadcrumbTrailSetupPopulateSearchItemsTest extends WP_UnitTestCase {
@@ -58,6 +66,7 @@ class CarbonBreadcrumbTrailSetupPopulateSearchItemsTest extends WP_UnitTestCase 
 		$actual_items = array_values( $this->trail->get_items() );
 		$actual_item  = $actual_items[0][0];
 
+		// Translators: %1$s - search query.
 		$expected_title = sprintf( __( 'Search results for: "%1$s"', 'carbon_breadcrumbs' ), get_search_query() );
 		$this->assertSame( $expected_title, $actual_item->get_title() );
 		$this->assertSame( '', $actual_item->get_link() );

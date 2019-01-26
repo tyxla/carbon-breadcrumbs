@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Trail_Setup::populate_404_items()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Trail_Setup::populate_404_items()
+ *
  * @group trail_setup
  */
 class CarbonBreadcrumbTrailSetupPopulate404ItemsTest extends WP_UnitTestCase {

@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Admin_Settings_Field::render_help()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Admin_Settings_Field::render_help()
+ *
  * @group admin_settings_field
  */
 class CarbonBreadcrumbAdminSettingsFieldRenderHelpTest extends WP_UnitTestCase {

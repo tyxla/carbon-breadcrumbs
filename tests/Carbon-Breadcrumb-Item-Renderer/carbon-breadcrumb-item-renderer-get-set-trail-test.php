@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Item_Renderer::get_trail() and Carbon_Breadcrumb_Item_Renderer::set_trail()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Item_Renderer::get_trail() and Carbon_Breadcrumb_Item_Renderer::set_trail()
+ *
  * @group item_renderer
  */
 class CarbonBreadcrumbItemRendererGetSetTrailTest extends WP_UnitTestCase {

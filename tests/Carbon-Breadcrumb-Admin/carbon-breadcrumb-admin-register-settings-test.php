@@ -2,6 +2,12 @@
 /**
  * Tests for Carbon_Breadcrumb_Admin::register_settings() and Carbon_Breadcrumb_Admin::admin_menu()
  *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Admin::register_settings() and Carbon_Breadcrumb_Admin::admin_menu()
+ *
  * @group admin
  */
 class CarbonBreadcrumbAdminRegisterSettingsTest extends WP_UnitTestCase {

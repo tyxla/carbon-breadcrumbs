@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Admin_Settings::admin_menu()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Admin_Settings::admin_menu()
+ *
  * @group admin_settings
  */
 class CarbonBreadcrumbAdminSettingsAdminMenuTest extends WP_UnitTestCase {
@@ -40,14 +48,14 @@ class CarbonBreadcrumbAdminSettingsAdminMenuTest extends WP_UnitTestCase {
 		$this->assertArrayHasKey( 'admin_page_' . $page_name, $_registered_pages );
 		$this->assertTrue( $_registered_pages[ 'admin_page_' . $page_name ] );
 
-		$submenuItem = array(
+		$submenu_item = array(
 			$page_title,
 			'manage_options',
 			$page_name,
 			$page_title,
 		);
 		$this->assertArrayHasKey( 'options-general.php', $submenu );
-		$this->assertContains( $submenuItem, $submenu['options-general.php'] );
+		$this->assertContains( $submenu_item, $submenu['options-general.php'] );
 	}
 
 	/**
@@ -62,14 +70,14 @@ class CarbonBreadcrumbAdminSettingsAdminMenuTest extends WP_UnitTestCase {
 
 		$this->admin_settings->admin_menu();
 
-		$sectionItem = array(
+		$section_item = array(
 			'id'       => $page_name,
 			'title'    => 'General Settings',
 			'callback' => '',
 		);
 		$this->assertArrayHasKey( $page_name, $wp_settings_sections );
 		$this->assertArrayHasKey( $page_name, $wp_settings_sections[ $page_name ] );
-		$this->assertSame( $sectionItem, $wp_settings_sections[ $page_name ][ $page_name ] );
+		$this->assertSame( $section_item, $wp_settings_sections[ $page_name ][ $page_name ] );
 	}
 
 }

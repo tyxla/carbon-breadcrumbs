@@ -1,12 +1,43 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Admin_Settings_Field::__construct()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Admin_Settings_Field::__construct()
+ *
  * @group admin_settings_field
  */
 class CarbonBreadcrumbAdminSettingsFieldConstructTest extends WP_UnitTestCase {
-	protected $id      = 'foo_bar';
-	protected $title   = 'Foo Bar';
+	/**
+	 * Field ID.
+	 *
+	 * @var string
+	 **/
+	protected $id = 'foo_bar';
+
+	/**
+	 * Field title.
+	 *
+	 * @var string
+	 **/
+	protected $title = 'Foo Bar';
+
+	/**
+	 * Field section.
+	 *
+	 * @var string
+	 **/
 	protected $section = 'Test';
-	protected $args    = array( 'foo' => 'bar' );
+
+	/**
+	 * Field args.
+	 *
+	 * @var array
+	 **/
+	protected $args = array( 'foo' => 'bar' );
 
 	/**
 	 * Test setup

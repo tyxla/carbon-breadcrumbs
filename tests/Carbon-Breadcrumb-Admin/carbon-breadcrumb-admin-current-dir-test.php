@@ -2,6 +2,12 @@
 /**
  * Tests for Carbon_Breadcrumb_Admin::current_dir()
  *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Admin::current_dir()
+ *
  * @group admin
  */
 class CarbonBreadcrumbAdminCurrentDirTest extends WP_UnitTestCase {

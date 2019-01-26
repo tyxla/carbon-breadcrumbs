@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Trail_Renderer::get_link_before() and Carbon_Breadcrumb_Trail_Renderer::set_link_before()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Trail_Renderer::get_link_before() and Carbon_Breadcrumb_Trail_Renderer::set_link_before()
+ *
  * @group trail_renderer
  */
 class CarbonBreadcrumbTrailRendererGetSetLinkBeforeTest extends WP_UnitTestCase {

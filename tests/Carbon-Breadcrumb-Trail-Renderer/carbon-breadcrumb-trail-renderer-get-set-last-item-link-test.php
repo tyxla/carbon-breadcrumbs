@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Trail_Renderer::get_last_item_link() and Carbon_Breadcrumb_Trail_Renderer::set_last_item_link()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Trail_Renderer::get_last_item_link() and Carbon_Breadcrumb_Trail_Renderer::set_last_item_link()
+ *
  * @group trail_renderer
  */
 class CarbonBreadcrumbTrailRendererGetSetLastItemLinkTest extends WP_UnitTestCase {

@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Admin_Settings::get_field_data()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Admin_Settings::get_field_data()
+ *
  * @group admin_settings
  */
 class CarbonBreadcrumbAdminSettingsGetFieldDataTest extends WP_UnitTestCase {

@@ -1,16 +1,40 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Item_User::setup()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Item_User::setup()
+ *
  * @group item
  */
 class CarbonBreadcrumbItemUserSetupTest extends WP_UnitTestCase {
-
+	/**
+	 * Default mock title.
+	 *
+	 * @var string
+	 **/
 	public $default_mock_title = 'foobar';
-	public $default_mock_link  = 'http://example.com/';
 
+	/**
+	 * Default mock link.
+	 *
+	 * @var string
+	 **/
+	public $default_mock_link = 'http://example.com/';
+
+	/**
+	 * Setup mock title.
+	 */
 	public function mockSetupTitle() {
 		$this->item->mock_title = $this->default_mock_title;
 	}
 
+	/**
+	 * Setup mock link.
+	 */
 	public function mockSetupLink() {
 		$this->item->mock_link = $this->default_mock_link;
 	}

@@ -1,10 +1,23 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Item_Renderer::get_item_attributes_html()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Item_Renderer::get_item_attributes_html()
+ *
  * @group item_renderer
  */
 class CarbonBreadcrumbItemRendererGetItemAttributesTest extends WP_UnitTestCase {
-
-	public function custom_attributes_filter( $attributes = '' ) {
+	/**
+	 * Add custom attributes.
+	 *
+	 * @param array $attributes Default attributes.
+	 * @return array Filtered attributes.
+	 */
+	public function custom_attributes_filter( $attributes = array() ) {
 		$attributes['class'] = 'foo-bar';
 		$attributes['id']    = 'FooBar';
 		return $attributes;

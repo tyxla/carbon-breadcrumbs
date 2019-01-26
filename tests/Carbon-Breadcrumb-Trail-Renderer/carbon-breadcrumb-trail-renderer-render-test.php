@@ -1,9 +1,19 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Trail_Renderer::render()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Trail_Renderer::render()
+ *
  * @group trail_renderer
  */
 class CarbonBreadcrumbTrailRendererRenderTest extends WP_UnitTestCase {
-
+	/**
+	 * Filter what to display before the trail.
+	 */
 	public function carbon_breadcrumbs_before_render() {
 		$this->trail->remove_item_by_title( 'Foo' );
 	}

@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Admin_Settings::get_page_title()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Admin_Settings::get_page_title()
+ *
  * @group admin_settings
  */
 class CarbonBreadcrumbAdminSettingsGetPageTitleTest extends WP_UnitTestCase {

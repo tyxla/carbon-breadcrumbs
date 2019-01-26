@@ -1,9 +1,22 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Trail::__construct()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Trail::__construct()
+ *
  * @group trail
  */
 class CarbonBreadcrumbTrailConstruct extends WP_UnitTestCase {
 
+	/**
+	 * Filters the trail renderer class name.
+	 *
+	 * @return string Filtered renderer class name.
+	 */
 	public function customRenderer() {
 		return 'Carbon_Breadcrumb_Trail_Renderer_Custom';
 	}
@@ -86,6 +99,9 @@ class CarbonBreadcrumbTrailConstruct extends WP_UnitTestCase {
 
 }
 
+/**
+ * Class for a custom trail renderer.
+ */
 class Carbon_Breadcrumb_Trail_Renderer_Custom extends Carbon_Breadcrumb_Trail_Renderer {
 
 }

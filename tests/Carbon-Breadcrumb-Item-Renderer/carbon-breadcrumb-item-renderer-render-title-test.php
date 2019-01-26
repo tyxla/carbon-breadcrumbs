@@ -1,9 +1,22 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Item_Renderer::render_title()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Item_Renderer::render_title()
+ *
  * @group item_renderer
  */
 class CarbonBreadcrumbItemRendererRenderTitleTest extends WP_UnitTestCase {
-
+	/**
+	 * Filter item title.
+	 *
+	 * @param string $title Default item title.
+	 * @return string Filtered item title.
+	 */
 	public function custom_item_title_filter( $title = '' ) {
 		return 'Foo Bar Example Here';
 	}

@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Trail::get_flat_items()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Trail::get_flat_items()
+ *
  * @group trail
  */
 class CarbonBreadcrumbTrailGetFlatItemsTest extends WP_UnitTestCase {

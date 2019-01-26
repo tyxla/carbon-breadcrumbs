@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Trail_Renderer::get_home_item_title() and Carbon_Breadcrumb_Trail_Renderer::set_home_item_title()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Trail_Renderer::get_home_item_title() and Carbon_Breadcrumb_Trail_Renderer::set_home_item_title()
+ *
  * @group trail_renderer
  */
 class CarbonBreadcrumbTrailRendererGetSetHomeItemTitleTest extends WP_UnitTestCase {

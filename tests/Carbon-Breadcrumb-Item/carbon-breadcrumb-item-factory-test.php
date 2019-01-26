@@ -1,9 +1,16 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Item::factory()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Item::factory()
+ *
  * @group item
  */
 class CarbonBreadcrumbItemFactoryTest extends WP_UnitTestCase {
-
 	/**
 	 * Tests for Carbon_Breadcrumb_Item::factory().
 	 *
@@ -38,5 +45,4 @@ class CarbonBreadcrumbItemFactoryTest extends WP_UnitTestCase {
 		$this->assertSame( 'post', $item->get_type() );
 		$this->assertSame( 123, $item->get_priority() );
 	}
-
 }

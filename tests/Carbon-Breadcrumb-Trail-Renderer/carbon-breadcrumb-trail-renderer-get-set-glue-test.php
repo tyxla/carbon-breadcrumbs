@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Trail_Renderer::get_glue() and Carbon_Breadcrumb_Trail_Renderer::set_glue()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Trail_Renderer::get_glue() and Carbon_Breadcrumb_Trail_Renderer::set_glue()
+ *
  * @group trail_renderer
  */
 class CarbonBreadcrumbTrailRendererGetSetGlueTest extends WP_UnitTestCase {

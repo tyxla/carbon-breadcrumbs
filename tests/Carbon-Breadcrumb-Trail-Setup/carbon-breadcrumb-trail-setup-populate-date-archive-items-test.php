@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Trail_Setup::populate_date_archive_items()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Trail_Setup::populate_date_archive_items()
+ *
  * @group trail_setup
  */
 class CarbonBreadcrumbTrailSetupPopulateDateArchiveItemsTest extends WP_UnitTestCase {

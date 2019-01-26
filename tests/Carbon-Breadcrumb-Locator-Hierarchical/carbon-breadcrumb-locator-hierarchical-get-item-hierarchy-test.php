@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Locator_Hierarchical::get_item_hierarchy()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Locator_Hierarchical::get_item_hierarchy()
+ *
  * @group locator
  */
 class CarbonBreadcrumbLocatorHierarchicalGetItemHierarchyTest extends WP_UnitTestCase {
@@ -58,10 +66,22 @@ class CarbonBreadcrumbLocatorHierarchicalGetItemHierarchyTest extends WP_UnitTes
 		}
 	}
 
+	/**
+	 * Get the parent ID of a post.
+	 *
+	 * @param integer $id ID of the post.
+	 * @return integer ID of the parent.
+	 */
 	public function get_post_parent( $id ) {
 		return get_post_field( 'post_parent', $id );
 	}
 
+	/**
+	 * Get the parent ID of a term.
+	 *
+	 * @param integer $id ID of the term.
+	 * @return integer ID of the parent.
+	 */
 	public function get_term_parent( $id ) {
 		$term = get_term_by( 'id', $id, 'category' );
 		return $term->parent;

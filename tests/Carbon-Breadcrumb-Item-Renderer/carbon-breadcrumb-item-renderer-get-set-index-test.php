@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Item_Renderer::get_index() and Carbon_Breadcrumb_Item_Renderer::set_index()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Item_Renderer::get_index() and Carbon_Breadcrumb_Item_Renderer::set_index()
+ *
  * @group item_renderer
  */
 class CarbonBreadcrumbItemRendererGetSetIndexTest extends WP_UnitTestCase {

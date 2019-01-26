@@ -1,8 +1,21 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Admin_Settings_Field_Checkbox::render()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Admin_Settings_Field_Checkbox::render()
+ *
  * @group admin_settings_field_checkbox
  */
 class CarbonBreadcrumbAdminSettingsFieldCheckboxRenderTest extends WP_UnitTestCase {
+	/**
+	 * Field ID.
+	 *
+	 * @var string
+	 **/
 	protected $id = 'foobar';
 
 	/**

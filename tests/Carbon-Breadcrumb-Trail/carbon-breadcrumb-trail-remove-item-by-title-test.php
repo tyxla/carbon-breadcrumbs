@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Trail::remove_item_by_title()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Trail::remove_item_by_title()
+ *
  * @group trail
  */
 class CarbonBreadcrumbTrailRemoveItemByTitleTest extends WP_UnitTestCase {

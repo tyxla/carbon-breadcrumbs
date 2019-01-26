@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Trail_Setup::populate_home_items()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Trail_Setup::populate_home_items()
+ *
  * @group trail_setup
  */
 class CarbonBreadcrumbTrailSetupPopulateHomeItemsTest extends WP_UnitTestCase {

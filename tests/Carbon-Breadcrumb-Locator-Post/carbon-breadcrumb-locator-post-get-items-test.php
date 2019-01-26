@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Locator_Post::get_items()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Locator_Post::get_items()
+ *
  * @group locator
  */
 class CarbonBreadcrumbLocatorPostGetItemsTest extends WP_UnitTestCase {

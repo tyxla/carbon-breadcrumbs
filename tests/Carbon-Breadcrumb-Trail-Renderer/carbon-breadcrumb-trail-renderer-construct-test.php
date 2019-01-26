@@ -1,9 +1,22 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Trail_Renderer::__construct()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Trail_Renderer::__construct()
+ *
  * @group trail_renderer
  */
 class CarbonBreadcrumbTrailRendererConstructTest extends WP_UnitTestCase {
 
+	/**
+	 * Filter the default renderer options.
+	 *
+	 * @return array The filtered options.
+	 */
 	public function carbon_breadcrumbs_renderer_default_options() {
 		return array(
 			'min_items' => 5,

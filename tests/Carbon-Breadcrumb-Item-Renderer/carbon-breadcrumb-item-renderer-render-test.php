@@ -1,9 +1,22 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Item_Renderer::render()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Item_Renderer::render()
+ *
  * @group item_renderer
  */
 class CarbonBreadcrumbItemRendererRenderTest extends WP_UnitTestCase {
-
+	/**
+	 * Filter item output.
+	 *
+	 * @param string $item_output Default item output.
+	 * @return string Filtered item output.
+	 */
 	public function carbon_breadcrumbs_item_output( $item_output ) {
 		return $item_output . 'foobar';
 	}

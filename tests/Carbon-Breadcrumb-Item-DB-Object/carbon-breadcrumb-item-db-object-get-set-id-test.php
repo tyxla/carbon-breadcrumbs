@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Item_DB_Object::get_id() and Carbon_Breadcrumb_Item_DB_Object::set_id()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Item_DB_Object::get_id() and Carbon_Breadcrumb_Item_DB_Object::set_id()
+ *
  * @group item
  */
 class CarbonBreadcrumbItemDbObjectGetSetIdTest extends WP_UnitTestCase {

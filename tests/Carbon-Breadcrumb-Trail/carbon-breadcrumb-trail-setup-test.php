@@ -1,15 +1,40 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Trail::setup()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Trail::setup()
+ *
  * @group trail
  */
 class CarbonBreadcrumbTrailSetupTest extends WP_UnitTestCase {
+	/**
+	 * Glue before items.
+	 *
+	 * @var string
+	 **/
 	protected $glue_before = ' => ';
-	protected $glue_after  = ' -> ';
 
+	/**
+	 * Glue after items.
+	 *
+	 * @var string
+	 **/
+	protected $glue_after = ' -> ';
+
+	/**
+	 * Modify the trail glue, displayed before the items.
+	 */
 	public function modifyTrailGlueBefore() {
 		$this->trail->get_renderer()->set_glue( $this->glue_before );
 	}
 
+	/**
+	 * Modify the trail glue, displayed after the items.
+	 */
 	public function modifyTrailGlueAfter() {
 		$this->trail->get_renderer()->set_glue( $this->glue_after );
 	}
@@ -39,14 +64,14 @@ class CarbonBreadcrumbTrailSetupTest extends WP_UnitTestCase {
 		$mock_trail       = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail' )->setMethods( null )->getMock();
 		$mock_trail_setup = $this->getMockBuilder( 'Carbon_Breadcrumb_Trail_Setup' )->setMethods( null )->setConstructorArgs( array( $mock_trail ) )->getMock();
 
-		$trailItems       = $this->trail->get_items();
+		$trail_items      = $this->trail->get_items();
 		$mock_trail_items = $mock_trail->get_items();
 
-		$this->assertSame( count( $mock_trail_items ), count( $trailItems ) );
+		$this->assertSame( count( $mock_trail_items ), count( $trail_items ) );
 
 		foreach ( $mock_trail_items as $priority => $items ) {
 			foreach ( $items as $key => $item ) {
-				$this->assertInstanceOf( get_class( $item ), $trailItems[ $priority ][ $key ] );
+				$this->assertInstanceOf( get_class( $item ), $trail_items[ $priority ][ $key ] );
 			}
 		}
 	}

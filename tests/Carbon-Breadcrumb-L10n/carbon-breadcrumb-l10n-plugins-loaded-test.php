@@ -1,15 +1,35 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_L10n::plugins_loaded()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_L10n::plugins_loaded()
+ *
  * @group l10n
  */
 class CarbonBreadcrumbL10nPluginsLoadedTest extends WP_UnitTestCase {
-
+	/**
+	 * Change the locale.
+	 *
+	 * @param string $locale Default locale.
+	 * @return string Filtered locale.
+	 */
 	public function locale( $locale ) {
 		return 'bg_BG';
 	}
 
+	/**
+	 * Load the textdomain MO file.
+	 *
+	 * @param string $mofile Path to MO file.
+	 * @param string $domain Textdomain.
+	 * @return string Path to the MO file.
+	 */
 	public function load_textdomain_mofile( $mofile, $domain ) {
-		if ( $domain === 'carbon_breadcrumbs' ) {
+		if ( 'carbon_breadcrumbs' === $domain ) {
 			$filename   = basename( $mofile );
 			$plugin_dir = dirname( dirname( dirname( dirname( __FILE__ ) ) ) );
 			$path       = $plugin_dir . DIRECTORY_SEPARATOR . 'languages' . DIRECTORY_SEPARATOR . $filename;

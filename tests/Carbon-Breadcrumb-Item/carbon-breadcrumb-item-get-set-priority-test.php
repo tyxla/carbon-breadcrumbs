@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Item::get_priority() and Carbon_Breadcrumb_Item::set_priority()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Item::get_priority() and Carbon_Breadcrumb_Item::set_priority()
+ *
  * @group item
  */
 class CarbonBreadcrumbItemGetSetPriorityTest extends WP_UnitTestCase {

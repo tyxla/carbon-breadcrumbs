@@ -2,6 +2,12 @@
 /**
  * Tests for Carbon_Breadcrumb_Admin::is_enabled()
  *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Admin::is_enabled()
+ *
  * @group admin
  */
 class CarbonBreadcrumbAdminIsEnabledTest extends WP_UnitTestCase {
@@ -79,6 +85,11 @@ class CarbonBreadcrumbAdminIsEnabledTest extends WP_UnitTestCase {
 		$this->assertFalse( $this->admin->is_enabled() );
 	}
 
+	/**
+	 * A stub function that always returns true.
+	 *
+	 * @return boolean
+	 */
 	public function __return_true() {
 		return true;
 	}

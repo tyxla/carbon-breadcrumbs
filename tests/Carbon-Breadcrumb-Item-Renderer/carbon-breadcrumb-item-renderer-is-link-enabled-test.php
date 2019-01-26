@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Item_Renderer::is_link_enabled()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Item_Renderer::is_link_enabled()
+ *
  * @group item_renderer
  */
 class CarbonBreadcrumbItemRendererIsLinkEnabledTest extends WP_UnitTestCase {

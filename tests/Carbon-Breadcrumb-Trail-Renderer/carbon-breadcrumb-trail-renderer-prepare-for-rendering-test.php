@@ -1,15 +1,38 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Trail_Renderer::prepare_for_rendering()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Trail_Renderer::prepare_for_rendering()
+ *
  * @group trail_renderer
  */
 class CarbonBreadcrumbTrailRendererPrepareForRenderingTest extends WP_UnitTestCase {
-
+	/**
+	 * Glue string.
+	 *
+	 * @var string
+	 **/
 	public $glue = ' => ';
 
+	/**
+	 * Set the glue of trail renderer.
+	 *
+	 * @param Carbon_Breadcrumb_Trail_Renderer $trail_renderer Renderer object.
+	 */
 	public function carbon_breadcrumbs_before_render( $trail_renderer ) {
 		$trail_renderer->set_glue( $this->glue );
 	}
 
+	/**
+	 * Filter whether to auto sort the items.
+	 *
+	 * @param boolean $sort Whether to sort the items.
+	 * @return boolean Whether to sort the items.
+	 */
 	public function carbon_breadcrumbs_auto_sort_items( $sort ) {
 		return false;
 	}

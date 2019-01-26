@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Item_Term::setup()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Item_Term::setup()
+ *
  * @group item
  */
 class CarbonBreadcrumbItemTermSetupTest extends WP_UnitTestCase {

@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Admin_Settings_Field::get_title() and Carbon_Breadcrumb_Admin_Settings_Field::set_title()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Admin_Settings_Field::get_title() and Carbon_Breadcrumb_Admin_Settings_Field::set_title()
+ *
  * @group admin_settings_field
  */
 class CarbonBreadcrumbAdminSettingsFieldGetSetTitleTest extends WP_UnitTestCase {

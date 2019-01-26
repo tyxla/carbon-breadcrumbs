@@ -1,5 +1,13 @@
 <?php
 /**
+ * Tests for Carbon_Breadcrumb_Trail::sort_items()
+ *
+ * @package carbon-breadcrumbs
+ */
+
+/**
+ * Test class for Carbon_Breadcrumb_Trail::sort_items()
+ *
  * @group trail
  */
 class CarbonBreadcrumbTrailSortItemsTest extends WP_UnitTestCase {
