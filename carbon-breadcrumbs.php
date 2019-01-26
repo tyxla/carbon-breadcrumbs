@@ -25,39 +25,39 @@ $base_dir = dirname( __FILE__ );
 $core_dir = $base_dir . '/core/';
 
 // Utility classes.
-include_once( $core_dir . 'Carbon-Breadcrumb-Factory.php' );
-include_once( $core_dir . 'Carbon-Breadcrumb-L10n.php' );
+include_once( $core_dir . 'class-Carbon-Breadcrumb-Factory.php' );
+include_once( $core_dir . 'class-Carbon-Breadcrumb-L10n.php' );
 
 // Main classes.
-include_once( $core_dir . 'Carbon-Breadcrumb-Trail.php' );
-include_once( $core_dir . 'Carbon-Breadcrumb-Trail-Setup.php' );
-include_once( $core_dir . 'Carbon-Breadcrumb-Trail-Renderer.php' );
+include_once( $core_dir . 'class-Carbon-Breadcrumb-Trail.php' );
+include_once( $core_dir . 'class-Carbon-Breadcrumb-Trail-Setup.php' );
+include_once( $core_dir . 'class-Carbon-Breadcrumb-Trail-Renderer.php' );
 
 // Interfaces.
-include_once( $core_dir . 'Carbon-Breadcrumb-DB-Object.php' );
+include_once( $core_dir . 'class-Carbon-Breadcrumb-DB-Object.php' );
 
 // Locators.
-include_once( $core_dir . 'Carbon-Breadcrumb-Locator.php' );
-include_once( $core_dir . 'Carbon-Breadcrumb-Locator-Hierarchical.php' );
-include_once( $core_dir . 'Carbon-Breadcrumb-Locator-Post.php' );
-include_once( $core_dir . 'Carbon-Breadcrumb-Locator-Term.php' );
-include_once( $core_dir . 'Carbon-Breadcrumb-Locator-User.php' );
-include_once( $core_dir . 'Carbon-Breadcrumb-Locator-Date.php' );
+include_once( $core_dir . 'class-Carbon-Breadcrumb-Locator.php' );
+include_once( $core_dir . 'class-Carbon-Breadcrumb-Locator-Hierarchical.php' );
+include_once( $core_dir . 'class-Carbon-Breadcrumb-Locator-Post.php' );
+include_once( $core_dir . 'class-Carbon-Breadcrumb-Locator-Term.php' );
+include_once( $core_dir . 'class-Carbon-Breadcrumb-Locator-User.php' );
+include_once( $core_dir . 'class-Carbon-Breadcrumb-Locator-Date.php' );
 
 // Items.
-include_once( $core_dir . 'Carbon-Breadcrumb-Item.php' );
-include_once( $core_dir . 'Carbon-Breadcrumb-Item-DB-Object.php' );
-include_once( $core_dir . 'Carbon-Breadcrumb-Item-Post.php' );
-include_once( $core_dir . 'Carbon-Breadcrumb-Item-Term.php' );
-include_once( $core_dir . 'Carbon-Breadcrumb-Item-User.php' );
-include_once( $core_dir . 'Carbon-Breadcrumb-Item-Custom.php' );
-include_once( $core_dir . 'Carbon-Breadcrumb-Item-Renderer.php' );
+include_once( $core_dir . 'class-Carbon-Breadcrumb-Item.php' );
+include_once( $core_dir . 'class-Carbon-Breadcrumb-Item-DB-Object.php' );
+include_once( $core_dir . 'class-Carbon-Breadcrumb-Item-Post.php' );
+include_once( $core_dir . 'class-Carbon-Breadcrumb-Item-Term.php' );
+include_once( $core_dir . 'class-Carbon-Breadcrumb-Item-User.php' );
+include_once( $core_dir . 'class-Carbon-Breadcrumb-Item-Custom.php' );
+include_once( $core_dir . 'class-Carbon-Breadcrumb-Item-Renderer.php' );
 
 // Exceptions.
-include_once( $core_dir . 'Carbon-Breadcrumb-Exception.php' );
+include_once( $core_dir . 'class-Carbon-Breadcrumb-Exception.php' );
 
 // Administration.
-include_once( $base_dir . '/admin/Carbon-Breadcrumb-Admin.php' );
+include_once( $base_dir . '/admin/class-Carbon-Breadcrumb-Admin.php' );
 
 // Initialize l10n support.
 global $carbon_breadcrumb_l10n;
