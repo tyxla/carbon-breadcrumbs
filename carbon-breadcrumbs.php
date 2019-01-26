@@ -11,30 +11,32 @@
  * Tested up to: 4.5
  * Text Domain: carbon_breadcrumbs
  * Domain Path: /languages
+ *
+ * @package carbon-breadcrumbs
  */
 
-// allows the plugin to be included as a library in themes
+// Allows the plugin to be included as a library in themes.
 if ( class_exists( 'Carbon_Breadcrumb_Trail' ) ) {
 	return;
 }
 
-// define directories
+// Define directories.
 $base_dir = dirname( __FILE__ );
 $core_dir = $base_dir . '/core/';
 
-// utility classes
+// Utility classes.
 include_once( $core_dir . 'Carbon_Breadcrumb_Factory.php' );
 include_once( $core_dir . 'Carbon_Breadcrumb_L10n.php' );
 
-// main classes
+// Main classes.
 include_once( $core_dir . 'Carbon_Breadcrumb_Trail.php' );
 include_once( $core_dir . 'Carbon_Breadcrumb_Trail_Setup.php' );
 include_once( $core_dir . 'Carbon_Breadcrumb_Trail_Renderer.php' );
 
-// interfaces
+// Interfaces.
 include_once( $core_dir . 'Carbon_Breadcrumb_DB_Object.php' );
 
-// locators
+// Locators.
 include_once( $core_dir . 'Carbon_Breadcrumb_Locator.php' );
 include_once( $core_dir . 'Carbon_Breadcrumb_Locator_Hierarchical.php' );
 include_once( $core_dir . 'Carbon_Breadcrumb_Locator_Post.php' );
@@ -42,7 +44,7 @@ include_once( $core_dir . 'Carbon_Breadcrumb_Locator_Term.php' );
 include_once( $core_dir . 'Carbon_Breadcrumb_Locator_User.php' );
 include_once( $core_dir . 'Carbon_Breadcrumb_Locator_Date.php' );
 
-// items
+// Items.
 include_once( $core_dir . 'Carbon_Breadcrumb_Item.php' );
 include_once( $core_dir . 'Carbon_Breadcrumb_Item_DB_Object.php' );
 include_once( $core_dir . 'Carbon_Breadcrumb_Item_Post.php' );
@@ -51,16 +53,16 @@ include_once( $core_dir . 'Carbon_Breadcrumb_Item_User.php' );
 include_once( $core_dir . 'Carbon_Breadcrumb_Item_Custom.php' );
 include_once( $core_dir . 'Carbon_Breadcrumb_Item_Renderer.php' );
 
-// exceptions
+// Exceptions.
 include_once( $core_dir . 'Carbon_Breadcrumb_Exception.php' );
 
-// administration
+// Administration.
 include_once( $base_dir . '/admin/Carbon_Breadcrumb_Admin.php' );
 
-// initialize l10n support
+// Initialize l10n support.
 global $carbon_breadcrumb_l10n;
 $carbon_breadcrumb_l10n = new Carbon_Breadcrumb_L10n();
 
-// initialize the administration interface
+// Initialize the administration interface.
 global $carbon_breadcrumb_admin;
 $carbon_breadcrumb_admin = new Carbon_Breadcrumb_Admin();
